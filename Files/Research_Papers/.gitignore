@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Secrets and local configuration
+.env
+.env.*
+*.pem
+*.key
+*secret*
+*credentials*
+
+# Formal verification temporary outputs
+*.vcd
+*.fst
+*.fsdb
+*.wlf
+*.jou
+*.log
+*.history
+*.trace
+*.cex
+*.dump
+*.tmp
+*.bak
+formal_work/
+formal_tmp/
+yosys_tmp/
+symbiyosys_tmp/
+abc_tmp/
+
+# Tool-generated databases / build outputs
+*.db
+*.sqlite
+*.sqlite3
+build/
+dist/
+out/
+work/
+tmp/
+
+# Generated caches
+.cache/
+.pytest_cache/
+.mplconfig/
+huggingface_cache/
+model_cache/
+
+# Local experiment outputs
+experiments/_local/
+results/_local/
