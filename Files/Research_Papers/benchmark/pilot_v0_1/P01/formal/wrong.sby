@@ -1,0 +1,18 @@
+[options]
+mode bmc
+depth 1
+expect fail
+
+[engines]
+smtbmc z3
+
+[script]
+read_verilog -formal -sv ../validation_rtl/deliberately_wrong_rtl.sv
+read_verilog -formal -sv properties/mux2to1_properties.sv
+read_verilog -formal -sv harness_wrong.sv
+prep -top harness_wrong
+
+[files]
+../validation_rtl/deliberately_wrong_rtl.sv
+properties/mux2to1_properties.sv
+harness_wrong.sv
