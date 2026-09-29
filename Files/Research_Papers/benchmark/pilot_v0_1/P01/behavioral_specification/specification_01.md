@@ -19,9 +19,17 @@ a, b, sel \in \{0, 1\}
 
 Functional definition:
 
-```
+```text
 y = a, if sel = 0
 y = b, if sel = 1
 ```
 
 The required behavior is purely combinational. No clock, reset, enable, storage, latency, or state behavior is part of this specification.
+
+## Pre-RTL Review Record
+
+**Decision:** APPROVED TO PROCEED TO RTL IMPLEMENTATION
+
+The pre-RTL review found the requirement, interpretation, and behavioral specification consistent on the intended Boolean behavior: `sel = 0` selects `a`, and `sel = 1` selects `b`. No reasonable competing behavioral interpretation was identified for the tested behavior.
+
+This decision advances only the pre-RTL review gate. It does **not** constitute formal verification, annotation completion, reproducibility completion, template freeze, or final `UNAMBIGUOUS` certification.
