@@ -7,8 +7,9 @@ module mux2to1_properties (
     input logic y
 );
 
-    // For Boolean inputs, the output must equal the selected input.
-    always_comb begin
+    // Immediate combinational assertion over the legal Boolean input domain.
+    // No environmental assumptions are added.
+    always @* begin
         assert (y == (sel ? b : a));
     end
 
