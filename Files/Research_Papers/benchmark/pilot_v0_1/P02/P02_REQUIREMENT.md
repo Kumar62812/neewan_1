@@ -17,6 +17,20 @@
 | `d` | input | 1 | Data input |
 | `q` | output | 1 | Stored output |
 
+## Required behavioral details
+
+- **Design:** one-bit register.
+- **Clock:** update on rising edges of `clk`.
+- **Reset polarity:** active high.
+- **Reset timing:** synchronous.
+- **Reset priority:** reset overrides data loading.
+- **Reset behavior:** at a rising edge with `rst=1`, set `q` to 0.
+- **Normal behavior:** at a rising edge with `rst=0`, load sampled `d` into `q`.
+- **Between edges:** hold the previous `q`.
+- **Initial state:** `q` is unspecified before the first rising edge.
+- **Enable:** none.
+- **Formal scope:** Boolean behavior; four-state SystemVerilog X/Z behavior is not claimed.
+
 ## Scope
 
 This artifact records only the natural-language requirement and port definitions. It does not define an RTL implementation or formal result.
