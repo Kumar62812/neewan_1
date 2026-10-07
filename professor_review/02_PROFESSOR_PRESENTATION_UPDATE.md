@@ -1,6 +1,8 @@
 # P01 Professor Presentation — Update Record
 
-The repository presentation update is defined by the following changes.
+**Presentation update instructions — not an updated PPTX.**
+
+The repository Markdown record below defines the intended presentation changes. The binary PPTX is not treated as updated by this Markdown document.
 
 ## Slide 1
 
@@ -73,4 +75,4 @@ GUIDE DIRECTION REQUESTED
 3. Revise P01 before proceeding
 ```
 
-The binary presentation was updated in the working project artifact; this Markdown record preserves the exact intended presentation changes in the repository.
+The binary presentation is not represented as updated by this file. This record preserves the intended presentation changes without implying that the PPTX itself was edited.
