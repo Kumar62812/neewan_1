@@ -1,10 +1,10 @@
 # FORMAL-AMBIG-RTL — Current Project Brief
 
-**Status date:** 2026-10-07
+**Status date:** 2026-10-08
 
 ## Project position
 
-P01 professor review is recorded as approved to proceed to P02. This is a project-direction record and does not imply an independently signed certification dossier.
+P01 formal evidence is complete for the documented effective tested source. P01 professor approval is recorded as **APPROVED** project direction to proceed with P02. This does not imply that an independent certification dossier has been completed.
 
 ## Research question
 
@@ -39,11 +39,13 @@ P02 is a deterministic sequential pilot: one-bit register with synchronous activ
 
 Current state:
 
-`Requirement: DRAFT PROPOSED`
+`Requirement: PRESENT`
 
-`Interpretation: DRAFT PROPOSED`
+`Interpretation: PRESENT`
 
-`Specification: DRAFT PROPOSED`
+`Specification: PRESENT`
+
+`Pre-RTL consistency review: PENDING`
 
 `RTL: NOT IMPLEMENTED`
 
@@ -55,4 +57,4 @@ Current state:
 
 Proceed with P02 using the reviewed P01 workflow while preserving P01 accepted evidence unchanged.
 
-Approval date, mode, and exact professor wording are not stated here because they were not supplied.
+Approval date, mode, and exact professor wording are not stated here because they were not supplied in the project record.
