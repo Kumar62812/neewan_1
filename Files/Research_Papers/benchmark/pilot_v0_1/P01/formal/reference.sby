@@ -1,0 +1,18 @@
+[options]
+mode bmc
+depth 1
+expect pass
+
+[engines]
+smtbmc z3
+
+[script]
+read_verilog -formal -sv ../reference_rtl/rtl_01.sv
+read_verilog -formal -sv properties/mux2to1_properties.sv
+read_verilog -formal -sv harness_reference.sv
+prep -top harness_reference
+
+[files]
+../reference_rtl/rtl_01.sv
+properties/mux2to1_properties.sv
+harness_reference.sv

@@ -1,0 +1,97 @@
+schema_version: "1.0"
+instance_id: "FSM_EXAMPLE_001"
+instance_version: "v1"
+status: "candidate"
+
+provenance:
+  source_type: "original"
+  source_reference: ""
+  source_location: ""
+  author_notes: ""
+
+requirement:
+  specification_text: ""
+  domain: "FSM"
+  primary_ambiguity_dimension: ""
+  secondary_dimensions: []
+
+interpretations:
+  A:
+    text: ""
+    rationale: ""
+  B:
+    text: ""
+    rationale: ""
+
+reference_rtl:
+  A:
+    path: ""
+    sha256: ""
+  B:
+    path: ""
+    sha256: ""
+
+formal_environment:
+  clock: ""
+  reset: ""
+  input_assumptions: []
+  initial_state_assumptions: []
+  protocol_assumptions: []
+  other_assumptions: []
+
+observables:
+  signals: []
+  cycle_semantics: ""
+  comparison_scope: ""
+
+formal_result:
+  tool: ""
+  tool_version: ""
+  backend: ""
+  method: ""
+  result: "NOT_RUN"
+  command: ""
+  timeout_seconds: null
+  counterexample_path: ""
+  distinguishing_trace_summary: ""
+  assumptions_satisfiable: null
+
+human_annotation:
+  protocol_version: ""
+  annotator_count: 0
+  interpretation_A_scores: []
+  interpretation_B_scores: []
+  unresolved_choice_scores: []
+  agreement_metric: ""
+  agreement_value: null
+  plausibility_threshold: 0.80
+  A_pass: false
+  B_pass: false
+  adjudication_required: false
+  adjudication_record: ""
+
+certification:
+  formal_requirement_met: false
+  human_requirement_met: false
+  certified_ambiguous: false
+  rejection_reason: ""
+
+llm_evaluation:
+  condition: ""
+  model: ""
+  model_version: ""
+  trial_id: ""
+  prompt_hash: ""
+  response_path: ""
+  generated_rtl_path: ""
+  interaction_outcome: ""
+  rtl_classification: ""
+  compile_status: ""
+  formal_status: ""
+
+reproducibility:
+  protocol_version: ""
+  benchmark_version: ""
+  repository_commit: ""
+  created_at: ""
+  updated_at: ""
