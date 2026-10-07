@@ -1,38 +1,23 @@
 # P02 Readiness
 
-## Authorization
+## Pre-RTL Readiness Checklist
 
-P02 is authorized to begin based on the professor approval reported by the project owner.
+- [x] P01 professor approval recorded — reference: `02_CERTIFICATION/P01_GUIDE_MEETING_RECORD.md`
+- [x] P02 requirement file present
+- [x] P02 interpretation file present
+- [x] P02 specification file present
+- [ ] P02 pre-RTL consistency review completed
+- [ ] Reference RTL implemented
+- [ ] Negative-control RTL implemented
+- [ ] Formal properties and harness completed
+- [ ] Formal configuration selected and justified
+- [ ] Formal runs executed
+- [ ] Evidence packaged and verified
 
-## Required first-stage artifacts
+## Current Stage
 
-1. `P02_REQUIREMENT.md`
-2. `P02_INTERPRETATION.md`
-3. `P02_SPECIFICATION.md`
+**P02 pre-RTL consistency review**
 
-These three artifacts are now present in the repository.
+The three P02 contract documents are present and have been synchronized to the same required behavioral contract. Their formal consistency review is intentionally still marked pending until the project review step is explicitly completed.
 
-## Consistency check
-
-The requirement specifies:
-
-- rising-edge updates;
-- synchronous active-high reset;
-- reset priority;
-- loading `d` otherwise;
-- state retention between rising edges;
-- unspecified initial state.
-
-The interpretation states the same semantics without adding asynchronous reset, initialization, enable, or extra latency.
-
-The specification expresses:
-
-`q_next = 0` when `rst=1`, otherwise `q_next=d`,
-
-and includes the corresponding behavior table and example edge sequence.
-
-## Next stage
-
-After these artifacts are reviewed for consistency, P02 reference RTL, deliberate negative control, formal property, and sequential harness may be prepared.
-
-No P02 formal execution or evidence is claimed yet.
+No P02 RTL, formal verification run, or evidence package is claimed.
