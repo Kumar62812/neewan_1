@@ -4,19 +4,13 @@ FORMAL-AMBIG-RTL is a research repository for evaluating how LLM-generated RTL h
 
 ## Current project position
 
-**P01 professor review: APPROVED, as recorded by the project owner.** This records professor direction to proceed; it does not imply that an independent certification dossier has been signed.
+**P01: Formal evidence complete; professor-approved.** Professor approval is recorded as project direction to proceed with P02; it does not imply completion of an independent certification record.
 
-**P02: READY TO BEGIN.**
+**P02: Requirement, interpretation, and specification prepared; pre-RTL consistency review pending.**
 
-`P01 requirement → interpretation → specification → RTL → formal evidence: COMPLETE`
+`P01: Formal evidence COMPLETE`
 
-`P02 requirement/specification: DRAFT PROPOSED`
-
-`P02 RTL: NOT YET IMPLEMENTED`
-
-`P02 formal verification: NOT YET EXECUTED`
-
-`P02 evidence: NOT YET GENERATED`
+`P02: Requirement PRESENT → Interpretation PRESENT → Specification PRESENT → Consistency review PENDING → RTL NOT IMPLEMENTED → Formal verification NOT EXECUTED → Evidence NOT GENERATED`
 
 ## Start here
 
@@ -26,7 +20,7 @@ FORMAL-AMBIG-RTL is a research repository for evaluating how LLM-generated RTL h
 4. [`docs/provenance/p01-evidence-register.md`](docs/provenance/p01-evidence-register.md) — P01 evidence/provenance register.
 5. [`docs/reproducibility/p01-reproduction.md`](docs/reproducibility/p01-reproduction.md) — clean-checkout reproduction boundary.
 6. [`Files/Research_Papers/benchmark/pilot_v0_1/P01/`](Files/Research_Papers/benchmark/pilot_v0_1/P01/) — P01 source artifacts.
-7. [`Files/Research_Papers/benchmark/pilot_v0_1/P02/`](Files/Research_Papers/benchmark/pilot_v0_1/P02/) — P02 working requirement/specification artifacts.
+7. [`Files/Research_Papers/benchmark/pilot_v0_1/P02/`](Files/Research_Papers/benchmark/pilot_v0_1/P02/) — P02 requirement, interpretation, and specification artifacts.
 
 ## P01 evidence boundary
 
@@ -46,7 +40,7 @@ Accepted P01 archive:
 Archive SHA-256:
 `32811754b548108c74095f19362ddd18bb379aadd220bd8a7e4b2abee82c063b`
 
-**The accepted archive and checksum are protected and are not modified by P02 work.**
+**The accepted archive and checksum are protected and are not modified by P02 documentation work.**
 
 The unmodified pinned revision is not represented as having formally passed.
 
@@ -54,15 +48,17 @@ The unmodified pinned revision is not represented as having formally passed.
 
 - Formal evidence: **COMPLETE** for the documented effective tested source.
 - Evidence audit/integrity: **COMPLETE**.
-- P01 professor/guide direction: **APPROVED TO PROCEED WITH P02**, based on the project owner's recorded statement.
+- P01 professor approval: **APPROVED** — see `02_CERTIFICATION/P01_GUIDE_MEETING_RECORD.md`.
+- Independent certification record: **not completed/recorded in the current project record**.
 - P01 Golden Template: **NOT FROZEN**.
-- P02: **AUTHORIZED TO BEGIN**.
-- P02 formal execution: **NOT YET EXECUTED**.
-- P02 evidence: **NOT YET GENERATED**.
+- P02 requirement, interpretation, specification: **PRESENT; consistency review pending**.
+- P02 RTL: **NOT IMPLEMENTED**.
+- P02 formal verification: **NOT EXECUTED**.
+- P02 evidence: **NOT GENERATED**.
 - Benchmark-wide validity: **NOT CLAIMED**.
 - Complete LLM-methodology validation: **NOT CLAIMED**.
 
-Approval metadata not supplied in the current record (exact approval date, approval mode, and exact professor wording) must not be invented.
+Approval date, mode, and exact professor wording are not stated because they were not supplied in the project record.
 
 ## Repository conventions
 
