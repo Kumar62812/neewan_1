@@ -25,6 +25,19 @@ The P01 provenance and execution history are retained in the canonical P01 execu
 | P02 RTL/formal execution | Not started |
 | P01 accepted evidence | No intentional modifications in this documentation update |
 
+
+## 2026-10-10 update — P05 plausibility preparation
+
+| Field | Entry |
+|---|---|
+| Date | 2026-10-10 |
+| Event | P05 independent human-plausibility review procedure published; thesis assessment plan added |
+| Review protocol | `Files/Research_Papers/benchmark/pilot_v0_1/P05/annotation/v1/` |
+| Thesis plan | `docs/project-state/THESIS_ASSESSMENT_PLAN.md` |
+| Current P05 state | Human responses: 0; plausibility pending; ambiguity certification not claimed |
+| Formal/LLM work | No P05 formal result, evidence package, or LLM evaluation result is asserted by this documentation update |
+| Merge commit | `c891fa94e04e0dfd747eb716192833bf26fd769a` |
+
 ## Approval-record boundary
 
 The project record reports professor approval to proceed with P02. The exact approval date, approval mode, and verbatim professor wording were not supplied, so those fields are not invented. This project-state entry does not constitute an independent certification signature.
