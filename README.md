@@ -8,6 +8,10 @@ FORMAL-AMBIG-RTL is a research repository for evaluating how LLM-generated RTL h
 
 **P02: Requirement, interpretation, and specification prepared; pre-RTL consistency review pending.**
 
+**P05: Human-plausibility preparation published for review; zero human responses; plausibility pending. No ambiguity certification is claimed.**
+
+`P05: Review procedure PREPARED → Human responses 0/5 → Plausibility PENDING → Formal behavioral distinction NOT ASSERTED → Ambiguity certification NOT CLAIMED`
+
 `P01: Formal evidence COMPLETE`
 
 `P02: Requirement PRESENT → Interpretation PRESENT → Specification PRESENT → Consistency review PENDING → RTL NOT IMPLEMENTED → Formal verification NOT EXECUTED → Evidence NOT GENERATED`
@@ -21,6 +25,9 @@ FORMAL-AMBIG-RTL is a research repository for evaluating how LLM-generated RTL h
 5. [`docs/reproducibility/p01-reproduction.md`](docs/reproducibility/p01-reproduction.md) — clean-checkout reproduction boundary.
 6. [`Files/Research_Papers/benchmark/pilot_v0_1/P01/`](Files/Research_Papers/benchmark/pilot_v0_1/P01/) — P01 source artifacts.
 7. [`Files/Research_Papers/benchmark/pilot_v0_1/P02/`](Files/Research_Papers/benchmark/pilot_v0_1/P02/) — P02 requirement, interpretation, and specification artifacts.
+8. [P05 plausibility procedure](Files/Research_Papers/benchmark/pilot_v0_1/P05/annotation/v1/README.md) — five-reviewer independent assessment procedure.
+9. [P05 blank reviewer form](Files/Research_Papers/benchmark/pilot_v0_1/P05/annotation/v1/reviewer_form.md) — independent ratings.
+10. [Thesis assessment plan](docs/project-state/THESIS_ASSESSMENT_PLAN.md) — required evidence and claim boundaries.
 
 ## P01 evidence boundary
 
@@ -55,6 +62,10 @@ The unmodified pinned revision is not represented as having formally passed.
 - P02 RTL: **NOT IMPLEMENTED**.
 - P02 formal verification: **NOT EXECUTED**.
 - P02 evidence: **NOT GENERATED**.
+- P05 human plausibility: **PENDING; zero responses recorded**.
+- P05 ambiguity certification: **NOT CLAIMED**.
+- P05 formal behavioral distinction: **not asserted by the plausibility-preparation package**.
+- LLM evaluation against P05 as a certified ambiguity case: **not authorized until required gates pass**.
 - Benchmark-wide validity: **NOT CLAIMED**.
 - Complete LLM-methodology validation: **NOT CLAIMED**.
 
