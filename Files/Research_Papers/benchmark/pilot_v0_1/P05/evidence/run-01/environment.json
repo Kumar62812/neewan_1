@@ -1,0 +1,8 @@
+{
+  "platform": "macOS-15.5-arm64-arm-64bit",
+  "python": "3.12.1",
+  "base_commit": "ebc6e8a81669d9c8a4ff7b47f2de6d96d507c720",
+  "timeout_seconds": 180,
+  "yosys": "yowasp-yosys",
+  "smtbmc": "yowasp-yosys-smtbmc"
+}

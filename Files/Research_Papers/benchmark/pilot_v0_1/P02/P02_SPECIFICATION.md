@@ -1,16 +1,10 @@
 # P02 Behavioral Specification
 
+## Interface
+
+One-bit inputs `clk`, `rst`, `d`; one-bit output `q`. No enable input.
+
 ## Update equation
-
-[
-q_{	ext{next}} =
-egin{cases}
-0, & rst=1\
-d, & rst=0
-end{cases}
-]
-
-Equivalently:
 
 `q_next = rst ? 1'b0 : d`
 

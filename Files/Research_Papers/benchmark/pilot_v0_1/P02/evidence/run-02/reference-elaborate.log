@@ -1,0 +1,492 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.63 (git sha1 70a11c6bf, ccache clang++ 18.1.3 -O3 -flto -flto) [yowasp/yosys at release-0.63]
+
+-- Executing script file `reference.ys' --
+
+1. Executing Verilog-2005 frontend: source/reference_rtl/register.sv
+Parsing formal SystemVerilog input from `source/reference_rtl/register.sv' to AST representation.
+Generating RTLIL representation for module `\p02_register'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: source/validation_rtl/wrong_reset.sv
+Parsing formal SystemVerilog input from `source/validation_rtl/wrong_reset.sv' to AST representation.
+Generating RTLIL representation for module `\p02_wrong'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: source/validation_rtl/wrong_async.sv
+Parsing formal SystemVerilog input from `source/validation_rtl/wrong_async.sv' to AST representation.
+Generating RTLIL representation for module `\p02_async'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: source/formal/properties/register_properties.sv
+Parsing formal SystemVerilog input from `source/formal/properties/register_properties.sv' to AST representation.
+Generating RTLIL representation for module `\p02_properties'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: source/formal/harness.sv
+Parsing formal SystemVerilog input from `source/formal/harness.sv' to AST representation.
+Generating RTLIL representation for module `\harness'.
+Successfully finished Verilog frontend.
+
+6. Executing PREP pass.
+
+6.1. Executing HIERARCHY pass (managing design hierarchy).
+
+6.1.1. Analyzing design hierarchy..
+Top module:  \harness
+Used module:     \p02_properties
+Used module:     \p02_register
+
+6.1.2. Analyzing design hierarchy..
+Top module:  \harness
+Used module:     \p02_properties
+Used module:     \p02_register
+Removing unused module `\p02_async'.
+Removing unused module `\p02_wrong'.
+Removed 2 unused modules.
+Module harness directly or indirectly contains formal properties -> setting "keep" attribute.
+Module p02_properties directly or indirectly contains formal properties -> setting "keep" attribute.
+Mapping positional arguments of cell harness.properties (p02_properties).
+Mapping positional arguments of cell harness.dut (p02_register).
+
+6.2. Executing PROC pass (convert processes to netlists).
+
+6.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+6.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $proc$source/formal/properties/register_properties.sv:5$24 in module p02_properties.
+Marked 1 switch rules as full_case in process $proc$source/reference_rtl/register.sv:2$1 in module p02_register.
+Removed a total of 0 dead cases.
+
+6.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 28 assignments to connections.
+
+6.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\harness.$proc$source/formal/harness.sv:12$117'.
+  Set init value: \past_valid = 1'0
+Found init rule in `\p02_properties.$proc$source/formal/properties/register_properties.sv:4$96'.
+  Set init value: \reset_after_one = 1'0
+Found init rule in `\p02_properties.$proc$source/formal/properties/register_properties.sv:3$95'.
+  Set init value: \loaded_one = 1'0
+Found init rule in `\p02_properties.$proc$source/formal/properties/register_properties.sv:2$94'.
+  Set init value: \past_valid = 1'0
+
+6.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+6.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~8 debug messages>
+
+6.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\harness.$proc$source/formal/harness.sv:12$117'.
+Creating decoders for process `\harness.$proc$source/formal/harness.sv:13$103'.
+     1/3: $assume$source/formal/harness.sv:19$115_EN
+     2/3: $assume$source/formal/harness.sv:18$113_EN
+     3/3: $assume$source/formal/harness.sv:15$108_EN
+Creating decoders for process `\p02_properties.$proc$source/formal/properties/register_properties.sv:4$96'.
+Creating decoders for process `\p02_properties.$proc$source/formal/properties/register_properties.sv:3$95'.
+Creating decoders for process `\p02_properties.$proc$source/formal/properties/register_properties.sv:2$94'.
+Creating decoders for process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+     1/13: $cover$source/formal/properties/register_properties.sv:24$92_EN
+     2/13: $cover$source/formal/properties/register_properties.sv:23$90_EN
+     3/13: $cover$source/formal/properties/register_properties.sv:20$84_EN
+     4/13: $cover$source/formal/properties/register_properties.sv:19$76_EN
+     5/13: $assert$source/formal/properties/register_properties.sv:18$74_EN
+     6/13: $cover$source/formal/properties/register_properties.sv:16$68_EN
+     7/13: $cover$source/formal/properties/register_properties.sv:13$60_EN
+     8/13: $cover$source/formal/properties/register_properties.sv:12$54_EN
+     9/13: $cover$source/formal/properties/register_properties.sv:11$50_EN
+    10/13: $assert$source/formal/properties/register_properties.sv:10$48_EN
+    11/13: $assert$source/formal/properties/register_properties.sv:9$46_EN
+    12/13: $0\reset_after_one[0:0]
+    13/13: $0\loaded_one[0:0]
+Creating decoders for process `\p02_register.$proc$source/reference_rtl/register.sv:2$1'.
+     1/1: $0\q[0:0]
+
+6.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+6.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\harness.\past_valid' using process `\harness.$proc$source/formal/harness.sv:13$103'.
+  created $ff cell `$procdff$209' with global clock.
+Creating register for signal `\harness.$past$source/formal/harness.sv:17$97$0' using process `\harness.$proc$source/formal/harness.sv:13$103'.
+  created $ff cell `$procdff$210' with global clock.
+Creating register for signal `\harness.$past$source/formal/harness.sv:18$98$0' using process `\harness.$proc$source/formal/harness.sv:13$103'.
+  created $ff cell `$procdff$211' with global clock.
+Creating register for signal `\harness.$past$source/formal/harness.sv:19$99$0' using process `\harness.$proc$source/formal/harness.sv:13$103'.
+  created $ff cell `$procdff$212' with global clock.
+Creating register for signal `\p02_properties.\past_valid' using process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+  created $ff cell `$procdff$213' with global clock.
+Creating register for signal `\p02_properties.\loaded_one' using process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+  created $ff cell `$procdff$214' with global clock.
+Creating register for signal `\p02_properties.\reset_after_one' using process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+  created $ff cell `$procdff$215' with global clock.
+Creating register for signal `\p02_properties.$past$source/formal/properties/register_properties.sv:8$5$0' using process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+  created $ff cell `$procdff$216' with global clock.
+Creating register for signal `\p02_properties.$past$source/formal/properties/register_properties.sv:9$6$0' using process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+  created $ff cell `$procdff$217' with global clock.
+Creating register for signal `\p02_properties.$past$source/formal/properties/register_properties.sv:10$7$0' using process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+  created $ff cell `$procdff$218' with global clock.
+Creating register for signal `\p02_properties.$past$source/formal/properties/register_properties.sv:11$8$0' using process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+  created $ff cell `$procdff$219' with global clock.
+Creating register for signal `\p02_properties.$past$source/formal/properties/register_properties.sv:11$9$0' using process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+  created $ff cell `$procdff$220' with global clock.
+Creating register for signal `\p02_properties.$past$source/formal/properties/register_properties.sv:12$10$0' using process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+  created $ff cell `$procdff$221' with global clock.
+Creating register for signal `\p02_properties.$past$source/formal/properties/register_properties.sv:12$11$0' using process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+  created $ff cell `$procdff$222' with global clock.
+Creating register for signal `\p02_properties.$past$source/formal/properties/register_properties.sv:13$12$0' using process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+  created $ff cell `$procdff$223' with global clock.
+Creating register for signal `\p02_properties.$past$source/formal/properties/register_properties.sv:13$13$0' using process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+  created $ff cell `$procdff$224' with global clock.
+Creating register for signal `\p02_properties.$past$source/formal/properties/register_properties.sv:14$14$0' using process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+  created $ff cell `$procdff$225' with global clock.
+Creating register for signal `\p02_properties.$past$source/formal/properties/register_properties.sv:14$15$0' using process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+  created $ff cell `$procdff$226' with global clock.
+Creating register for signal `\p02_properties.$past$source/formal/properties/register_properties.sv:15$16$0' using process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+  created $ff cell `$procdff$227' with global clock.
+Creating register for signal `\p02_properties.$past$source/formal/properties/register_properties.sv:16$17$0' using process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+  created $ff cell `$procdff$228' with global clock.
+Creating register for signal `\p02_properties.$past$source/formal/properties/register_properties.sv:16$18$0' using process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+  created $ff cell `$procdff$229' with global clock.
+Creating register for signal `\p02_properties.$past$source/formal/properties/register_properties.sv:18$19$0' using process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+  created $ff cell `$procdff$230' with global clock.
+Creating register for signal `\p02_properties.$past$source/formal/properties/register_properties.sv:19$20$0' using process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+  created $ff cell `$procdff$231' with global clock.
+Creating register for signal `\p02_properties.$past$source/formal/properties/register_properties.sv:19$21$0' using process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+  created $ff cell `$procdff$232' with global clock.
+Creating register for signal `\p02_properties.$past$source/formal/properties/register_properties.sv:20$22$0' using process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+  created $ff cell `$procdff$233' with global clock.
+Creating register for signal `\p02_properties.$past$source/formal/properties/register_properties.sv:20$23$0' using process `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+  created $ff cell `$procdff$234' with global clock.
+Creating register for signal `\p02_register.\q' using process `\p02_register.$proc$source/reference_rtl/register.sv:2$1'.
+  created $dff cell `$procdff$235' with positive edge clock.
+
+6.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+6.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `harness.$proc$source/formal/harness.sv:12$117'.
+Found and cleaned up 2 empty switches in `\harness.$proc$source/formal/harness.sv:13$103'.
+Removing empty process `harness.$proc$source/formal/harness.sv:13$103'.
+Removing empty process `p02_properties.$proc$source/formal/properties/register_properties.sv:4$96'.
+Removing empty process `p02_properties.$proc$source/formal/properties/register_properties.sv:3$95'.
+Removing empty process `p02_properties.$proc$source/formal/properties/register_properties.sv:2$94'.
+Found and cleaned up 5 empty switches in `\p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+Removing empty process `p02_properties.$proc$source/formal/properties/register_properties.sv:5$24'.
+Found and cleaned up 1 empty switch in `\p02_register.$proc$source/reference_rtl/register.sv:2$1'.
+Removing empty process `p02_register.$proc$source/reference_rtl/register.sv:2$1'.
+Cleaned up 8 empty switches.
+
+6.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module harness.
+<suppressed ~1 debug messages>
+Optimizing module p02_properties.
+<suppressed ~7 debug messages>
+Optimizing module p02_register.
+
+6.3. Executing FUTURE pass.
+
+6.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module harness.
+Optimizing module p02_properties.
+Optimizing module p02_register.
+
+6.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \harness..
+Finding unused cells or wires in module \p02_properties..
+Finding unused cells or wires in module \p02_register..
+Removed 1 unused cells and 84 unused wires.
+<suppressed ~4 debug messages>
+
+6.6. Executing CHECK pass (checking for obvious problems).
+Checking module harness...
+Checking module p02_properties...
+Checking module p02_register...
+Found and reported 0 problems.
+
+6.7. Executing OPT pass (performing simple optimizations).
+
+6.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module harness.
+Optimizing module p02_properties.
+Optimizing module p02_register.
+
+6.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\harness'.
+Computing hashes of 21 cells of `\harness'.
+Finding duplicate cells in `\harness'.
+Finding identical cells in module `\p02_properties'.
+Computing hashes of 97 cells of `\p02_properties'.
+Finding duplicate cells in `\p02_properties'.
+Computing hashes of 93 cells of `\p02_properties'.
+Finding duplicate cells in `\p02_properties'.
+<suppressed ~12 debug messages>
+Finding identical cells in module `\p02_register'.
+Computing hashes of 2 cells of `\p02_register'.
+Finding duplicate cells in `\p02_register'.
+Removed a total of 4 cells.
+
+6.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \harness..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \p02_properties..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \p02_register..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~49 debug messages>
+
+6.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \harness.
+  Optimizing cells in module \p02_properties.
+  Optimizing cells in module \p02_register.
+Performed a total of 0 changes.
+
+6.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\harness'.
+Computing hashes of 21 cells of `\harness'.
+Finding duplicate cells in `\harness'.
+Computing hashes of 20 cells of `\harness'.
+Finding duplicate cells in `\harness'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\p02_properties'.
+Computing hashes of 93 cells of `\p02_properties'.
+Finding duplicate cells in `\p02_properties'.
+Computing hashes of 87 cells of `\p02_properties'.
+Finding duplicate cells in `\p02_properties'.
+Computing hashes of 82 cells of `\p02_properties'.
+Finding duplicate cells in `\p02_properties'.
+<suppressed ~33 debug messages>
+Finding identical cells in module `\p02_register'.
+Computing hashes of 2 cells of `\p02_register'.
+Finding duplicate cells in `\p02_register'.
+Removed a total of 12 cells.
+
+6.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \harness..
+Finding unused cells or wires in module \p02_properties..
+Finding unused cells or wires in module \p02_register..
+Removed 0 unused cells and 16 unused wires.
+<suppressed ~2 debug messages>
+
+6.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module harness.
+Optimizing module p02_properties.
+Optimizing module p02_register.
+
+6.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \harness..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \p02_properties..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \p02_register..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~30 debug messages>
+
+6.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \harness.
+  Optimizing cells in module \p02_properties.
+  Optimizing cells in module \p02_register.
+Performed a total of 0 changes.
+
+6.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\harness'.
+Computing hashes of 20 cells of `\harness'.
+Finding duplicate cells in `\harness'.
+Finding identical cells in module `\p02_properties'.
+Computing hashes of 82 cells of `\p02_properties'.
+Finding duplicate cells in `\p02_properties'.
+Finding identical cells in module `\p02_register'.
+Computing hashes of 2 cells of `\p02_register'.
+Finding duplicate cells in `\p02_register'.
+Removed a total of 0 cells.
+
+6.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \harness..
+Finding unused cells or wires in module \p02_properties..
+Finding unused cells or wires in module \p02_register..
+
+6.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module harness.
+Optimizing module p02_properties.
+Optimizing module p02_register.
+
+6.7.14. Finished fast OPT passes. (There is nothing left to do.)
+
+6.8. Executing WREDUCE pass (reducing word size of cells).
+
+6.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \harness..
+Finding unused cells or wires in module \p02_properties..
+Finding unused cells or wires in module \p02_register..
+
+6.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+6.11. Executing OPT pass (performing simple optimizations).
+
+6.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module harness.
+Optimizing module p02_properties.
+Optimizing module p02_register.
+
+6.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\harness'.
+Computing hashes of 20 cells of `\harness'.
+Finding duplicate cells in `\harness'.
+Finding identical cells in module `\p02_properties'.
+Computing hashes of 82 cells of `\p02_properties'.
+Finding duplicate cells in `\p02_properties'.
+Finding identical cells in module `\p02_register'.
+Computing hashes of 2 cells of `\p02_register'.
+Finding duplicate cells in `\p02_register'.
+Removed a total of 0 cells.
+
+6.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \harness..
+Finding unused cells or wires in module \p02_properties..
+Finding unused cells or wires in module \p02_register..
+
+6.11.4. Finished fast OPT passes.
+
+6.12. Executing SORT pass.
+
+6.13. Printing statistics.
+
+=== harness ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       16 wires
+       16 wire bits
+        5 public wires
+        5 public wire bits
+       18 cells
+        3   $anyseq
+        3   $check
+        2   $eq
+        4   $ff
+        2   $logic_and
+        2   $logic_not
+        2   $mux
+        2 submodules
+        1   p02_properties
+        1   p02_register
+
+=== p02_properties ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       75 wires
+       75 wire bits
+        7 public wires
+        7 public wire bits
+        4 ports
+        4 port bits
+       82 cells
+       11   $check
+        2   $eq
+       22   $ff
+       19   $logic_and
+       10   $logic_not
+       17   $mux
+        1   $not
+
+=== p02_register ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        5 wire bits
+        4 public wires
+        4 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        1   $dff
+        1   $mux
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+      102 harness
+       82 p02_properties
+        2 p02_register
+
+        +----------Count including submodules.
+        | 
+       96 wires
+       96 wire bits
+       16 public wires
+       16 public wire bits
+        8 ports
+        8 port bits
+        - memories
+        - memory bits
+        - processes
+      102 cells
+        3   $anyseq
+       14   $check
+        1   $dff
+        4   $eq
+       26   $ff
+       21   $logic_and
+       12   $logic_not
+       20   $mux
+        1   $not
+        2 submodules
+        1   p02_properties
+        1   p02_register
+
+6.14. Executing CHECK pass (checking for obvious problems).
+Checking module harness...
+Checking module p02_properties...
+Checking module p02_register...
+Found and reported 0 problems.
+
+7. Executing FLATTEN pass (flatten design).
+Deleting now unused module p02_properties.
+Deleting now unused module p02_register.
+<suppressed ~2 debug messages>
+
+8. Executing CLK2FFLOGIC pass (convert clocked FFs to generic $ff cells).
+
+8.1. Executing PEEPOPT pass (run peephole optimizers).
+Replacing harness.$flatten\dut.$procdff$235 ($dff): CLK=\dut.clk, D=$flatten\dut.$0\q[0:0], Q=\dut.q
+
+9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \harness..
+Removed 20 unused cells and 21 unused wires.
+<suppressed ~21 debug messages>
+
+10. Executing SMT2 backend.
+
+10.1. Executing BMUXMAP pass.
+
+10.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module harness.
+
+End of script. Logfile hash: 5b006221e4, CPU: user 0.10s system 0.00s
+Yosys 0.63 (git sha1 70a11c6bf, ccache clang++ 18.1.3 -O3 -flto -flto) [yowasp/yosys at release-0.63]
+Time spent: 40% 6x read_verilog (0 sec), 13% 2x write_smt2 (0 sec), ...
