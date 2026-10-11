@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "instance_id": "P02",
+  "instance_version": "v1",
+  "status": "technical_verification_complete",
+  "provenance": {
+    "source_type": "existing user requirement",
+    "author_notes": "Codex work session; not an LLM evaluation trial"
+  },
+  "requirement": {
+    "path": "P02_REQUIREMENT.md",
+    "domain": "sequential RTL",
+    "primary_ambiguity_dimension": "none"
+  },
+  "interpretations": {
+    "path": "P02_INTERPRETATION.md"
+  },
+  "reference_rtl": {
+    "reference_rtl/register.sv": {
+      "sha256": "891316d1f241693a87fb920b02be29639c65c979c3331d238633fcaa6dd1619f"
+    }
+  },
+  "formal_environment": {
+    "clock": "arbitrary Boolean clock, initially low",
+    "reset": "unconstrained synchronous active-high",
+    "input_assumptions": [
+      "rst and data/request stable across rising global step"
+    ],
+    "initial_state_assumptions": [],
+    "other_assumptions": [
+      "Boolean-only digital semantics"
+    ]
+  },
+  "observables": {
+    "signals": [
+      "q"
+    ],
+    "cycle_semantics": "post-rising-edge output plus between-edge hold"
+  },
+  "formal_result": {
+    "tool": "Yosys + Yosys-SMTBMC",
+    "tool_version": "0.63 (70a11c6bf)",
+    "backend": "Z3 4.15.4",
+    "method": "BMC + temporal induction + cover",
+    "result": "PASS",
+    "runs": "evidence/run-02/runs.json",
+    "report": "P02_RESULTS.md",
+    "timeout_seconds": 180,
+    "assumptions_satisfiable": true
+  },
+  "human_annotation": {
+    "annotator_count": 0,
+    "interpretation_A_scores": [],
+    "interpretation_B_scores": [],
+    "agreement_value": null,
+    "plausibility_threshold": 0.8,
+    "A_pass": false,
+    "B_pass": false
+  },
+  "certification": {
+    "formal_requirement_met": true,
+    "human_requirement_met": false,
+    "certified_ambiguous": false,
+    "rejection_reason": "Not an ambiguity candidate"
+  },
+  "llm_evaluation": {
+    "status": "not performed",
+    "model": null,
+    "rtl_classification": null
+  },
+  "reproducibility": {
+    "benchmark_version": "pilot_v0_1",
+    "repository_commit": "ebc6e8a81669d9c8a4ff7b47f2de6d96d507c720",
+    "effective_source": "base commit plus additions/edits, exact tested inputs snapshotted and hashed in evidence/run-02",
+    "created_at": "2026-10-10"
+  }
+}

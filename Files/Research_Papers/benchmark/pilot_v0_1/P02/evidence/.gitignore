@@ -1,0 +1,3 @@
+# Raw formal logs and traces are intentional research evidence.
+!*.log
+!*.vcd

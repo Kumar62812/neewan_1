@@ -1,0 +1,7 @@
+WARNING: The directory '/Users/naveen_gugulothu/Library/Caches/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+click==8.5.0
+platformdirs==4.12.4
+wasmtime==47.0.1
+yowasp-runtime==1.96
+yowasp-yosys==0.63.0.0.post1107
+z3-solver==4.15.4.0

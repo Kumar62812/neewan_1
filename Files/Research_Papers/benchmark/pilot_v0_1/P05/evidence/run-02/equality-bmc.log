@@ -1,0 +1,10 @@
+##   0:00:00  Solver: z3
+##   0:00:00  Checking assertions in step 0..
+##   0:00:00  Checking assertions in step 1..
+##   0:00:00  Checking assertions in step 2..
+##   0:00:00  Checking assertions in step 3..
+##   0:00:00  BMC failed!
+##   0:00:00  Assert failed in harness: source/formal/harness.sv:32.25-32.47 ($assert$source/formal/harness.sv:32$93)
+##   0:00:00  Writing trace to VCD file: equality-bmc.vcd
+##   0:00:00  Writing trace to Yosys witness file: equality-bmc.yw
+##   0:00:00  Status: FAILED

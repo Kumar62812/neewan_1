@@ -1,0 +1,6 @@
+read_verilog -formal -sv -D EQUALITY source/reference_rtl/responses.sv source/formal/b_properties.sv source/formal/harness.sv
+prep -top harness
+flatten
+clk2fflogic
+opt_clean
+write_smt2 -wires equality.smt2

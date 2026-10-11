@@ -1,0 +1,8 @@
+##   0:00:00  Solver: z3
+##   0:00:00  Checking assertions in step 0..
+##   0:00:00  Checking assertions in step 1..
+##   0:00:00  BMC failed!
+##   0:00:00  Assert failed in harness: source/formal/properties/register_properties.sv:18.17-18.38 ($flatten/properties.$assert$source/formal/properties/register_properties.sv:18$74)
+##   0:00:00  Writing trace to VCD file: async-bmc.vcd
+##   0:00:00  Writing trace to Yosys witness file: async-bmc.yw
+##   0:00:00  Status: FAILED
