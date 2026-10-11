@@ -38,6 +38,19 @@ The P01 provenance and execution history are retained in the canonical P01 execu
 | Formal/LLM work | No P05 formal result, evidence package, or LLM evaluation result is asserted by this documentation update |
 | Merge commit | `c891fa94e04e0dfd747eb716192833bf26fd769a` |
 
+## 2026-10-12 update — P02/P05 technical evidence publication
+
+| Field | Entry |
+|---|---|
+| Date | 2026-10-12 |
+| Event | P02/P05 technical source, formal run evidence, result summaries, and tool requirements published for review |
+| Pull request | [#6: Publish P02 and P05 formal evidence](https://github.com/Kumar62812/neewan_1/pull/6), targeting `main`; open, not merged |
+| Tested source | `0874a36608a249b3c2c89ccc35e637936bd2987f`; clean reproduction dated 2026-10-10 |
+| P02 result | Reference bounded and induction checks PASS; eight cover goals reached; both intended negative controls FAIL with counterexamples |
+| P05 result | A/B conformance PASS; post-reset equality FAIL with a legal distinction; human plausibility pending, zero responses |
+| Archive handling | Clean-run archives were retained locally but omitted from the PR after the connected GitHub review rejected uploading opaque archives; checksums are recorded in `docs/reproducibility/p02-p05-reproduction.md` |
+| P01 boundary | No P01 evidence or preservation metadata is changed by the publication PR |
+
 ## Approval-record boundary
 
 The project record reports professor approval to proceed with P02. The exact approval date, approval mode, and verbatim professor wording were not supplied, so those fields are not invented. This project-state entry does not constitute an independent certification signature.
@@ -63,8 +76,11 @@ P01 Golden Template: NOT FROZEN
 P02 requirement: PRESENT
 P02 interpretation: PRESENT
 P02 specification: PRESENT
-P02 pre-RTL consistency review: PENDING
-P02 RTL: NOT IMPLEMENTED
-P02 formal verification: NOT EXECUTED
-P02 evidence: NOT GENERATED
+P02 pre-RTL consistency review: COMPLETE
+P02 RTL: IMPLEMENTED
+P02 formal verification: COMPLETE under the documented Boolean sampled-edge model
+P02 evidence: PUBLISHED in open PR #6; PR not merged
+P05 formal distinction: DEMONSTRATED under the tested model
+P05 human plausibility: PENDING; zero responses
+P05 ambiguity certification: NOT CLAIMED
 ```

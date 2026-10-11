@@ -1,7 +1,7 @@
 # P05 Plausibility Status
 
-**As of:** 2026-10-10  
-**Status:** PREPARATION COMPLETE; HUMAN PLAUSIBILITY PENDING
+**As of:** 2026-10-12
+**Status:** FORMAL DISTINCTION DEMONSTRATED; HUMAN PLAUSIBILITY PENDING
 
 ## Current state
 
@@ -11,7 +11,7 @@
 - Human responses received: **0**
 - Interpretation plausibility: **PENDING**
 - Pair-level ambiguity judgment: **PENDING**
-- Formal behavioral distinction for the candidate pair: **not asserted by this status file**
+- Formal behavioral distinction for the candidate pair: **demonstrated after a shared sampled reset under the tested model**
 - Ambiguity certification: **NOT CLAIMED**
 - LLM evaluation using P05 as a certified ambiguity case: **NOT AUTHORIZED until case gates pass**
 
@@ -31,4 +31,4 @@
 
 The procedure is an operational pilot protocol, not an externally validated psychometric instrument. Five reviewers provide a small expert judgment sample, not population-level proof. Human plausibility review and formal behavioral distinction are separate evidence gates.
 
-No P05 reviewer forms, formal results, LLM evaluation results, or ambiguity certification are represented as completed.
+The P05 formal source and run evidence are published in open PR #6, based on tested source commit `0874a36608a249b3c2c89ccc35e637936bd2987f`. A/B conformance passed; the post-reset equality check found a legal distinguishing trace. Human plausibility review remains pending with zero responses. No ambiguity certification or LLM evaluation result is claimed.
