@@ -5,7 +5,7 @@
 - **Environment:** macOS 15.5, arm64; Python 3.12.1
 - **Tools:** Yosys 0.63 (`70a11c6bf`), YoWASP 0.63.0.0.post1107, Yosys-SMTBMC, Z3 4.15.4
 - **Pinned packages:** `docs/reproducibility/formal-requirements.txt`
-- **Publication:** [PR #6](https://github.com/Kumar62812/neewan_1/pull/6), open against `main`, not merged
+- **Publication update (2026-10-14):** [PR #6](https://github.com/Kumar62812/neewan_1/pull/6) merged 2026-10-11 UTC as commit `83046997dce165fd3b40c190f7dffa1e280b2c86`. The reproduction itself occurred earlier, at tested source commit `0874a36608a249b3c2c89ccc35e637936bd2987f`. The original execution snapshot, tested clean-reproduction source, and published-evidence merge commit are distinct provenance stages; merging evidence does not constitute a new formal run.
 
 ## Commands executed
 
