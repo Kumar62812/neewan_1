@@ -8,9 +8,17 @@
 - `Files/Research_Papers/benchmark/pilot_v0_1/P05/P05_INTERPRETATIONS.md` — Git blob SHA `31fedca9a16de2b35027ee87dd2e003a38bf35eb` — [source file](https://github.com/Kumar62812/neewan_1/blob/main/Files/Research_Papers/benchmark/pilot_v0_1/P05/P05_INTERPRETATIONS.md)
 - `Files/Research_Papers/benchmark/pilot_v0_1/P05/P05_SPECIFICATIONS.md` — Git blob SHA `65a34d0c689cdbbdba567cc306fa34041e920a87` — [source file](https://github.com/Kumar62812/neewan_1/blob/main/Files/Research_Papers/benchmark/pilot_v0_1/P05/P05_SPECIFICATIONS.md)
 
-## Hash audit status
+## SHA-256 audit of frozen sources
 
-The source commit and Git blob identities above are recorded. **SHA-256 of the three source files has not yet been independently recomputed and recorded in this manifest.** Do not treat Git blob SHA values as SHA-256; they are different hash schemes. This is an explicit outstanding freeze-audit item and must be completed before the first LLM experiment. Do not edit the frozen source files; any intended change requires a new versioned candidate and manifest.
+The following digests were calculated on 2026-10-14 from the UTF-8 contents returned by GitHub for **commit `83046997dce165fd3b40c190f7dffa1e280b2c86`**. The fetched Git blob IDs matched the source identities recorded above. The digest algorithm was separately checked against the standard SHA-256 test vector for `abc`. This is a source-content hash calculation, **not** an independent third-party audit of the local archive files.
+
+| Frozen source file | SHA-256 (UTF-8 file content) | Bytes |
+|---|---|---:|
+| `P05_REQUIREMENT.md` | `01e88ea63bebff82db1fff2c9c5b661e5ab8b756535223c10dbd824ff95b1870` | 978 |
+| `P05_INTERPRETATIONS.md` | `83d3c65305b42d7df2b9a2ed3a5ac4ee5c1f5f29812fec5cd1e4c98d342d0e7e` | 944 |
+| `P05_SPECIFICATIONS.md` | `6dd5bdd7e4fcda97a44de984a29d9ded64af32343c8bb0ee172732ebc9569777` | 1130 |
+
+Confirm these values against a separate clean checkout (e.g., `shasum -a 256`) before reviewer-package distribution. Do not confuse Git blob SHA-1 identifiers with SHA-256 file-content hashes. Any source wording change requires a new versioned candidate and freeze manifest.
 
 ## Interpretation index
 
