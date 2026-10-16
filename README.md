@@ -9,6 +9,7 @@ Research on whether LLM-generated RTL violates a requirement, implements a defen
 3. [Frozen scientific plan](Files/FORMAL_AMBIG_RTL_PLAN.md) — methodology and gates; not a live progress checklist.
 4. [Repository map](docs/repository-map.md) — artifacts grouped by purpose and phase.
 5. [Repository audit](docs/audits/2026-10-16-repository-audit.md) — integrity checks, inconsistencies and required follow-up.
+6. [Thesis chapter map and workflow](docs/thesis/README.md) — chapter-to-source map and evidence-safe writing sequence.
 
 ## Current evidence position
 
