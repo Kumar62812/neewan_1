@@ -34,6 +34,8 @@ The protocol’s operational definition is more specific than the shorthand “p
 
 ## 2. Thesis chapter order and source map
 
+The five detailed chapter files follow the mandatory order: [01 — Introduction](chapters/01-introduction-and-problem-formulation.md) → [02 — Literature Review](chapters/02-comprehensive-literature-review.md) → [03 — Methodology](chapters/03-methodology-and-system-architecture.md) → [04 — Results and Discussion](chapters/04-results-discussion-and-experimental-evaluation.md) → [05 — Conclusion and Viva](chapters/05-conclusion-future-scope-and-viva.md). These are ordered outlines, not evidence that a chapter or project phase is complete.
+
 ### Chapter 1 — Introduction and problem formulation
 
 **Write:** background and research significance; the single-reference evaluation limitation; the hardware-specific ambiguity gap; research questions, objectives, scope, and contributions. Keep claims about prior work tied to verified literature sources.
@@ -44,21 +46,19 @@ The protocol’s operational definition is more specific than the shorthand “p
 
 ### Chapter 2 — Literature review
 
-Organize the review as a synthesis, not a sequence of paper summaries:
+Organize the review into exactly three synthesis buckets, not a sequence of paper summaries:
 
-1. LLM-to-RTL generation and evaluation: [01_LLM_to_RTL](../../Files/Research_Papers/01_LLM_to_RTL/) and [00_Base_Paper](../../Files/Research_Papers/00_Base_Paper/).
-2. FSM and hardware reasoning: [02_FSM_and_Hardware_Reasoning](../../Files/Research_Papers/02_FSM_and_Hardware_Reasoning/).
-3. Ambiguity, clarification, and requirements engineering: [03_Ambiguity_and_Underspecification](../../Files/Research_Papers/03_Ambiguity_and_Underspecification/) and [05_Requirements_Engineering](../../Files/Research_Papers/05_Requirements_Engineering/).
-4. Formal verification and sequential equivalence: [04_Formal_Verification](../../Files/Research_Papers/04_Formal_Verification/).
-5. Benchmark design and related work: [06_Benchmarks_and_Evaluation](../../Files/Research_Papers/06_Benchmarks_and_Evaluation/) and [07_Related_Work](../../Files/Research_Papers/07_Related_Work/).
+1. **LLM RTL generation and hardware reasoning:** [00_Base_Paper](../../Files/Research_Papers/00_Base_Paper/), [01_LLM_to_RTL](../../Files/Research_Papers/01_LLM_to_RTL/), and [02_FSM_and_Hardware_Reasoning](../../Files/Research_Papers/02_FSM_and_Hardware_Reasoning/).
+2. **Software ambiguity, clarification, and requirements engineering:** [03_Ambiguity_and_Underspecification](../../Files/Research_Papers/03_Ambiguity_and_Underspecification/) and [05_Requirements_Engineering](../../Files/Research_Papers/05_Requirements_Engineering/).
+3. **Formal verification and hardware behavioral equivalence:** [04_Formal_Verification](../../Files/Research_Papers/04_Formal_Verification/) and the [formal verification protocol](../../Files/Research_Papers/docs/formal_verification_protocol.md).
 
-Use the [literature matrix guide](../../Files/Research_Papers/literature/README.md) and matrix to compare each work’s task, evidence, human validation, formal methods, interaction, and limitation. Verify each paper’s metadata and content before citing it; a filename or matrix row alone is not source verification.
+Use [06_Benchmarks_and_Evaluation](../../Files/Research_Papers/06_Benchmarks_and_Evaluation/) and [07_Related_Work](../../Files/Research_Papers/07_Related_Work/) as cross-cutting sources, assigning each paper to the bucket its verified contribution supports. Use the [literature matrix guide](../../Files/Research_Papers/literature/README.md) and matrix to compare task, ground truth, evaluation, human validation, formal methods, interaction, and limitations. Verify each paper’s metadata and content against its primary source before citing it; a filename or matrix row alone is not source verification.
 
-**Finish when:** the three strands—LLM hardware generation, ambiguity/clarification, and formal methods—are compared against explicit research gaps and the proposed contribution.
+**Finish when:** these three buckets are synthesized against explicit research gaps and the proposed contribution, with each gap claim supported paper by paper.
 
 ### Chapter 3 — Methodology and system architecture
 
-**Write:** the frozen evidence chain; the distinction between plausibility and formal behavioral distinction; the six ambiguity dimensions and C1–C5 case categories; case construction; formal environment and observables; review protocol; evaluation conditions; and gate sequence.
+**Write:** the frozen evidence chain; the distinction between plausibility and formal behavioral distinction; the six ambiguity dimensions and C1–C5 case categories; case construction; formal environment and observables; review protocol; evaluation conditions; and gate sequence. For P01, the current shared property file contains an immediate assertion over the Boolean mux contract, while both harnesses add no assumptions and the checked configs contain no cover property. Do not describe `assume` or `cover` as completed P01 evidence.
 
 **Start from:** the [research protocol](../../Files/Research_Papers/docs/research_protocol.md), [formal verification protocol](../../Files/Research_Papers/docs/formal_verification_protocol.md), [benchmark schema](../../Files/Research_Papers/docs/benchmark_schema.md), [phase workboard](../project-state/PHASE_WORKBOARD.md), and canonical case folders under [pilot_v0_1](../../Files/Research_Papers/benchmark/pilot_v0_1/).
 
@@ -99,15 +99,15 @@ Use this chapter map as a navigation layer. Keep source artifacts in their canon
 - Decisions and dated history: [governance](../../governance/).
 - Accepted historical packages: [re](../../re/).
 
-Do not physically move, rename, edit, or duplicate frozen requirements, protocols, case sources, manifests, accepted archives, or evidence to make the directory tree look like the thesis. Commands, hashes, provenance records, and links depend on those paths. For future editable chapter drafts, use a separate ordered directory such as:
+Do not physically move, rename, edit, or duplicate frozen requirements, protocols, case sources, manifests, accepted archives, or evidence to make the directory tree look like the thesis. Commands, hashes, provenance records, and links depend on those paths. The ordered outline files are stored under [docs/thesis/chapters](chapters/):
 
-- docs/thesis/chapters/01-introduction.md
-- docs/thesis/chapters/02-literature-review.md
-- docs/thesis/chapters/03-methodology.md
-- docs/thesis/chapters/04-results-discussion.md
-- docs/thesis/chapters/05-conclusion-future-viva.md
+1. [01 — Introduction and Problem Formulation](chapters/01-introduction-and-problem-formulation.md)
+2. [02 — Comprehensive Literature Review](chapters/02-comprehensive-literature-review.md)
+3. [03 — Methodology and System Architecture](chapters/03-methodology-and-system-architecture.md)
+4. [04 — Results, Discussion and Experimental Evaluation](chapters/04-results-discussion-and-experimental-evaluation.md)
+5. [05 — Conclusion, Future Scope and Viva](chapters/05-conclusion-future-scope-and-viva.md)
 
-Create those chapter files only when there is substantive draft content to review; do not use empty files as evidence of completion.
+These files are substantive, evidence-aware outlines. Keep the numeric prefixes, do not duplicate frozen research artifacts into this directory, and update status claims only from their canonical records.
 
 ## 4. Writing control checklist
 
