@@ -1,100 +1,36 @@
-# Repository Map and Curation Policy
+# Repository map
 
-## 1. Current remote state
+Audited main: `83046997dce165fd3b40c190f7dffa1e280b2c86` (2026-10-16). [PR #6](https://github.com/Kumar62812/neewan_1/pull/6) is merged at this commit. [PR #7](https://github.com/Kumar62812/neewan_1/pull/7) is a separate draft branch; its runner is not on this main snapshot.
 
-The repository default branch is `main`.
+## Where to work by phase
 
-The FORMAL-AMBIG-RTL foundation work from `formal-ambig-rtl-foundation` has now been merged into `main` through PR #2:
+| Purpose / phase | Location | Usage |
+|---|---|---|
+| Daily phase management | [Phase workboard](project-state/PHASE_WORKBOARD.md), [compass](../Files/FORMAL_AMBIG_RTL_PROJECT_COMPASS.md) | Start here and record evidence-backed progress |
+| Frozen foundation (1A) | [Plan](../Files/FORMAL_AMBIG_RTL_PLAN.md), [protocols](../Files/Research_Papers/docs/) | Preserve methodology; amendments must be explicit |
+| Golden instance (1B–1C) | [P01](../Files/Research_Papers/benchmark/pilot_v0_1/P01/), [certification dossier](../02_CERTIFICATION/) | Close outstanding review/freeze gates |
+| Pilot construction (2) | [P02](../Files/Research_Papers/benchmark/pilot_v0_1/P02/), [P05](../Files/Research_Papers/benchmark/pilot_v0_1/P05/) | Keep case source, metadata and evidence together |
+| Pilot review (3) | [P05 annotation](../Files/Research_Papers/benchmark/pilot_v0_1/P05/annotation/v1/), case review files | Preserve independent responses and decisions; pending means pending |
+| Scaling (4) | No completed scaled benchmark evidenced | Create only after phase transition |
+| LLM evaluation (5) | Draft PR #7: `tools/llm_eval/` | Infrastructure still needs repair; not model results |
+| Analysis and release (6) | [Thesis plan](project-state/THESIS_ASSESSMENT_PLAN.md), [professor review](../professor_review/) | Planning/presentation material; verify claims against current evidence |
+| Literature | [Research papers](../Files/Research_Papers/), [literature matrix](../Files/Research_Papers/literature/literature_matrix.csv) | Check title/content identity before citing; audit flags mismatches |
+| Provenance / reproduction | [P01 register](provenance/p01-evidence-register.md), [reproduction records](reproducibility/) | Distinguish source, retained evidence and new reproduction |
+| Historical tools / archives | [re](../re/), [notebook index](../03_NOTEBOOKS/), [historical index](../06_HISTORICAL/), [legacy](../legacy/) | Retain historical context and archive identities |
+| Decisions and history | [Project log](../governance/07_PROJECT_LOG.md) | Append events; do not rewrite historical truth |
 
-- PR: #2
-- Merge commit: `4af94063d69c48ef616727853b99187fe468a0dc`
-- Purpose: synchronize the audited P01 foundation and curation layer into `main`.
+## Why the physical paths remain stable
 
-The current working synchronization branch is `sync/current-project-state-p02`.
+Benchmark sources currently live under `Files/Research_Papers/benchmark/pilot_v0_1/`. These paths appear in commands, evidence snapshots and provenance records. Navigation is organized by phase here without moving hashed artifacts. A later physical migration needs an explicit old-to-new mapping, reference audit and reproduction check.
 
-## 2. Logical architecture
+Keep the accepted P01 archive and checksum at `re/p01-20260930T220622Z-rev1.tar.gz` and `re/p01-20260930T220622Z-rev1.tar.gz.sha256`. Do not rewrite, replace, recompress or rename them. See the [P01 register](provenance/p01-evidence-register.md) for the effective tested-source boundary.
 
-```text
-FORMAL-AMBIG-RTL/
-├── README.md
-├── docs/
-│   ├── repository-map.md
-│   ├── provenance/
-│   ├── reproducibility/
-│   └── project-state/
-├── Files/
-│   ├── FORMAL_AMBIG_RTL_PLAN.md
-│   ├── FORMAL_AMBIG_RTL_PROJECT_COMPASS.md
-│   └── Research_Papers/
-│       ├── docs/
-│       └── benchmark/
-│           ├── pilot_v0_1/P01/
-│           └── pilot_v0_1/P02/
-├── 02_CERTIFICATION/
-├── 03_NOTEBOOKS/
-└── 06_HISTORICAL/
-```
+## Which record answers which question?
 
-## 3. P01 evidence chain
+- What rules apply? Frozen plan and protocols.
+- What should happen next? Compass and phase workboard.
+- What happened? Dated project log and original run records.
+- What does the evidence establish? Case results plus raw logs/witnesses and review decisions.
+- What changed during organization? [Original curation manifest](curation-manifest.md) and [2026-10-16 audit](audits/2026-10-16-repository-audit.md).
 
-```text
-R requirement
-  ↓
-I interpretation
-  ↓
-S behavioral specification
-  ↓
-RTL reference + negative control
-  ↓
-F formal evidence
-  ↓
-C independent certification/review decision
-```
-
-P01 formal evidence is complete for its documented effective tested source. The independent certification dossier decision remains a separate matter and is not fabricated by this repository update.
-
-## 4. Protected evidence
-
-The accepted P01 archive and checksum are immutable:
-
-```text
-re/p01-20260930T220622Z-rev1.tar.gz
-re/p01-20260930T220622Z-rev1.tar.gz.sha256
-```
-
-SHA-256:
-
-```text
-32811754b548108c74095f19362ddd18bb379aadd220bd8a7e4b2abee82c063b
-```
-
-Do not rewrite, replace, recompress, rename, or regenerate the accepted archive as part of P02 work.
-
-## 5. P01 provenance
-
-- Pinned base revision: `6d09dca0e6d8292d0b4cf13ff19b3ed06ec3de35`
-- Effective tested source: pinned base + retained path-only SBY patch
-- Patch SHA-256: `71bee3408a34460b8c84bc34838779ff6cea0316662f1d6f8d35742be7e7d5c4`
-- Accepted archive SHA-256: `32811754b548108c74095f19362ddd18bb379aadd220bd8a7e4b2abee82c063b`
-
-The unmodified pinned revision is not claimed to have passed.
-
-## 6. P02 boundary
-
-P02 is authorized to begin at the requirement → interpretation → specification stage.
-
-At this synchronization point:
-
-```text
-P02 requirement       DRAFT PROPOSED
-P02 interpretation    DRAFT PROPOSED
-P02 specification     DRAFT PROPOSED
-P02 reference RTL     NOT IMPLEMENTED
-P02 negative control  NOT IMPLEMENTED
-P02 formal properties NOT IMPLEMENTED
-P02 harness           NOT IMPLEMENTED
-P02 formal execution  NOT EXECUTED
-P02 evidence          NOT GENERATED
-```
-
-Each later state must be recorded only after the corresponding artifact or execution actually exists.
+A status page cannot override raw evidence or create a missing human decision.

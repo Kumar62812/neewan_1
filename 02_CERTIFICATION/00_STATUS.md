@@ -1,6 +1,8 @@
 # FORMAL-AMBIG-RTL — Current Project Status
 
-**Status date:** 2026-10-08
+**Status date:** 2026-10-08 (historical snapshot)
+
+**Current navigation (2026-10-16):** This dated dossier snapshot predates the merged P02/P05 technical evidence. Its P02 "not implemented" statements are historical. Use the [phase workboard](../docs/project-state/PHASE_WORKBOARD.md) for current project work; the P01 independent-certification and template-freeze gaps remain open.
 
 ## Current Status
 

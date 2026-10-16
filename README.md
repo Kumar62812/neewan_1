@@ -1,80 +1,44 @@
-# FORMAL-AMBIG-RTL — Audit-Ready Research Repository
+# FORMAL-AMBIG-RTL
 
-FORMAL-AMBIG-RTL is a research repository for evaluating how LLM-generated RTL handles underspecified natural-language hardware requirements using explicit interpretations, behavioral specifications, formal verification, and review-governed evidence.
-
-## Current project position
-
-**P01: Formal evidence complete; professor-approved.** Professor approval is recorded as project direction to proceed with P02; it does not imply completion of an independent certification record.
-
-**P02: Requirement, interpretation, and specification prepared; pre-RTL consistency review pending.**
-
-**P05: Human-plausibility preparation published for review; zero human responses; plausibility pending. No ambiguity certification is claimed.**
-
-`P05: Review procedure PREPARED → Human responses 0/5 → Plausibility PENDING → Formal behavioral distinction NOT ASSERTED → Ambiguity certification NOT CLAIMED`
-
-`P01: Formal evidence COMPLETE`
-
-`P02: Requirement PRESENT → Interpretation PRESENT → Specification PRESENT → Consistency review PENDING → RTL NOT IMPLEMENTED → Formal verification NOT EXECUTED → Evidence NOT GENERATED`
+Research on whether LLM-generated RTL violates a requirement, implements a defensible reading of an underspecified requirement, or remains unclassifiable. The evidence chain is **requirement → interpretation → behavioral specification → RTL → formal evidence → certification**.
 
 ## Start here
 
-1. [`Files/FORMAL_AMBIG_RTL_PROJECT_COMPASS.md`](Files/FORMAL_AMBIG_RTL_PROJECT_COMPASS.md) — project control.
-2. [`Files/FORMAL_AMBIG_RTL_PLAN.md`](Files/FORMAL_AMBIG_RTL_PLAN.md) — scientific plan and phase gates.
-3. [`docs/repository-map.md`](docs/repository-map.md) — repository structure and provenance boundaries.
-4. [`docs/provenance/p01-evidence-register.md`](docs/provenance/p01-evidence-register.md) — P01 evidence/provenance register.
-5. [`docs/reproducibility/p01-reproduction.md`](docs/reproducibility/p01-reproduction.md) — clean-checkout reproduction boundary.
-6. [`Files/Research_Papers/benchmark/pilot_v0_1/P01/`](Files/Research_Papers/benchmark/pilot_v0_1/P01/) — P01 source artifacts.
-7. [`Files/Research_Papers/benchmark/pilot_v0_1/P02/`](Files/Research_Papers/benchmark/pilot_v0_1/P02/) — P02 requirement, interpretation, and specification artifacts.
-8. [P05 plausibility procedure](Files/Research_Papers/benchmark/pilot_v0_1/P05/annotation/v1/README.md) — five-reviewer independent assessment procedure.
-9. [P05 blank reviewer form](Files/Research_Papers/benchmark/pilot_v0_1/P05/annotation/v1/reviewer_form.md) — independent ratings.
-10. [Thesis assessment plan](docs/project-state/THESIS_ASSESSMENT_PLAN.md) — required evidence and claim boundaries.
+1. [Phase workboard](docs/project-state/PHASE_WORKBOARD.md) — current evidence, ordered next actions and phase exits.
+2. [Project compass](Files/FORMAL_AMBIG_RTL_PROJECT_COMPASS.md) — operating rules and original case order.
+3. [Frozen scientific plan](Files/FORMAL_AMBIG_RTL_PLAN.md) — methodology and gates; not a live progress checklist.
+4. [Repository map](docs/repository-map.md) — artifacts grouped by purpose and phase.
+5. [Repository audit](docs/audits/2026-10-16-repository-audit.md) — integrity checks, inconsistencies and required follow-up.
 
-## P01 evidence boundary
+## Current evidence position
 
-The retained P01 formal evidence applies only to the **effective tested source**:
+Status reconciled on 2026-10-16 against main `83046997dce165fd3b40c190f7dffa1e280b2c86`.
 
-`pinned base revision + retained path-only SBY patch`
+| Area | Published evidence | Remaining limitation |
+|---|---|---|
+| P01 | Formal evidence complete for the documented effective tested source; professor direction to proceed with P02 recorded | Independent certification record incomplete; Golden Template not frozen |
+| P02 | RTL, properties, harness, positive checks, eight covers and two negative-control failures published through merged PR #6 | Results are scoped to the Boolean sampled-edge model; public clean reproduction reference needs repair |
+| P05 | A/B conformance and a legal post-reset distinguishing trace published through merged PR #6 | Zero human responses recorded; plausibility pending; ambiguity certification not claimed |
+| LLM evaluation | [PR #7](https://github.com/Kumar62812/neewan_1/pull/7) contains draft infrastructure | Not merged; no model-performance result established; scientific and runner gates remain |
 
-Pinned base revision:
-`6d09dca0e6d8292d0b4cf13ff19b3ed06ec3de35`
+**Formal distinction: Reported demonstrated locally. Human plausibility: Pending. Certified ambiguity: Not claimed.**
 
-Patch SHA-256:
-`71bee3408a34460b8c84bc34838779ff6cea0316662f1d6f8d35742be7e7d5c4`
+The immediate focus is P01 gate closure and reconciliation of existing P02/P05 work with the original phase rules. Technical progress does not imply that every earlier gate passed. Follow the [ordered work queue](docs/project-state/PHASE_WORKBOARD.md#ordered-work-queue).
 
-Accepted P01 archive:
-`p01-20260930T220622Z-rev1.tar.gz`
+## Evidence entry points
 
-Archive SHA-256:
-`32811754b548108c74095f19362ddd18bb379aadd220bd8a7e4b2abee82c063b`
+- [P01 evidence register](docs/provenance/p01-evidence-register.md) and [reproduction boundary](docs/reproducibility/p01-reproduction.md).
+- [P02 readiness](docs/project-state/P02_READINESS.md) and [results](Files/Research_Papers/benchmark/pilot_v0_1/P02/P02_RESULTS.md).
+- [P05 plausibility status](docs/project-state/P05_PLAUSIBILITY_STATUS.md), [formal results](Files/Research_Papers/benchmark/pilot_v0_1/P05/P05_RESULTS.md), and [review procedure](Files/Research_Papers/benchmark/pilot_v0_1/P05/annotation/v1/README.md).
+- [P02/P05 reproduction record](docs/reproducibility/p02-p05-reproduction.md).
+- [Project history](governance/07_PROJECT_LOG.md) and [thesis assessment plan](docs/project-state/THESIS_ASSESSMENT_PLAN.md).
 
-**The accepted archive and checksum are protected and are not modified by P02 documentation work.**
+## P01 preservation boundary
 
-The unmodified pinned revision is not represented as having formally passed.
+Accepted archive: `re/p01-20260930T220622Z-rev1.tar.gz`.
 
-## Current governance
+SHA-256: `32811754b548108c74095f19362ddd18bb379aadd220bd8a7e4b2abee82c063b`.
 
-- Formal evidence: **COMPLETE** for the documented effective tested source.
-- Evidence audit/integrity: **COMPLETE**.
-- P01 professor approval: **APPROVED** — see `02_CERTIFICATION/P01_GUIDE_MEETING_RECORD.md`.
-- Independent certification record: **not completed/recorded in the current project record**.
-- P01 Golden Template: **NOT FROZEN**.
-- P02 requirement, interpretation, specification: **PRESENT; consistency review pending**.
-- P02 RTL: **NOT IMPLEMENTED**.
-- P02 formal verification: **NOT EXECUTED**.
-- P02 evidence: **NOT GENERATED**.
-- P05 human plausibility: **PENDING; zero responses recorded**.
-- P05 ambiguity certification: **NOT CLAIMED**.
-- P05 formal behavioral distinction: **not asserted by the plausibility-preparation package**.
-- LLM evaluation against P05 as a certified ambiguity case: **not authorized until required gates pass**.
-- Benchmark-wide validity: **NOT CLAIMED**.
-- Complete LLM-methodology validation: **NOT CLAIMED**.
+The formal result applies to pinned revision `6d09dca0e6d8292d0b4cf13ff19b3ed06ec3de35` plus the retained path-only SBY patch, SHA-256 `71bee3408a34460b8c84bc34838779ff6cea0316662f1d6f8d35742be7e7d5c4`. The unmodified pinned revision is not claimed to have passed.
 
-Approval date, mode, and exact professor wording are not stated because they were not supplied in the project record.
-
-## Repository conventions
-
-- `Files/Research_Papers/benchmark/` contains benchmark artifacts.
-- `Files/Research_Papers/docs/` contains research protocols and schemas.
-- `docs/` contains repository-level navigation, provenance, reproducibility, and project-state controls.
-- `legacy/` contains retained historical/imported material.
-- Accepted evidence is immutable; reruns create new evidence packages rather than replacing old ones.
+Evidence and accepted archives are immutable. Reruns create new packages. This navigation update changes no frozen scientific rules, benchmark sources, evidence files or archive paths. Benchmark-wide validity and complete LLM-methodology validation are not claimed.

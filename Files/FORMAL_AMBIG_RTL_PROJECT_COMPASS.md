@@ -1,6 +1,6 @@
 # FORMAL-AMBIG-RTL Project Compass
 
-**CURRENT: P01 / NOT STARTED**
+**CURRENT: P01 FREEZE GATE OPEN / P02 TECHNICAL EVIDENCE PUBLISHED / P05 PLAUSIBILITY PENDING**
 
 **Purpose:** This is the project’s day-to-day source of truth.  
 Read this file before starting work. If a proposed task is not permitted by the  
@@ -60,16 +60,19 @@ Never create two RTL variants first and call them “interpretations” afterwar
 
 | Field | Current value |
 |---|---|
-| Project phase | Phase 1 — Research Foundation |
-| Current milestone | P01 — Golden Benchmark Instance v1.0 |
-| Current status | Not started |
-| Allowed work | Create and validate P01 only |
-| Not allowed yet | P02–P12 construction, model experiments, benchmark scaling, performance claims |
-| Exit condition | P01 passes all evidence, formal, annotation, metadata, and reproduction gates |
+| Project phase | Phase 1C gate closure; existing Phase 2 technical work requires governance reconciliation |
+| Current milestone | P01 template-freeze closure; P05 human plausibility remains pending |
+| Current status | P01 formal evidence complete for effective tested source, template not frozen; P02/P05 technical evidence merged via PR #6 |
+| Allowed work | Evidence audit, P01 outstanding-gate closure, reproduction repair and preparation of pending reviews |
+| Not allowed yet | Treating P05 as certified, scored model experiments, or unapproved pilot expansion |
+| Exit condition | Traceable gate/exception decisions and required review, reproduction and freeze evidence |
+| Working index | [Phase workboard](../docs/project-state/PHASE_WORKBOARD.md) — audited 2026-10-16 |
+
+The recorded professor direction to proceed with P02 is distinct from independent certification and a P01 template freeze. Existing technical artifacts do not retrospectively complete those decisions. The original checklist below retains its unclosed items; use linked evidence and explicit review before marking them complete.
 
 ---
 
-## 5. Current task: P01 only
+## 5. Current task: P01 outstanding-gate closure
 
 ### P01 identity
 
@@ -148,10 +151,10 @@ If any answer is “no,” P01 is not complete.
 
 ```text
 Phase 1A: Frozen methodology
-        ↓ completed
+        ↓ methodology labeled frozen; reconcile Gate 1 record
 Phase 1B: P01 golden-template construction
-        ↓ current
-Phase 1C: P01 verification, annotation, reproduction, and freeze
+        ↓ artifacts present
+Phase 1C: P01 verification, annotation, reproduction, and freeze (gate open)
         ↓ only after all P01 gates pass
 Phase 2: Build P02–P12 pilot cases
         ↓ only after pilot evidence is complete
@@ -224,13 +227,14 @@ The response to a stop rule is one of:
 
 ## 11. Immediate next action
 
-Create the P01 directory tree and complete these three files first:
+Use the [ordered work queue](../docs/project-state/PHASE_WORKBOARD.md#ordered-work-queue):
 
-1. `requirement.md`
-2. `interpretations/interpretation_01.md`
-3. `behavioral_specification/specification_01.md`
+1. Review existing P01 artifacts and close the missing annotation, metadata, reproduction and freeze decisions.
+2. Reconcile the P02 proceed direction and existing P02/P05 evidence with the phase-transition record.
+3. Repair the public reproduction reference and audit literature identities.
+4. Complete P05 independent plausibility review under the existing protocol before any certification claim.
 
-Do not write RTL until these three artifacts have been reviewed and accepted.
+Do not recreate existing requirements, interpretations or specifications, and do not treat this status update as a gate approval.
 
 ---
 
