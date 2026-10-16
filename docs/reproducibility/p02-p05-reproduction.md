@@ -5,7 +5,13 @@
 - **Environment:** macOS 15.5, arm64; Python 3.12.1
 - **Tools:** Yosys 0.63 (`70a11c6bf`), YoWASP 0.63.0.0.post1107, Yosys-SMTBMC, Z3 4.15.4
 - **Pinned packages:** `docs/reproducibility/formal-requirements.txt`
-- **Publication:** [PR #6](https://github.com/Kumar62812/neewan_1/pull/6), open against `main`, not merged
+- **Publication:** [PR #6](https://github.com/Kumar62812/neewan_1/pull/6), merged into `main` at `83046997dce165fd3b40c190f7dffa1e280b2c86`
+
+## Public reproduction limitation (checked 2026-10-16)
+
+GitHub returned `No commit found for SHA` for the historical tested-source revision above. All 154 entries across the four published P02/P05 run manifests match their retained files, but that establishes published-byte integrity, not a fresh independent execution at the unavailable revision. The archive checksums below are not substitutes for downloadable archives.
+
+Before claiming public clean reproduction, restore access to the intended source or document and validate an equivalent public source mapping, then retain a new run package. Do not overwrite historical records or silently substitute main for the tested revision. See the [phase workboard](../project-state/PHASE_WORKBOARD.md).
 
 ## Commands executed
 

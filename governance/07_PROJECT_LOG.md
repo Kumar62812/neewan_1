@@ -79,8 +79,19 @@ P02 specification: PRESENT
 P02 pre-RTL consistency review: COMPLETE
 P02 RTL: IMPLEMENTED
 P02 formal verification: COMPLETE under the documented Boolean sampled-edge model
-P02 evidence: PUBLISHED in open PR #6; PR not merged
+P02 evidence: PUBLISHED on main through merged PR #6 (reconciled 2026-10-16)
 P05 formal distinction: DEMONSTRATED under the tested model
 P05 human plausibility: PENDING; zero responses
 P05 ambiguity certification: NOT CLAIMED
 ```
+
+## 2026-10-16 — Phase-based repository organization
+
+- Verified main at `83046997dce165fd3b40c190f7dffa1e280b2c86`; PR #6 merged and PR #7 still draft.
+- Added a phase workboard and updated navigation/compass current-state fields against published artifacts.
+- Preserved the original phase sequence, case order and frozen methodology. No phase exit, reviewer decision or certification was created.
+- Verified 154 P02/P05 manifest entries and the accepted P01 archive hash. No formal solver or model evaluation was rerun.
+- Recorded the unresolved public reproduction revision and literature title/content conflicts.
+- Retained dated historical entries above as history; their original open-PR status is not current.
+
+See [phase workboard](../docs/project-state/PHASE_WORKBOARD.md) and [audit](../docs/audits/2026-10-16-repository-audit.md).
