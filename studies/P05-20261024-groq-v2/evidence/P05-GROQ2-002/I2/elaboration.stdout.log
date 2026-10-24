@@ -1,0 +1,606 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.63 (git sha1 70a11c6bf, ccache clang++ 18.1.3 -O3 -flto -flto) [yowasp/yosys at release-0.63]
+
+-- Executing script file `cases/P05/evidence/current/groq-v2_1-eval-01-P05-GROQ2-002/groq-v2_1-eval-01-P05-GROQ2-002-I2/build.ys' --
+
+1. Executing Verilog-2005 frontend: generation/batches/P05-20261024-groq-v2/P05-GROQ2-002/rtl.sv
+Parsing formal SystemVerilog input from `generation/batches/P05-20261024-groq-v2/P05-GROQ2-002/rtl.sv' to AST representation.
+Generating RTLIL representation for module `\p05'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: cases/P05/contracts/I1_contract.sv
+Parsing formal SystemVerilog input from `cases/P05/contracts/I1_contract.sv' to AST representation.
+Generating RTLIL representation for module `\p05_i1_contract'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: cases/P05/contracts/I2_contract.sv
+Parsing formal SystemVerilog input from `cases/P05/contracts/I2_contract.sv' to AST representation.
+Generating RTLIL representation for module `\p05_i2_contract'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: cases/P05/formal/assumptions.sv
+Parsing formal SystemVerilog input from `cases/P05/formal/assumptions.sv' to AST representation.
+Generating RTLIL representation for module `\p05_environment'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: formal/P05/harness/current.sv
+Parsing formal SystemVerilog input from `formal/P05/harness/current.sv' to AST representation.
+Generating RTLIL representation for module `\harness'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: formal/P05/harness/reference_state_properties.sv
+Parsing formal SystemVerilog input from `formal/P05/harness/reference_state_properties.sv' to AST representation.
+Generating RTLIL representation for module `\p05_b_properties'.
+Successfully finished Verilog frontend.
+
+7. Executing PREP pass.
+
+7.1. Executing HIERARCHY pass (managing design hierarchy).
+
+7.1.1. Analyzing design hierarchy..
+Top module:  \harness
+Used module:     \p05_i2_contract
+Used module:     \p05_environment
+Used module:     \p05
+
+7.1.2. Analyzing design hierarchy..
+Top module:  \harness
+Used module:     \p05_i2_contract
+Used module:     \p05_environment
+Used module:     \p05
+Removing unused module `\p05_b_properties'.
+Removing unused module `\p05_i1_contract'.
+Removed 2 unused modules.
+Module p05_environment directly or indirectly contains formal properties -> setting "keep" attribute.
+Module p05_i2_contract directly or indirectly contains formal properties -> setting "keep" attribute.
+Module harness directly or indirectly contains formal properties -> setting "keep" attribute.
+Mapping positional arguments of cell harness.contract (p05_i2_contract).
+Mapping positional arguments of cell harness.env (p05_environment).
+
+7.2. Executing PROC pass (convert processes to netlists).
+
+7.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+7.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$cases/P05/contracts/I2_contract.sv:4$33 in module p05_i2_contract.
+Marked 1 switch rules as full_case in process $proc$generation/batches/P05-20261024-groq-v2/P05-GROQ2-002/rtl.sv:21$2 in module p05.
+Marked 1 switch rules as full_case in process $proc$generation/batches/P05-20261024-groq-v2/P05-GROQ2-002/rtl.sv:11$1 in module p05.
+Removed a total of 0 dead cases.
+
+7.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 4 redundant assignments.
+Promoted 20 assignments to connections.
+
+7.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\p05_environment.$proc$cases/P05/formal/assumptions.sv:3$76'.
+  Set init value: \edge_seen = 1'0
+Found init rule in `\p05_environment.$proc$cases/P05/formal/assumptions.sv:3$75'.
+  Set init value: \valid = 1'0
+Found init rule in `\p05_environment.$proc$cases/P05/formal/assumptions.sv:2$74'.
+  Set init value: \seen_reset = 1'0
+Found init rule in `\p05_i2_contract.$proc$cases/P05/contracts/I2_contract.sv:3$44'.
+  Set init value: \valid = 1'0
+
+7.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+7.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~8 debug messages>
+
+7.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\p05_environment.$proc$cases/P05/formal/assumptions.sv:3$76'.
+Creating decoders for process `\p05_environment.$proc$cases/P05/formal/assumptions.sv:3$75'.
+Creating decoders for process `\p05_environment.$proc$cases/P05/formal/assumptions.sv:2$74'.
+Creating decoders for process `\p05_environment.$proc$cases/P05/formal/assumptions.sv:4$53'.
+     1/7: \isolated_requests_EN
+     2/7: \stable_request_EN
+     3/7: \stable_reset_EN
+     4/7: \initial_clock_low_EN
+     5/7: $0\last_req[0:0]
+     6/7: $0\seen_reset[0:0]
+     7/7: $0\edge_seen[0:0]
+Creating decoders for process `\p05_i2_contract.$proc$cases/P05/contracts/I2_contract.sv:3$44'.
+Creating decoders for process `\p05_i2_contract.$proc$cases/P05/contracts/I2_contract.sv:4$33'.
+     1/2: \i2_hold_EN
+     2/2: \i2_transfer_EN
+Creating decoders for process `\harness.$proc$formal/P05/harness/current.sv:30$80'.
+Creating decoders for process `\p05.$proc$generation/batches/P05-20261024-groq-v2/P05-GROQ2-002/rtl.sv:21$2'.
+     1/1: $0\ack[0:0]
+Creating decoders for process `\p05.$proc$generation/batches/P05-20261024-groq-v2/P05-GROQ2-002/rtl.sv:11$1'.
+     1/1: $0\req_d[0:0]
+
+7.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+7.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\p05_environment.\valid' using process `\p05_environment.$proc$cases/P05/formal/assumptions.sv:4$53'.
+  created $ff cell `$procdff$146' with global clock.
+Creating register for signal `\p05_environment.\edge_seen' using process `\p05_environment.$proc$cases/P05/formal/assumptions.sv:4$53'.
+  created $ff cell `$procdff$147' with global clock.
+Creating register for signal `\p05_environment.\seen_reset' using process `\p05_environment.$proc$cases/P05/formal/assumptions.sv:4$53'.
+  created $ff cell `$procdff$148' with global clock.
+Creating register for signal `\p05_environment.\last_req' using process `\p05_environment.$proc$cases/P05/formal/assumptions.sv:4$53'.
+  created $ff cell `$procdff$149' with global clock.
+Creating register for signal `\p05_environment.$past$cases/P05/formal/assumptions.sv:7$45$0' using process `\p05_environment.$proc$cases/P05/formal/assumptions.sv:4$53'.
+  created $ff cell `$procdff$150' with global clock.
+Creating register for signal `\p05_environment.$past$cases/P05/formal/assumptions.sv:8$46$0' using process `\p05_environment.$proc$cases/P05/formal/assumptions.sv:4$53'.
+  created $ff cell `$procdff$151' with global clock.
+Creating register for signal `\p05_environment.$past$cases/P05/formal/assumptions.sv:9$47$0' using process `\p05_environment.$proc$cases/P05/formal/assumptions.sv:4$53'.
+  created $ff cell `$procdff$152' with global clock.
+Creating register for signal `\p05_environment.$past$cases/P05/formal/assumptions.sv:10$48$0' using process `\p05_environment.$proc$cases/P05/formal/assumptions.sv:4$53'.
+  created $ff cell `$procdff$153' with global clock.
+Creating register for signal `\p05_environment.$past$cases/P05/formal/assumptions.sv:10$49$0' using process `\p05_environment.$proc$cases/P05/formal/assumptions.sv:4$53'.
+  created $ff cell `$procdff$154' with global clock.
+Creating register for signal `\p05_environment.$past$cases/P05/formal/assumptions.sv:11$50$0' using process `\p05_environment.$proc$cases/P05/formal/assumptions.sv:4$53'.
+  created $ff cell `$procdff$155' with global clock.
+Creating register for signal `\p05_environment.$past$cases/P05/formal/assumptions.sv:11$51$0' using process `\p05_environment.$proc$cases/P05/formal/assumptions.sv:4$53'.
+  created $ff cell `$procdff$156' with global clock.
+Creating register for signal `\p05_environment.$past$cases/P05/formal/assumptions.sv:13$52$0' using process `\p05_environment.$proc$cases/P05/formal/assumptions.sv:4$53'.
+  created $ff cell `$procdff$157' with global clock.
+Creating register for signal `\p05_i2_contract.\valid' using process `\p05_i2_contract.$proc$cases/P05/contracts/I2_contract.sv:4$33'.
+  created $ff cell `$procdff$158' with global clock.
+Creating register for signal `\p05_i2_contract.$past$cases/P05/contracts/I2_contract.sv:7$29$0' using process `\p05_i2_contract.$proc$cases/P05/contracts/I2_contract.sv:4$33'.
+  created $ff cell `$procdff$159' with global clock.
+Creating register for signal `\p05_i2_contract.$past$cases/P05/contracts/I2_contract.sv:8$30$0' using process `\p05_i2_contract.$proc$cases/P05/contracts/I2_contract.sv:4$33'.
+  created $ff cell `$procdff$160' with global clock.
+Creating register for signal `\p05_i2_contract.$past$cases/P05/contracts/I2_contract.sv:8$31$0' using process `\p05_i2_contract.$proc$cases/P05/contracts/I2_contract.sv:4$33'.
+  created $ff cell `$procdff$161' with global clock.
+Creating register for signal `\p05_i2_contract.$past$cases/P05/contracts/I2_contract.sv:9$32$0' using process `\p05_i2_contract.$proc$cases/P05/contracts/I2_contract.sv:4$33'.
+  created $ff cell `$procdff$162' with global clock.
+Creating register for signal `\p05.\ack' using process `\p05.$proc$generation/batches/P05-20261024-groq-v2/P05-GROQ2-002/rtl.sv:21$2'.
+  created $dff cell `$procdff$163' with positive edge clock.
+Creating register for signal `\p05.\req_d' using process `\p05.$proc$generation/batches/P05-20261024-groq-v2/P05-GROQ2-002/rtl.sv:11$1'.
+  created $dff cell `$procdff$164' with positive edge clock.
+
+7.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+7.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `p05_environment.$proc$cases/P05/formal/assumptions.sv:3$76'.
+Removing empty process `p05_environment.$proc$cases/P05/formal/assumptions.sv:3$75'.
+Removing empty process `p05_environment.$proc$cases/P05/formal/assumptions.sv:2$74'.
+Found and cleaned up 4 empty switches in `\p05_environment.$proc$cases/P05/formal/assumptions.sv:4$53'.
+Removing empty process `p05_environment.$proc$cases/P05/formal/assumptions.sv:4$53'.
+Removing empty process `p05_i2_contract.$proc$cases/P05/contracts/I2_contract.sv:3$44'.
+Found and cleaned up 2 empty switches in `\p05_i2_contract.$proc$cases/P05/contracts/I2_contract.sv:4$33'.
+Removing empty process `p05_i2_contract.$proc$cases/P05/contracts/I2_contract.sv:4$33'.
+Removing empty process `harness.$proc$formal/P05/harness/current.sv:30$80'.
+Found and cleaned up 1 empty switch in `\p05.$proc$generation/batches/P05-20261024-groq-v2/P05-GROQ2-002/rtl.sv:21$2'.
+Removing empty process `p05.$proc$generation/batches/P05-20261024-groq-v2/P05-GROQ2-002/rtl.sv:21$2'.
+Found and cleaned up 1 empty switch in `\p05.$proc$generation/batches/P05-20261024-groq-v2/P05-GROQ2-002/rtl.sv:11$1'.
+Removing empty process `p05.$proc$generation/batches/P05-20261024-groq-v2/P05-GROQ2-002/rtl.sv:11$1'.
+Cleaned up 8 empty switches.
+
+7.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module p05_environment.
+<suppressed ~1 debug messages>
+Optimizing module p05_i2_contract.
+Optimizing module harness.
+Optimizing module p05.
+
+7.3. Executing FUTURE pass.
+
+7.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module p05_environment.
+Optimizing module p05_i2_contract.
+Optimizing module harness.
+Optimizing module p05.
+
+7.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \p05_environment..
+Finding unused cells or wires in module \p05_i2_contract..
+Finding unused cells or wires in module \harness..
+Finding unused cells or wires in module \p05..
+Removed 1 unused cells and 48 unused wires.
+<suppressed ~5 debug messages>
+
+7.6. Executing CHECK pass (checking for obvious problems).
+Checking module p05_environment...
+Checking module p05_i2_contract...
+Checking module harness...
+Checking module p05...
+Found and reported 0 problems.
+
+7.7. Executing OPT pass (performing simple optimizations).
+
+7.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module p05_environment.
+Optimizing module p05_i2_contract.
+Optimizing module harness.
+Optimizing module p05.
+
+7.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\p05_environment'.
+Computing hashes of 36 cells of `\p05_environment'.
+Finding duplicate cells in `\p05_environment'.
+Finding identical cells in module `\p05_i2_contract'.
+Computing hashes of 17 cells of `\p05_i2_contract'.
+Finding duplicate cells in `\p05_i2_contract'.
+Finding identical cells in module `\harness'.
+Computing hashes of 13 cells of `\harness'.
+Finding duplicate cells in `\harness'.
+Finding identical cells in module `\p05'.
+Computing hashes of 4 cells of `\p05'.
+Finding duplicate cells in `\p05'.
+Removed a total of 0 cells.
+
+7.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \p05_environment..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \p05_i2_contract..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \harness..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \p05..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~29 debug messages>
+
+7.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \p05_environment.
+  Optimizing cells in module \p05_i2_contract.
+  Optimizing cells in module \harness.
+  Optimizing cells in module \p05.
+Performed a total of 0 changes.
+
+7.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\p05_environment'.
+Computing hashes of 36 cells of `\p05_environment'.
+Finding duplicate cells in `\p05_environment'.
+Computing hashes of 35 cells of `\p05_environment'.
+Finding duplicate cells in `\p05_environment'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\p05_i2_contract'.
+Computing hashes of 17 cells of `\p05_i2_contract'.
+Finding duplicate cells in `\p05_i2_contract'.
+Finding identical cells in module `\harness'.
+Computing hashes of 13 cells of `\harness'.
+Finding duplicate cells in `\harness'.
+Finding identical cells in module `\p05'.
+Computing hashes of 4 cells of `\p05'.
+Finding duplicate cells in `\p05'.
+Removed a total of 1 cells.
+
+7.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \p05_environment..
+Finding unused cells or wires in module \p05_i2_contract..
+Finding unused cells or wires in module \harness..
+Finding unused cells or wires in module \p05..
+
+7.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module p05_environment.
+Optimizing module p05_i2_contract.
+Optimizing module harness.
+Optimizing module p05.
+
+7.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \p05_environment..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \p05_i2_contract..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \harness..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \p05..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~27 debug messages>
+
+7.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \p05_environment.
+  Optimizing cells in module \p05_i2_contract.
+  Optimizing cells in module \harness.
+  Optimizing cells in module \p05.
+Performed a total of 0 changes.
+
+7.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\p05_environment'.
+Computing hashes of 35 cells of `\p05_environment'.
+Finding duplicate cells in `\p05_environment'.
+Finding identical cells in module `\p05_i2_contract'.
+Computing hashes of 17 cells of `\p05_i2_contract'.
+Finding duplicate cells in `\p05_i2_contract'.
+Finding identical cells in module `\harness'.
+Computing hashes of 13 cells of `\harness'.
+Finding duplicate cells in `\harness'.
+Finding identical cells in module `\p05'.
+Computing hashes of 4 cells of `\p05'.
+Finding duplicate cells in `\p05'.
+Removed a total of 0 cells.
+
+7.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \p05_environment..
+Finding unused cells or wires in module \p05_i2_contract..
+Finding unused cells or wires in module \harness..
+Finding unused cells or wires in module \p05..
+
+7.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module p05_environment.
+Optimizing module p05_i2_contract.
+Optimizing module harness.
+Optimizing module p05.
+
+7.7.14. Finished fast OPT passes. (There is nothing left to do.)
+
+7.8. Executing WREDUCE pass (reducing word size of cells).
+
+7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \p05_environment..
+Finding unused cells or wires in module \p05_i2_contract..
+Finding unused cells or wires in module \harness..
+Finding unused cells or wires in module \p05..
+
+7.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+7.11. Executing OPT pass (performing simple optimizations).
+
+7.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module p05_environment.
+Optimizing module p05_i2_contract.
+Optimizing module harness.
+Optimizing module p05.
+
+7.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\p05_environment'.
+Computing hashes of 35 cells of `\p05_environment'.
+Finding duplicate cells in `\p05_environment'.
+Finding identical cells in module `\p05_i2_contract'.
+Computing hashes of 17 cells of `\p05_i2_contract'.
+Finding duplicate cells in `\p05_i2_contract'.
+Finding identical cells in module `\harness'.
+Computing hashes of 13 cells of `\harness'.
+Finding duplicate cells in `\harness'.
+Finding identical cells in module `\p05'.
+Computing hashes of 4 cells of `\p05'.
+Finding duplicate cells in `\p05'.
+Removed a total of 0 cells.
+
+7.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \p05_environment..
+Finding unused cells or wires in module \p05_i2_contract..
+Finding unused cells or wires in module \harness..
+Finding unused cells or wires in module \p05..
+
+7.11.4. Finished fast OPT passes.
+
+7.12. Executing SORT pass.
+
+7.13. Printing statistics.
+
+=== harness ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       13 wires
+       13 wire bits
+        8 public wires
+        8 public wire bits
+       10 cells
+        3   $anyseq
+        2   $check
+        4   $logic_and
+        1   $logic_not
+        3 submodules
+        1   p05
+        1   p05_environment
+        1   p05_i2_contract
+
+=== p05 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        7 wire bits
+        5 public wires
+        5 public wire bits
+        4 ports
+        4 port bits
+        4 cells
+        2   $dff
+        2   $mux
+
+=== p05_environment ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       35 wires
+       35 wire bits
+       11 public wires
+       11 public wire bits
+        4 ports
+        4 port bits
+       35 cells
+        4   $check
+        2   $eq
+       12   $ff
+        4   $logic_and
+        4   $logic_not
+        9   $mux
+
+=== p05_i2_contract ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+       20 wire bits
+        8 public wires
+        8 public wire bits
+        5 ports
+        5 port bits
+       17 cells
+        2   $check
+        2   $eq
+        5   $ff
+        2   $logic_and
+        1   $logic_not
+        5   $mux
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+       66 harness
+        4 p05
+       35 p05_environment
+       17 p05_i2_contract
+
+        +----------Count including submodules.
+        | 
+       75 wires
+       75 wire bits
+       32 public wires
+       32 public wire bits
+       13 ports
+       13 port bits
+        - memories
+        - memory bits
+        - processes
+       66 cells
+        3   $anyseq
+        8   $check
+        2   $dff
+        4   $eq
+       17   $ff
+       10   $logic_and
+        6   $logic_not
+       16   $mux
+        3 submodules
+        1   p05
+        1   p05_environment
+        1   p05_i2_contract
+
+7.14. Executing CHECK pass (checking for obvious problems).
+Checking module harness...
+Checking module p05...
+Checking module p05_environment...
+Checking module p05_i2_contract...
+Found and reported 0 problems.
+
+8. Executing FLATTEN pass (flatten design).
+Deleting now unused module p05.
+Deleting now unused module p05_environment.
+Deleting now unused module p05_i2_contract.
+<suppressed ~3 debug messages>
+
+9. Executing CLK2FFLOGIC pass (convert clocked FFs to generic $ff cells).
+
+9.1. Executing PEEPOPT pass (run peephole optimizers).
+Replacing harness.$flatten\dut.$procdff$164 ($dff): CLK=\dut.clk, D=$flatten\dut.$0\req_d[0:0], Q=\dut.req_d
+Replacing harness.$flatten\dut.$procdff$163 ($dff): CLK=\dut.clk, D=$flatten\dut.$0\ack[0:0], Q=\dut.ack
+
+10. Executing OPT pass (performing simple optimizations).
+
+10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module harness.
+<suppressed ~15 debug messages>
+
+10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\harness'.
+Computing hashes of 83 cells of `\harness'.
+Finding duplicate cells in `\harness'.
+Computing hashes of 72 cells of `\harness'.
+Finding duplicate cells in `\harness'.
+Computing hashes of 70 cells of `\harness'.
+Finding duplicate cells in `\harness'.
+<suppressed ~39 debug messages>
+Removed a total of 13 cells.
+
+10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \harness..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~15 debug messages>
+
+10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \harness.
+Performed a total of 0 changes.
+
+10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\harness'.
+Computing hashes of 70 cells of `\harness'.
+Finding duplicate cells in `\harness'.
+Computing hashes of 69 cells of `\harness'.
+Finding duplicate cells in `\harness'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+10.6. Executing OPT_SHARE pass.
+
+10.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \harness..
+Removed 10 unused cells and 33 unused wires.
+<suppressed ~11 debug messages>
+
+10.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module harness.
+
+10.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \harness..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~14 debug messages>
+
+10.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \harness.
+Performed a total of 0 changes.
+
+10.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\harness'.
+Computing hashes of 59 cells of `\harness'.
+Finding duplicate cells in `\harness'.
+Removed a total of 0 cells.
+
+10.14. Executing OPT_SHARE pass.
+
+10.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \harness..
+
+10.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module harness.
+
+10.18. Finished fast OPT passes. (There is nothing left to do.)
+
+11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \harness..
+
+12. Executing JSON backend.
+
+13. Executing SMT2 backend.
+
+13.1. Executing BMUXMAP pass.
+
+13.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module harness.
+
+End of script. Logfile hash: ec4f4c3383, CPU: user 0.04s system 0.00s
+Yosys 0.63 (git sha1 70a11c6bf, ccache clang++ 18.1.3 -O3 -flto -flto) [yowasp/yosys at release-0.63]
+Time spent: 27% 9x opt_expr (0 sec), 22% 7x read_verilog (0 sec), ...

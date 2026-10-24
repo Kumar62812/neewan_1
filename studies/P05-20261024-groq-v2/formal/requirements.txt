@@ -1,0 +1,6 @@
+yowasp-yosys==0.63.0.0.post1107
+yowasp-runtime==1.96
+wasmtime==47.0.1
+z3-solver==4.15.4.0
+click==8.5.0
+platformdirs==4.12.4

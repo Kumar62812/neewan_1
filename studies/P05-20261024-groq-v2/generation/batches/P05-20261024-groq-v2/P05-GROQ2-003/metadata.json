@@ -1,0 +1,40 @@
+{
+  "run_id": "P05-GROQ2-003",
+  "batch_id": "P05-20261024-groq-v2",
+  "attempt_number": 3,
+  "seed": 27003,
+  "model_provider": "Groq",
+  "model_name": "openai/gpt-oss-120b",
+  "model_version": "immutable deployment snapshot unavailable",
+  "generation_timestamp": "2026-10-24T05:52:01.929647+00:00",
+  "git_commit": "b567132920ee2ba961446be9e8e16d5bdeb0a370",
+  "prompt_sha256": "ab2ccb7d26eca2e546e36310e74680d144f119410a8f051fc13368b92886721c",
+  "system_sha256": "f222c6e4a1ceeed38db0ff0608cc07cddaf67b4e1565b4879415ca835bf40108",
+  "request_sha256": "dd1702c81b25215e057cdac6eaf74d5e279b4071b80d05f3273cf176301420d5",
+  "client": "Python standard-library urllib; no SDK; no automatic retries",
+  "python": "3.12.1",
+  "generation_status": "RECEIVED",
+  "rtl_extraction_status": "EXTRACTED",
+  "exclusion_reason": "",
+  "raw_output_path": "generation/batches/P05-20261024-groq-v2/P05-GROQ2-003/raw.txt",
+  "raw_output_sha256": "ee135fffbc646bdaf29e6e717caef13e73382525f9ab9786445811903bad730f",
+  "rtl_path": "generation/batches/P05-20261024-groq-v2/P05-GROQ2-003/rtl.sv",
+  "rtl_sha256": "c6c98f0f9a75519c791678d053303b23f61dbf7ecbd96ad57a6881d58b9164a8",
+  "seconds": 0.849,
+  "http_status": 200,
+  "resolved_model": "openai/gpt-oss-120b",
+  "system_fingerprint": "fp_c3da0d4bb9",
+  "usage": {
+    "queue_time": 0.213111265,
+    "prompt_tokens": 312,
+    "prompt_time": 0.014157592,
+    "completion_tokens": 261,
+    "completion_time": 0.543083509,
+    "total_tokens": 573,
+    "total_time": 0.557241101,
+    "completion_tokens_details": {
+      "reasoning_tokens": 87
+    }
+  },
+  "finish_reason": "stop"
+}

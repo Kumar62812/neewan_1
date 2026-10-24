@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "samples": 3,
+  "primary_contract_checks": 6,
+  "new_model_requests": 0,
+  "outcomes": {
+    "P05-GROQ2-001": [
+      "FAIL",
+      "PASS",
+      "I2_only"
+    ],
+    "P05-GROQ2-002": [
+      "PASS",
+      "FAIL",
+      "I1_only"
+    ],
+    "P05-GROQ2-003": [
+      "PASS",
+      "FAIL",
+      "I1_only"
+    ]
+  },
+  "test_source_commit": "390e9a4c52eb8827e7ff860831395cb3b7b3ebbd",
+  "test_scope": "Prepared scoped public adapter; same installed pinned tools on same host; no API calls",
+  "full_local_study_source": "6f2acd74e80e807d785c9166cb1c449751638f81"
+}

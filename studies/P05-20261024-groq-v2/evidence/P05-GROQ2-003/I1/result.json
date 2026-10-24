@@ -1,0 +1,17 @@
+{
+  "job_id": "groq-v2_1-eval-01-P05-GROQ2-003-I1",
+  "dut": "p05",
+  "contract": "I1",
+  "result": "PASS",
+  "bmc_result": "PASS",
+  "induction_result": "FAIL",
+  "reachability_result": "PASS",
+  "seconds": 6.072,
+  "property_inventory": {
+    "$assert": 3,
+    "$assume": 4,
+    "$cover": 2
+  },
+  "local_native_record_sha256": "533c2a2252bcca3fdeacc9991dfe4475e2642a4c278f4a0993415e106fd00222",
+  "record_scope": "Selected native verdict fields; private absolute executable paths omitted"
+}
