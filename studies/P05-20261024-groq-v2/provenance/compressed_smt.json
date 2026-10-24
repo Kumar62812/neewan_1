@@ -1,0 +1,62 @@
+[
+  {
+    "path": "evidence/P05-GROQ2-001/I1/model.smt2.gz",
+    "uncompressed_path": "evidence/P05-GROQ2-001/I1/model.smt2",
+    "uncompressed_sha256": "f86e67ddf370557c1e11a5e5a36e85bcf7573b31ae2d329053d39f4b8b6751a5"
+  },
+  {
+    "path": "evidence/P05-GROQ2-001/I2/model.smt2.gz",
+    "uncompressed_path": "evidence/P05-GROQ2-001/I2/model.smt2",
+    "uncompressed_sha256": "f92a46d1a4f327325bab093cb0563f3b50881f4a8dd3e603078666b685749c26"
+  },
+  {
+    "path": "evidence/P05-GROQ2-002/I1/certificate-closure.smt2.gz",
+    "uncompressed_path": "evidence/P05-GROQ2-002/I1/certificate-closure.smt2",
+    "uncompressed_sha256": "d190af589bcc0b3489a6a356a31fc6fe3bb6067849b4eee884ec0cc104b7ea6f"
+  },
+  {
+    "path": "evidence/P05-GROQ2-002/I1/certificate-initiation.smt2.gz",
+    "uncompressed_path": "evidence/P05-GROQ2-002/I1/certificate-initiation.smt2",
+    "uncompressed_sha256": "285169a6e8554c252ae34172124c161df242e689e120c51d15fecd3b24ab8997"
+  },
+  {
+    "path": "evidence/P05-GROQ2-002/I1/certificate-safety.smt2.gz",
+    "uncompressed_path": "evidence/P05-GROQ2-002/I1/certificate-safety.smt2",
+    "uncompressed_sha256": "453fca935670a6d84e87751caa217600ac24090cb06759173c4f5cbc3697b62f"
+  },
+  {
+    "path": "evidence/P05-GROQ2-002/I1/model.smt2.gz",
+    "uncompressed_path": "evidence/P05-GROQ2-002/I1/model.smt2",
+    "uncompressed_sha256": "b43a0e63715a8745fa0c0c7f7ace77a50c2235dc11e8af46471a3cd8f36c3eb5"
+  },
+  {
+    "path": "evidence/P05-GROQ2-002/I2/model.smt2.gz",
+    "uncompressed_path": "evidence/P05-GROQ2-002/I2/model.smt2",
+    "uncompressed_sha256": "2a2d25cd7b8cb4bae9d57c8c44001386843dcf3d964491e872e6e9e81064ae11"
+  },
+  {
+    "path": "evidence/P05-GROQ2-003/I1/certificate-closure.smt2.gz",
+    "uncompressed_path": "evidence/P05-GROQ2-003/I1/certificate-closure.smt2",
+    "uncompressed_sha256": "d190af589bcc0b3489a6a356a31fc6fe3bb6067849b4eee884ec0cc104b7ea6f"
+  },
+  {
+    "path": "evidence/P05-GROQ2-003/I1/certificate-initiation.smt2.gz",
+    "uncompressed_path": "evidence/P05-GROQ2-003/I1/certificate-initiation.smt2",
+    "uncompressed_sha256": "285169a6e8554c252ae34172124c161df242e689e120c51d15fecd3b24ab8997"
+  },
+  {
+    "path": "evidence/P05-GROQ2-003/I1/certificate-safety.smt2.gz",
+    "uncompressed_path": "evidence/P05-GROQ2-003/I1/certificate-safety.smt2",
+    "uncompressed_sha256": "453fca935670a6d84e87751caa217600ac24090cb06759173c4f5cbc3697b62f"
+  },
+  {
+    "path": "evidence/P05-GROQ2-003/I1/model.smt2.gz",
+    "uncompressed_path": "evidence/P05-GROQ2-003/I1/model.smt2",
+    "uncompressed_sha256": "b43a0e63715a8745fa0c0c7f7ace77a50c2235dc11e8af46471a3cd8f36c3eb5"
+  },
+  {
+    "path": "evidence/P05-GROQ2-003/I2/model.smt2.gz",
+    "uncompressed_path": "evidence/P05-GROQ2-003/I2/model.smt2",
+    "uncompressed_sha256": "2a2d25cd7b8cb4bae9d57c8c44001386843dcf3d964491e872e6e9e81064ae11"
+  }
+]

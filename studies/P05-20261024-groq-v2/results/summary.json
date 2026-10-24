@@ -1,0 +1,38 @@
+{
+  "v1_cli": {
+    "attempts": 3,
+    "raw_outputs": 0,
+    "formally_evaluated": 0,
+    "excluded": 3
+  },
+  "v2_api": {
+    "batch_id": "P05-20261024-groq-v2",
+    "attempts": 3,
+    "raw_outputs": 3,
+    "extractable": 3,
+    "syntax_valid": 3,
+    "elaborated": 3,
+    "formally_evaluated": 3,
+    "excluded": 0,
+    "I1_only": 2,
+    "I2_only": 1,
+    "both": 0,
+    "neither": 0,
+    "unresolved": 0,
+    "I1_pass": 2,
+    "I2_pass": 1,
+    "I2_reference_accepted": 1,
+    "enumerated_set_accepted": 3,
+    "reference_dependent_rejections": 2
+  },
+  "cumulative_flow": {
+    "attempts": 6,
+    "raw_outputs": 3,
+    "extractable": 3,
+    "formally_evaluated": 3,
+    "excluded": 3,
+    "performance_rates_pooled": false
+  },
+  "independent_human_plausibility": false,
+  "certified_ambiguity": false
+}

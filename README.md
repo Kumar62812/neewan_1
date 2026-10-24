@@ -1,8 +1,14 @@
 # FORMAL-AMBIG-RTL — Audit-Ready Research Repository
 
+## Latest P05 study - 24 October 2026
+
+The [completed P05 model pilot](studies/P05-20261024-groq-v2/README.md) records three retained Groq samples: two pass only I1 (following-edge acknowledgment) and one passes only I2 (sampling-edge acknowledgment). The designated I2 comparator accepts 1/3; the internally admitted I1/I2 set accepts 3/3. These are descriptive counts for one constructed case, not general model accuracy or certified ambiguity.
+
+The update includes paired results, native evidence, the technical manuscript and a tested reproduction command requiring no API key. The original access failures remain separate. Human plausibility, academic review and inherited redistribution rights remain open. Earlier project-position/governance wording below is preserved as a historical snapshot; current P05 execution details are in the new study.
+
 FORMAL-AMBIG-RTL is a research repository for evaluating how LLM-generated RTL handles underspecified natural-language hardware requirements using explicit interpretations, behavioral specifications, formal verification, and review-governed evidence.
 
-## Current project position
+## Earlier project-position snapshot
 
 **P01: Formal evidence complete; professor-approved.** Professor approval is recorded as project direction to proceed with P02; it does not imply completion of an independent certification record.
 
@@ -51,7 +57,7 @@ Archive SHA-256:
 
 The unmodified pinned revision is not represented as having formally passed.
 
-## Current governance
+## Earlier governance snapshot
 
 - Formal evidence: **COMPLETE** for the documented effective tested source.
 - Evidence audit/integrity: **COMPLETE**.

@@ -1,0 +1,28 @@
+{
+  "batch_id": "P05-20261024-groq-v2",
+  "endpoint": "https://api.groq.com/openai/v1/chat/completions",
+  "attempt_ids": [
+    "P05-GROQ2-001",
+    "P05-GROQ2-002",
+    "P05-GROQ2-003"
+  ],
+  "seeds": [
+    27001,
+    27002,
+    27003
+  ],
+  "parameters": {
+    "model": "openai/gpt-oss-120b",
+    "temperature": 0.2,
+    "top_p": 1,
+    "max_completion_tokens": 4096,
+    "reasoning_effort": "low",
+    "include_reasoning": false,
+    "n": 1,
+    "stream": false,
+    "tools": [],
+    "tool_choice": "none"
+  },
+  "timeout_seconds": 180,
+  "retries": 0
+}

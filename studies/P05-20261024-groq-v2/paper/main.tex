@@ -1,0 +1,158 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,booktabs,longtable,url,microtype}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parskip}{5pt}
+\setlength{\parindent}{0pt}
+\title{Timing Interpretations in RTL Evaluation:\\A P05 Formal Pilot and Execution Audit}
+\author{Naveen\\\small Technical draft prepared with AI assistance}
+\date{24 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+A reference mismatch can reveal a timing difference without deciding whether a natural-language requirement excludes that behavior. This pilot studies one constructed request--acknowledgment case, P05, using two internally assessed timing interpretations under a shared observation boundary. Fresh formal checks establish that each retained reference satisfies its corresponding contract, the references disagree after reset, and deliberately invalid controls violate both contracts. A native witness is replayed and exported to checked CSV records. The original fixed batch scheduled three model-generation attempts; all three failed during local CLI initialization, producing no model responses or RTL. A separate frozen three-attempt Groq API batch then returned three eligible designs. One conforms only to the sampling-edge contract I2, and two conform only to the following-edge contract I1. The prospectively designated I2 reference accepts one of three samples, while the enumerated interpretation set accepts all three. A versioned evaluator correction and supplemental post-reset witnesses are disclosed. These are descriptive outcomes for one internally assessed case, not a model benchmark or human ambiguity certification.
+\end{abstract}
+
+\section{Introduction and research question}
+Natural-language hardware requirements can state pulse duration while leaving response latency open. Evaluating an implementation against a single reference then combines two questions: whether its behavior matches that reference, and whether the requirement uniquely selects that behavior. This pilot makes the interpretation choice explicit and retains separate evidence for text assessment, implementation conformance, and reachable disagreement.
+
+The research question is: under one fixed legal input model and observation boundary, can the two proposed P05 timing readings each have a conforming implementation while disagreeing observably? A secondary workflow question is whether retained generation attempts can be transformed into a complete paired evaluation dataset without discarding failures. The execution answers the formal question and records paired outcomes for three prospectively scheduled API samples, while preserving the original access failures. It measures reference-choice sensitivity within this constructed pilot and does not establish general model performance.
+
+\section{Scope, requirement and interpretation assessment}
+P05 was constructed by Codex on 10 October 2026 in the source repository. It is an internally assessed candidate rather than an independently certified ambiguous requirement. Only P05 is evaluated here. P02 remains retained supporting history; the other registered case identifiers are outside this pilot.
+
+The instruction-only text is retained in \path{cases/P05/requirement/requirement.txt}; legal context and extraction provenance are separate. It specifies one-bit inputs \texttt{clk}, \texttt{rst}, \texttt{req}, and output \texttt{ack}; rising-edge request sampling; a one-cycle acknowledgment pulse; synchronous active-high reset with priority over requests; clearing of acknowledgment and pending requests; between-edge storage; and unspecified initial storage. Its retained context requires isolated sampled requests and explicitly leaves latency otherwise unspecified.
+
+The internal assessment admits two readings. A sampling-edge acknowledgment needs no extra processing stage. A following-edge acknowledgment treats capture and response as consecutive registered actions. Counterarguments remain: the text does not require the added stage, and it does not explicitly demand a response on the sampling edge. Formal checks do not resolve that linguistic question. No independent reviewer, human agreement, or human signature is represented.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{llll}
+\toprule
+Final ID & Response edge & Historical ID & Reference module\\
+\midrule
+I1 & Following edge $t+1$ & B & \texttt{response\_b}\\
+I2 & Sampling edge $t$ & A / I0 & \texttt{response\_a}\\
+\bottomrule
+\end{tabular}
+\caption{Frozen interpretation crosswalk. I0 is an archived alias for I2, not another behavior.}
+\label{tab:interpretations}
+\end{table}
+
+Neither reference is normative. I2 was designated prospectively as a descriptive single-reference comparator, without assigning it unique linguistic authority. Table~\ref{tab:interpretations} fixes the labels before generation.
+
+\section{Formal model and exact contracts}
+Let $n$ index rising clock edges, $r[n]$ and $z[n]$ denote the sampled request and reset, and $a[n]$ denote acknowledgment after the sequential update. The exact I1 contract is
+\begin{align}
+p[n]&=z[n] ? 0 : r[n],\\
+a[n]&=z[n] ? 0 : p[n-1].
+\end{align}
+Thus, from a real sampled edge to its successor,
+\begin{equation}
+a[n+1]=\neg z[n+1]\land\neg z[n]\land r[n].
+\end{equation}
+The I2 contract is $a[n]=z[n] ? 0 : r[n]$. Both require acknowledgment to hold between rising edges. Reset cancels pending response obligations. I1 permits neither arbitrary delay nor combinational responses; a low current request does not force its current acknowledgment low when a previous request is due.
+
+Initial acknowledgment and pending history are unconstrained. The first non-reset I1 output can depend on unspecified pending history; subsequent outputs must follow sampled request history. Reset is synchronous, so a reset transition between edges does not itself clear the output. No asynchronous reset assertion is substituted for this rule.
+
+The common environment uses Boolean signals, an initially low explicit clock, and stable request/reset across each modeled rising transition. Outside reset, sampled high requests have at least one intervening low-request edge. Reset restarts this request history. There is no forced reset, clock-period constraint, clock fairness, output assumption, or progress assumption. X/Z behavior, analog setup/hold time, metastability and physical timing are outside the model.
+
+Only external acknowledgment is compared, after active-edge updates and at intervening observations. The same input history is used for both interpretations. No latency alignment, transaction collapse or retiming removes their difference. Observable distinction and self-equivalence are gated by a shared sampled reset, excluding arbitrary initial mismatches.
+
+\section{Implementation and verification method}
+The reference source remains byte-identical to the imported source. The current harness, checkers, runner and strict controls are separately authored. The source inventory fixes 190 inherited files, including 77 P05 files; the 154 retained checksum entries span historical P02/P05 evidence and are not a count of P05 source files.
+
+The current flow uses YoWASP Yosys 0.63 and Z3 4.15.4. Yosys converts explicit clocked storage through \texttt{clk2fflogic} to a global-step transition model; global steps must not be interpreted as clock cycles~\cite{yosysclock}. The runner lowers formal checks, inspects assertion/assumption/cover inventory, and emits the SMT model. Bounded checking and induction use 16 global steps with 180-second process limits.
+
+A passing bounded base alone is insufficient for PASS. If induction is inconclusive, a small-state fallback proposes a reachable-state invariant for the same SMT model. Separate native Z3 checks must prove initiation, transition closure, and safety. All three certificates must return UNSAT. Unsupported state projections, empty initial sets, timeouts and unsuccessful certificates cannot pass. This fallback introduces no extra clock-progress assumption or weaker contract. Its 24-bit projection limit restricts scalability.
+
+FAIL requires a reachable native counterexample. An induction failure is an inconclusive proof attempt rather than a reachable implementation failure. TIMEOUT, UNKNOWN and TOOL\_ERROR remain separate categories. Native logs, commands, source snapshots, SMT files, waveforms and development failures are retained. The v2 evidence runner preserves an indexed waveform for each cover target; its predecessor's fixed filename had retained only the final cover waveform.
+
+\begin{figure}[ht]
+\input{figures/pipeline.tex}
+\caption{Evidence flow. An unavailable generation stage is counted and cannot create a formal design outcome.}
+\label{fig:pipeline}
+\end{figure}
+
+\section{Current formal results and controls}
+Table~\ref{tab:conformance} reports the paired reference results. Response B satisfies I1, and response A satisfies I2. Each violates the other contract. These outcomes concern the frozen Boolean model and exact recurrences, not natural-language certification.
+\begin{table}[ht]
+\centering\input{tables/conformance.tex}
+\caption{Current reference-to-contract conformance. FAIL is an expected reachable cross-contract mismatch.}
+\label{tab:conformance}
+\end{table}
+
+The 20-job suite comprises four reference/contract combinations, one distinction check, one two-goal cover job, two positive self-equivalence checks, six strict-mutant checks, and six additional post-reset strict-mutant checks. The positive controls pass. The no-response, two-edge-delay and wrong-reset controls fail both interpretations. Their post-reset traces are checked against the timing equations to ensure that rejection reflects a meaningful legal-history violation. Table~\ref{tab:controls} summarizes these outcomes. Reachability covers provide an additional non-vacuity check; they do not establish universal conformance.
+\begin{table}[ht]
+\centering\input{tables/controls.tex}
+\caption{Validation controls. Negative entries summarize the additional post-reset checks; full-conformance negative checks also fail.}
+\label{tab:controls}
+\end{table}
+
+\section{Distinguishing witness and replay}
+The equality assertion fails on a legal trace following synchronous reset. In Table~\ref{tab:witness}, reset clears both outputs at global step 1. An isolated request is sampled at global step 3: I2 acknowledgment becomes one while I1 remains zero. This is the first post-reset divergence. The short counterexample stops at disagreement; a separate cover reaches the complementary following-edge I1 response.
+
+\begin{table}[ht]
+\centering\input{tables/witness.tex}
+\caption{Native distinguishing trace. Initial outputs in row 0 are unspecified. Global steps 1 and 3 contain rising edges.}
+\label{tab:witness}
+\end{table}
+
+The native Yosys witness is checked to force equality failure and is replayed against the same current SMT model. CSV export verifies identical replay inputs and post-reset outputs, legal sampled requests, stable edge inputs, between-edge hold, and both timing equations. Unconstrained initial output values may differ between replay and the original trace; they are not evidence of distinction. A reachable witness demonstrates one legal disagreement, whereas the separate conformance proofs cover the universal obligations in the model.
+
+\section{Generation protocols and execution status}
+The original prospectively frozen protocol scheduled exactly three fresh attempts using the same requirement/context prompt, no examples, and no reference RTL or interpretation labels. The requested provider/model was OpenAI \texttt{gpt-6.1-sol}, accessed through the user-authorized signed-in Codex CLI 0.163.0-alpha.11.1. The requested reasoning setting was low. Temperature, top-$p$, seed, output cap and immutable provider snapshot were not exposed/set by that configuration and are not invented here.
+
+The retained configuration replaces base instructions with a saved instruction file, uses an isolated working directory and read-only sandbox, and disables tools, memories and plugins. CLI JSONL recording and final-message output are documented capabilities~\cite{codexexec,codexconfig}. Platform wrappers are not fully observable, which limits prompt-level replication. The extraction policy accepts exactly one HDL block with the specified interface, rejects evaluator-altering constructs and directives, and permits no manual repair. Every eligible design would receive both contract checks.
+
+All three invocations failed before model output with ``failed to initialize in-process app-server client: Operation not permitted.'' The metadata's broad recorded label is PROVIDER\_ERROR; the retained stderr identifies a local CLI initialization/access failure, not a provider-returned semantic failure. No attempt was replaced or silently retried. That original CLI batch has no raw model response, extracted RTL, or generated-design formal outcome.
+
+On 24 October 2026, a generic Groq preflight returned READY using the supplied credential~\cite{groqmodel,groqapi}. The account exposed \texttt{openai/gpt-oss-120b}; an initially considered Llama endpoint was unavailable. No P05 prompt was used in access diagnostics. Separate batch P05-20261024-groq-v2 was committed before any study output: three fresh requests, temperature 0.2, top-$p$ 1, maximum 4096 completion tokens each, low reasoning effort, reasoning omitted, no tools, fixed seeds 27001--27003, and no retries or repairs. Complete request bodies are retained for review. Automatic approval review initially held the unpublished prompt export. The user then explicitly approved the exact three-message batch. All three scheduled requests completed once, with no replacement attempts, regeneration or RTL edits. Generic preflight responses are outside study denominators and cannot count as generated RTL. The provider alias and fingerprint are not immutable weight snapshots. Provider data-handling terms and account settings remain separate from study eligibility~\cite{groqdata}.
+
+\begin{table}[ht]
+\centering\small\input{tables/all_batches_flow.tex}
+\caption{Batch-specific flow. Total flow retains failures; provider performance is not pooled.}
+\label{tab:flow}
+\end{table}
+\begin{table}[ht]
+\centering\small\input{tables/api_paired.tex}
+\caption{All scheduled API samples under the same frozen contracts. The original CLI failures remain separate.}
+\label{tab:paired}
+\end{table}
+
+\subsection{Evaluator correction and generated-design verification}
+The first evaluator run accepted each SystemVerilog frontend and module hierarchy, then failed at JSON export because sequential processes had not been lowered. Its original syntax-error labels are retained as historical evaluator failures, not candidate syntax evidence. Evaluator v2.1 inserts the required \texttt{proc} pass before interface JSON export. This correction occurred after outputs were available and is explicitly versioned; the original evaluator and failed run remain unchanged. Every retained sample was re-evaluated with the correction. The prompt, extraction, RTL, legal environment and contracts were not altered.
+
+Three separately authored sequential controls validate the corrected path: sampling-edge and following-edge controls each pass their matching contract and fail the other, and a constant-high invalid control fails both. These six expected outcomes complement the original 20-job baseline. No model sample was selected or repaired because of a result.
+
+All three API samples parse, expose the exact four one-bit ports, and receive both contract checks. Sample 001 passes I2 by bounded checking plus induction. Samples 002 and 003 pass I1 through reachable-state certificates whose initiation, closure and safety queries each return UNSAT in native Z3. The other comparison for each sample has a reachable native counterexample. Table~\ref{tab:paired} retains the complete paired outcomes.
+
+Initial native cross-contract counterexamples can use unspecified pre-reset state. Supplemental checks therefore enable the same rejected contract only after a shared sampled reset, under the unchanged legal-input environment. All three rejected comparisons also fail after reset. Their native witnesses are checked to force failure, replayed, and exported to CSV with legal edge inputs and post-reset mismatch steps verified. These additional diagnostic checks were introduced after output inspection and are not relabeled as prospective primary tests.
+
+\section{Analysis, limitations and threats to validity}
+The unit of accounting is a scheduled attempt; paired design outcomes use only eligible extracted and elaborated RTL. I1-only, I2-only, both, neither and unresolved outcomes are distinct. The category \emph{neither} requires both contracts to fail; no missing output or tool error is assigned to that class. The eligible API denominator is three. I2 accepts one sample, while one fixed interpretation from the enumerated I1/I2 set accepts each of the three samples. Two samples are I1 PASS and I2 FAIL: rejecting them relative to I2 is conditional on reference choice. Table~\ref{tab:acceptance} reports counts rather than a general accuracy claim. The original CLI batch retains a zero eligible denominator and no defined acceptance rate.
+
+\begin{table}[ht]
+\centering\small\input{tables/api_acceptance.tex}
+\caption{Observed reference-choice sensitivity for the three API samples. Set acceptance is conditional on the internally admitted interpretations.}
+\label{tab:acceptance}
+\end{table}
+
+The evidence concerns one constructed case and an internal interpretation assessment. It cannot establish independent human plausibility, certified ambiguity, model superiority, or general behavior across RTL tasks. The Boolean observation model excludes four-state and physical timing effects. Tool/frontend correctness and the custom invariant enumerator remain trusted components, with native certificate checks reducing dependence on enumeration completeness. The state limit may leave larger designs unresolved. The 16-step BMC bound is not itself an unbounded proof; PASS requires induction or the checked invariant certificates.
+
+The fixed API pilot is completed, with an explicitly disclosed post-output evaluator correction. Three samples from one case cannot support inferential statistics, broad accuracy estimates or model rankings. Two outputs implement the same following-edge behavior despite different returned text; request IDs and different seeds do not establish statistical independence. The returned model alias and backend fingerprint do not identify an immutable weight snapshot. Provider usage reports reasoning-token counts even though reasoning text was omitted. Original CLI failures and generic access diagnostics stay outside the API design denominator. Retained-response reproduction requires no new model requests and makes no claim of identical future stochastic regeneration.
+
+\section{Reproducibility, availability and release boundary}
+The local package records the baseline, case freeze, exact source commit for every formal run, fixed tool versions, protected-source inventory, checksums, commands, and failed attempts. The repository README gives the one-command deterministic reproduction procedure: verify hashes; rerun current conformance, covers, replay and controls; re-extract retained responses; regenerate the dataset and manuscript assets; and compile this document. The original clean-clone execution record is \path{artifacts/reproduction_run.md}; the model-study continuation record is \path{artifacts/model_study_reproduction.md}. That record, rather than this manuscript's existence, establishes which reproduction stages completed.
+
+Newly authored code uses MIT as selected by the user. The 190 inherited files retain their existing terms and are excluded from that grant. Their public visibility does not establish redistribution rights. No public-release URL or archived release is claimed. The three-request model batch has completed. Public redistribution rights, target-venue decisions and institutional/supervisor manuscript review remain explicit release conditions. No human review or institutional compliance review has been fabricated.
+
+\section{Conclusion}
+P05 provides a checked formal timing baseline: the two frozen internal interpretations have conforming references, a replayable post-reset distinction, and controls that discriminate meaningful invalid behavior. The execution retains three original CLI access failures and all three outputs from the separately frozen, user-approved Groq batch. Under the unchanged contracts, two API samples are I1-only and one is I2-only. Thus the designated I2 comparator accepts one sample while the admitted interpretation set accepts three. Versioned evaluator repair, control validation and native post-reset mismatch evidence support the reported pipeline behavior. These conditional descriptive findings leave human plausibility, academic review, source rights and publication decisions open.
+
+\section*{AI assistance disclosure}
+OpenAI Codex assisted with the constructed case, interpretation assessment, checker and control code, execution scripts, local evidence analysis, and manuscript drafting across the technical sections. Formal claims refer to retained native tool results rather than AI assertions. The author must review these contributions and take responsibility for the final content. AI assessment does not establish independent human review or institutional approval. Groq-hosted GPT-OSS 120B produced the three retained P05 samples; its generic preflight response is excluded from study outcomes. The reported model results are based on formal execution of those saved outputs.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

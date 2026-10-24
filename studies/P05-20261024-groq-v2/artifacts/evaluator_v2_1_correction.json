@@ -1,0 +1,18 @@
+{
+  "version": "v2.1",
+  "reason": "Yosys JSON backend rejected unlowered sequential processes after successful frontend and hierarchy; frozen v2 evaluator omitted proc",
+  "original_evaluator": "scripts/evaluate_api_batch.py",
+  "original_run": "analysis/batches/P05-20261024-groq-v2",
+  "corrected_evaluator": "scripts/evaluate_api_batch_v2_1.py",
+  "correction": "Insert proc after hierarchy -check and before write_json in interface inspection only",
+  "original_sha256": "9a9b28157269e0b2f683ed789df37b1a3a2eacef229c9fdb6774e8b8dd706b0c",
+  "corrected_sha256": "5c5985729d3958335ef5dc87bf157a6729db10bcf4ca77f592b6cdbaa055b5c7",
+  "raw_responses_changed": false,
+  "extracted_rtl_changed": false,
+  "contracts_changed": false,
+  "prompts_changed": false,
+  "new_generation_requests": 0,
+  "post_output_evaluator_correction": true,
+  "primary_results": "analysis/batches/P05-20261024-groq-v2/validated-v2_1",
+  "historical_classification": "Initial syntax ERROR labels reflect evaluator backend errors and are excluded from model semantic outcome claims"
+}

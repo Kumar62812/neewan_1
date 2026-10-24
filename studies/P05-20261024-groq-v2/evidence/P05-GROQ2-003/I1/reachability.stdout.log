@@ -1,0 +1,12 @@
+round 1 reachable 256 new 64
+round 2 reachable 320 new 6
+round 3 reachable 326 new 40
+round 4 reachable 366 new 1
+round 5 reachable 367 new 7
+round 6 reachable 374 new 1
+round 7 reachable 375 new 7
+round 8 reachable 382 new 0
+initiation unsat
+closure unsat
+safety unsat
+Status: PASSED
