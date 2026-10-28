@@ -181,3 +181,11 @@ The current head \`09094366a11294a86975e3a1a5aedccd47cfcc71\` passed the P01 pac
 
 - Follow-up CI run [40765501022](https://github.com/Kumar62812/neewan_1/actions/runs/40765501022) on commit \`92f8cf8323a7457325c2d5016c798783aa060171\` also passed: 26/26 validator checks, four regression tests, and artifact upload. Added its run/artifact metadata to the machine-readable B6 record.
 
+## 2026-10-29 update — C1 pilot benchmark inventory
+
+- Added \`docs/project-state/C1_PILOT_BENCHMARK_INVENTORY.md\` and machine-readable \`docs/project-state/evidence/C1_PILOT_CASE_INVENTORY_v1.json\` after a read-only recursive tree inspection of branch snapshot \`50b8d926b8c8b29fa2375eda40b0c6cfa48325f2\`.
+- The inspected tree contains canonical case directories for P01, P02 and P05 only. P03, P04, P06–P12 have no case-directory path components in that snapshot; this is not a claim about local-only material outside the repository.
+- Recorded P02's existing source and run-01/run-02 technical evidence with T06 still in progress, and P05's formal distinction evidence with human plausibility pending (zero responses) and ambiguity certification not claimed.
+- Recorded reported core/conditional-extension scope with an explicit caveat that the approved signed master-plan text was not located; disclosed inconsistent PR #6/main publication statements instead of inferring a merge or approval.
+- No RTL, formal logs, witnesses, run manifests, accepted evidence archive, approval record, or pending amendment was changed. No new formal run, human review, certification, or template freeze was performed.
+
