@@ -1,6 +1,6 @@
 # B2 — P01 Read-Only Package Validator
 
-**Status:** Validator implemented. Running it on a complete local checkout is required to produce a real runtime report. No new formal run, independent review, certification, or template freeze is claimed.
+**Status:** Validator implemented and successfully executed in [GitHub Actions run 40752580869](https://github.com/Kumar62812/neewan_1/actions/runs/40752580869). No new formal run, independent review, certification, or template freeze is claimed.
 
 ## What B2 adds
 
@@ -35,11 +35,11 @@ The script prints a JSON report and exits with code 0 when checks pass, 1 when c
 - [x] Reusable validator source committed.
 - [x] Checks cover baseline source inventory, contract consistency, shared formal property, expected positive/negative SBY configuration and accepted archive checksum.
 - [x] Validator explicitly reports that formal tools, independent certification and template freeze were not performed.
-- [ ] Runtime execution and JSON output from a complete checkout — not performed in this connected GitHub documentation session.
+- [x] Runtime validator executed successfully in [GitHub Actions run 40752580869](https://github.com/Kumar62812/neewan_1/actions/runs/40752580869); JSON output is retained as a workflow artifact.
 
 ## Regression tests (added in B3)
 
-The isolated-fixture regression suite is documented in [B3](B3_P01_VALIDATOR_TESTS.md) and implemented at [test_validate_p01_package.py](../../Files/Research_Papers/benchmark/pilot_v0_1/P01/tests/test_validate_p01_package.py). The suite is committed but was not executed by this connected GitHub operation. B2's runtime-execution checkbox therefore remains pending.
+The isolated-fixture regression suite is documented in [B3](B3_P01_VALIDATOR_TESTS.md) and implemented at [test_validate_p01_package.py](../../Files/Research_Papers/benchmark/pilot_v0_1/P01/tests/test_validate_p01_package.py). The suite was executed successfully in [GitHub Actions run 40752580869](https://github.com/Kumar62812/neewan_1/actions/runs/40752580869). The B2 runtime checkbox is checked based on that remote run; local checkout execution is still available for independent reproduction.
 
 ## Baseline source of truth (B5)
 
