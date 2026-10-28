@@ -1,6 +1,6 @@
 # B4 — Automated P01 Package Validation Gate
 
-**Status:** Continuous-integration workflow added. A successful workflow run must be observed before calling automated validation operational. This gate does not perform P01's accepted formal run or freeze/certify the template.
+**Status:** CI workflow verified by [successful run 40752580869](https://github.com/Kumar62812/neewan_1/actions/runs/40752580869). It validates the package and runs the four B3 regression tests. This gate does not perform P01's accepted formal run or freeze/certify the template.
 
 ## Workflow
 
@@ -10,7 +10,7 @@ It performs the following in a clean GitHub-hosted runner:
 
 1. Checks out the repository and configures Python 3.11.
 2. Runs the read-only package validator, preserving its JSON output as a workflow artifact.
-3. Runs the B3 regression tests, including baseline success and two integrity-mutation checks.
+3. Runs the B3 regression tests, including baseline success and source, archive, and manifest integrity-mutation checks.
 4. Uploads the validation JSON report, including on failure, for diagnosis.
 
 ## Scope limits
@@ -25,12 +25,12 @@ It performs the following in a clean GitHub-hosted runner:
 
 - **PASS:** source fingerprints and archive checksum match the B1 baseline and the regression suite behaves as expected.
 - **FAIL:** inspect the named validator check or test failure; do not update baseline hashes simply to make a changed file pass. Any intentional baseline update requires separate versioned provenance.
-- **Workflow not yet run / queued:** automation is committed but operational result is not yet demonstrated.
+- **Latest verified result:** run 40752580869 completed successfully. Earlier runs exposed over-strict contract-text checks; those checks were normalized to ignore Markdown backticks and match the specification's actual wording. The later run passed both the validator and regression suite.
 
 ## B4 completion boundary
 
 - [x] CI workflow definition committed.
 - [x] Validator and regression tests wired into the workflow.
 - [x] JSON report artifact configured.
-- [ ] Successful remote workflow run verified — depends on GitHub Actions execution.
+- [x] Successful remote workflow run verified: [40752580869](https://github.com/Kumar62812/neewan_1/actions/runs/40752580869).
 - [ ] P01 independent certification / template freeze — outside B4 and not claimed.
