@@ -1,0 +1,206 @@
+{
+  "inventory_id": "FORMAL-AMBIG-RTL-C1-PILOT-CASE-INVENTORY",
+  "version": "1.0",
+  "prepared_at": "2026-10-29",
+  "repository": "Kumar62812/neewan_1",
+  "branch": "research/end-to-end-sequence",
+  "observed_tree_commit": "50b8d926b8c8b29fa2375eda40b0c6cfa48325f2",
+  "canonical_pilot_root": "Files/Research_Papers/benchmark/pilot_v0_1/",
+  "inventory_method": {
+    "method": "Read-only recursive Git tree inspection",
+    "finding": "Only P01, P02, and P05 appear as case-directory path components in the inspected branch tree.",
+    "interpretation": "A missing canonical case directory is recorded as absent from this inspected tree, not as a claim that no local-only work exists.",
+    "no_mutations": "No RTL, formal evidence, witnesses, run manifests, or source case definitions were changed."
+  },
+  "scope_classification": {
+    "source": "docs/project-sequence/TASK_T01_T31_CROSSWALK.md and docs/project-sequence/STAGE_REGISTER.md",
+    "basis": "Reported Amendment 05 scope recorded in the project crosswalk/stage register; the signed approved master plan text was not located in the published tree.",
+    "reported_core_cases": [
+      "P02",
+      "P05",
+      "P06",
+      "P08",
+      "P03",
+      "P04"
+    ],
+    "reported_conditional_extensions": [
+      "P07",
+      "P09",
+      "P10",
+      "P11",
+      "P12"
+    ],
+    "reported_outside_core_and_extensions": [
+      "P01"
+    ],
+    "status": "reported_scope_not_independently_verified_against_signed_master_plan"
+  },
+  "cases": [
+    {
+      "id": "P01",
+      "role": "deterministic/unambiguous control",
+      "included_in_c_scope": false,
+      "canonical_directory_present": true,
+      "observed_evidence": "requirement, interpretation, specification, reference RTL, deliberately wrong negative-control RTL, shared property, harnesses, SBY configurations, runner, accepted archive record, validator, tests, manifest",
+      "readiness": "formal evidence and package-integrity validation are recorded",
+      "remaining_gate": "Golden Template remains NOT FROZEN; independent certification not established; D2 and D14 remain pending",
+      "references": [
+        "Files/Research_Papers/benchmark/pilot_v0_1/P01/README.md",
+        "Files/Research_Papers/benchmark/pilot_v0_1/P01/p01_package_manifest_v1.json",
+        "docs/project-state/B6_P01_VALIDATION_EVIDENCE_RECORD.md"
+      ]
+    },
+    {
+      "id": "P02",
+      "role": "one-bit register with synchronous active-high reset",
+      "reported_scope_group": "core",
+      "canonical_directory_present": true,
+      "requirement_interpretation_specification": true,
+      "reference_and_negative_rtl": true,
+      "formal_runner_and_properties": true,
+      "retained_run_directories": [
+        "evidence/run-01",
+        "evidence/run-02"
+      ],
+      "formal_status": "reported/retained technical verification passes for the documented Boolean stable-edge digital environment; wrong reset-polarity and asynchronous-reset controls fail with counterexamples",
+      "human_annotation_count": 0,
+      "certification_status": "not an ambiguity candidate; certified_ambiguous=false in metadata",
+      "closure_status": "technical verification evidence present; T06 formal/provenance closure remains IN PROGRESS in project sequence",
+      "publication_boundary": "The branch contains the P02 sources and evidence. Repository records differ on PR #6/main publication state; this inventory does not reconcile or promote a merge/approval claim.",
+      "references": [
+        "Files/Research_Papers/benchmark/pilot_v0_1/P02/P02_REQUIREMENT.md",
+        "Files/Research_Papers/benchmark/pilot_v0_1/P02/P02_INTERPRETATION.md",
+        "Files/Research_Papers/benchmark/pilot_v0_1/P02/P02_SPECIFICATION.md",
+        "Files/Research_Papers/benchmark/pilot_v0_1/P02/P02_RESULTS.md",
+        "Files/Research_Papers/benchmark/pilot_v0_1/P02/metadata.json",
+        "docs/project-state/P02_READINESS.md",
+        "docs/project-state/T06_P02_CLOSURE_REVIEW_v1.md"
+      ]
+    },
+    {
+      "id": "P03",
+      "role": "reported core case; exact design/title not reconstructed in this inventory",
+      "reported_scope_group": "core",
+      "canonical_directory_present": false,
+      "path_component_detected_in_inspected_repository_tree": false,
+      "readiness": "not evidenced in the canonical pilot tree inspected at the snapshot",
+      "next_gate": "locate or author the approved requirement/case definition; preserve scope and interpretation provenance; create no RTL/formal result until the applicable case sequence and approval gates permit it"
+    },
+    {
+      "id": "P04",
+      "role": "reported core case; exact design/title not reconstructed in this inventory",
+      "reported_scope_group": "core",
+      "canonical_directory_present": false,
+      "path_component_detected_in_inspected_repository_tree": false,
+      "readiness": "not evidenced in the canonical pilot tree inspected at the snapshot",
+      "next_gate": "locate or author the approved requirement/case definition; preserve scope and interpretation provenance; create no RTL/formal result until the applicable case sequence and approval gates permit it"
+    },
+    {
+      "id": "P05",
+      "role": "candidate ambiguity case; competing response-latency interpretations",
+      "reported_scope_group": "core",
+      "canonical_directory_present": true,
+      "requirement_interpretations_specifications": true,
+      "reference_rtl_and_formal_sources": true,
+      "retained_run_directories": [
+        "evidence/run-01",
+        "evidence/run-02"
+      ],
+      "formal_status": "run-02 records A/B conformance PASS under the tested model and equality check FAIL with a legal post-reset distinguishing trace",
+      "human_annotation_count": 0,
+      "plausibility_status": "PENDING",
+      "ambiguity_status": "UNRESOLVED; ambiguity certification NOT CLAIMED",
+      "llm_evaluation_status": "not performed / not authorized as a certified ambiguity case",
+      "next_gate": "freeze the exact review texts and hashes; collect five independent blinded reviews under the existing protocol; apply the recorded threshold and preserve raw responses; do not certify before all gates pass",
+      "references": [
+        "Files/Research_Papers/benchmark/pilot_v0_1/P05/P05_REQUIREMENT.md",
+        "Files/Research_Papers/benchmark/pilot_v0_1/P05/P05_INTERPRETATIONS.md",
+        "Files/Research_Papers/benchmark/pilot_v0_1/P05/P05_SPECIFICATIONS.md",
+        "Files/Research_Papers/benchmark/pilot_v0_1/P05/P05_RESULTS.md",
+        "Files/Research_Papers/benchmark/pilot_v0_1/P05/metadata.json",
+        "Files/Research_Papers/benchmark/pilot_v0_1/P05/annotation/v1/README.md",
+        "docs/project-state/P05_PLAUSIBILITY_STATUS.md"
+      ]
+    },
+    {
+      "id": "P06",
+      "role": "reported core case; exact design/title not reconstructed in this inventory",
+      "reported_scope_group": "core",
+      "canonical_directory_present": false,
+      "path_component_detected_in_inspected_repository_tree": false,
+      "readiness": "not evidenced in the canonical pilot tree inspected at the snapshot",
+      "next_gate": "prepare the case only under the applicable approved case template and prior-case authorization rule"
+    },
+    {
+      "id": "P07",
+      "role": "conditional extension; exact design/title not reconstructed in this inventory",
+      "reported_scope_group": "conditional_extension",
+      "canonical_directory_present": false,
+      "path_component_detected_in_inspected_repository_tree": false,
+      "readiness": "not evidenced in the canonical pilot tree inspected at the snapshot",
+      "next_gate": "require explicit case eligibility/author approval before construction"
+    },
+    {
+      "id": "P08",
+      "role": "reported core case; exact design/title not reconstructed in this inventory",
+      "reported_scope_group": "core",
+      "canonical_directory_present": false,
+      "path_component_detected_in_inspected_repository_tree": false,
+      "readiness": "not evidenced in the canonical pilot tree inspected at the snapshot",
+      "next_gate": "prepare the case only under the applicable approved case template and prior-case authorization rule"
+    },
+    {
+      "id": "P09",
+      "role": "conditional extension; exact design/title not reconstructed in this inventory",
+      "reported_scope_group": "conditional_extension",
+      "canonical_directory_present": false,
+      "path_component_detected_in_inspected_repository_tree": false,
+      "readiness": "not evidenced in the canonical pilot tree inspected at the snapshot",
+      "next_gate": "require explicit case eligibility/author approval before construction"
+    },
+    {
+      "id": "P10",
+      "role": "conditional extension; exact design/title not reconstructed in this inventory",
+      "reported_scope_group": "conditional_extension",
+      "canonical_directory_present": false,
+      "path_component_detected_in_inspected_repository_tree": false,
+      "readiness": "not evidenced in the canonical pilot tree inspected at the snapshot",
+      "next_gate": "require explicit case eligibility/author approval before construction"
+    },
+    {
+      "id": "P11",
+      "role": "conditional extension; exact design/title not reconstructed in this inventory",
+      "reported_scope_group": "conditional_extension",
+      "canonical_directory_present": false,
+      "path_component_detected_in_inspected_repository_tree": false,
+      "readiness": "not evidenced in the canonical pilot tree inspected at the snapshot",
+      "next_gate": "require explicit case eligibility/author approval before construction"
+    },
+    {
+      "id": "P12",
+      "role": "conditional extension; exact design/title not reconstructed in this inventory",
+      "reported_scope_group": "conditional_extension",
+      "canonical_directory_present": false,
+      "path_component_detected_in_inspected_repository_tree": false,
+      "readiness": "not evidenced in the canonical pilot tree inspected at the snapshot",
+      "next_gate": "require explicit case eligibility/author approval before construction"
+    }
+  ],
+  "unresolved_repository_state": {
+    "t05_t31_task_mapping": "The exact approved 56-task A-H worklist wording was not located in this published snapshot; C1 is recorded as the inventory/readiness baseline execution, not a reconstruction of the absent authoritative task wording.",
+    "pr_publication": "PR #6 / main publication state is reported inconsistently by repository documents; not resolved here.",
+    "approvals": "No new approval, effective amendment, task closure, or case certification is inferred."
+  },
+  "completion_boundary": {
+    "completed": "Read-only inventory of P01-P12 directory presence, source/evidence paths, observed technical status, and missing canonical case paths.",
+    "not_done": [
+      "case RTL authoring for missing cases",
+      "formal runs for missing cases",
+      "human annotation",
+      "ambiguity certification",
+      "benchmark-wide freeze",
+      "LLM evaluation"
+    ],
+    "protected_assets_unchanged": true
+  }
+}
