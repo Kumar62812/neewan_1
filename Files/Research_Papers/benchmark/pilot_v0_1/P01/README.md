@@ -62,7 +62,7 @@ A case-level metadata file is not added here because the A3 decisions on canonic
 - B2 guide: [P01 package validator](../../../../../docs/project-state/B2_P01_PACKAGE_VALIDATOR.md)
 - B3 guide: [validator regression tests](../../../../../docs/project-state/B3_P01_VALIDATOR_TESTS.md)
 
-The validator checks source fingerprints, the mux contract, reference/negative RTL roles, shared property use, SBY configuration intent, and accepted archive SHA-256. Regression tests cover an unchanged baseline fixture and two deliberate mutations. Neither artifact independently reruns the archived formal job or certifies/freezes P01.
+The validator checks the pinned versioned manifest, source fingerprints, the mux contract, reference/negative RTL roles, shared property use, SBY configuration intent, and accepted archive SHA-256. Regression tests cover baseline success plus deliberate source, archive, and manifest mutations. The validator and all four tests passed in [GitHub Actions run 40752580869](https://github.com/Kumar62812/neewan_1/actions/runs/40752580869). Neither artifact independently reruns the archived formal job or certifies/freezes P01.
 
 - Automated CI gate: [B4 validation workflow guide](../../../../../docs/project-state/B4_P01_CI_VALIDATION_GATE.md).
 
@@ -72,4 +72,8 @@ The validator checks source fingerprints, the mux contract, reference/negative R
 - [B5 manifest and provenance guide](../../../../../docs/project-state/B5_P01_VERSIONED_MANIFEST.md)
 
 The manifest is a pinned baseline inventory, not template-freeze approval. The validator checks its pinned Git blob before evaluating source fingerprints and archive checksum.
+
+## Latest package-validation result
+
+**PASS:** [GitHub Actions run 40752580869](https://github.com/Kumar62812/neewan_1/actions/runs/40752580869). The read-only validator and four regression tests succeeded, and the JSON validation report was retained as a workflow artifact. The run is structural/integrity validation only; no formal RTL tools were invoked.
 
