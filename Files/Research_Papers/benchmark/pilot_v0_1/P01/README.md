@@ -64,3 +64,5 @@ A case-level metadata file is not added here because the A3 decisions on canonic
 
 The validator checks source fingerprints, the mux contract, reference/negative RTL roles, shared property use, SBY configuration intent, and accepted archive SHA-256. Regression tests cover an unchanged baseline fixture and two deliberate mutations. Neither artifact independently reruns the archived formal job or certifies/freezes P01.
 
+- Automated CI gate: [B4 validation workflow guide](../../../../../docs/project-state/B4_P01_CI_VALIDATION_GATE.md).
+
