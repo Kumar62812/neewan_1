@@ -1,8 +1,9 @@
 # T06 — P02 formal/provenance closure: closure review v1
 
 **Status: DRAFT FOR AUTHOR APPROVAL. Not DONE until the author approves this named version.**
-Prepared 2026-10-28 after T05 was approved ([approval record](T05_APPROVAL_RECORD.md)). This review is
-read-only over branch `research/end-to-end-sequence` at commit `109336c88433be1c3f5836bfde351b5e0c841b0c`.
+Prepared 2026-10-28 after T05 was approved ([approval record](../project-sequence/approvals/T05_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-28.md)). This review is
+read-only over branch `research/end-to-end-sequence` at commit `109336c88433be1c3f5836bfde351b5e0c841b0c`;
+the P02 tree is byte-identical through branch head `762c68df4217d8c6cbf0c93ce4447d1bc136ba88`.
 No P02 source, evidence or run file was modified. Reviewer: Claude (automated technical review). This is not
 a human review or a certification decision.
 
@@ -69,7 +70,7 @@ LLM-performance result. P02 was never a SymbiYosys run; there is no `.sby` file.
 
 ## 6. Case role and package version
 
-Per T05 decision O4, **P02 is the deterministic control in the core benchmark set**. Its metadata already
+Per T05 decision O4 ([approval record](../project-sequence/approvals/T05_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-28.md)), **P02 is the deterministic control in the core benchmark set**. Its metadata already
 agrees: `primary_ambiguity_dimension: none`, `certified_ambiguous: false`, rejection reason
 "Not an ambiguity candidate". P02 therefore needs no S1/S2 pair, miter or human plausibility review, and
 its formal closure is final at technical level. In LLM experiments it serves as the control: a generated
