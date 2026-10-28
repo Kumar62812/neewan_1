@@ -136,3 +136,10 @@ P05 ambiguity certification: NOT CLAIMED
 - This task inspected source/configuration and recorded formal results but did not execute a new formal run or independently reproduce the archived run. Existing P01 evidence and frozen sources were not edited.
 - P01 remains **NOT FROZEN**; independent certification is not established, and D2/D14 metadata decisions remain pending. No freeze tag or certification claim was created.
 
+## 2026-10-29 update — B2 P01 package validation
+
+- Added read-only validator \`Files/Research_Papers/benchmark/pilot_v0_1/P01/validate_p01_package.py\` and its usage/interpretation guide at \`docs/project-state/B2_P01_PACKAGE_VALIDATOR.md\`.
+- The validator checks the B1-baseline Git blob IDs for 12 package files, contract consistency, correct/negative RTL roles, shared property use, expected SBY configuration outcomes, and the registered SHA-256 of the accepted archive.
+- Corrected relative links in the P01 README.
+- No formal tools were executed by this connected GitHub operation. Runtime validator output remains pending execution on a complete local checkout. P01 remains NOT FROZEN; this task does not grant certification or authorize a freeze tag.
+
