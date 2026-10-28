@@ -63,6 +63,17 @@ The P01 provenance and execution history are retained in the canonical P01 execu
 - T06 draft: broken link to a non-existent `T05_APPROVAL_RECORD.md` replaced by the T05 approval record path.
 - No source plan, protocol, P02 or P05 file was changed.
 
+## 2026-10-28 update — A3 decision matrix
+
+- A3-v1.0 (`docs/project-state/A3_PROTOCOL_DECISION_MATRIX_v1.0.md`) sequences the 16 A2 inconsistencies by
+  gate (T08: D1, D2, D9, D14; Gate 3: D7, D11, D12; Gate 4: D3, D4, D5, D10, D13; documentation: D6, D8, D15, D16).
+  All dispositions PENDING; author decision form at `docs/project-state/A3_AUTHOR_DECISION_FORM.md`.
+- Current-state findings recorded: the PR #7 evaluator emits none of INVALID / INCOMPLETE / INCONCLUSIVE /
+  MISINTERPRET / A / B / AB / M and treats any non-zero formal exit as `fail`; the PR #9 pilot used
+  per-interpretation contract conformance rather than equivalence.
+- Amendment template added at `docs/amendments/AMENDMENT_TEMPLATE.md`. No amendment has been made.
+- No source plan, protocol, RTL, evidence or run file was changed.
+
 ## Approval-record boundary
 
 The project record reports professor approval to proceed with P02. The exact approval date, approval mode, and verbatim professor wording were not supplied, so those fields are not invented. This project-state entry does not constitute an independent certification signature.
