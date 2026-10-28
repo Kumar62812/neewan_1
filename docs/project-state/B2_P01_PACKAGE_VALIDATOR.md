@@ -41,3 +41,7 @@ The script prints a JSON report and exits with code 0 when checks pass, 1 when c
 
 The isolated-fixture regression suite is documented in [B3](B3_P01_VALIDATOR_TESTS.md) and implemented at [test_validate_p01_package.py](../../Files/Research_Papers/benchmark/pilot_v0_1/P01/tests/test_validate_p01_package.py). The suite is committed but was not executed by this connected GitHub operation. B2's runtime-execution checkbox therefore remains pending.
 
+## Baseline source of truth (B5)
+
+The baseline artifact paths and Git blob object IDs now live in the versioned JSON manifest at [P01 package manifest](../../Files/Research_Papers/benchmark/pilot_v0_1/P01/p01_package_manifest_v1.json). The validator checks that manifest against its pinned Git blob ID before using its listed fingerprints. Archive path and expected SHA-256 are read from that same manifest. A manifest edit therefore fails validation until its revision is deliberately reviewed and the validator pin is updated; do not change hashes just to silence a failure.
+
