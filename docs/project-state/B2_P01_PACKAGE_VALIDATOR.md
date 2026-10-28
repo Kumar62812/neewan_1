@@ -36,3 +36,8 @@ The script prints a JSON report and exits with code 0 when checks pass, 1 when c
 - [x] Checks cover baseline source inventory, contract consistency, shared formal property, expected positive/negative SBY configuration and accepted archive checksum.
 - [x] Validator explicitly reports that formal tools, independent certification and template freeze were not performed.
 - [ ] Runtime execution and JSON output from a complete checkout — not performed in this connected GitHub documentation session.
+
+## Regression tests (added in B3)
+
+The isolated-fixture regression suite is documented in [B3](B3_P01_VALIDATOR_TESTS.md) and implemented at [test_validate_p01_package.py](../../Files/Research_Papers/benchmark/pilot_v0_1/P01/tests/test_validate_p01_package.py). The suite is committed but was not executed by this connected GitHub operation. B2's runtime-execution checkbox therefore remains pending.
+
