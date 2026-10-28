@@ -54,3 +54,13 @@ Do not treat a new run of the current checkout as the accepted archived run. The
 This README is a navigation aid; it does not certify or freeze P01. The existing record still says **P01 Golden Template: NOT FROZEN**. The negative-control RTL is intentionally wrong and must not be presented as a plausible alternate interpretation. Formal inequivalence between the reference and negative control validates the checker; it does not prove ambiguity.
 
 A case-level metadata file is not added here because the A3 decisions on canonical certification/lifecycle vocabulary (D2) and case layout (D14), with draft AM-002/AM-004, remain pending. Do not retrofit frozen sources or existing case records to pre-empt those decisions.
+
+## Package validator and tests
+
+- Read-only validator: [validate_p01_package.py](validate_p01_package.py)
+- Regression tests: [test_validate_p01_package.py](tests/test_validate_p01_package.py)
+- B2 guide: [P01 package validator](../../../../docs/project-state/B2_P01_PACKAGE_VALIDATOR.md)
+- B3 guide: [validator regression tests](../../../../docs/project-state/B3_P01_VALIDATOR_TESTS.md)
+
+The validator checks source fingerprints, the mux contract, reference/negative RTL roles, shared property use, SBY configuration intent, and accepted archive SHA-256. Regression tests cover an unchanged baseline fixture and two deliberate mutations. Neither artifact independently reruns the archived formal job or certifies/freezes P01.
+
