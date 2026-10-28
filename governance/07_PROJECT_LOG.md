@@ -157,3 +157,11 @@ P05 ambiguity certification: NOT CLAIMED
 - Added \`docs/project-state/B4_P01_CI_VALIDATION_GATE.md\` and linked it from the P01 README.
 - The workflow definition is prepared, but no successful remote run is claimed until GitHub Actions reports a completed PASS. This gate is not formal verification, independent certification, or P01 template freeze.
 
+## 2026-10-29 update — B5 versioned P01 package manifest
+
+- Added the machine-readable baseline inventory at \`Files/Research_Papers/benchmark/pilot_v0_1/P01/p01_package_manifest_v1.json\`, listing 12 source artifacts by Git blob ID and the registered accepted-archive SHA-256.
+- Updated the B2 validator to load that manifest as its central source of baseline fingerprints and verify the manifest itself against a pinned Git blob ID.
+- Extended B3 regression tests with manifest-tampering detection; test mutations remain isolated to temporary fixtures.
+- Updated the B2/B3 guides and P01 README; added \`docs/project-state/B5_P01_VERSIONED_MANIFEST.md\`.
+- No formal run, independent reproduction, external review, certification, metadata migration, or P01 freeze was performed. Validator/test execution remains pending a complete checkout.
+
