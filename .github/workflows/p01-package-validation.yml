@@ -1,0 +1,57 @@
+name: P01 package validation
+
+on:
+  push:
+    branches:
+      - main
+      - research/end-to-end-sequence
+    paths:
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/P01/**'
+      - 'docs/project-state/B2_P01_PACKAGE_VALIDATOR.md'
+      - 'docs/project-state/B3_P01_VALIDATOR_TESTS.md'
+      - 'docs/project-state/B4_P01_CI_VALIDATION_GATE.md'
+      - '.github/workflows/p01-package-validation.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/P01/**'
+      - 'docs/project-state/B2_P01_PACKAGE_VALIDATOR.md'
+      - 'docs/project-state/B3_P01_VALIDATOR_TESTS.md'
+      - 'docs/project-state/B4_P01_CI_VALIDATION_GATE.md'
+      - '.github/workflows/p01-package-validation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-p01-package:
+    name: Validate P01 package and validator behavior
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run read-only package validator
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 Files/Research_Papers/benchmark/pilot_v0_1/P01/validate_p01_package.py | tee p01-validator-report.json
+
+      - name: Run validator regression tests
+        run: python3 Files/Research_Papers/benchmark/pilot_v0_1/P01/tests/test_validate_p01_package.py
+
+      - name: Upload validator report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p01-package-validation-report
+          path: p01-validator-report.json
+          if-no-files-found: warn
+          retention-days: 30
