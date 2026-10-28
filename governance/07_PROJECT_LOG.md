@@ -51,6 +51,18 @@ The P01 provenance and execution history are retained in the canonical P01 execu
 | Archive handling | Clean-run archives were retained locally but omitted from the PR after the connected GitHub review rejected uploading opaque archives; checksums are recorded in `docs/reproducibility/p02-p05-reproduction.md` |
 | P01 boundary | No P01 evidence or preservation metadata is changed by the publication PR |
 
+## 2026-10-28 update — A2 scope consolidation
+
+- A2-v1.0 (`docs/project-state/A2_RESEARCH_SCOPE_FREEZE_v1.0.md`) consolidates RQ1–RQ4, H1–H4, C1–C5,
+  certification rule, outcome classes, scope, metrics and claim boundaries, each cited to PLAN/RP/BS/FVP/AP
+  pinned by SHA-256. Author approval PENDING.
+- 16 source inconsistencies recorded, not resolved, in `docs/project-state/A2_SOURCE_INCONSISTENCY_REGISTER.md`;
+  D1, D2, D9 and D14 must be settled before T08.
+- `T05_P02_CLOSURE_REVIEW_v1.md` restored to its exact approved bytes (trailing newline;
+  SHA-256 `ccc6a7d637f424937ce349a207f02bd287b10de224e45ee64c5b971d9bd79a04`). Text unchanged.
+- T06 draft: broken link to a non-existent `T05_APPROVAL_RECORD.md` replaced by the T05 approval record path.
+- No source plan, protocol, P02 or P05 file was changed.
+
 ## Approval-record boundary
 
 The project record reports professor approval to proceed with P02. The exact approval date, approval mode, and verbatim professor wording were not supplied, so those fields are not invented. This project-state entry does not constitute an independent certification signature.
