@@ -1,6 +1,6 @@
 # B5 — Versioned P01 Package Manifest
 
-**Status:** Manifest committed; validator and four regression tests passed in [GitHub Actions run 40752580869](https://github.com/Kumar62812/neewan_1/actions/runs/40752580869). This is a source/evidence inventory, not a freeze or certification.
+**Status:** Manifest committed; validator and four regression tests passed in [GitHub Actions run 40752919435](https://github.com/Kumar62812/neewan_1/actions/runs/40752919435). This is a source/evidence inventory, not a freeze or certification.
 
 ## Manifest
 
@@ -16,7 +16,7 @@ It records:
 - the pinned base revision and retained path-only patch checksum;
 - explicit non-claims about certification, freeze and independent reproduction.
 
-The archive checksum is transcribed from the already-existing provenance register and committed checksum sidecar. This B5 connected GitHub session did not download the binary archive to independently recompute that digest. The B2 validator will recompute it from the local archive when run on a complete checkout.
+The expected archive checksum was transcribed from the existing provenance register and committed checksum sidecar. The B5 authoring step did not itself download the archive, but the B2 validator subsequently recomputed SHA-256 from the archive in the checked-out repository and passed in [GitHub Actions run 40752919435](https://github.com/Kumar62812/neewan_1/actions/runs/40752919435).
 
 ## Tamper-evident use
 
@@ -41,4 +41,4 @@ The B3 regression suite now includes a fourth case which alters a copy of the ma
 - [x] Make the validator use the manifest and pin the manifest's own Git blob ID.
 - [x] Add a regression test for manifest tampering.
 - [x] Update B2/B3 guides, P01 README and project log.
-- [x] Runtime validator and all four regression tests passed on GitHub-hosted runner in [run 40752580869](https://github.com/Kumar62812/neewan_1/actions/runs/40752580869).
+- [x] Runtime validator and all four regression tests passed on GitHub-hosted runner in [run 40752919435](https://github.com/Kumar62812/neewan_1/actions/runs/40752919435).
