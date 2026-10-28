@@ -33,3 +33,5 @@ The project author explicitly approved `T05_P02_CLOSURE_REVIEW_v1` at the pinned
 - O5: author-supplied SHA-256 for `P02_RESULTS.md`: `0b508df3c4569bf1ecdc026e70f47e89d1f002b533fc6dd5fe13bac00382bb6b`; for `metadata.json`: `6488b260226c633098d69c3e5dbbd87fd0cd5614ef44993df862d2abe35affde`.
 - T05 is DONE for the named review version. T06 is unblocked to begin, not declared complete.
 - The listed hashes are recorded as author-supplied and have not been independently rehashed in this documentation update.
+
+Approved review document (added 2026-10-28, bytes unchanged): [`T05_P02_CLOSURE_REVIEW_v1.md`](../project-state/T05_P02_CLOSURE_REVIEW_v1.md), SHA-256 `ccc6a7d637f424937ce349a207f02bd287b10de224e45ee64c5b971d9bd79a04`. T06 draft: [`T06_P02_CLOSURE_REVIEW_v1.md`](../project-state/T06_P02_CLOSURE_REVIEW_v1.md), author approval PENDING.
