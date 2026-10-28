@@ -8,8 +8,8 @@
 | T02 | Governance/methods freeze | User-reported APPROVED AS PARTIAL; supervisor decisions gated to T21 | 02 |
 | T03 | Research source review/audit | Author approval PENDING; external source audit open | 01/02 |
 | T04 | P01 control validation | Author-reported APPROVED on 2026-10-25; verified closure artifact in repo UNKNOWN | 03 |
-| T05 | P02 requirements/specification consistency and provenance | Author approval PENDING; task began as read-only | 04 |
-| T06 | P02 formal/provenance closure | BLOCKED pending accepted T5 closeout; existing technical evidence != T6 author-approved closure | 05 |
+| T05 | P02 requirements/specification consistency and provenance | **DONE — author approved `T05_P02_CLOSURE_REVIEW_v1` on 2026-10-28**; see [approval record](./approvals/T05_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-28.md) | 04 |
+| T06 | P02 formal/provenance closure | **UNBLOCKED / AUTHORIZED TO BEGIN** following T05 approval; T06 execution and closure remain pending | 05 |
 | T07 | UNKNOWN — approved master-plan title not located in published snapshot | UNKNOWN — do not invent or mark DONE | UNMAPPED |
 | T08 | Case template v1, runner and negative controls | Approved scope described in Amendment 06, but execution/closure unverified | 06 |
 | T09 | UNKNOWN — approved master-plan title not located in published snapshot | UNKNOWN — do not invent or mark DONE | UNMAPPED |
@@ -50,4 +50,4 @@
 
 A task may be marked DONE only on explicit **author approval of its named version** after verification. PARTIAL approval is not DONE. Simulated reviews do not satisfy external human reviews. No task status should be inferred from a model response, a branch or a roadmap.
 
-**Next known gate:** T5 author approval is pending; do not launch T6 as a closed/approved research task until the T5 closure block and evidence are verified and approved. Consult [conflicts](CONFLICTS_AND_NEXT_ACTION.md).
+**Next known gate:** T05 approval is recorded for `T05_P02_CLOSURE_REVIEW_v1` at review commit `109336c88433be1c3f5836bfde351b5e0c841b0c`. T06 is now authorized to begin; do not mark T06 complete until its own technical/provenance checks and closure record are satisfied. Consult [conflicts](CONFLICTS_AND_NEXT_ACTION.md) and the [approval record](./approvals/T05_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-28.md).
