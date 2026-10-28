@@ -167,3 +167,7 @@ P05 ambiguity certification: NOT CLAIMED
 - The updated validator and all four regression tests passed in [run 40752580869](https://github.com/Kumar62812/neewan_1/actions/runs/40752580869); the JSON validation report is retained as a run artifact.
 - No formal run, independent reproduction, external review, certification, metadata migration, or P01 freeze was performed.
 
+## B5 validation confirmation
+
+The current head \`09094366a11294a86975e3a1a5aedccd47cfcc71\` passed the P01 package-validation workflow: [run 40752919435](https://github.com/Kumar62812/neewan_1/actions/runs/40752919435). The manifest pin, all 12 source Git blob fingerprints, the accepted archive SHA-256, and all four validator regression tests passed. This is repository integrity/validator regression evidence only; no formal RTL run or P01 certification/freeze was performed.
+
