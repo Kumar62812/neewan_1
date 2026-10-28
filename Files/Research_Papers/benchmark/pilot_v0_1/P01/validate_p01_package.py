@@ -110,15 +110,20 @@ wrong_harness = read("formal/harness_wrong.sv")
 ref_sby = read("formal/reference.sby")
 wrong_sby = read("formal/wrong.sby")
 
+normalized_requirement = requirement.replace("`", "").lower()
+normalized_interpretation = interpretation.replace("`", "").lower()
+normalized_specification = specification.replace("`", "").lower()
 record("contract:requirement",
-       all(x in requirement for x in ["sel", "y shall equal", "a", "b", "combinational"]),
-       "requirement includes inputs, mux output selection and combinational scope")
+       all(x in normalized_requirement for x in ["sel", "y shall equal a", "y shall equal b", "combinational"]),
+       "requirement states both select cases and combinational scope")
 record("contract:interpretation",
-       all(x in interpretation for x in ["sel", "y equals", "a", "b", "purely combinational"]),
-       "interpretation documents the same Boolean mux behavior")
+       all(x in normalized_interpretation for x in ["sel", "y equals a", "y equals b", "purely combinational"]),
+       "interpretation documents both select cases and combinational scope")
 record("contract:specification",
-       "sel ? b : a" in specification and "don't care" in specification,
-       "behavioral specification defines the mux function and Boolean don't-care notation")
+       ("y = a, if sel = 0" in normalized_specification
+        and "y = b, if sel = 1" in normalized_specification
+        and "don't care" in normalized_specification),
+       "behavioral specification defines both select cases and Boolean don't-care notation")
 record("reference-rtl-selects-correct-input",
        "y = a;" in reference and "y = b;" in reference and "sel == 1'b0" in reference,
        "reference RTL expresses sel=0 -> a and sel=1 -> b")
