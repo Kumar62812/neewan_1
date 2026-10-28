@@ -171,3 +171,11 @@ P05 ambiguity certification: NOT CLAIMED
 
 The current head \`09094366a11294a86975e3a1a5aedccd47cfcc71\` passed the P01 package-validation workflow: [run 40752919435](https://github.com/Kumar62812/neewan_1/actions/runs/40752919435). The manifest pin, all 12 source Git blob fingerprints, the accepted archive SHA-256, and all four validator regression tests passed. This is repository integrity/validator regression evidence only; no formal RTL run or P01 certification/freeze was performed.
 
+## 2026-10-29 update — B6 P01 validation evidence provenance
+
+- Added \`docs/project-state/B6_P01_VALIDATION_EVIDENCE_RECORD.md\` and machine-readable \`docs/project-state/evidence/P01_CI_VALIDATION_RUN_40752919435.json\`.
+- Captured successful run 40752919435, tested commit \`09094366a11294a86975e3a1a5aedccd47cfcc71\`, the four tested source blob IDs, all 26 validator check results, all four regression-test results, and the GitHub artifact ID/digest/expiry.
+- Independently inspected the Actions job steps and logs; the validator reported 26 passed, 0 failed, and unittest reported 4 tests passed.
+- The artifact binary is subject to GitHub retention through 2026-11-27 19:17:19 UTC; the committed provenance record preserves run metadata, not an expired artifact's bytes.
+- No formal RTL tool run, independent reproduction of the archived formal execution, external certification or P01 Golden Template freeze was performed. P01 remains NOT FROZEN, and D2/D14 remain pending.
+
