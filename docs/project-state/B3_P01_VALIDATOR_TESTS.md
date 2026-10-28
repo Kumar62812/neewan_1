@@ -31,3 +31,8 @@ From a complete local repository checkout:
 - [x] Test mutations are confined to temporary fixture directories.
 - [x] Test purpose and command documented.
 - [ ] Actual suite execution and retained test log — pending execution on a complete checkout.
+
+## Manifest-integrity regression (B5)
+
+A fourth test mutates the manifest in its temporary fixture and requires the validator to flag the pinned manifest Git blob check. This confirms that the source of truth cannot be edited silently. The real package manifest and source files are not altered by the mutation test.
+
