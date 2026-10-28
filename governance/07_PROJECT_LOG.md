@@ -128,3 +128,11 @@ P05 ambiguity certification: NOT CLAIMED
 - The existing author approval record remains at `docs/project-sequence/approvals/T05_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-28.md`; no duplicate approval record was created.
 - Added `docs/project-state/T06_P02_CLOSURE_REVIEW_v1.md` as a draft read-only closure review. T06 remains IN PROGRESS; this update does not claim T06 completion.
 - No P02 source, RTL, formal run, log, witness or existing evidence manifest was modified. No new formal run was executed by this documentation update.
+
+## 2026-10-29 update — B1 P01 golden benchmark package audit
+
+- Added a root-level P01 README at `Files/Research_Papers/benchmark/pilot_v0_1/P01/README.md` with the Boolean mux contract, source index, accepted-evidence lineage, and explicit freeze boundary.
+- Added `docs/project-state/B1_P01_GOLDEN_BENCHMARK_READINESS.md` with the source inventory and Git blob IDs, cross-check of requirement/interpretation/specification/RTL/shared property, recorded formal outcomes, and readiness limits.
+- This task inspected source/configuration and recorded formal results but did not execute a new formal run or independently reproduce the archived run. Existing P01 evidence and frozen sources were not edited.
+- P01 remains **NOT FROZEN**; independent certification is not established, and D2/D14 metadata decisions remain pending. No freeze tag or certification claim was created.
+
