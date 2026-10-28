@@ -42,3 +42,8 @@ The B3 regression suite now includes a fourth case which alters a copy of the ma
 - [x] Add a regression test for manifest tampering.
 - [x] Update B2/B3 guides, P01 README and project log.
 - [x] Runtime validator and all four regression tests passed on GitHub-hosted runner in [run 40752919435](https://github.com/Kumar62812/neewan_1/actions/runs/40752919435).
+
+## B6 validation evidence
+
+The stable execution/provenance record is available at [B6 — P01 Validation Evidence and Provenance Record](B6_P01_VALIDATION_EVIDENCE_RECORD.md), with its machine-readable run record at [P01_CI_VALIDATION_RUN_40752919435.json](evidence/P01_CI_VALIDATION_RUN_40752919435.json). The recorded GitHub Actions run passed all 26 validator checks and four regression tests. It is a source-integrity/validator test result, not an RTL formal-tool run or certification.
+
