@@ -59,8 +59,8 @@ A case-level metadata file is not added here because the A3 decisions on canonic
 
 - Read-only validator: [validate_p01_package.py](validate_p01_package.py)
 - Regression tests: [test_validate_p01_package.py](tests/test_validate_p01_package.py)
-- B2 guide: [P01 package validator](../../../../docs/project-state/B2_P01_PACKAGE_VALIDATOR.md)
-- B3 guide: [validator regression tests](../../../../docs/project-state/B3_P01_VALIDATOR_TESTS.md)
+- B2 guide: [P01 package validator](../../../../../docs/project-state/B2_P01_PACKAGE_VALIDATOR.md)
+- B3 guide: [validator regression tests](../../../../../docs/project-state/B3_P01_VALIDATOR_TESTS.md)
 
 The validator checks source fingerprints, the mux contract, reference/negative RTL roles, shared property use, SBY configuration intent, and accepted archive SHA-256. Regression tests cover an unchanged baseline fixture and two deliberate mutations. Neither artifact independently reruns the archived formal job or certifies/freezes P01.
 
