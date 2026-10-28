@@ -111,5 +111,36 @@
     "No independent certification, ambiguity determination, or author-approved template freeze is established.",
     "P01 Golden Template remains NOT FROZEN; D2 and D14 remain pending.",
     "The archive checksum was recomputed by the validator from the archive present in the checked-out repository and matched the manifest's registered expected SHA-256."
-  ]
+  ],
+  "followup_validation_run": {
+    "purpose": "Reconfirm the P01 validation workflow after adding B6 links to the P01 README and publishing the evidence index.",
+    "workflow_id": 399799608,
+    "run_id": 40765501022,
+    "run_number": 14,
+    "branch": "research/end-to-end-sequence",
+    "tested_commit": "92f8cf8323a7457325c2d5016c798783aa060171",
+    "event": "push",
+    "created_at_utc": "2026-10-28T20:41:21Z",
+    "conclusion": "success",
+    "url": "https://github.com/Kumar62812/neewan_1/actions/runs/40765501022",
+    "validator_result": {
+      "check_count": 26,
+      "passed": 26,
+      "failed": 0
+    },
+    "regression_tests": {
+      "tests_run": 4,
+      "passed": 4,
+      "failed": 0,
+      "unittest_duration_seconds": 0.144
+    },
+    "workflow_artifact": {
+      "artifact_id": 12849069246,
+      "name": "p01-package-validation-report",
+      "zip_digest": "sha256:9c7226b12db9b1522b60c3a920a4d51f331b6282888dce02b0c7c13482d32c95",
+      "download_url": "https://github.com/Kumar62812/neewan_1/actions/runs/40765501022/artifacts/12849069246",
+      "expires_at_utc": "2026-11-27T20:41:27Z"
+    },
+    "interpretation": "This subsequent run validates the P01 package code and regression suite on the branch commit that included the B6 README links. The B6 JSON provenance file was later updated in a documentation-only commit and is not itself included in the validator's 12-file source baseline."
+  }
 }
