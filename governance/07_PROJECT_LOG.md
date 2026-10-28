@@ -82,6 +82,12 @@ The P01 provenance and execution history are retained in the canonical P01 execu
 - No frozen plan/protocol, existing case metadata, RTL, formal evidence, logs, witnesses or evidence manifests were modified.
 - AM-003 describes the proposed P01 gate-deviation handling, but does not itself authorize T08.
 
+## 2026-10-29 update — A5 reconciliation
+
+- Added `docs/project-state/A5_A1_A4_CONSISTENCY_AND_GATE_READINESS.md` to cross-check the A1–A4 records and state their dependency readiness.
+- A5 is complete as a documentation consistency check; D1, D2, D9 and D14 remain pending, and no T08 authorization is inferred.
+- No frozen source, P01/P02/P05 metadata, RTL, formal evidence or evidence manifest was modified.
+
 ## Approval-record boundary
 
 The project record reports professor approval to proceed with P02. The exact approval date, approval mode, and verbatim professor wording were not supplied, so those fields are not invented. This project-state entry does not constitute an independent certification signature.
