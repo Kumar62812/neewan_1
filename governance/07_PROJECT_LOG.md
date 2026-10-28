@@ -74,6 +74,14 @@ The P01 provenance and execution history are retained in the canonical P01 execu
 - Amendment template added at `docs/amendments/AMENDMENT_TEMPLATE.md`. No amendment has been made.
 - No source plan, protocol, RTL, evidence or run file was changed.
 
+## 2026-10-29 update — A4 draft amendments
+
+- Added draft AM-001 through AM-004 under `docs/amendments/` for A3 decisions D1, D2, D9 and D14.
+- All four amendments remain drafts and are not effective. No author decision or approval is implied.
+- Each draft records its source hash baseline and discloses that P05 exploratory pilot outcomes were visible during preparation.
+- No frozen plan/protocol, existing case metadata, RTL, formal evidence, logs, witnesses or evidence manifests were modified.
+- AM-003 describes the proposed P01 gate-deviation handling, but does not itself authorize T08.
+
 ## Approval-record boundary
 
 The project record reports professor approval to proceed with P02. The exact approval date, approval mode, and verbatim professor wording were not supplied, so those fields are not invented. This project-state entry does not constitute an independent certification signature.
