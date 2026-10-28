@@ -66,3 +66,10 @@ The validator checks source fingerprints, the mux contract, reference/negative R
 
 - Automated CI gate: [B4 validation workflow guide](../../../../../docs/project-state/B4_P01_CI_VALIDATION_GATE.md).
 
+## Versioned manifest
+
+- [Machine-readable P01 package manifest](p01_package_manifest_v1.json)
+- [B5 manifest and provenance guide](../../../../../docs/project-state/B5_P01_VERSIONED_MANIFEST.md)
+
+The manifest is a pinned baseline inventory, not template-freeze approval. The validator checks its pinned Git blob before evaluating source fingerprints and archive checksum.
+
