@@ -51,6 +51,13 @@ The P01 provenance and execution history are retained in the canonical P01 execu
 | Archive handling | Clean-run archives were retained locally but omitted from the PR after the connected GitHub review rejected uploading opaque archives; checksums are recorded in `docs/reproducibility/p02-p05-reproduction.md` |
 | P01 boundary | No P01 evidence or preservation metadata is changed by the publication PR |
 
+## 2026-10-28 update — T05 review archived and T06 closure review drafted
+
+- Added `docs/project-state/T05_P02_CLOSURE_REVIEW_v1.md` using the exact content approved for `T05_P02_CLOSURE_REVIEW_v1`; SHA-256 `ccc6a7d637f424937ce349a207f02bd287b10de224e45ee64c5b971d9bd79a04`.
+- The existing author approval record remains at `docs/project-sequence/approvals/T05_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-28.md`; no duplicate approval record was created.
+- Added `docs/project-state/T06_P02_CLOSURE_REVIEW_v1.md` as a draft read-only closure review. T06 remains IN PROGRESS; this update does not claim T06 completion.
+- No P02 source, RTL, formal run, log, witness or existing evidence manifest was modified. No new formal run was executed by this documentation update.
+
 ## Approval-record boundary
 
 The project record reports professor approval to proceed with P02. The exact approval date, approval mode, and verbatim professor wording were not supplied, so those fields are not invented. This project-state entry does not constitute an independent certification signature.
