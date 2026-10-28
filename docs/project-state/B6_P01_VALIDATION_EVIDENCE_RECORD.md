@@ -63,3 +63,11 @@ P01 remains **NOT FROZEN**. Pending decisions D2 and D14 remain pending. The acc
 - [x] Record the uploaded artifact ID, ZIP digest, download link and expiry.
 - [x] Separate integrity-test claims from formal reproduction and certification claims.
 - [x] Add a machine-readable evidence record and project log entry.
+
+## 6. Follow-up CI confirmation
+
+After B6 was linked from the P01 README, GitHub Actions run [40765501022 — PASS](https://github.com/Kumar62812/neewan_1/actions/runs/40765501022) completed on commit \`92f8cf8323a7457325c2d5016c798783aa060171\`. It again reported **26/26 validator checks passed** and **4/4 regression tests passed**. Its report artifact is [available until 2026-11-27 20:41:27 UTC](https://github.com/Kumar62812/neewan_1/actions/runs/40765501022/artifacts/12849069246).
+
+This follow-up checks the P01 package validator and regression suite on the branch commit containing the README links. The B6 JSON provenance file itself is a documentation record and is not one of the 12 source artifacts fingerprinted by the P01 manifest.
+
+
