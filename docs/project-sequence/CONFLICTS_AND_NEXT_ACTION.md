@@ -4,7 +4,7 @@
 
 | Severity | Issue | Why it matters | Next permitted action |
 |---|---|---|---|
-| OPEN / T06 GATE | T06 P02 technical/formal and provenance closure remains to be executed after T05 approval | T05 author approval now closes the named consistency-review gate; existing run-02 evidence does not itself complete T06 | Execute only the authorized T06 scope; preserve run-02 hashes and record any new verification separately, including `clk2fflogic + yosys-smtbmc`, reset may change while clk low, and `equivalent by content, not commit identity` where supported |
+| OPEN / T06 GATE | T06 P02 technical/formal and provenance closure remains in progress; see [closure review draft](../project-state/T06_P02_CLOSURE_REVIEW_v1.md) | T05 author approval closes the named consistency-review gate; the existing run-02 evidence and the draft review do not by themselves establish T06 completion | Complete the documented T06 checks and record dispositions for P1–P3; preserve run-02 hashes and keep any new verification under a separate provenance ID. Retain the declared `clk2fflogic + yosys-smtbmc` method and model assumptions |
 | BLOCKER | Authoritative T1–T31 master file and full decision registers D1–D7 not available as verified GitHub artifacts | Invented mappings would invalidate provenance | Recover exact plan/approved closure records from controlled source before marking tasks DONE |
 | HIGH | `main` README and compass contain earlier P02-not-implemented / P01-only state, despite published [P02 results](https://github.com/Kumar62812/neewan_1/blob/83046997dce165fd3b40c190f7dffa1e280b2c86/Files/Research_Papers/benchmark/pilot_v0_1/P02/P02_RESULTS.md) and [P05 results](https://github.com/Kumar62812/neewan_1/blob/83046997dce165fd3b40c190f7dffa1e280b2c86/Files/Research_Papers/benchmark/pilot_v0_1/P05/P05_RESULTS.md) | Historical status can be mistaken for present state | Use this newer navigation first; amend historical status only via separately documented non-destructive correction |
 | HIGH | P05 early formal distinction is not independent human plausibility | Cannot claim certified ambiguous case or certified model accuracy | Maintain author-approved candidate classification until post-technical human review/adjudication |
@@ -17,7 +17,7 @@
 
 ## Next authorised research checkpoint
 
-**T06 P02 technical/formal and provenance closure** is now the next authorized task, following explicit author approval of `T05_P02_CLOSURE_REVIEW_v1` on 2026-10-28. See the [approval record](./approvals/T05_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-28.md). Preserve existing run-02 hashes; verify the declared P02 model/provenance details (`clk2fflogic + yosys-smtbmc`, reset may change while clock is low, and `equivalent by content, not commit identity` where supported). Do not overwrite historical evidence or mark T06 complete before its own exit checks.
+**T06 P02 technical/formal and provenance closure** remains the next authorized task after the T05 approval. See the [approval record](./approvals/T05_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-28.md) and [T06 closure review draft](../project-state/T06_P02_CLOSURE_REVIEW_v1.md). Preserve run-02 hashes; retain the declared `clk2fflogic + yosys-smtbmc` method and assumptions; record any new run under a separate provenance ID. Do not mark T06 complete until its own exit checks are met.
 
 ## Branch navigation status
 
