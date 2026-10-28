@@ -33,10 +33,10 @@ The circuit is combinational: no clock, reset, storage, enable, or latency is pa
 | Pre-RTL review | `review/pre_rtl_review.md` |
 
 Cross-package governance evidence:
-- [Formal result summary](../../../../../../02_CERTIFICATION/P01_FORMAL_RESULTS.md)
-- [Traceability matrix](../../../../../../02_CERTIFICATION/P01_TRACEABILITY_MATRIX.md)
-- [Claims and limitations](../../../../../../02_CERTIFICATION/P01_CLAIMS_AND_LIMITATIONS.md)
-- [Accepted evidence provenance register](../../../../../../docs/provenance/p01-evidence-register.md)
+- [Formal result summary](../../../../../02_CERTIFICATION/P01_FORMAL_RESULTS.md)
+- [Traceability matrix](../../../../../02_CERTIFICATION/P01_TRACEABILITY_MATRIX.md)
+- [Claims and limitations](../../../../../02_CERTIFICATION/P01_CLAIMS_AND_LIMITATIONS.md)
+- [Accepted evidence provenance register](../../../../../docs/provenance/p01-evidence-register.md)
 
 ## Recorded formal result and provenance boundary
 
