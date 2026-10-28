@@ -163,5 +163,7 @@ P05 ambiguity certification: NOT CLAIMED
 - Updated the B2 validator to load that manifest as its central source of baseline fingerprints and verify the manifest itself against a pinned Git blob ID.
 - Extended B3 regression tests with manifest-tampering detection; test mutations remain isolated to temporary fixtures.
 - Updated the B2/B3 guides and P01 README; added \`docs/project-state/B5_P01_VERSIONED_MANIFEST.md\`.
-- No formal run, independent reproduction, external review, certification, metadata migration, or P01 freeze was performed. Validator/test execution remains pending a complete checkout.
+- GitHub Actions initially exposed overly strict wording checks in the validator; the checks were corrected to normalize Markdown backticks and test the specification's actual wording.
+- The updated validator and all four regression tests passed in [run 40752580869](https://github.com/Kumar62812/neewan_1/actions/runs/40752580869); the JSON validation report is retained as a run artifact.
+- No formal run, independent reproduction, external review, certification, metadata migration, or P01 freeze was performed.
 
