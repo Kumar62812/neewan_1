@@ -10,8 +10,8 @@ The distinction between **repository artifact**, **author-reported approval**, *
 | T2 governance | Author-reported 25 Oct | APPROVED AS PARTIAL; supervisor decisions carry to T21 |
 | T3 evidence audit | Author-reported 25 Oct | PENDING |
 | T4 P01 validation | Author-reported 25 Oct | APPROVED as reported; named closure file/version not verified in GitHub |
-| T5 P02 consistency | [Author approval record](./approvals/T05_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-28.md), pinned review commit `109336c88433be1c3f5836bfde351b5e0c841b0c` | **DONE — explicitly approved by author on 2026-10-28 for `T05_P02_CLOSURE_REVIEW_v1`** |
-| T6 P02 closure | T5 approved | **UNBLOCKED / AUTHORIZED TO BEGIN**; T6 completion not claimed |
+| T5 P02 consistency | [Closure review](../project-state/T05_P02_CLOSURE_REVIEW_v1.md) (SHA-256 `ccc6a7d637f424937ce349a207f02bd287b10de224e45ee64c5b971d9bd79a04`); [author approval record](./approvals/T05_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-28.md), pinned review commit `109336c88433be1c3f5836bfde351b5e0c841b0c` | **DONE — explicitly approved by author on 2026-10-28 for `T05_P02_CLOSURE_REVIEW_v1`** |
+| T6 P02 closure | T5 approved; [closure review draft](../project-state/T06_P02_CLOSURE_REVIEW_v1.md) | **IN PROGRESS — closure not yet complete**; authorized to proceed, not declared DONE |
 | P05 independent plausibility | [review procedure](https://github.com/Kumar62812/neewan_1/blob/83046997dce165fd3b40c190f7dffa1e280b2c86/Files/Research_Papers/benchmark/pilot_v0_1/P05/annotation/v1/README.md) | Published repo metadata says 0 human responses at snapshot; later off-repo reviews UNKNOWN |
 | P05 technical non-equivalence | [recorded formal result](https://github.com/Kumar62812/neewan_1/blob/83046997dce165fd3b40c190f7dffa1e280b2c86/Files/Research_Papers/benchmark/pilot_v0_1/P05/P05_RESULTS.md) | Reported technical result, not certification |
 | T1–T31 official plan | Not found in GitHub | Full task titles, approval signatures and hashes UNKNOWN; external source needed |
