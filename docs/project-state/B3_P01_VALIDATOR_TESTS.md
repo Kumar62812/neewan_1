@@ -1,6 +1,6 @@
 # B3 — P01 Validator Regression-Test Suite
 
-**Status:** Regression tests added. Execution requires the complete repository checkout; this connected GitHub session did not execute the suite.
+**Status:** Regression suite added and passed in [GitHub Actions run 40752580869](https://github.com/Kumar62812/neewan_1/actions/runs/40752580869). The test-step result and detailed output are available from that run.
 
 ## Covered tests
 
@@ -9,6 +9,7 @@ The standard-library unittest suite in P01's tests folder builds an isolated tem
 1. **Baseline success:** unchanged baseline source files and accepted archive should return exit code 0, emit valid JSON, and state that formal tools, certification and freeze were not performed.
 2. **Source-integrity failure:** mutating reference RTL should return exit code 1 and identify the changed Git blob.
 3. **Archive-integrity failure:** mutating one byte in the temporary copy of the accepted archive should return exit code 1 and flag the SHA-256 mismatch.
+4. **Manifest-integrity failure:** altering the manifest in a temporary fixture should return exit code 1 and flag the pinned manifest Git blob mismatch.
 
 Each test uses a separate temporary directory. It does not change source files in the real checkout, and it does not run Yosys, SymbiYosys or Z3.
 
@@ -30,7 +31,7 @@ From a complete local repository checkout:
 - [x] Regression suite added for expected-success and mutation-detection behavior.
 - [x] Test mutations are confined to temporary fixture directories.
 - [x] Test purpose and command documented.
-- [ ] Actual suite execution and retained test log — pending execution on a complete checkout.
+- [x] Suite executed successfully in [GitHub Actions run 40752580869](https://github.com/Kumar62812/neewan_1/actions/runs/40752580869); the job log is retained on GitHub.
 
 ## Manifest-integrity regression (B5)
 
