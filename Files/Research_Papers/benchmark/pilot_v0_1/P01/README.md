@@ -77,3 +77,10 @@ The manifest is a pinned baseline inventory, not template-freeze approval. The v
 
 **PASS:** [GitHub Actions run 40752815545](https://github.com/Kumar62812/neewan_1/actions/runs/40752815545). The read-only validator and four regression tests succeeded, and the JSON validation report was retained as a workflow artifact. The run is structural/integrity validation only; no formal RTL tools were invoked.
 
+## Validation provenance record
+
+- [B6 validation evidence and provenance](../../../../../docs/project-state/B6_P01_VALIDATION_EVIDENCE_RECORD.md)
+- [Machine-readable CI run record](../../../../../docs/project-state/evidence/P01_CI_VALIDATION_RUN_40752919435.json)
+
+The evidence records the exact successful CI run, tested commit, 26/26 validator checks, four regression tests, and workflow artifact expiry. This is not formal-run reproduction or template-freeze approval.
+
