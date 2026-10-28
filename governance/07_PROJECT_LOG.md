@@ -84,3 +84,10 @@ P05 formal distinction: DEMONSTRATED under the tested model
 P05 human plausibility: PENDING; zero responses
 P05 ambiguity certification: NOT CLAIMED
 ```
+
+## 2026-10-28 update — T05 review archived and T06 closure review drafted
+
+- Added `docs/project-state/T05_P02_CLOSURE_REVIEW_v1.md` using the exact content approved for `T05_P02_CLOSURE_REVIEW_v1`; SHA-256 `ccc6a7d637f424937ce349a207f02bd287b10de224e45ee64c5b971d9bd79a04`.
+- The existing author approval record remains at `docs/project-sequence/approvals/T05_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-28.md`; no duplicate approval record was created.
+- Added `docs/project-state/T06_P02_CLOSURE_REVIEW_v1.md` as a draft read-only closure review. T06 remains IN PROGRESS; this update does not claim T06 completion.
+- No P02 source, RTL, formal run, log, witness or existing evidence manifest was modified. No new formal run was executed by this documentation update.
