@@ -1,0 +1,148 @@
+[
+  {
+    "name": "yosys-version",
+    "command": [
+      "yowasp-yosys",
+      "-V"
+    ],
+    "cwd": "/Users/naveen_gugulothu/Documents/Codex/2026-10-10/referenced-chatgpt-conversation-this-is-an/outputs/neewan_1/Files/Research_Papers/benchmark/pilot_v0_1/P02/evidence/run-01",
+    "started_utc": "2026-10-09T23:21:32.898522+00:00",
+    "elapsed_seconds": 0.841,
+    "returncode": 0,
+    "status": null
+  },
+  {
+    "name": "solver-version",
+    "command": [
+      "z3",
+      "-version"
+    ],
+    "cwd": "/Users/naveen_gugulothu/Documents/Codex/2026-10-10/referenced-chatgpt-conversation-this-is-an/outputs/neewan_1/Files/Research_Papers/benchmark/pilot_v0_1/P02/evidence/run-01",
+    "started_utc": "2026-10-09T23:21:33.739528+00:00",
+    "elapsed_seconds": 0.453,
+    "returncode": 0,
+    "status": null
+  },
+  {
+    "name": "python-packages",
+    "command": [
+      "/Users/naveen_gugulothu/Documents/Codex/2026-10-10/referenced-chatgpt-conversation-this-is-an/work/formal-venv/bin/python",
+      "-m",
+      "pip",
+      "freeze"
+    ],
+    "cwd": "/Users/naveen_gugulothu/Documents/Codex/2026-10-10/referenced-chatgpt-conversation-this-is-an/outputs/neewan_1/Files/Research_Papers/benchmark/pilot_v0_1/P02/evidence/run-01",
+    "started_utc": "2026-10-09T23:21:34.192771+00:00",
+    "elapsed_seconds": 0.314,
+    "returncode": 0,
+    "status": null
+  },
+  {
+    "name": "reference-elaborate",
+    "command": [
+      "yowasp-yosys",
+      "-s",
+      "reference.ys"
+    ],
+    "cwd": "/Users/naveen_gugulothu/Documents/Codex/2026-10-10/referenced-chatgpt-conversation-this-is-an/outputs/neewan_1/Files/Research_Papers/benchmark/pilot_v0_1/P02/evidence/run-01",
+    "started_utc": "2026-10-09T23:21:34.507315+00:00",
+    "elapsed_seconds": 0.672,
+    "returncode": 0,
+    "status": null
+  },
+  {
+    "name": "reference-bmc",
+    "command": [
+      "yowasp-yosys-smtbmc",
+      "-s",
+      "z3",
+      "-t",
+      "12",
+      "--dump-vcd",
+      "reference-bmc-%.vcd",
+      "--dump-yw",
+      "reference-bmc-%.yw",
+      "reference.smt2"
+    ],
+    "cwd": "/Users/naveen_gugulothu/Documents/Codex/2026-10-10/referenced-chatgpt-conversation-this-is-an/outputs/neewan_1/Files/Research_Papers/benchmark/pilot_v0_1/P02/evidence/run-01",
+    "started_utc": "2026-10-09T23:21:35.179819+00:00",
+    "elapsed_seconds": 0.525,
+    "returncode": 0,
+    "status": "PASS"
+  },
+  {
+    "name": "reference-induction",
+    "command": [
+      "yowasp-yosys-smtbmc",
+      "-s",
+      "z3",
+      "-t",
+      "12",
+      "-i",
+      "--dump-vcd",
+      "reference-induction-%.vcd",
+      "--dump-yw",
+      "reference-induction-%.yw",
+      "reference.smt2"
+    ],
+    "cwd": "/Users/naveen_gugulothu/Documents/Codex/2026-10-10/referenced-chatgpt-conversation-this-is-an/outputs/neewan_1/Files/Research_Papers/benchmark/pilot_v0_1/P02/evidence/run-01",
+    "started_utc": "2026-10-09T23:21:35.705300+00:00",
+    "elapsed_seconds": 0.088,
+    "returncode": 0,
+    "status": "PASS"
+  },
+  {
+    "name": "reference-cover",
+    "command": [
+      "yowasp-yosys-smtbmc",
+      "-s",
+      "z3",
+      "-t",
+      "16",
+      "-c",
+      "--dump-vcd",
+      "reference-cover-%.vcd",
+      "--dump-yw",
+      "reference-cover-%.yw",
+      "reference.smt2"
+    ],
+    "cwd": "/Users/naveen_gugulothu/Documents/Codex/2026-10-10/referenced-chatgpt-conversation-this-is-an/outputs/neewan_1/Files/Research_Papers/benchmark/pilot_v0_1/P02/evidence/run-01",
+    "started_utc": "2026-10-09T23:21:35.793050+00:00",
+    "elapsed_seconds": 0.107,
+    "returncode": 0,
+    "status": "PASS"
+  },
+  {
+    "name": "wrong-elaborate",
+    "command": [
+      "yowasp-yosys",
+      "-s",
+      "wrong.ys"
+    ],
+    "cwd": "/Users/naveen_gugulothu/Documents/Codex/2026-10-10/referenced-chatgpt-conversation-this-is-an/outputs/neewan_1/Files/Research_Papers/benchmark/pilot_v0_1/P02/evidence/run-01",
+    "started_utc": "2026-10-09T23:21:35.899987+00:00",
+    "elapsed_seconds": 0.68,
+    "returncode": 0,
+    "status": null
+  },
+  {
+    "name": "wrong-bmc",
+    "command": [
+      "yowasp-yosys-smtbmc",
+      "-s",
+      "z3",
+      "-t",
+      "12",
+      "--dump-vcd",
+      "wrong-bmc-%.vcd",
+      "--dump-yw",
+      "wrong-bmc-%.yw",
+      "wrong.smt2"
+    ],
+    "cwd": "/Users/naveen_gugulothu/Documents/Codex/2026-10-10/referenced-chatgpt-conversation-this-is-an/outputs/neewan_1/Files/Research_Papers/benchmark/pilot_v0_1/P02/evidence/run-01",
+    "started_utc": "2026-10-09T23:21:36.580602+00:00",
+    "elapsed_seconds": 0.09,
+    "returncode": 1,
+    "status": "FAIL"
+  }
+]

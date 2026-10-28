@@ -1,0 +1,32 @@
+# Artifact and evidence register
+
+All source links are pinned to published commits. Listing an artifact means the path exists at that revision; it does **not** independently validate the recorded experiment or certify ambiguity. Frozen evidence is never overwritten in this index.
+
+| Package | Source (pinned) | Verified inventory / recorded claims | Scientific boundary |
+|---|---|---|---|
+| Research foundation | [project plan](https://github.com/Kumar62812/neewan_1/blob/83046997dce165fd3b40c190f7dffa1e280b2c86/Files/FORMAL_AMBIG_RTL_PLAN.md), [compass](https://github.com/Kumar62812/neewan_1/blob/83046997dce165fd3b40c190f7dffa1e280b2c86/Files/FORMAL_AMBIG_RTL_PROJECT_COMPASS.md) | Methodology, taxonomy, original pilot plan | Earlier snapshot, later approved amendments require reconciliation |
+| P01 source | [P01 source tree](https://github.com/Kumar62812/neewan_1/tree/83046997dce165fd3b40c190f7dffa1e280b2c86/Files/Research_Papers/benchmark/pilot_v0_1/P01) | Requirement, interpretation, behavioral spec, RTL, harness, properties and wrong control | P01 is control; independent full freeze not established |
+| P01 certified formal provenance | [evidence register](https://github.com/Kumar62812/neewan_1/blob/83046997dce165fd3b40c190f7dffa1e280b2c86/docs/provenance/p01-evidence-register.md), [certification folder](https://github.com/Kumar62812/neewan_1/tree/83046997dce165fd3b40c190f7dffa1e280b2c86/02_CERTIFICATION) | Pinned base + retained path-only SBY patch; separate archive | Never claim unmodified pinned base proved a PASS |
+| P02 requirements | [P02 requirement](https://github.com/Kumar62812/neewan_1/blob/83046997dce165fd3b40c190f7dffa1e280b2c86/Files/Research_Papers/benchmark/pilot_v0_1/P02/P02_REQUIREMENT.md), [interpretation](https://github.com/Kumar62812/neewan_1/blob/83046997dce165fd3b40c190f7dffa1e280b2c86/Files/Research_Papers/benchmark/pilot_v0_1/P02/P02_INTERPRETATION.md), [specification](https://github.com/Kumar62812/neewan_1/blob/83046997dce165fd3b40c190f7dffa1e280b2c86/Files/Research_Papers/benchmark/pilot_v0_1/P02/P02_SPECIFICATION.md) | Source contract, reset and clock semantics | T5 closeout/version traceability remains author-PENDING |
+| P02 run-02 | [P02 results](https://github.com/Kumar62812/neewan_1/blob/83046997dce165fd3b40c190f7dffa1e280b2c86/Files/Research_Papers/benchmark/pilot_v0_1/P02/P02_RESULTS.md), [run-02](https://github.com/Kumar62812/neewan_1/tree/83046997dce165fd3b40c190f7dffa1e280b2c86/Files/Research_Papers/benchmark/pilot_v0_1/P02/evidence/run-02) | Recorded PASS reference BMC+induction; 8 covers; wrong reset and wrong async negative controls produce expected FAIL witnesses | Yosys + Yosys-SMTBMC with clk2fflogic, not an SBY run; Boolean digital environment |
+| P05 requirement and interpretation | [P05 source tree](https://github.com/Kumar62812/neewan_1/tree/83046997dce165fd3b40c190f7dffa1e280b2c86/Files/Research_Papers/benchmark/pilot_v0_1/P05) | R, alternative interpretations/specifications and reference RTL | Author-approved ambiguity candidate only; not certified |
+| P05 formal | [P05 results](https://github.com/Kumar62812/neewan_1/blob/83046997dce165fd3b40c190f7dffa1e280b2c86/Files/Research_Papers/benchmark/pilot_v0_1/P05/P05_RESULTS.md), [run-02](https://github.com/Kumar62812/neewan_1/tree/83046997dce165fd3b40c190f7dffa1e280b2c86/Files/Research_Papers/benchmark/pilot_v0_1/P05/evidence/run-02) | Recorded A/B conformance, post-reset divergence and proof counterexample; unsuccessful run-01 retained | Formal distinguishability != independently plausible reading |
+| P01/P02/P05 reproduction | [reproduction instructions](https://github.com/Kumar62812/neewan_1/blob/83046997dce165fd3b40c190f7dffa1e280b2c86/docs/reproducibility/p02-p05-reproduction.md) | Public reproducibility records, hashes and reported environment | Historical source/clean reproduction provenance may still need audit |
+| P05 freeze candidate (draft) | [manifest](https://github.com/Kumar62812/neewan_1/blob/07a498a6a94a88cca213ce49445c92738f27384d/Files/Research_Papers/benchmark/pilot_v0_1/P05/P05_FREEZE_MANIFEST_v1.md) | Branch-only review/version manifest | Draft, not a final reviewed/certified freeze |
+| LLM evaluation runner (draft) | [runner](https://github.com/Kumar62812/neewan_1/blob/07a498a6a94a88cca213ce49445c92738f27384d/tools/llm_eval/run_pipeline.py), [plan](https://github.com/Kumar62812/neewan_1/blob/07a498a6a94a88cca213ce49445c92738f27384d/docs/experiments/llm_evaluation_plan_v0_1.md) | Intended pipeline and experimental controls | PR #7 draft; no production readiness or scored study implied |
+| Phase organization (draft) | [phase workboard](https://github.com/Kumar62812/neewan_1/blob/7c01376c84e83e42603c86451939a7a9676a1089/docs/project-state/PHASE_WORKBOARD.md), [audit](https://github.com/Kumar62812/neewan_1/blob/7c01376c84e83e42603c86451939a7a9676a1089/docs/audits/2026-10-16-repository-audit.md) | Phase inventory and source gap report | Audit as of 2026-10-16, not current task approval |
+| P05 Groq 2026-10-24 (draft) | [study README](https://github.com/Kumar62812/neewan_1/blob/31d31939599e6ec2b0b03a2e66645cb481d6de1b/studies/P05-20261024-groq-v2/README.md), [scope](https://github.com/Kumar62812/neewan_1/blob/31d31939599e6ec2b0b03a2e66645cb481d6de1b/studies/P05-20261024-groq-v2/SCOPE.md) | 3 retained RTL samples and six paired comparison outcomes; public evidence and paper subset | Exploratory; not certified accuracy, full local study, or full benchmark |
+
+## Known P01 hashes from published records (not rehashed this update)
+
+- Effective tested source is base revision `6d09dca0e6d8292d0b4cf13ff19b3ed06ec3de35` plus retained path-only SBY patch.
+- Historical patch SHA-256: `71bee3408a34460b8c84bc34838779ff6cea0316662f1d6f8d35742be7e7d5c4`.
+- Historical accepted archive SHA-256: `32811754b548108c74095f19362ddd18bb379aadd220bd8a7e4b2abee82c063b`.
+- These values are reproduced from earlier provenance records; not new integrity-check results.
+
+## Evidence validation still required
+
+1. Rehash actual accepted P01 archive and all P02/P05 formal inputs in a verified local checkout.
+2. Review the historical source-to-commit mapping for P02 as `equivalent by content, not commit identity` where supported by the 11 full SHA-256 values.
+3. Verify local-only full P05 Groq pilot vs public subset; do not assume the public branch contains exact private prompt bodies or entire study package.
+4. Reconcile local untracked files and backup contents; remote GitHub tree is not the local disk.

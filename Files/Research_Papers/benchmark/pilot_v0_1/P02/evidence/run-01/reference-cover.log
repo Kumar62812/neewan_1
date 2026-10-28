@@ -1,0 +1,39 @@
+##   0:00:00  Solver: z3
+##   0:00:00  Checking cover reachability in step 0..
+##   0:00:00  Reached cover statement in step 0 at harness: source/formal/properties/register_properties.sv:23.13-23.26 ($flatten/properties.$cover$source/formal/properties/register_properties.sv:23$89)
+##   0:00:00  Writing trace to VCD file: reference-cover-0.vcd
+##   0:00:00  Writing trace to Yosys witness file: reference-cover-0.yw
+##   0:00:00  Checking cover reachability in step 0..
+##   0:00:00  Reached cover statement in step 0 at harness: source/formal/properties/register_properties.sv:24.13-24.26 ($flatten/properties.$cover$source/formal/properties/register_properties.sv:24$91)
+##   0:00:00  Writing trace to VCD file: reference-cover-1.vcd
+##   0:00:00  Writing trace to Yosys witness file: reference-cover-1.yw
+##   0:00:00  Checking cover reachability in step 0..
+##   0:00:00  Checking cover reachability in step 1..
+##   0:00:00  Reached cover statement in step 1 at harness: source/formal/properties/register_properties.sv:13.17-13.57 ($flatten/properties.$cover$source/formal/properties/register_properties.sv:13$59)
+##   0:00:00  Writing trace to VCD file: reference-cover-2.vcd
+##   0:00:00  Writing trace to Yosys witness file: reference-cover-2.yw
+##   0:00:00  Checking cover reachability in step 1..
+##   0:00:00  Reached cover statement in step 1 at harness: source/formal/properties/register_properties.sv:12.17-12.58 ($flatten/properties.$cover$source/formal/properties/register_properties.sv:12$53)
+##   0:00:00  Writing trace to VCD file: reference-cover-3.vcd
+##   0:00:00  Writing trace to Yosys witness file: reference-cover-3.yw
+##   0:00:00  Checking cover reachability in step 1..
+##   0:00:00  Reached cover statement in step 1 at harness: source/formal/properties/register_properties.sv:11.17-11.56 ($flatten/properties.$cover$source/formal/properties/register_properties.sv:11$49)
+##   0:00:00  Writing trace to VCD file: reference-cover-4.vcd
+##   0:00:00  Writing trace to Yosys witness file: reference-cover-4.yw
+##   0:00:00  Checking cover reachability in step 1..
+##   0:00:00  Reached cover statement in step 1 at harness: source/formal/properties/register_properties.sv:19.17-19.70 ($flatten/properties.$cover$source/formal/properties/register_properties.sv:19$75)
+##   0:00:00  Writing trace to VCD file: reference-cover-5.vcd
+##   0:00:00  Writing trace to Yosys witness file: reference-cover-5.yw
+##   0:00:00  Checking cover reachability in step 1..
+##   0:00:00  Checking cover reachability in step 2..
+##   0:00:00  Reached cover statement in step 2 at harness: source/formal/properties/register_properties.sv:20.17-20.68 ($flatten/properties.$cover$source/formal/properties/register_properties.sv:20$83)
+##   0:00:00  Writing trace to VCD file: reference-cover-6.vcd
+##   0:00:00  Writing trace to Yosys witness file: reference-cover-6.yw
+##   0:00:00  Checking cover reachability in step 2..
+##   0:00:00  Checking cover reachability in step 3..
+##   0:00:00  Checking cover reachability in step 4..
+##   0:00:00  Checking cover reachability in step 5..
+##   0:00:00  Reached cover statement in step 5 at harness: source/formal/properties/register_properties.sv:16.17-16.76 ($flatten/properties.$cover$source/formal/properties/register_properties.sv:16$67)
+##   0:00:00  Writing trace to VCD file: reference-cover-7.vcd
+##   0:00:00  Writing trace to Yosys witness file: reference-cover-7.yw
+##   0:00:00  Status: PASSED

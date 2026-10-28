@@ -1,0 +1,547 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.63 (git sha1 70a11c6bf, ccache clang++ 18.1.3 -O3 -flto -flto) [yowasp/yosys at release-0.63]
+
+-- Executing script file `equality.ys' --
+
+1. Executing Verilog-2005 frontend: source/reference_rtl/responses.sv
+Parsing formal SystemVerilog input from `source/reference_rtl/responses.sv' to AST representation.
+Generating RTLIL representation for module `\response_a'.
+Generating RTLIL representation for module `\response_b'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: source/formal/b_properties.sv
+Parsing formal SystemVerilog input from `source/formal/b_properties.sv' to AST representation.
+Generating RTLIL representation for module `\p05_b_properties'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: source/formal/harness.sv
+Parsing formal SystemVerilog input from `source/formal/harness.sv' to AST representation.
+Generating RTLIL representation for module `\harness'.
+Successfully finished Verilog frontend.
+
+4. Executing PREP pass.
+
+4.1. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1.1. Analyzing design hierarchy..
+Top module:  \harness
+Used module:     \response_b
+Used module:         \p05_b_properties
+Used module:     \response_a
+
+4.1.2. Analyzing design hierarchy..
+Top module:  \harness
+Used module:     \response_b
+Used module:         \p05_b_properties
+Used module:     \response_a
+Removed 0 unused modules.
+Module harness directly or indirectly contains formal properties -> setting "keep" attribute.
+Module p05_b_properties directly or indirectly contains formal properties -> setting "keep" attribute.
+Module response_b directly or indirectly contains formal properties -> setting "keep" attribute.
+Mapping positional arguments of cell harness.b (response_b).
+Mapping positional arguments of cell harness.a (response_a).
+Mapping positional arguments of cell response_b.props_b (p05_b_properties).
+
+4.2. Executing PROC pass (convert processes to netlists).
+
+4.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$source/formal/harness.sv:10$47 in module harness.
+Marked 1 switch rules as full_case in process $proc$source/formal/b_properties.sv:5$10 in module p05_b_properties.
+Marked 1 switch rules as full_case in process $proc$source/reference_rtl/responses.sv:9$2 in module response_b.
+Marked 1 switch rules as full_case in process $proc$source/reference_rtl/responses.sv:2$1 in module response_a.
+Removed a total of 0 dead cases.
+
+4.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 5 redundant assignments.
+Promoted 28 assignments to connections.
+
+4.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\harness.$proc$source/formal/harness.sv:8$97'.
+  Set init value: \seen_reset = 1'0
+Found init rule in `\harness.$proc$source/formal/harness.sv:7$96'.
+  Set init value: \edge_seen = 1'0
+Found init rule in `\harness.$proc$source/formal/harness.sv:6$95'.
+  Set init value: \valid = 1'0
+Found init rule in `\p05_b_properties.$proc$source/formal/b_properties.sv:4$30'.
+  Set init value: \valid = 1'0
+
+4.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~11 debug messages>
+
+4.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\harness.$proc$source/formal/harness.sv:8$97'.
+Creating decoders for process `\harness.$proc$source/formal/harness.sv:7$96'.
+Creating decoders for process `\harness.$proc$source/formal/harness.sv:6$95'.
+Creating decoders for process `\harness.$proc$source/formal/harness.sv:10$47'.
+     1/12: $assert$source/formal/harness.sv:32$93_EN
+     2/12: $assert$source/formal/harness.sv:26$83_EN
+     3/12: $assert$source/formal/harness.sv:25$81_EN
+     4/12: $assert$source/formal/harness.sv:19$78_EN
+     5/12: $assert$source/formal/harness.sv:18$75_EN
+     6/12: $assume$source/formal/harness.sv:17$72_EN
+     7/12: $assume$source/formal/harness.sv:16$68_EN
+     8/12: $assume$source/formal/harness.sv:15$66_EN
+     9/12: $assume$source/formal/harness.sv:12$62_EN
+    10/12: $0\sampled_request[0:0]
+    11/12: $0\seen_reset[0:0]
+    12/12: $0\edge_seen[0:0]
+Creating decoders for process `\p05_b_properties.$proc$source/formal/b_properties.sv:4$30'.
+Creating decoders for process `\p05_b_properties.$proc$source/formal/b_properties.sv:5$10'.
+     1/4: $assert$source/formal/b_properties.sv:13$28_EN
+     2/4: $assert$source/formal/b_properties.sv:12$26_EN
+     3/4: $assert$source/formal/b_properties.sv:10$23_EN
+     4/4: $assert$source/formal/b_properties.sv:9$20_EN
+Creating decoders for process `\response_b.$proc$source/reference_rtl/responses.sv:9$2'.
+     1/2: $0\ack[0:0]
+     2/2: $0\pending[0:0]
+Creating decoders for process `\response_a.$proc$source/reference_rtl/responses.sv:2$1'.
+     1/1: $0\ack[0:0]
+
+4.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\harness.\valid' using process `\harness.$proc$source/formal/harness.sv:10$47'.
+  created $ff cell `$procdff$187' with global clock.
+Creating register for signal `\harness.\edge_seen' using process `\harness.$proc$source/formal/harness.sv:10$47'.
+  created $ff cell `$procdff$188' with global clock.
+Creating register for signal `\harness.\seen_reset' using process `\harness.$proc$source/formal/harness.sv:10$47'.
+  created $ff cell `$procdff$189' with global clock.
+Creating register for signal `\harness.\sampled_request' using process `\harness.$proc$source/formal/harness.sv:10$47'.
+  created $ff cell `$procdff$190' with global clock.
+Creating register for signal `\harness.$past$source/formal/harness.sv:14$31$0' using process `\harness.$proc$source/formal/harness.sv:10$47'.
+  created $ff cell `$procdff$191' with global clock.
+Creating register for signal `\harness.$past$source/formal/harness.sv:15$32$0' using process `\harness.$proc$source/formal/harness.sv:10$47'.
+  created $ff cell `$procdff$192' with global clock.
+Creating register for signal `\harness.$past$source/formal/harness.sv:16$33$0' using process `\harness.$proc$source/formal/harness.sv:10$47'.
+  created $ff cell `$procdff$193' with global clock.
+Creating register for signal `\harness.$past$source/formal/harness.sv:17$34$0' using process `\harness.$proc$source/formal/harness.sv:10$47'.
+  created $ff cell `$procdff$194' with global clock.
+Creating register for signal `\harness.$past$source/formal/harness.sv:17$35$0' using process `\harness.$proc$source/formal/harness.sv:10$47'.
+  created $ff cell `$procdff$195' with global clock.
+Creating register for signal `\harness.$past$source/formal/harness.sv:18$36$0' using process `\harness.$proc$source/formal/harness.sv:10$47'.
+  created $ff cell `$procdff$196' with global clock.
+Creating register for signal `\harness.$past$source/formal/harness.sv:18$37$0' using process `\harness.$proc$source/formal/harness.sv:10$47'.
+  created $ff cell `$procdff$197' with global clock.
+Creating register for signal `\harness.$past$source/formal/harness.sv:19$38$0' using process `\harness.$proc$source/formal/harness.sv:10$47'.
+  created $ff cell `$procdff$198' with global clock.
+Creating register for signal `\harness.$past$source/formal/harness.sv:21$39$0' using process `\harness.$proc$source/formal/harness.sv:10$47'.
+  created $ff cell `$procdff$199' with global clock.
+Creating register for signal `\harness.$past$source/formal/harness.sv:21$40$0' using process `\harness.$proc$source/formal/harness.sv:10$47'.
+  created $ff cell `$procdff$200' with global clock.
+Creating register for signal `\harness.$past$source/formal/harness.sv:23$41$0' using process `\harness.$proc$source/formal/harness.sv:10$47'.
+  created $ff cell `$procdff$201' with global clock.
+Creating register for signal `\harness.$past$source/formal/harness.sv:25$42$0' using process `\harness.$proc$source/formal/harness.sv:10$47'.
+  created $ff cell `$procdff$202' with global clock.
+Creating register for signal `\harness.$past$source/formal/harness.sv:26$43$0' using process `\harness.$proc$source/formal/harness.sv:10$47'.
+  created $ff cell `$procdff$203' with global clock.
+Creating register for signal `\p05_b_properties.\valid' using process `\p05_b_properties.$proc$source/formal/b_properties.sv:5$10'.
+  created $ff cell `$procdff$204' with global clock.
+Creating register for signal `\p05_b_properties.$past$source/formal/b_properties.sv:8$3$0' using process `\p05_b_properties.$proc$source/formal/b_properties.sv:5$10'.
+  created $ff cell `$procdff$205' with global clock.
+Creating register for signal `\p05_b_properties.$past$source/formal/b_properties.sv:9$4$0' using process `\p05_b_properties.$proc$source/formal/b_properties.sv:5$10'.
+  created $ff cell `$procdff$206' with global clock.
+Creating register for signal `\p05_b_properties.$past$source/formal/b_properties.sv:9$5$0' using process `\p05_b_properties.$proc$source/formal/b_properties.sv:5$10'.
+  created $ff cell `$procdff$207' with global clock.
+Creating register for signal `\p05_b_properties.$past$source/formal/b_properties.sv:10$6$0' using process `\p05_b_properties.$proc$source/formal/b_properties.sv:5$10'.
+  created $ff cell `$procdff$208' with global clock.
+Creating register for signal `\p05_b_properties.$past$source/formal/b_properties.sv:10$7$0' using process `\p05_b_properties.$proc$source/formal/b_properties.sv:5$10'.
+  created $ff cell `$procdff$209' with global clock.
+Creating register for signal `\p05_b_properties.$past$source/formal/b_properties.sv:12$8$0' using process `\p05_b_properties.$proc$source/formal/b_properties.sv:5$10'.
+  created $ff cell `$procdff$210' with global clock.
+Creating register for signal `\p05_b_properties.$past$source/formal/b_properties.sv:13$9$0' using process `\p05_b_properties.$proc$source/formal/b_properties.sv:5$10'.
+  created $ff cell `$procdff$211' with global clock.
+Creating register for signal `\response_b.\ack' using process `\response_b.$proc$source/reference_rtl/responses.sv:9$2'.
+  created $dff cell `$procdff$212' with positive edge clock.
+Creating register for signal `\response_b.\pending' using process `\response_b.$proc$source/reference_rtl/responses.sv:9$2'.
+  created $dff cell `$procdff$213' with positive edge clock.
+Creating register for signal `\response_a.\ack' using process `\response_a.$proc$source/reference_rtl/responses.sv:2$1'.
+  created $dff cell `$procdff$214' with positive edge clock.
+
+4.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `harness.$proc$source/formal/harness.sv:8$97'.
+Removing empty process `harness.$proc$source/formal/harness.sv:7$96'.
+Removing empty process `harness.$proc$source/formal/harness.sv:6$95'.
+Found and cleaned up 7 empty switches in `\harness.$proc$source/formal/harness.sv:10$47'.
+Removing empty process `harness.$proc$source/formal/harness.sv:10$47'.
+Removing empty process `p05_b_properties.$proc$source/formal/b_properties.sv:4$30'.
+Found and cleaned up 2 empty switches in `\p05_b_properties.$proc$source/formal/b_properties.sv:5$10'.
+Removing empty process `p05_b_properties.$proc$source/formal/b_properties.sv:5$10'.
+Found and cleaned up 1 empty switch in `\response_b.$proc$source/reference_rtl/responses.sv:9$2'.
+Removing empty process `response_b.$proc$source/reference_rtl/responses.sv:9$2'.
+Found and cleaned up 1 empty switch in `\response_a.$proc$source/reference_rtl/responses.sv:2$1'.
+Removing empty process `response_a.$proc$source/reference_rtl/responses.sv:2$1'.
+Cleaned up 11 empty switches.
+
+4.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module harness.
+<suppressed ~2 debug messages>
+Optimizing module p05_b_properties.
+Optimizing module response_b.
+Optimizing module response_a.
+
+4.3. Executing FUTURE pass.
+
+4.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module harness.
+Optimizing module p05_b_properties.
+Optimizing module response_b.
+Optimizing module response_a.
+
+4.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \harness..
+Finding unused cells or wires in module \p05_b_properties..
+Finding unused cells or wires in module \response_b..
+Finding unused cells or wires in module \response_a..
+Removed 1 unused cells and 87 unused wires.
+<suppressed ~5 debug messages>
+
+4.6. Executing CHECK pass (checking for obvious problems).
+Checking module harness...
+Checking module p05_b_properties...
+Checking module response_b...
+Checking module response_a...
+Found and reported 0 problems.
+
+4.7. Executing OPT pass (performing simple optimizations).
+
+4.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module harness.
+Optimizing module p05_b_properties.
+Optimizing module response_b.
+Optimizing module response_a.
+
+4.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\harness'.
+Computing hashes of 80 cells of `\harness'.
+Finding duplicate cells in `\harness'.
+Finding identical cells in module `\p05_b_properties'.
+Computing hashes of 28 cells of `\p05_b_properties'.
+Finding duplicate cells in `\p05_b_properties'.
+Finding identical cells in module `\response_b'.
+Computing hashes of 5 cells of `\response_b'.
+Finding duplicate cells in `\response_b'.
+Finding identical cells in module `\response_a'.
+Computing hashes of 2 cells of `\response_a'.
+Finding duplicate cells in `\response_a'.
+Removed a total of 0 cells.
+
+4.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \harness..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \p05_b_properties..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \response_b..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \response_a..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~62 debug messages>
+
+4.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \harness.
+  Optimizing cells in module \p05_b_properties.
+  Optimizing cells in module \response_b.
+  Optimizing cells in module \response_a.
+Performed a total of 0 changes.
+
+4.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\harness'.
+Computing hashes of 80 cells of `\harness'.
+Finding duplicate cells in `\harness'.
+Computing hashes of 77 cells of `\harness'.
+Finding duplicate cells in `\harness'.
+Computing hashes of 74 cells of `\harness'.
+Finding duplicate cells in `\harness'.
+<suppressed ~18 debug messages>
+Finding identical cells in module `\p05_b_properties'.
+Computing hashes of 28 cells of `\p05_b_properties'.
+Finding duplicate cells in `\p05_b_properties'.
+Computing hashes of 26 cells of `\p05_b_properties'.
+Finding duplicate cells in `\p05_b_properties'.
+Computing hashes of 24 cells of `\p05_b_properties'.
+Finding duplicate cells in `\p05_b_properties'.
+<suppressed ~12 debug messages>
+Finding identical cells in module `\response_b'.
+Computing hashes of 5 cells of `\response_b'.
+Finding duplicate cells in `\response_b'.
+Finding identical cells in module `\response_a'.
+Computing hashes of 2 cells of `\response_a'.
+Finding duplicate cells in `\response_a'.
+Removed a total of 10 cells.
+
+4.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \harness..
+Finding unused cells or wires in module \p05_b_properties..
+Finding unused cells or wires in module \response_b..
+Finding unused cells or wires in module \response_a..
+Removed 0 unused cells and 10 unused wires.
+<suppressed ~2 debug messages>
+
+4.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module harness.
+Optimizing module p05_b_properties.
+Optimizing module response_b.
+Optimizing module response_a.
+
+4.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \harness..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \p05_b_properties..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \response_b..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \response_a..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~47 debug messages>
+
+4.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \harness.
+  Optimizing cells in module \p05_b_properties.
+  Optimizing cells in module \response_b.
+  Optimizing cells in module \response_a.
+Performed a total of 0 changes.
+
+4.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\harness'.
+Computing hashes of 74 cells of `\harness'.
+Finding duplicate cells in `\harness'.
+Finding identical cells in module `\p05_b_properties'.
+Computing hashes of 24 cells of `\p05_b_properties'.
+Finding duplicate cells in `\p05_b_properties'.
+Finding identical cells in module `\response_b'.
+Computing hashes of 5 cells of `\response_b'.
+Finding duplicate cells in `\response_b'.
+Finding identical cells in module `\response_a'.
+Computing hashes of 2 cells of `\response_a'.
+Finding duplicate cells in `\response_a'.
+Removed a total of 0 cells.
+
+4.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \harness..
+Finding unused cells or wires in module \p05_b_properties..
+Finding unused cells or wires in module \response_b..
+Finding unused cells or wires in module \response_a..
+
+4.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module harness.
+Optimizing module p05_b_properties.
+Optimizing module response_b.
+Optimizing module response_a.
+
+4.7.14. Finished fast OPT passes. (There is nothing left to do.)
+
+4.8. Executing WREDUCE pass (reducing word size of cells).
+
+4.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \harness..
+Finding unused cells or wires in module \p05_b_properties..
+Finding unused cells or wires in module \response_b..
+Finding unused cells or wires in module \response_a..
+
+4.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.11. Executing OPT pass (performing simple optimizations).
+
+4.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module harness.
+Optimizing module p05_b_properties.
+Optimizing module response_b.
+Optimizing module response_a.
+
+4.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\harness'.
+Computing hashes of 74 cells of `\harness'.
+Finding duplicate cells in `\harness'.
+Finding identical cells in module `\p05_b_properties'.
+Computing hashes of 24 cells of `\p05_b_properties'.
+Finding duplicate cells in `\p05_b_properties'.
+Finding identical cells in module `\response_b'.
+Computing hashes of 5 cells of `\response_b'.
+Finding duplicate cells in `\response_b'.
+Finding identical cells in module `\response_a'.
+Computing hashes of 2 cells of `\response_a'.
+Finding duplicate cells in `\response_a'.
+Removed a total of 0 cells.
+
+4.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \harness..
+Finding unused cells or wires in module \p05_b_properties..
+Finding unused cells or wires in module \response_b..
+Finding unused cells or wires in module \response_a..
+
+4.11.4. Finished fast OPT passes.
+
+4.12. Executing SORT pass.
+
+4.13. Printing statistics.
+
+=== harness ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       63 wires
+       63 wire bits
+        9 public wires
+        9 public wire bits
+       72 cells
+        3   $anyseq
+       11   $check
+        6   $eq
+       17   $ff
+        7   $logic_and
+        6   $logic_not
+       21   $mux
+        1   $not
+        2 submodules
+        1   response_a
+        1   response_b
+
+=== p05_b_properties ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       25 wires
+       25 wire bits
+        6 public wires
+        6 public wire bits
+        5 ports
+        5 port bits
+       24 cells
+        4   $check
+        4   $eq
+        8   $ff
+        1   $logic_and
+        1   $logic_not
+        6   $mux
+
+=== response_a ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        5 wire bits
+        4 public wires
+        4 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        1   $dff
+        1   $mux
+
+=== response_b ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        7 wire bits
+        5 public wires
+        5 public wire bits
+        4 ports
+        4 port bits
+        4 cells
+        2   $dff
+        2   $mux
+        1 submodules
+        1   p05_b_properties
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+      102 harness
+        2 response_a
+        4 response_b
+       24   p05_b_properties
+
+        +----------Count including submodules.
+        | 
+      100 wires
+      100 wire bits
+       24 public wires
+       24 public wire bits
+       13 ports
+       13 port bits
+        - memories
+        - memory bits
+        - processes
+      102 cells
+        3   $anyseq
+       15   $check
+        3   $dff
+       10   $eq
+       25   $ff
+        8   $logic_and
+        7   $logic_not
+       30   $mux
+        1   $not
+        2 submodules
+        1   response_a
+        1   response_b
+
+4.14. Executing CHECK pass (checking for obvious problems).
+Checking module harness...
+Checking module p05_b_properties...
+Checking module response_a...
+Checking module response_b...
+Found and reported 0 problems.
+
+5. Executing FLATTEN pass (flatten design).
+Deleting now unused module p05_b_properties.
+Deleting now unused module response_a.
+Deleting now unused module response_b.
+<suppressed ~3 debug messages>
+
+6. Executing CLK2FFLOGIC pass (convert clocked FFs to generic $ff cells).
+
+6.1. Executing PEEPOPT pass (run peephole optimizers).
+Replacing harness.$flatten\a.$procdff$214 ($dff): CLK=\a.clk, D=$flatten\a.$0\ack[0:0], Q=\a.ack
+Replacing harness.$flatten\b.$procdff$213 ($dff): CLK=\b.clk, D=$flatten\b.$0\pending[0:0], Q=\b.pending
+Replacing harness.$flatten\b.$procdff$212 ($dff): CLK=\b.clk, D=$flatten\b.$0\ack[0:0], Q=\b.ack
+
+7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \harness..
+Removed 28 unused cells and 31 unused wires.
+<suppressed ~29 debug messages>
+
+8. Executing SMT2 backend.
+
+8.1. Executing BMUXMAP pass.
+
+8.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module harness.
+
+End of script. Logfile hash: f9d5f523c7, CPU: user 0.02s system 0.00s
+Yosys 0.63 (git sha1 70a11c6bf, ccache clang++ 18.1.3 -O3 -flto -flto) [yowasp/yosys at release-0.63]
+Time spent: 24% 6x opt_expr (0 sec), 19% 4x read_verilog (0 sec), ...

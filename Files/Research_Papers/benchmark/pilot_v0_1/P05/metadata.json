@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "instance_id": "P05",
+  "instance_version": "v1",
+  "status": "UNRESOLVED",
+  "provenance": {
+    "source_type": "original AI-assisted candidate",
+    "author_notes": "Codex work session; not an LLM evaluation trial"
+  },
+  "requirement": {
+    "path": "P05_REQUIREMENT.md",
+    "domain": "sequential RTL",
+    "primary_ambiguity_dimension": "response latency"
+  },
+  "interpretations": {
+    "path": "P05_INTERPRETATIONS.md"
+  },
+  "reference_rtl": {
+    "reference_rtl/responses.sv": {
+      "sha256": "490003a932adcf2887e821c9e22a70a6194df8704ede019a8c1c014e0b7e60ac"
+    }
+  },
+  "formal_environment": {
+    "clock": "arbitrary Boolean clock, initially low",
+    "reset": "unconstrained synchronous active-high",
+    "input_assumptions": [
+      "rst and data/request stable across rising global step",
+      "isolated sampled requests outside reset"
+    ],
+    "initial_state_assumptions": [],
+    "other_assumptions": [
+      "Boolean-only digital semantics"
+    ]
+  },
+  "observables": {
+    "signals": [
+      "ack"
+    ],
+    "cycle_semantics": "post-rising-edge output plus between-edge hold"
+  },
+  "formal_result": {
+    "tool": "Yosys + Yosys-SMTBMC",
+    "tool_version": "0.63 (70a11c6bf)",
+    "backend": "Z3 4.15.4",
+    "method": "BMC + temporal induction + cover",
+    "result": "PASS",
+    "runs": "evidence/run-02/runs.json",
+    "report": "P05_RESULTS.md",
+    "timeout_seconds": 180,
+    "assumptions_satisfiable": true,
+    "behavioral_relation": "NON_EQUIVALENT (equality task FAIL)"
+  },
+  "human_annotation": {
+    "annotator_count": 0,
+    "interpretation_A_scores": [],
+    "interpretation_B_scores": [],
+    "agreement_value": null,
+    "plausibility_threshold": 0.8,
+    "A_pass": false,
+    "B_pass": false
+  },
+  "certification": {
+    "formal_requirement_met": true,
+    "human_requirement_met": false,
+    "certified_ambiguous": false,
+    "rejection_reason": "Human plausibility review pending"
+  },
+  "llm_evaluation": {
+    "status": "not performed",
+    "model": null,
+    "rtl_classification": null
+  },
+  "reproducibility": {
+    "benchmark_version": "pilot_v0_1",
+    "repository_commit": "ebc6e8a81669d9c8a4ff7b47f2de6d96d507c720",
+    "effective_source": "base commit plus additions/edits, exact tested inputs snapshotted and hashed in evidence/run-02",
+    "created_at": "2026-10-10"
+  }
+}
