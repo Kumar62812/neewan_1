@@ -1,0 +1,115 @@
+{
+  "evidence_record_id": "FORMAL-AMBIG-RTL-P01-CI-VALIDATION-40752919435",
+  "record_version": "1.0",
+  "evidence_type": "CI package-integrity validation and validator regression tests",
+  "status": "PASS",
+  "repository": "Kumar62812/neewan_1",
+  "branch": "research/end-to-end-sequence",
+  "workflow": {
+    "name": "P01 package validation",
+    "workflow_path": ".github/workflows/p01-package-validation.yml",
+    "workflow_id": 399799608,
+    "run_id": 40752919435,
+    "run_number": 13,
+    "event": "push",
+    "run_attempt": 1,
+    "created_at_utc": "2026-10-28T19:17:11Z",
+    "completed_at_utc": "2026-10-28T19:17:23Z",
+    "conclusion": "success",
+    "url": "https://github.com/Kumar62812/neewan_1/actions/runs/40752919435",
+    "tested_commit": "09094366a11294a86975e3a1a5aedccd47cfcc71"
+  },
+  "tested_artifacts": {
+    "manifest": {
+      "path": "Files/Research_Papers/benchmark/pilot_v0_1/P01/p01_package_manifest_v1.json",
+      "git_blob_sha1": "bd3329ea1af786eeedafb556c4a8ea7cb404bfcc"
+    },
+    "validator": {
+      "path": "Files/Research_Papers/benchmark/pilot_v0_1/P01/validate_p01_package.py",
+      "git_blob_sha1": "38a90573e67c69f140a1fc7c80e00d4f11bcdc9d",
+      "version_reported": "1.1"
+    },
+    "regression_tests": {
+      "path": "Files/Research_Papers/benchmark/pilot_v0_1/P01/tests/test_validate_p01_package.py",
+      "git_blob_sha1": "cee11305b90829bfcdad8e9782e0e6fe3925fdb3",
+      "tests_run": 4,
+      "summary": "4 tests passed in 0.144 seconds",
+      "tests": [
+        {
+          "name": "test_accepted_archive_mutation_is_detected",
+          "result": "PASS"
+        },
+        {
+          "name": "test_manifest_mutation_is_detected",
+          "result": "PASS"
+        },
+        {
+          "name": "test_source_mutation_is_detected",
+          "result": "PASS"
+        },
+        {
+          "name": "test_unmodified_baseline_fixture_passes",
+          "result": "PASS"
+        }
+      ]
+    },
+    "workflow_definition": {
+      "path": ".github/workflows/p01-package-validation.yml",
+      "git_blob_sha1": "9ecd6321a1c0053d1c7c09eba585cb2c75a05d94"
+    }
+  },
+  "validator_result": {
+    "check_count": 26,
+    "passed": 26,
+    "failed": 0,
+    "checks": [
+      "manifest-git-blob-sha1",
+      "manifest-status-boundary",
+      "manifest-artifact-schema",
+      "source:requirement.md",
+      "source:interpretations/interpretation_01.md",
+      "source:behavioral_specification/specification_01.md",
+      "source:reference_rtl/rtl_01.sv",
+      "source:validation_rtl/deliberately_wrong_rtl.sv",
+      "source:formal/properties/mux2to1_properties.sv",
+      "source:formal/harness_reference.sv",
+      "source:formal/harness_wrong.sv",
+      "source:formal/reference.sby",
+      "source:formal/wrong.sby",
+      "source:formal/run_p01_formal.sh",
+      "source:review/pre_rtl_review.md",
+      "required-file-inventory",
+      "contract:requirement",
+      "contract:interpretation",
+      "contract:specification",
+      "reference-rtl-selects-correct-input",
+      "negative-control-swaps-inputs",
+      "shared-property",
+      "same-property-instantiated",
+      "reference-config-expects-pass",
+      "negative-config-expects-fail",
+      "accepted-archive-sha256"
+    ],
+    "formal_tools_executed": false,
+    "human_certification_performed": false,
+    "template_freeze_performed": false
+  },
+  "workflow_artifact": {
+    "name": "p01-package-validation-report",
+    "artifact_id": 12845086153,
+    "download_url": "https://github.com/Kumar62812/neewan_1/actions/runs/40752919435/artifacts/12845086153",
+    "api_archive_url": "https://api.github.com/repos/Kumar62812/neewan_1/actions/artifacts/12845086153/zip",
+    "zip_size_bytes": 1204,
+    "zip_digest": "sha256:1a24dd92554b849478aec96054874e8215258fe94c8809db08f48afa0366c1c3",
+    "expires_at_utc": "2026-11-27T19:17:19Z",
+    "interpretation": "The artifact digest is GitHub's digest for the uploaded ZIP archive, not the digest of the extracted JSON file."
+  },
+  "explicit_limits": [
+    "This is package/source-integrity validation and validator regression testing only.",
+    "The workflow did not execute Yosys, SymbiYosys, Z3, or the P01 formal runner.",
+    "The run is not an independent reproduction of the archived formal job.",
+    "No independent certification, ambiguity determination, or author-approved template freeze is established.",
+    "P01 Golden Template remains NOT FROZEN; D2 and D14 remain pending.",
+    "The archive checksum was recomputed by the validator from the archive present in the checked-out repository and matched the manifest's registered expected SHA-256."
+  ]
+}
