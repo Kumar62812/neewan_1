@@ -143,3 +143,10 @@ P05 ambiguity certification: NOT CLAIMED
 - Corrected relative links in the P01 README.
 - No formal tools were executed by this connected GitHub operation. Runtime validator output remains pending execution on a complete local checkout. P01 remains NOT FROZEN; this task does not grant certification or authorize a freeze tag.
 
+## 2026-10-29 update — B3 P01 validator regression tests
+
+- Added standard-library regression tests at \`Files/Research_Papers/benchmark/pilot_v0_1/P01/tests/test_validate_p01_package.py\`.
+- The tests create isolated temporary fixtures and check baseline success, detection of a changed reference RTL blob, and detection of a mutated accepted-archive checksum.
+- Linked the tests from the P01 README and B2 guide; added the usage/interpretation guide at \`docs/project-state/B3_P01_VALIDATOR_TESTS.md\`.
+- Suite execution was not possible through the connected GitHub file-editing session. No test pass is claimed; the local run command is documented. No formal tool run, certification, case metadata migration, or P01 freeze was performed.
+
