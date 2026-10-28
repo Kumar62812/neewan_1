@@ -22,3 +22,11 @@
 ## Security and visibility
 
 This repository is **public**. Do not commit API keys, unpublished local-only prompts, private human review correspondence, or other sensitive data. Review local-only packages separately before any publication decision. A public draft branch does not imply redistribution or publication approval.
+
+## Pilot benchmark inventory (C1)
+
+- [P01–P12 pilot case inventory and readiness register](../project-state/C1_PILOT_BENCHMARK_INVENTORY.md)
+- [Machine-readable inventory evidence](../project-state/evidence/C1_PILOT_CASE_INVENTORY_v1.json)
+
+C1 records observable repository paths and known evidence/gates; it does not certify cases or infer that missing local-only artifacts never existed.
+
