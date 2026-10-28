@@ -15,7 +15,7 @@
 
 - The scientific [frozen plan](https://github.com/Kumar62812/neewan_1/blob/83046997dce165fd3b40c190f7dffa1e280b2c86/Files/FORMAL_AMBIG_RTL_PLAN.md) and [repository compass](https://github.com/Kumar62812/neewan_1/blob/83046997dce165fd3b40c190f7dffa1e280b2c86/Files/FORMAL_AMBIG_RTL_PROJECT_COMPASS.md) are preserved as-is. Their historical status statements are **not necessarily current**.
 - P01 accepted evidence and source caveats, P02 formal runs and P05 formal runs remain in their original paths; no evidence, witness, run manifest or historical log was rewritten as part of this branch navigation.
-- **Most recent author-reported task checkpoint**: T5 (P02 requirement/specification consistency) has an author approval **PENDING**. Do not infer closure from the October 10 technical evidence.
+- **Most recent author approval (2026-10-28)**: T05 P02 consistency is **DONE** for `T05_P02_CLOSURE_REVIEW_v1` at pinned review commit `109336c88433be1c3f5836bfde351b5e0c841b0c`; see the [approval record](./approvals/T05_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-28.md). T06 P02 technical/provenance closure is **UNBLOCKED / AUTHORIZED TO BEGIN**, not complete. The author-supplied SHA-256 values are recorded but were not independently rehashed in this documentation update.
 - **Review policy**: human reviews occur after the technical work. Formal evidence before then is provisional with respect to linguistic ambiguity certification.
 - Historical snapshot vs verified reality: `main` at `83046997dce165fd3b40c190f7dffa1e280b2c86` contains P02/P05 executed evidence; the inherited `README.md` and compass contain earlier pre-execution status assertions. See [conflicts](CONFLICTS_AND_NEXT_ACTION.md).
 
