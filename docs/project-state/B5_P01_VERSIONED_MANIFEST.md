@@ -1,6 +1,6 @@
 # B5 — Versioned P01 Package Manifest
 
-**Status:** Manifest committed; validator and regression tests now use it as the centralized baseline. This is a source/evidence inventory, not a freeze, certification or a substitute for a runtime validation result.
+**Status:** Manifest committed; validator and four regression tests passed in [GitHub Actions run 40752580869](https://github.com/Kumar62812/neewan_1/actions/runs/40752580869). This is a source/evidence inventory, not a freeze or certification.
 
 ## Manifest
 
@@ -29,7 +29,7 @@ The B3 regression suite now includes a fourth case which alters a copy of the ma
 ## Limits
 
 - The baseline fingerprints are taken from the B1 inspection snapshot; the presence of a hash does not independently prove a design property.
-- The validator/regression suite has not been executed in this connected GitHub session.
+- The validator/regression suite passed in the remote workflow run linked above; this is structural/integrity validation, not a formal-tool rerun.
 - The accepted formal evidence remains scoped to the pinned base plus the retained path-only patch.
 - Pending decisions D2 and D14 remain pending. This does not add canonical case metadata or activate AM-002/AM-004.
 - P01 Golden Template remains NOT FROZEN. No release tag or certification is created by B5.
@@ -41,4 +41,4 @@ The B3 regression suite now includes a fourth case which alters a copy of the ma
 - [x] Make the validator use the manifest and pin the manifest's own Git blob ID.
 - [x] Add a regression test for manifest tampering.
 - [x] Update B2/B3 guides, P01 README and project log.
-- [ ] Runtime validator and four regression tests executed on complete checkout — pending.
+- [x] Runtime validator and all four regression tests passed on GitHub-hosted runner in [run 40752580869](https://github.com/Kumar62812/neewan_1/actions/runs/40752580869).
