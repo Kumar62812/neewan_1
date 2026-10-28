@@ -179,3 +179,5 @@ The current head \`09094366a11294a86975e3a1a5aedccd47cfcc71\` passed the P01 pac
 - The artifact binary is subject to GitHub retention through 2026-11-27 19:17:19 UTC; the committed provenance record preserves run metadata, not an expired artifact's bytes.
 - No formal RTL tool run, independent reproduction of the archived formal execution, external certification or P01 Golden Template freeze was performed. P01 remains NOT FROZEN, and D2/D14 remain pending.
 
+- Follow-up CI run [40765501022](https://github.com/Kumar62812/neewan_1/actions/runs/40765501022) on commit \`92f8cf8323a7457325c2d5016c798783aa060171\` also passed: 26/26 validator checks, four regression tests, and artifact upload. Added its run/artifact metadata to the machine-readable B6 record.
+
