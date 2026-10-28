@@ -150,3 +150,10 @@ P05 ambiguity certification: NOT CLAIMED
 - Linked the tests from the P01 README and B2 guide; added the usage/interpretation guide at \`docs/project-state/B3_P01_VALIDATOR_TESTS.md\`.
 - Suite execution was not possible through the connected GitHub file-editing session. No test pass is claimed; the local run command is documented. No formal tool run, certification, case metadata migration, or P01 freeze was performed.
 
+## 2026-10-29 update — B4 automated P01 package validation
+
+- Added \`.github/workflows/p01-package-validation.yml\` to run the B2 read-only package validator and B3 regression tests for relevant branch pushes and pull requests.
+- The workflow preserves the validator JSON output as a downloadable artifact, including on a failing run.
+- Added \`docs/project-state/B4_P01_CI_VALIDATION_GATE.md\` and linked it from the P01 README.
+- The workflow definition is prepared, but no successful remote run is claimed until GitHub Actions reports a completed PASS. This gate is not formal verification, independent certification, or P01 template freeze.
+
