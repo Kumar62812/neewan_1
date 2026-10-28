@@ -50,6 +50,7 @@ def make_fixture(root: Path) -> Path:
         shutil.copy2(source, target)
     validator = case_dir / "validate_p01_package.py"
     shutil.copy2(real_root / P01_REL / "validate_p01_package.py", validator)
+    shutil.copy2(real_root / P01_REL / "p01_package_manifest_v1.json", case_dir / "p01_package_manifest_v1.json")
     archive_target = root / ARCHIVE_REL
     archive_target.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(real_root / ARCHIVE_REL, archive_target)
@@ -108,6 +109,21 @@ class P01ValidatorRegressionTests(unittest.TestCase):
             report = json.loads(result.stdout)
             failed_names = {item["check"] for item in report["checks"] if item["status"] == "FAIL"}
             self.assertIn("accepted-archive-sha256", failed_names)
+
+
+    def test_manifest_mutation_is_detected(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="p01-validator-manifest-mutation-") as tmp:
+            root = Path(tmp)
+            validator = make_fixture(root)
+            manifest_path = root / P01_REL / "p01_package_manifest_v1.json"
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            manifest["case_role"] = "altered baseline"
+            manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+            result = self.run_validator(root, validator)
+            self.assertEqual(result.returncode, 1, result.stdout + "\n" + result.stderr)
+            report = json.loads(result.stdout)
+            failed_names = {item["check"] for item in report["checks"] if item["status"] == "FAIL"}
+            self.assertIn("manifest-git-blob-sha1", failed_names)
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
