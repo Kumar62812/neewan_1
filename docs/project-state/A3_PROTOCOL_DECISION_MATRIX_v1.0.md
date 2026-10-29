@@ -144,7 +144,7 @@ Disposition codes: **ACCEPT** (adopt the recommendation) · **REJECT** (keep the
 ### D5 — A/B/AB/M comparison semantics
 
 - **Conflict:** PLAN §11 and RP §7 define the classes by equivalence to RTL_A and RTL_B. If RTL_A and RTL_B are proven non-equivalent on the declared observables, AB cannot occur.
-- **Current state:** the PR #9 pilot does **not** use equivalence. It checks each generated design against per-interpretation **contracts** (`I1_contract.sv`, `I2_contract.sv`) and reports `I1_only`, `I2_only` and so on. PILOT-CSV shows 1 × I2_only and 2 × I1_only. This is a different relation from the one the protocol defines.
+- **Current state (updated 2026-10-29):** the PR #9 pilot does **not** use equivalence. It checks each generated design against per-interpretation **contracts** (`I1_contract.sv`, `I2_contract.sv`) and reports `I1_only`, `I2_only` and so on. PILOT-CSV shows 1 × I2_only and 2 × I1_only. This is a different relation from the one the protocol defines. The [D5 decision-readiness brief](D5_COMPARISON_RELATION_DECISION_READINESS.md) analyses all three options and recommends (c) as a technical position only: frozen-plan equivalence primary, contract conformance separately secondary. This is **not an approval**; author disposition remains pending.
 - **Options:**
   - (a) Keep equivalence. AB is then reachable only when the references differ outside the observables, so on certified cases it is reported as structurally empty.
   - (b) Amend to **contract conformance**: class A means the design satisfies S_A's property set. AB then means it satisfies both contracts, which is possible when the contracts leave behaviour unconstrained. This needs an extra check that the contracts are tight (each reference fails the other's contract).

@@ -355,3 +355,10 @@ The current head `09094366a11294a86975e3a1a5aedccd47cfcc71` passed the P01 packa
 - The positive test uses only a synthetic `fixture://` contract. D5 remains pending, so the helper deliberately requires the comparison contract to be explicitly approved; it does not choose equivalence vs contract conformance or create an A/B/AB/M classifier.
 - D4 author disposition remains pending. The helper is not yet wired into the complete evaluator; no model calls, scored experiments, real RTL formal runs, human reviews, or case/evidence modifications occurred.
 - **Supersession note:** the earlier D3 log entry above saying the CI/approval outcome was pending is a historical snapshot. It was superseded on 2026-10-29 by the later “D3 author approval recorded” entry and the updated decision/evidence records.
+
+## 2026-10-29 update — D5 comparison-relation decision brief
+
+- Added `docs/project-state/D5_COMPARISON_RELATION_DECISION_READINESS.md`, comparing the frozen-plan equivalence relation, contract conformance, and dual-relation approaches.
+- Source-grounded findings: frozen PLAN §11 and RP §7 define A/B/AB/M by equivalence to references; if the certified reference pair is non-equivalent on the same declared observables, equivalence-based AB is structurally unreachable. The open PR #9 P05 pilot instead evaluates per-interpretation contracts, with two I1-only and one I2-only sample.
+- The brief's technical recommendation is Option C: preserve equivalence as the primary relation and report contract conformance separately as secondary, requiring AM-007 if adopted. This is explicitly not an author decision; D5 remains pending.
+- Existing PR #9 outputs and evidence remain unchanged and are not promoted from exploratory contract-conformance counts to primary equivalence results. D4 remains CI-verified (21/21 tests) but author disposition is still pending; production evaluator integration and Gate 4 remain blocked by D5 and other gates.
