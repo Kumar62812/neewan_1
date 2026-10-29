@@ -1,0 +1,67 @@
+name: C5 reusable-template readiness audit
+
+on:
+  push:
+    branches:
+      - main
+      - research/end-to-end-sequence
+    paths:
+      - 'Files/Research_Papers/docs/benchmark_schema.md'
+      - 'Files/Research_Papers/docs/formal_verification_protocol.md'
+      - 'Files/Research_Papers/templates/instance_metadata_template.yaml'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/P01/README.md'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/P01/p01_package_manifest_v1.json'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/audit_c5_template_readiness.py'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/tests/test_audit_c5_template_readiness.py'
+      - 'docs/project-sequence/STAGE_REGISTER.md'
+      - '.github/workflows/c5-template-readiness-audit.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'Files/Research_Papers/docs/benchmark_schema.md'
+      - 'Files/Research_Papers/docs/formal_verification_protocol.md'
+      - 'Files/Research_Papers/templates/instance_metadata_template.yaml'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/P01/README.md'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/P01/p01_package_manifest_v1.json'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/audit_c5_template_readiness.py'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/tests/test_audit_c5_template_readiness.py'
+      - 'docs/project-sequence/STAGE_REGISTER.md'
+      - '.github/workflows/c5-template-readiness-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: Audit schema/template/negative-control readiness
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate read-only audit report
+        run: |
+          python Files/Research_Papers/benchmark/pilot_v0_1/audit_c5_template_readiness.py \
+            --repo-root "$GITHUB_WORKSPACE" \
+            --commit "$GITHUB_SHA" \
+            --output "$GITHUB_WORKSPACE/c5-template-readiness-report.json"
+
+      - name: Run audit regression tests
+        run: python Files/Research_Papers/benchmark/pilot_v0_1/tests/test_audit_c5_template_readiness.py
+
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: c5-template-readiness-audit
+          path: c5-template-readiness-report.json
+          if-no-files-found: warn
+          retention-days: 30

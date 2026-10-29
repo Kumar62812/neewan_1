@@ -236,3 +236,14 @@ The current head `09094366a11294a86975e3a1a5aedccd47cfcc71` passed the P01 packa
 - Explicitly retained the current blank form as a prospective input and the different form captured in historical run-02 as immutable historical evidence; the run-02 manifest still binds the historical form's SHA-256.
 - Added a read-only validator, six regression tests and a GitHub Actions integrity workflow to check file pins, manifest identity, current/historic form separation, annotation counts and non-certification status.
 - This package is preparation only. It does not initiate reviews; policy still requires technical completion first. No RTL, formal output, historical manifest, source snapshot, current form or analysis protocol was modified.
+
+
+## 2026-10-29 — C5 reusable-template readiness audit
+
+- Added a read-only C5 readiness audit, regression tests, and a GitHub Actions workflow.
+- Recorded the existing schema/YAML mapping gap and missing explicit top-level template category; no canonical mapping was inferred.
+- Preserved P01's explicit NOT FROZEN status and the pending D2/D14 governance gate.
+- Documented that P01's deliberately wrong RTL is a formal checker negative control, not a second plausible interpretation.
+- Scope chosen under the user-directed C-series; no official T1–T31 task number is inferred.
+- No P01/P02/P05 source, RTL, manifests, runs, witnesses, or historical evidence changed. No formal tool or human review was run.
+- CI validation result will be appended only after GitHub reports the actual run outcome.

@@ -61,3 +61,13 @@ Both fresh formal runners exited 0; all 22 validator checks and all four C3 regr
 - [Integrity workflow](../../.github/workflows/p05-review-input-integrity.yml)
 
 C4 **PASS**: [61/61 checks and 6/6 tests passed](https://github.com/Kumar62812/neewan_1/actions/runs/40811887068). It pins the exact prospective P05 reviewer-facing materials and coordinator/technical provenance, records the distinct historical run-02 form, and does not authorize review before technical completion. [Evidence record](../project-state/evidence/C4_P05_REVIEW_INPUT_INTEGRITY_RUN_40811887068.json) · [artifact](https://github.com/Kumar62812/neewan_1/actions/runs/40811887068/artifacts/12870139889).
+
+
+## C5 — reusable-template and negative-control readiness
+
+- [C5 readiness audit and gate findings](../project-state/C5_TEMPLATE_AND_NEGATIVE_CONTROL_READINESS.md)
+- [Read-only audit script](../../Files/Research_Papers/benchmark/pilot_v0_1/audit_c5_template_readiness.py)
+- [Regression tests](../../Files/Research_Papers/benchmark/pilot_v0_1/tests/test_audit_c5_template_readiness.py)
+- [GitHub Actions workflow](../../.github/workflows/c5-template-readiness-audit.yml)
+
+C5 is a bounded readiness audit, **not a template freeze**. It checks the schema/template mapping, P01's explicit not-frozen status, D2/D14 governance gate, and the distinct role of a deliberately wrong negative control. The readiness outcome remains BLOCKED until the open governance and role-aware validation gates are resolved. The official T1–T31 task numbering is not inferred.

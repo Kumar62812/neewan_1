@@ -7,6 +7,7 @@
 | BLOCKER | Authoritative T1–T31 master file and full decision registers D1–D7 not available as verified GitHub artifacts | Invented mappings would invalidate provenance | Recover exact plan/approved closure records from controlled source before marking tasks DONE |
 | HIGH | `main` README and compass contain earlier P02-not-implemented / P01-only state, despite published [P02 results](https://github.com/Kumar62812/neewan_1/blob/83046997dce165fd3b40c190f7dffa1e280b2c86/Files/Research_Papers/benchmark/pilot_v0_1/P02/P02_RESULTS.md) and [P05 results](https://github.com/Kumar62812/neewan_1/blob/83046997dce165fd3b40c190f7dffa1e280b2c86/Files/Research_Papers/benchmark/pilot_v0_1/P05/P05_RESULTS.md) | Historical status can be mistaken for present state | Use this newer navigation first; amend historical status only via separately documented non-destructive correction |
 | HIGH | P05 early formal distinction is not independent human plausibility | Cannot claim certified ambiguous case or certified model accuracy | Maintain author-approved candidate classification until post-technical human review/adjudication |
+| HIGH | Benchmark schema and metadata template use different names/nesting, with no normative field mapping and no top-level category in the YAML template | Premature migration could change case semantics or mislabel control/ambiguity roles | C5 read-only audit documents the gap; retain NOT FROZEN until D2/D14 are resolved and role-aware fixtures pass |
 | HIGH | Draft PR #7 requires runner verification and scientific gate review | A proposed evaluator is not validated | Audit existing code as infrastructure; preserve all failures and fixed test fixtures |
 | HIGH | Draft PR #8 workboard is 16 Oct snapshot, not current 25–28 Oct governance | Stale next-action claims | Use as historical phase source; reconcile with approved task ledger |
 | HIGH | Draft PR #9 public P05 Groq pilot is only a scoped subset of the full local study | Full prompts, request data, private history may be intentionally excluded | Pin public results without inventing local-completeness; audit the local package privately |
@@ -20,7 +21,7 @@
 
 ## Next authorised research checkpoint
 
-**T06 is no longer the next gate.** The explicit author approval and closure record are now present. The next official T1–T31 task number is not inferred because the approved master plan remains unavailable in the verified tree. The remaining items above stay open, and the project must not be declared complete based on T06/C3 alone. For the separate user-directed C-series, continue with C4 while keeping the official task crosswalk caveat intact.
+**T06 is no longer the next gate.** The explicit author approval and closure record are now present. The next official T1–T31 task number is not inferred because the approved master plan remains unavailable in the verified tree. The remaining items above stay open, and the project must not be declared complete based on T06/C3 alone. For the separate user-directed C-series, C4 and C5 are bounded provenance/readiness audits; neither grants review authorization or template freeze. Continue with the next scoped audit while keeping the official task crosswalk caveat intact.
 
 ## Branch navigation status
 
