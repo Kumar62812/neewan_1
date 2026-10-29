@@ -340,3 +340,10 @@ The current head `09094366a11294a86975e3a1a5aedccd47cfcc71` passed the P01 packa
 - The 15 tests cover missing/truncated content, clarification-only response, syntax/elaboration diagnostics, unknown compile exits, timeouts, missing/crashed tools, formal-result sentinels, unmarked nonzero formal exits, and completed formal commands.
 - [Machine-readable evidence](../project-state/evidence/D3_TECHNICAL_OUTCOME_LABELS_RUN_40822948756.json); detailed report at `docs/project-state/D3_TECHNICAL_OUTCOME_LABELS.md`.
 - This establishes only fixture-level behavior for the D3 implementation candidate. No model call, scored experiment, actual RTL formal run or human review occurred. Author approval remains pending; PR #7 is still unmodified and Gate 4 remains blocked.
+
+## 2026-10-29 update — D3 author approval recorded
+
+- G. Naveen explicitly approved D3 implementation commit `aed8f38cf0fca5e2a0ff8e3d3bc07349e6d20df2` on 2026-10-29. The approval statement is preserved verbatim in [the dated approval record](../docs/project-sequence/approvals/D3_TECHNICAL_OUTCOME_LABELS_APPROVAL_2026-10-29.md).
+- Recorded D3 disposition as `ACCEPT` in `docs/project-state/A3_AUTHOR_DECISION_FORM.md` and added D3 to the approval register.
+- The named implementation's GitHub Actions run [40822948756](https://github.com/Kumar62812/neewan_1/actions/runs/40822948756) passed syntax compilation and all 15 offline regression tests; the machine-readable evidence status now records the approval.
+- Scope is limited to the approved implementation version and its fixture-level verification. PR #7 integration, real-tool end-to-end validation, D4, D5, and Gate 4 remain open. No historical case, RTL, formal evidence, or run manifest was altered.
