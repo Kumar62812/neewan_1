@@ -115,7 +115,7 @@ C7 checks that an unambiguous control need not invent interpretation B, ambiguit
 - [D3 implementation and verification report](../project-state/D3_TECHNICAL_OUTCOME_LABELS.md)
 - [Traceable runner](../../tools/llm_eval/run_pipeline.py) · [offline regression tests](../../tools/llm_eval/test_d3_outcomes.py) · [GitHub Actions workflow](../../.github/workflows/d3-technical-outcome-labels.yml)
 
-The implementation candidate separates `INVALID`, `INCOMPLETE`, and `INCONCLUSIVE` from generation/compile/formal stage status. An unmarked nonzero formal exit defaults to `INCONCLUSIVE`, never `M`. [CI run 40822948756 passed: 15/15 offline tests](https://github.com/Kumar62812/neewan_1/actions/runs/40822948756); [machine-readable evidence](../project-state/evidence/D3_TECHNICAL_OUTCOME_LABELS_RUN_40822948756.json). Author approval remains pending; this branch copy is not merged into PR #7 and does not authorize scored experiments.
+The D3 implementation version `aed8f38cf0fca5e2a0ff8e3d3bc07349e6d20df2` is **approved by G. Naveen** and passed [CI run 40822948756 (15/15 offline tests)](https://github.com/Kumar62812/neewan_1/actions/runs/40822948756); see the [dated approval record](./approvals/D3_TECHNICAL_OUTCOME_LABELS_APPROVAL_2026-10-29.md) and [machine-readable evidence](../project-state/evidence/D3_TECHNICAL_OUTCOME_LABELS_RUN_40822948756.json). Approval is version-specific. The code is not merged into PR #7; D4/D5 and scored-study gates remain open.
 
 ## C8 — C5–C7 cross-artifact integration
 
