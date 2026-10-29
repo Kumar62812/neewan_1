@@ -274,3 +274,12 @@ The current head `09094366a11294a86975e3a1a5aedccd47cfcc71` passed the P01 packa
 - Regression suite: 7 tests passed under Python 3.12.15.
 - Artifact: [12871731814](https://github.com/Kumar62812/neewan_1/actions/runs/40814081793/artifacts/12871731814), size 1,111 bytes, uploaded ZIP digest `sha256:5cd7b46b8bb7e6435a34bd32a5669675d4f473a876013018d3eb109e43eb4b9e`.
 - Result validates coverage/identity only. Proposal remains non-binding; D2/D14 are not approved, canonical files remain unchanged, and template freeze/project completion is not claimed.
+
+
+## 2026-10-29 — C7 role-aware synthetic fixtures
+
+- Added four proposal-only fixtures for unambiguous control, ambiguity candidate, negative candidate and robustness case roles.
+- Added a read-only validator, mutation-focused regression tests and a GitHub Actions workflow. Source pins protect the currently inspected schema, YAML template, formal protocol and C6 proposal.
+- The control fixture explicitly leaves interpretation B/reference RTL B absent and records the deliberately wrong checker-control separately. The negative-candidate fixture's rejection record is marked unadjudicated placeholder only.
+- These are synthetic structure tests; no real case, formal result, human annotation, LLM output or certification was created. The canonical schema/YAML and historical P01/P02/P05 artifacts remain unchanged. D2/D14 are still open.
+- CI outcome to be appended after verified workflow completion.

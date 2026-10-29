@@ -83,3 +83,12 @@ C5 is a bounded readiness audit, **not a template freeze**. It checks the schema
 - [Validator](../../Files/Research_Papers/benchmark/pilot_v0_1/validate_c6_schema_mapping_proposal.py) · [tests](../../Files/Research_Papers/benchmark/pilot_v0_1/tests/test_validate_c6_schema_mapping_proposal.py) · [workflow](../../.github/workflows/c6-schema-template-mapping.yml)
 
 C6 proposes, but does not implement, a normative field mapping. [CI run 40814081793 passed](https://github.com/Kumar62812/neewan_1/actions/runs/40814081793): 10/10 validation checks and 7/7 tests passed. [Evidence summary](../project-state/evidence/C6_SCHEMA_TEMPLATE_MAPPING_RUN_40814081793.json) · [report artifact](https://github.com/Kumar62812/neewan_1/actions/runs/40814081793/artifacts/12871731814). D2 (lifecycle/status and scientific classification vocabulary) and D14 (canonical case layout) remain unresolved. No canonical source is migrated or frozen.
+
+
+## C7 — role-aware illustrative fixtures
+
+- [C7 findings and boundaries](../project-state/C7_ROLE_AWARE_FIXTURES.md)
+- [Four synthetic fixtures](../../Files/Research_Papers/benchmark/pilot_v0_1/tests/fixtures/c7_role_aware/)
+- [Read-only audit](../../Files/Research_Papers/benchmark/pilot_v0_1/audit_c7_role_aware_fixtures.py) · [tests](../../Files/Research_Papers/benchmark/pilot_v0_1/tests/test_audit_c7_role_aware_fixtures.py) · [workflow](../../.github/workflows/c7-role-aware-fixtures.yml)
+
+C7 checks that an unambiguous control need not invent interpretation B, ambiguity/negative candidates require paired structure, and checker-negative controls stay separate. All examples are synthetic and non-binding; D2/D14 remain open and no freeze is implied.

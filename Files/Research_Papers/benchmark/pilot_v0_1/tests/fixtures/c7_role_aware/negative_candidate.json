@@ -1,0 +1,89 @@
+{
+  "fixture_id": "C7-FIXTURE-NEGATIVE-CANDIDATE",
+  "instance_id": "C7-FIXTURE-NEGATIVE-CANDIDATE",
+  "case_version": "fixture-v1",
+  "status": "candidate",
+  "case_role": "negative_candidate",
+  "classification": null,
+  "fixture_context": {
+    "fixture_only": true,
+    "fixture_status": "NON_BINDING_PROPOSAL",
+    "purpose": "Validate role-aware metadata shape only.",
+    "not_a_real_benchmark_case": true,
+    "prohibited_uses": [
+      "LLM prompt/evaluation",
+      "formal evidence",
+      "human annotation",
+      "benchmark inclusion",
+      "scientific classification"
+    ]
+  },
+  "requirement": {
+    "text": "FIXTURE PLACEHOLDER ONLY. This is not a benchmark-facing requirement.",
+    "source_reference": "fixture://not-a-real-requirement",
+    "primary_ambiguity_dimension": null
+  },
+  "interpretations": {
+    "A": {
+      "text": "FIXTURE PLACEHOLDER A: not a real interpretation and not a defensible candidate.",
+      "rationale": "Structure-only placeholder. No linguistic plausibility claim is made."
+    },
+    "B": {
+      "text": "FIXTURE PLACEHOLDER B: not a real interpretation and not a defensible candidate.",
+      "rationale": "Structure-only placeholder. No linguistic plausibility claim is made."
+    }
+  },
+  "reference_rtl": {
+    "A": {
+      "path": "fixture://c7/reference_a.sv",
+      "sha256": null,
+      "fixture_reference_only": true
+    },
+    "B": {
+      "path": "fixture://c7/candidate_b.sv",
+      "sha256": null,
+      "fixture_reference_only": true
+    }
+  },
+  "formal_environment": {
+    "contract": "NOT_SPECIFIED_FIXTURE_ONLY",
+    "input_assumptions": [],
+    "initial_state_assumptions": [],
+    "protocol_assumptions": []
+  },
+  "observables": {
+    "signals": [],
+    "cycle_semantics": "NOT_SPECIFIED_FIXTURE_ONLY",
+    "comparison_scope": "NO_FORMAL_COMPARISON"
+  },
+  "formal_result": {
+    "result": "NOT_RUN",
+    "tool": null,
+    "tool_version": null,
+    "backend": null,
+    "command": null,
+    "counterexample_path": null,
+    "evidence_reference": null
+  },
+  "human_annotation": {
+    "status": "NOT_COLLECTED",
+    "responses_count": 0,
+    "record_path": null
+  },
+  "certification": {
+    "certified_ambiguous": false,
+    "decision": "NOT_ADJUDICATED"
+  },
+  "provenance": {
+    "source_type": "synthetic_test_fixture",
+    "source_reference": "fixture://synthetic-only",
+    "canonical_case_path": null,
+    "source_commit": null
+  },
+  "rejection_record": {
+    "status": "PLACEHOLDER_NOT_ADJUDICATED",
+    "reason_code": "NOT_ADJUDICATED_FIXTURE_ONLY",
+    "rationale": "Field-placement placeholder only; no actual rejection is claimed.",
+    "evidence_reference": "fixture://no-rejection-evidence"
+  }
+}
