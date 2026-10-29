@@ -293,3 +293,11 @@ The current head `09094366a11294a86975e3a1a5aedccd47cfcc71` passed the P01 packa
 - Two earlier C7 workflow runs failed on syntax errors in the newly introduced validator: [40814629811](https://github.com/Kumar62812/neewan_1/actions/runs/40814629811) and [40814692433](https://github.com/Kumar62812/neewan_1/actions/runs/40814692433). The syntax defects were corrected before the passing run; both failures remain in the audit trail.
 - Report artifact: [12871802752](https://github.com/Kumar62812/neewan_1/actions/runs/40814758386/artifacts/12871802752), 1,771 bytes, uploaded ZIP digest `sha256:f76d7480fc923714ae30cd29068e379915a7a4a717c9f137d5447182d822f581`.
 - Fixtures remain synthetic, non-binding examples. Canonical schema/template, P01/P02/P05 sources and historical evidence remain untouched; D2/D14 remain open.
+
+
+## 2026-10-29 — C8 C5–C7 cross-artifact integration audit
+
+- Added a read-only integration audit that pins the canonical schema/template/formal protocol and the C5/C6/C7 reports, evidence records, C7 validator/tests and four synthetic fixtures.
+- Cross-checks the 18-field C6 mapping, C6 role list, C5 blocked/not-frozen status, C7 successful run summary, all four fixture role contracts and open D2/D14 status.
+- Added regression tests for source pins, complete mapping, role-specific shape, and mutation attempts that mislabel a checker-negative implementation as interpretation B or promote a synthetic fixture to certified status.
+- The actual CI outcome will be recorded after the run. No canonical schema/template, P01/P02/P05 case sources or historical formal evidence was changed.

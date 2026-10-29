@@ -1,0 +1,73 @@
+name: C8 C5-C7 cross-artifact integration audit
+
+on:
+  push:
+    branches:
+      - main
+      - research/end-to-end-sequence
+    paths:
+      - 'Files/Research_Papers/docs/benchmark_schema.md'
+      - 'Files/Research_Papers/templates/instance_metadata_template.yaml'
+      - 'Files/Research_Papers/docs/formal_verification_protocol.md'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/audit_c7_role_aware_fixtures.py'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/tests/test_audit_c7_role_aware_fixtures.py'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/tests/fixtures/c7_role_aware/**'
+      - 'docs/project-state/C5_TEMPLATE_AND_NEGATIVE_CONTROL_READINESS.md'
+      - 'docs/project-state/evidence/C5_TEMPLATE_READINESS_AUDIT_RUN_40813383592.json'
+      - 'docs/project-state/C6_SCHEMA_TEMPLATE_MAPPING_PROPOSAL.json'
+      - 'docs/project-state/C6_SCHEMA_TEMPLATE_MAPPING_VALIDATION.md'
+      - 'docs/project-state/evidence/C6_SCHEMA_TEMPLATE_MAPPING_RUN_40814081793.json'
+      - 'docs/project-state/C7_ROLE_AWARE_FIXTURES.md'
+      - 'docs/project-state/evidence/C7_ROLE_AWARE_FIXTURES_RUN_40814758386.json'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/audit_c8_integration.py'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/tests/test_audit_c8_integration.py'
+      - '.github/workflows/c8-cross-artifact-integration.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'Files/Research_Papers/docs/benchmark_schema.md'
+      - 'Files/Research_Papers/templates/instance_metadata_template.yaml'
+      - 'Files/Research_Papers/docs/formal_verification_protocol.md'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/audit_c7_role_aware_fixtures.py'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/tests/test_audit_c7_role_aware_fixtures.py'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/tests/fixtures/c7_role_aware/**'
+      - 'docs/project-state/C5_TEMPLATE_AND_NEGATIVE_CONTROL_READINESS.md'
+      - 'docs/project-state/evidence/C5_TEMPLATE_READINESS_AUDIT_RUN_40813383592.json'
+      - 'docs/project-state/C6_SCHEMA_TEMPLATE_MAPPING_PROPOSAL.json'
+      - 'docs/project-state/C6_SCHEMA_TEMPLATE_MAPPING_VALIDATION.md'
+      - 'docs/project-state/evidence/C6_SCHEMA_TEMPLATE_MAPPING_RUN_40814081793.json'
+      - 'docs/project-state/C7_ROLE_AWARE_FIXTURES.md'
+      - 'docs/project-state/evidence/C7_ROLE_AWARE_FIXTURES_RUN_40814758386.json'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/audit_c8_integration.py'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/tests/test_audit_c8_integration.py'
+      - '.github/workflows/c8-cross-artifact-integration.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: Verify C5-C7 artifact consistency
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run read-only cross-artifact audit
+        run: python Files/Research_Papers/benchmark/pilot_v0_1/audit_c8_integration.py --repo-root "$GITHUB_WORKSPACE" --commit "$GITHUB_SHA" --output "$GITHUB_WORKSPACE/c8-integration-report.json"
+      - name: Run C8 regression tests
+        run: python Files/Research_Papers/benchmark/pilot_v0_1/tests/test_audit_c8_integration.py
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: c8-cross-artifact-integration
+          path: c8-integration-report.json
+          if-no-files-found: warn
+          retention-days: 30

@@ -94,3 +94,11 @@ C6 proposes, but does not implement, a normative field mapping. [CI run 40814081
 C7 checks that an unambiguous control need not invent interpretation B, ambiguity/negative candidates require paired structure, and checker-negative controls stay separate. All examples are synthetic and non-binding; D2/D14 remain open and no freeze is implied.
 
 **Verified CI:** [run 40814758386 — PASS](https://github.com/Kumar62812/neewan_1/actions/runs/40814758386), with 53/53 checks and 10/10 regression tests passing. Two earlier syntax-failure runs remain visible in Actions history; the validator was corrected before the final passing run. [Evidence summary](../project-state/evidence/C7_ROLE_AWARE_FIXTURES_RUN_40814758386.json) · [report artifact](https://github.com/Kumar62812/neewan_1/actions/runs/40814758386/artifacts/12871802752).
+
+
+## C8 — C5–C7 cross-artifact integration
+
+- [C8 integration report](../project-state/C8_CROSS_ARTIFACT_INTEGRATION.md)
+- [Read-only integration validator](../../Files/Research_Papers/benchmark/pilot_v0_1/audit_c8_integration.py) · [regression tests](../../Files/Research_Papers/benchmark/pilot_v0_1/tests/test_audit_c8_integration.py) · [workflow](../../.github/workflows/c8-cross-artifact-integration.yml)
+
+C8 checks C5/C6/C7 records, pins 16 prior objects, cross-checks the 18-field proposal, and verifies four role-fixture boundaries. It does not resolve D2/D14 or freeze the template.
