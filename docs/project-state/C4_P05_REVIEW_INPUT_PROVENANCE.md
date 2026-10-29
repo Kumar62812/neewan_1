@@ -1,6 +1,6 @@
 # C4 — P05 prospective review-input provenance
 
-**Status:** Pinned preparation package; repository CI is the automated verification gate.  
+**Status: PASS** — the pinned preparation bundle passed 61/61 automated checks and all six regression tests in [GitHub Actions run 40811887068](https://github.com/Kumar62812/neewan_1/actions/runs/40811887068).  
 **Branch:** \`research/end-to-end-sequence\`  
 **Scope:** Make the prospective P05 review-input set reproducible, and account explicitly for the current reviewer form being different from the form captured in historical run-02.
 
@@ -35,6 +35,15 @@ The read-only validator checks the pinned manifest object, all 15 file identitie
 
 C4 does not change the requirement, interpretations, specifications, form, analysis protocol, metadata, RTL, formal logs, witnesses, run-01/run-02 manifests, or captured source snapshots. It does not collect human ratings, infer that reviewers are recruited, claim the P05 gold standard is frozen, close the project, or certify ambiguity. If any pinned input changes, the manifest must be intentionally versioned and reviewed; do not silently refresh its expected hashes to make a test pass.
 
-## 5. Result record
+## 5. Verified result
 
-CI result and machine-readable evidence are recorded after the workflow completes. The manifest is fixed at creation commit; the separate CI report records validation for the tested checkout. Until the CI workflow completes successfully, do not treat C4 as verified PASS.
+**PASS:** [GitHub Actions run 40811887068](https://github.com/Kumar62812/neewan_1/actions/runs/40811887068) on commit \`e15fea31a53d4b656d057bedaec7cbf1ad883f70\`.
+
+- **61/61 validation checks passed.** These include the pinned manifest identity, all 15 file records (Git blob SHA-1, SHA-256 and exact byte count), the current-versus-historical form boundary, run-02 manifest linkage, and P05's unresolved/no-human-review/no-certification state.
+- **6/6 regression tests passed**, including mutation detection and the historical-form separation condition.
+- [Machine-readable C4 evidence record](evidence/C4_P05_REVIEW_INPUT_INTEGRITY_RUN_40811887068.json).
+- [Validation report artifact](https://github.com/Kumar62812/neewan_1/actions/runs/40811887068/artifacts/12870139889), artifact ID 12870139889, 2,921 bytes, digest \`sha256:4727098a0dd9ff13d5978a82304e00cc262b1e06a23dfa1b0ec48a77b3e0912f\`, expires 2026-11-28 03:23:50 UTC.
+
+## 6. Final status boundary
+
+C4 completes the source-identity/provenance preparation step for the current prospective P05 review-input set. It does not make the P05 scientific candidate frozen or certified. Human review remains blocked until the project's complete technical-work gate is satisfied. If any of the pinned inputs changes, create and audit a new version; do not silently refresh the existing pins.

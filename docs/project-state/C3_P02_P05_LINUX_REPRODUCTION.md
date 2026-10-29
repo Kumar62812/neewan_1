@@ -45,4 +45,4 @@ The first workflow attempt (run [#1](https://github.com/Kumar62812/neewan_1/acti
 
 ## Remaining boundaries
 
-C3 establishes Linux reproducibility for these two existing cases under the registered model. It does **not** auto-close T06: author decisions/approval remain pending. It also does not resolve the known P05 reviewer-form version difference, collect human reviews, certify ambiguity, or claim LLM performance.
+C3 establishes Linux reproducibility for these two existing cases under the registered model. C3 itself did not auto-close T06; the separate author approval is recorded at [T06 approval](../project-sequence/approvals/T06_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-29.md). C3 itself also did not resolve the P05 reviewer-form identity boundary; that was handled separately in [C4](C4_P05_REVIEW_INPUT_PROVENANCE.md), which pins the current prospective form and preserves the historical run-02 snapshot as distinct. Human reviews remain blocked until full technical completion; no ambiguity certification or LLM-performance claim is made.

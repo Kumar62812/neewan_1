@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "task_id": "C4",
+  "task_name": "P05 prospective review-input provenance",
+  "status": "PASS",
+  "repository": "Kumar62812/neewan_1",
+  "branch": "research/end-to-end-sequence",
+  "tested_commit": "e15fea31a53d4b656d057bedaec7cbf1ad883f70",
+  "manifest": {
+    "path": "Files/Research_Papers/benchmark/pilot_v0_1/P05/annotation/v1/review_input_manifest_v1.json",
+    "git_blob_sha1": "f0875ee08e81aed2c642e9478379dc178c492844",
+    "status": "PINNED_PREPARATION_ONLY",
+    "pinned_file_count": 15,
+    "reviewer_facing_file_count": 3,
+    "coordinator_and_technical_files_count": 10,
+    "historical_boundary_files_count": 2
+  },
+  "workflow": {
+    "name": "P05 review-input integrity",
+    "run_id": 40811887068,
+    "conclusion": "success",
+    "url": "https://github.com/Kumar62812/neewan_1/actions/runs/40811887068",
+    "created_at": "2026-10-29T03:23:42Z",
+    "completed_at": "2026-10-29T03:23:54Z"
+  },
+  "validation": {
+    "status": "PASS",
+    "checks": 61,
+    "passed": 61,
+    "failed": 0,
+    "regression_tests_passed": 6,
+    "regression_tests_failed": 0
+  },
+  "artifact": {
+    "id": 12870139889,
+    "name": "c4-p05-review-input-integrity",
+    "url": "https://github.com/Kumar62812/neewan_1/actions/runs/40811887068/artifacts/12870139889",
+    "size_bytes": 2921,
+    "sha256": "4727098a0dd9ff13d5978a82304e00cc262b1e06a23dfa1b0ec48a77b3e0912f",
+    "expires_at": "2026-11-28T03:23:50Z"
+  },
+  "review_form_boundary": {
+    "current_form_git_blob_sha1": "5f091e8b86ad3c255ac0cd4f99f7c0ad77573093",
+    "current_form_sha256": "817387d4fff25ba47871e1b9d43c71cddc1c1872363086fb0f1abd361dbe4aa8",
+    "historical_run02_form_git_blob_sha1": "79179adf25d6ff604b11c4a33bc3bb9dc5d5673a",
+    "historical_run02_form_sha256": "c272940ef73e45d8159c8eb0df0e698706bec7797486b4ef36f4b9737dd81ce9",
+    "historical_run02_manifest_git_blob_sha1": "d572d9801ba889474f8d8e3999544131928ab6d4",
+    "forms_are_byte_identical": false,
+    "historical_manifest_binding_verified": true
+  },
+  "case_state": {
+    "p05": "UNRESOLVED",
+    "human_responses": 0,
+    "review_collection_authorized": false,
+    "ambiguity_certified": false,
+    "llm_evaluation": "not performed"
+  },
+  "boundaries": [
+    "Prospective source identities are pinned; the package is not an approved scientific gold-case freeze.",
+    "Human review is not authorized before full technical completion.",
+    "Historical run-01/run-02 contents and manifests remain unchanged.",
+    "No ambiguity certification, reviewer recruitment, or LLM evaluation is claimed."
+  ]
+}

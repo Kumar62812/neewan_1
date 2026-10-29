@@ -67,3 +67,8 @@ A successful workflow establishes consistency against the registered manifests/p
 - Do not convert the P05 formal distinction into an ambiguity-certification claim.
 - Do not treat a change in the reviewer form as a new formal run or change the historical source snapshot.
 - This does not implement missing P03/P04/P06/P08 or conditional P07/P09–P12.
+
+
+## C4 follow-up — prospective P05 reviewer-input version pinned (2026-10-29)
+
+The previously reported form-version boundary is now handled by a versioned prospective input manifest at \`P05/annotation/v1/review_input_manifest_v1.json\`. It identifies the current reviewer form with Git blob SHA-1 \`5f091e8b86ad3c255ac0cd4f99f7c0ad77573093\` and SHA-256 \`817387d4fff25ba47871e1b9d43c71cddc1c1872363086fb0f1abd361dbe4aa8\`, separately preserving the historic run-02 snapshot and its digest. [C4 validation](https://github.com/Kumar62812/neewan_1/actions/runs/40811887068) passed 61/61 checks and six tests. This resolves identity recording for the prospective packet; it does **not** open the review gate, recruit reviewers, or alter the historical run-02 source snapshot. Human review remains scheduled after full technical completion.

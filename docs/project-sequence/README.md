@@ -50,7 +50,7 @@ C2 passed the retained-run manifest integrity checks and selected source-snapsho
 - [Linux reproduction workflow](../../.github/workflows/p02-p05-formal-reproduction.yml)
 - [Output validator](../../Files/Research_Papers/benchmark/pilot_v0_1/validate_formal_reproduction.py)
 
-Both fresh formal runners exited 0; all 22 validator checks and all four C3 regression tests passed. T06 was separately approved and is now DONE. The known P05 reviewer-form version gate, local-asset audit, release-path hygiene, and wider project completion gates remain open.
+Both fresh formal runners exited 0; all 22 validator checks and all four C3 regression tests passed. T06 was separately approved and is now DONE. The P05 current-form identity is now explicitly pinned by C4; human-review collection remains blocked until technical completion. The local-asset audit, release-path hygiene, and wider project completion gates remain open.
 
 
 ## C4 — P05 review-input provenance
@@ -60,4 +60,4 @@ Both fresh formal runners exited 0; all 22 validator checks and all four C3 regr
 - [Validator](../../Files/Research_Papers/benchmark/pilot_v0_1/validate_p05_review_input_bundle.py)
 - [Integrity workflow](../../.github/workflows/p05-review-input-integrity.yml)
 
-C4 pins the exact prospective P05 reviewer-facing materials and coordinator/technical provenance. It preserves the distinct historical run-02 form and does not authorize human review before technical completion.
+C4 **PASS**: [61/61 checks and 6/6 tests passed](https://github.com/Kumar62812/neewan_1/actions/runs/40811887068). It pins the exact prospective P05 reviewer-facing materials and coordinator/technical provenance, records the distinct historical run-02 form, and does not authorize review before technical completion. [Evidence record](../project-state/evidence/C4_P05_REVIEW_INPUT_INTEGRITY_RUN_40811887068.json) · [artifact](https://github.com/Kumar62812/neewan_1/actions/runs/40811887068/artifacts/12870139889).
