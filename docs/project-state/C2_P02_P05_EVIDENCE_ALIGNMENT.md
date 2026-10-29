@@ -58,7 +58,7 @@ A successful workflow establishes consistency against the registered manifests/p
 
 ## 6. Current result record
 
-The exact successful run and its report will be linked here and captured in the machine-readable evidence record after CI completes. Until then, the source files, pinned manifests, results prose, and documented P05 review-form mismatch are implementation/audit baselines, not a claimed passed C2 runtime validation.
+**Verified result: PASS.** [GitHub Actions run 40808854269](https://github.com/Kumar62812/neewan_1/actions/runs/40808854269) completed successfully on commit `5b274f75b064864f3a45a753bf0543f5cb573498`. It passed **198/198 validator checks**, including all four P02/P05 run manifests, all 19 current-source/run-02 pairs, semantic status checks, and the explicit P05 form-version boundary. All four regression tests passed. The stable machine-readable evidence record is [C2_P02_P05_VALIDATION_RUN_40808854269.json](evidence/C2_P02_P05_VALIDATION_RUN_40808854269.json), and the [CI report artifact](https://github.com/Kumar62812/neewan_1/actions/runs/40808854269/artifacts/12869656255) is retained until 2026-11-28 02:52:00 UTC.
 
 ## 7. Protected boundaries
 
