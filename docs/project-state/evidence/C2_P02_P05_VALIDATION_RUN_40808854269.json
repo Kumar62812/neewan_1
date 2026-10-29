@@ -116,5 +116,33 @@
     "P02 technical/provenance closure remains subject to its T06 named author-approval procedure.",
     "P05 human plausibility remains pending; no human responses or ambiguity certification are claimed.",
     "P03/P04/P06/P08 and conditional extension cases P07/P09-P12 are outside C2."
-  ]
+  ],
+  "followup_validation_run": {
+    "purpose": "Confirm the C2 audit remains green after the C2 guide and index links were updated.",
+    "run_id": 40808996618,
+    "run_url": "https://github.com/Kumar62812/neewan_1/actions/runs/40808996618",
+    "tested_commit": "47a797a2640c09c3f14ff0894d10270de08836d3",
+    "conclusion": "success",
+    "validator_result": {
+      "checks_total": 198,
+      "checks_passed": 198,
+      "checks_failed": 0,
+      "run02_source_pairs_checked": 19,
+      "run02_source_pairs_passing": 19
+    },
+    "regression_tests": {
+      "tests_run": 4,
+      "tests_passed": 4,
+      "tests_failed": 0,
+      "duration_seconds": 0.005
+    },
+    "workflow_artifact": {
+      "artifact_id": 12869058706,
+      "name": "c2-p02-p05-evidence-alignment-report",
+      "download_url": "https://github.com/Kumar62812/neewan_1/actions/runs/40808996618/artifacts/12869058706",
+      "zip_size_bytes": 4485,
+      "zip_digest": "sha256:aa5bdf6db04034bab84a51998ef827df3b70b49ef3b1604344dac4d81dfcbf7e",
+      "expires_at_utc": "2026-11-28T02:53:29Z"
+    }
+  }
 }
