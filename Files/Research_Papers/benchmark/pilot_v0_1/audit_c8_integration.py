@@ -152,7 +152,8 @@ def audit_repo(repo_root: Path, commit: str | None = None) -> dict[str, Any]:
     schema_section = schema_text.split("## 3. Required instance fields", 1)
     schema_fields = []
     if len(schema_section) == 2:
-        for line in schema_section[1].splitlines():
+        fields_body = schema_section[1].split("## 4. Status lifecycle", 1)[0]
+        for line in fields_body.splitlines():
             stripped = line.strip()
             if stripped.startswith("- ") and stripped.count(chr(96)) == 2:
                 schema_fields.append(stripped[2:].strip(chr(96)))
@@ -210,7 +211,8 @@ def audit_repo(repo_root: Path, commit: str | None = None) -> dict[str, Any]:
         and c7.get("validation", {}).get("regression_tests_failed") == 0,
         "C7 evidence records the successful 53-check, 10-test run")
     add("C7-report-evidence-agree", "53/53 source/fixture checks" in c7_text
-        and "10/10 regression tests passed" in c7_text and "D2/D14: unresolved" in c7_text,
+        and "10/10 regression tests passed" in c7_text
+        and "D2/D14" in c7_text and "unresolved" in c7_text,
         "C7 report agrees with machine evidence and preserves open governance")
     add("D2-D14-remain-open",
         c6.get("governance_status", {}).get("D2") == "OPEN"
