@@ -283,3 +283,13 @@ The current head `09094366a11294a86975e3a1a5aedccd47cfcc71` passed the P01 packa
 - The control fixture explicitly leaves interpretation B/reference RTL B absent and records the deliberately wrong checker-control separately. The negative-candidate fixture's rejection record is marked unadjudicated placeholder only.
 - These are synthetic structure tests; no real case, formal result, human annotation, LLM output or certification was created. The canonical schema/YAML and historical P01/P02/P05 artifacts remain unchanged. D2/D14 are still open.
 - CI outcome to be appended after verified workflow completion.
+
+
+### C7 CI outcome — 2026-10-29
+
+- Passing workflow: [40814758386](https://github.com/Kumar62812/neewan_1/actions/runs/40814758386), tested commit `2a4dd8998b6e8aaae6aa6a0ba5e8098273148014`.
+- Read-only audit: 53 checks passed, 0 failed. Four synthetic role fixtures and four pinned source objects were checked.
+- Regression suite: 10 passed under Python 3.12.15.
+- Two earlier C7 workflow runs failed on syntax errors in the newly introduced validator: [40814629811](https://github.com/Kumar62812/neewan_1/actions/runs/40814629811) and [40814692433](https://github.com/Kumar62812/neewan_1/actions/runs/40814692433). The syntax defects were corrected before the passing run; both failures remain in the audit trail.
+- Report artifact: [12871802752](https://github.com/Kumar62812/neewan_1/actions/runs/40814758386/artifacts/12871802752), 1,771 bytes, uploaded ZIP digest `sha256:f76d7480fc923714ae30cd29068e379915a7a4a717c9f137d5447182d822f581`.
+- Fixtures remain synthetic, non-binding examples. Canonical schema/template, P01/P02/P05 sources and historical evidence remain untouched; D2/D14 remain open.

@@ -1,0 +1,67 @@
+{
+  "evidence_id": "C7_ROLE_AWARE_FIXTURES_RUN_40814758386",
+  "evidence_version": "1.0",
+  "date_utc": "2026-10-29",
+  "repository": "Kumar62812/neewan_1",
+  "branch": "research/end-to-end-sequence",
+  "tested_commit": "2a4dd8998b6e8aaae6aa6a0ba5e8098273148014",
+  "workflow": {
+    "name": "C7 role-aware fixture validation",
+    "run_id": 40814758386,
+    "url": "https://github.com/Kumar62812/neewan_1/actions/runs/40814758386",
+    "conclusion": "success",
+    "python_version": "3.12.15"
+  },
+  "validation": {
+    "audit_result": "PASS",
+    "checks_total": 53,
+    "checks_passed": 53,
+    "checks_failed": 0,
+    "fixtures_total": 4,
+    "roles": [
+      "unambiguous_control",
+      "ambiguity_candidate",
+      "negative_candidate",
+      "robustness_case"
+    ],
+    "pinned_source_objects": 4,
+    "regression_tests_total": 10,
+    "regression_tests_passed": 10,
+    "regression_tests_failed": 0
+  },
+  "earlier_attempts": [
+    {
+      "run_id": 40814629811,
+      "commit": "087dbd5518e32f94442682ce3e036f612e62330d",
+      "result": "failure",
+      "summary": "The initial C7 validator contained Python syntax errors; defects are preserved in Actions history."
+    },
+    {
+      "run_id": 40814692433,
+      "commit": "c399697ff71806a9bb31622e745030bce583b3d7",
+      "result": "failure",
+      "summary": "A remaining unterminated string in a checker-control reference caused validation to stop; corrected before the passing run."
+    }
+  ],
+  "artifact": {
+    "id": 12871802752,
+    "name": "c7-role-aware-fixtures",
+    "url": "https://github.com/Kumar62812/neewan_1/actions/runs/40814758386/artifacts/12871802752",
+    "size_bytes": 1771,
+    "uploaded_zip_sha256": "f76d7480fc923714ae30cd29068e379915a7a4a717c9f137d5447182d822f581",
+    "expires_at": "2026-11-28T03:54:39Z"
+  },
+  "readiness": "SYNTHETIC_PROPOSAL_ONLY_NOT_BENCHMARK_CONTENT",
+  "governance": {
+    "D2": "OPEN",
+    "D14": "OPEN",
+    "canonical_schema_changed": false,
+    "canonical_yaml_template_changed": false,
+    "p01_template_frozen": false
+  },
+  "nonclaims": [
+    "The four fixture files are synthetic structure tests, not benchmark cases.",
+    "No formal tools, human reviews or LLM experiments were run.",
+    "No ambiguity certification or project completion is inferred."
+  ]
+}
