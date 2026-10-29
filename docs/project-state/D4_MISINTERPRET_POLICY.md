@@ -3,7 +3,7 @@
 **Project:** FORMAL-AMBIG-RTL  
 **Prepared:** 2026-10-29  
 **Branch:** `research/end-to-end-sequence`  
-**Status:** POLICY HELPER ADDED — CI VERIFICATION PENDING — AUTHOR DISPOSITION PENDING  
+**Status:** POLICY HELPER CI-PASS — AUTHOR DISPOSITION PENDING — PRODUCTION INTEGRATION BLOCKED BY D5  
 **Normative basis:** Frozen plan §11; A3 D4  
 **Related dependency:** D5 comparison-relation decision remains pending
 
@@ -37,10 +37,14 @@ D5 has not chosen between equivalence, contract conformance, or both. This D4 he
 
 The approved D3 runner itself has not been modified by this D4 addition, preserving the exact D3-approved source version. This D4 artifact is a standalone policy gate; connection to a complete A/B/AB/M evaluator awaits a versioned D5 decision and integration test. Do not call the whole evaluator production-ready from this helper alone.
 
-## 4. Evidence boundary
+## 4. Verified CI evidence
+
+The D4 workflow completed successfully on the exact implementation commit `1c6269d3d107d8bbdd225d459390e17cfac588f3`. Python 3.12.15 `py_compile` passed and the unit-test log reports **Ran 21 tests; OK**. All 21 tests passed, with zero failures and zero skips. See [workflow run 40824632602](https://github.com/Kumar62812/neewan_1/actions/runs/40824632602) and [machine-readable evidence](evidence/D4_MISINTERPRET_POLICY_RUN_40824632602.json).
+
+## 5. Evidence boundary
 
 - No model calls, scored experiments, real RTL formal runs, or human reviews were run.
 - No P01/P02/P05 metadata, RTL, formal evidence, counterexamples, historical logs or run manifests were changed.
 - The policy test's positive example is explicitly synthetic; no case or contract is certified.
-- CI result will be recorded from the actual GitHub Actions run.
+- **Verified CI:** [GitHub Actions run 40824632602 — PASS](https://github.com/Kumar62812/neewan_1/actions/runs/40824632602). Python 3.12.15; syntax compilation passed; all 21 offline regression tests passed (0 failed, 0 skipped). [Machine-readable run evidence](evidence/D4_MISINTERPRET_POLICY_RUN_40824632602.json).
 - D4 author disposition remains pending until the decision form records it; D5 and Gate 4 remain separate open decisions.
