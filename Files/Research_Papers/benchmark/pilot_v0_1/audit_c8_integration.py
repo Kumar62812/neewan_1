@@ -155,8 +155,10 @@ def audit_repo(repo_root: Path, commit: str | None = None) -> dict[str, Any]:
         fields_body = schema_section[1].split("## 4. Status lifecycle", 1)[0]
         for line in fields_body.splitlines():
             stripped = line.strip()
-            if stripped.startswith("- ") and stripped.count(chr(96)) == 2:
-                schema_fields.append(stripped[2:].strip(chr(96)))
+            first_tick = stripped.find(chr(96))
+            second_tick = stripped.find(chr(96), first_tick + 1) if first_tick >= 0 else -1
+            if stripped.startswith("- ") and first_tick >= 0 and second_tick > first_tick:
+                schema_fields.append(stripped[first_tick + 1:second_tick])
 
     c5 = read_json(root, C5_EVIDENCE)
     c6 = read_json(root, C6_EVIDENCE)
