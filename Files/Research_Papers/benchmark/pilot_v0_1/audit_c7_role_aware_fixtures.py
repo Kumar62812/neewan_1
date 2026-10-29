@@ -99,7 +99,7 @@ def validate_fixture(record: Any, expected_role: str) -> list[dict[str, str]]:
             and str(rejection.get("evidence_reference", "")).startswith("fixture://")
         role_detail = "rejection fields are unadjudicated placeholders; no actual rejection is claimed"
     elif expected_role == "robustness_case":
-        c = obj(record.get("checker_negative_control))
+        c = obj(record.get("checker_negative_control"))
         target = record.get("robustness_target")
         role_ok = isinstance(target, str) and target.startswith("FIXTURE_STRUCTURE_ONLY") \
             and c.get("role") == "robustness_negative_control" and c.get("actual_formal_result") == "NOT_RUN" \
