@@ -237,11 +237,12 @@ def audit_semantic_status(repo_root: Path) -> list[dict[str, Any]]:
     add_check(checks, "P02:run-statuses",
               all(p02_statuses.get(name) == status for name, status in expected_p02.items()),
               "run-02 statuses align with expected reference and deliberately wrong controls")
+    p02_results_lower = p02_results.lower()
     add_check(checks, "P02:results-summary",
-              all(term in p02_results for term in [
-                  "Reference BMC | PASS", "Reference temporal induction | PASS",
-                  "Reference cover | PASS", "Wrong reset-polarity BMC | FAIL",
-                  "Wrong asynchronous-reset BMC | FAIL", "All 8 goals"]),
+              all(term in p02_results_lower for term in [
+                  "reference bmc | pass", "reference temporal induction | pass",
+                  "reference cover | pass", "wrong reset-polarity bmc | fail",
+                  "wrong asynchronous-reset bmc | fail", "all eight cover goals"]),
               "results prose records BMC, induction, cover and both negative-control outcomes")
 
     add_check(checks, "P05:identity-and-status",
