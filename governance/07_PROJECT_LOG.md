@@ -247,3 +247,12 @@ The current head `09094366a11294a86975e3a1a5aedccd47cfcc71` passed the P01 packa
 - Scope chosen under the user-directed C-series; no official T1–T31 task number is inferred.
 - No P01/P02/P05 source, RTL, manifests, runs, witnesses, or historical evidence changed. No formal tool or human review was run.
 - CI validation result will be appended only after GitHub reports the actual run outcome.
+
+
+### C5 CI outcome — 2026-10-29
+
+- Successful workflow: [40813383592](https://github.com/Kumar62812/neewan_1/actions/runs/40813383592), tested commit `5162c1155d72c3103ea81bd61f832a73eba53965`.
+- Audit source assertions: 10 PASS, 0 FAIL. Regression suite: 6 PASS.
+- Observed schema identifiers: 17/17; YAML template sections/keys: 15/15.
+- Template readiness remains `BLOCKED_NOT_FROZEN`; five blocker records are retained. Passing CI verifies the audit observations only and does not authorize a template freeze, case construction, human review, or project-completion claim.
+- Report artifact: [12871850130](https://github.com/Kumar62812/neewan_1/actions/runs/40813383592/artifacts/12871850130), uploaded ZIP digest `sha256:b88e6d95e148bf8d1115c1af602a6bfc0eddcd83840b1f858ef0fb617940bd9b`.

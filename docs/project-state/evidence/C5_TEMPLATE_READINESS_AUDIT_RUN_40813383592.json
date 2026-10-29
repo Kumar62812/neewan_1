@@ -1,0 +1,52 @@
+{
+  "evidence_id": "C5_TEMPLATE_READINESS_AUDIT_RUN_40813383592",
+  "evidence_version": "1.0",
+  "date_utc": "2026-10-29",
+  "repository": "Kumar62812/neewan_1",
+  "branch": "research/end-to-end-sequence",
+  "tested_commit": "5162c1155d72c3103ea81bd61f832a73eba53965",
+  "workflow": {
+    "name": "C5 reusable-template readiness audit",
+    "run_id": 40813383592,
+    "url": "https://github.com/Kumar62812/neewan_1/actions/runs/40813383592",
+    "conclusion": "success",
+    "python_version": "3.12.15"
+  },
+  "audit": {
+    "result": "PASS",
+    "checks_total": 10,
+    "checks_passed": 10,
+    "checks_failed": 0,
+    "schema_required_fields_found": 17,
+    "schema_required_fields_expected": 17,
+    "template_groups_found": 15,
+    "template_groups_expected": 15,
+    "regression_tests_total": 6,
+    "regression_tests_passed": 6,
+    "regression_tests_failed": 0
+  },
+  "template_readiness": "BLOCKED_NOT_FROZEN",
+  "open_blocker_count": 5,
+  "artifact": {
+    "id": 12871850130,
+    "name": "c5-template-readiness-audit",
+    "url": "https://github.com/Kumar62812/neewan_1/actions/runs/40813383592/artifacts/12871850130",
+    "size_bytes": 2729,
+    "uploaded_zip_sha256": "b88e6d95e148bf8d1115c1af602a6bfc0eddcd83840b1f858ef0fb617940bd9b",
+    "expires_at": "2026-11-28T03:39:47Z"
+  },
+  "findings": [
+    "The benchmark schema and metadata YAML template use multiple names/nesting conventions without a normative mapping.",
+    "The YAML template lacks an explicit top-level category field named by the schema.",
+    "P01 Golden Template is NOT FROZEN and the D2/D14 governance gate remains open.",
+    "P01 deliberately wrong RTL is a checker negative control, not a second plausible interpretation.",
+    "Existing package validators do not yet demonstrate role-aware reusable-template coverage across control, ambiguity candidate, and negative/rejected candidate roles."
+  ],
+  "nonclaims": [
+    "No schema/template was changed or frozen.",
+    "No formal tool was executed.",
+    "No human review was performed.",
+    "No ambiguity certification or full-project completion claim is made.",
+    "C5 is a user-directed C-series label and does not infer an official T1-T31 task."
+  ]
+}

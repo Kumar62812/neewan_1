@@ -71,3 +71,5 @@ C4 **PASS**: [61/61 checks and 6/6 tests passed](https://github.com/Kumar62812/n
 - [GitHub Actions workflow](../../.github/workflows/c5-template-readiness-audit.yml)
 
 C5 is a bounded readiness audit, **not a template freeze**. It checks the schema/template mapping, P01's explicit not-frozen status, D2/D14 governance gate, and the distinct role of a deliberately wrong negative control. The readiness outcome remains BLOCKED until the open governance and role-aware validation gates are resolved. The official T1–T31 task numbering is not inferred.
+
+**Verified CI:** [run 40813383592 — PASS](https://github.com/Kumar62812/neewan_1/actions/runs/40813383592): 10/10 audit checks and 6/6 regression tests passed. Readiness intentionally remains `BLOCKED_NOT_FROZEN`. [Evidence summary](../project-state/evidence/C5_TEMPLATE_READINESS_AUDIT_RUN_40813383592.json) · [report artifact](https://github.com/Kumar62812/neewan_1/actions/runs/40813383592/artifacts/12871850130).

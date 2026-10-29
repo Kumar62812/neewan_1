@@ -2,7 +2,7 @@
 
 **Scope selected for the user-directed C-series:** read-only audit of the roadmap's reusable case-template/negative-control dependency. This does not infer or replace an official T1–T31 task number.
 
-**Status before CI execution:** implementation committed; automated audit pending.  
+**Audit result: PASS** — 10/10 source-observation checks and 6/6 regression tests passed in [GitHub Actions run 40813383592](https://github.com/Kumar62812/neewan_1/actions/runs/40813383592).  
 **Template readiness:** **BLOCKED — NOT FROZEN**.
 
 ## 1. Decision
@@ -38,7 +38,9 @@ The audit checks current source facts, emits a machine-readable JSON report, and
 - Audit: `Files/Research_Papers/benchmark/pilot_v0_1/audit_c5_template_readiness.py`
 - Regression tests: `Files/Research_Papers/benchmark/pilot_v0_1/tests/test_audit_c5_template_readiness.py`
 - Workflow: `.github/workflows/c5-template-readiness-audit.yml`
-- Machine-readable workflow artifact: linked after the first CI run.
+- [Successful GitHub Actions run](https://github.com/Kumar62812/neewan_1/actions/runs/40813383592) — 10/10 checks passed; 0 failed; 6/6 tests passed.
+- [Machine-readable audit report artifact](https://github.com/Kumar62812/neewan_1/actions/runs/40813383592/artifacts/12871850130), artifact ID `12871850130`, 2,729 bytes, uploaded ZIP digest `sha256:b88e6d95e148bf8d1115c1af602a6bfc0eddcd83840b1f858ef0fb617940bd9b`, expires 2026-11-28 03:39:47 UTC.
+- [Committed machine-readable evidence summary](evidence/C5_TEMPLATE_READINESS_AUDIT_RUN_40813383592.json).
 
 ## 5. Conditions before a template-freeze decision
 
@@ -52,3 +54,13 @@ The audit checks current source facts, emits a machine-readable JSON report, and
 ## 6. Non-claims
 
 C5 does not alter schema/template source files or existing case artifacts; does not rerun formal tools; does not collect human review; does not certify ambiguity; does not declare the template frozen; and does not claim full project completion. A later status update will record the actual CI outcome, not assume it.
+
+
+## 7. Verified execution
+
+- Workflow run: [40813383592 — success](https://github.com/Kumar62812/neewan_1/actions/runs/40813383592)
+- Tested commit: `5162c1155d72c3103ea81bd61f832a73eba53965`
+- Audit: **10 passed / 0 failed**; 17/17 schema field identifiers and 15/15 template groups were observed.
+- Regression tests: **6 passed** under Python 3.12.15.
+- Readiness result: `BLOCKED_NOT_FROZEN`, with five explicit open blockers. This is the expected governance outcome, not a failed CI run.
+- Artifact digest and expiry are recorded in the evidence summary linked above.
