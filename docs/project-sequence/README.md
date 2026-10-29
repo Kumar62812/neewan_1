@@ -38,3 +38,12 @@ C1 records observable repository paths and known evidence/gates; it does not cer
 
 C2 passed the retained-run manifest integrity checks and selected source-snapshot identity checks. The known P05 reviewer-form version difference remains a gate before human-review data collection.
 
+
+
+## C3 — P02/P05 Linux formal reproduction (prepared)
+
+- [C3 reproduction plan and current status](../project-state/C3_P02_P05_LINUX_REPRODUCTION.md)
+- [Linux reproduction workflow](../../.github/workflows/p02-p05-formal-reproduction.yml)
+- [Output validator](../../Files/Research_Papers/benchmark/pilot_v0_1/validate_formal_reproduction.py)
+
+C3 is not PASS until the GitHub Actions execution and retained artifact have been inspected.

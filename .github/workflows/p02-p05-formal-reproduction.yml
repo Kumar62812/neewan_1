@@ -1,0 +1,105 @@
+name: P02/P05 Linux formal reproduction
+
+on:
+  push:
+    branches:
+      - main
+      - research/end-to-end-sequence
+    paths:
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/P02/**'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/P05/**'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/validate_p02_p05_evidence.py'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/tests/test_validate_p02_p05_evidence.py'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/validate_formal_reproduction.py'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/tests/test_validate_formal_reproduction.py'
+      - 'docs/reproducibility/formal-requirements.txt'
+      - '.github/workflows/p02-p05-formal-reproduction.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/P02/**'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/P05/**'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/validate_p02_p05_evidence.py'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/tests/test_validate_p02_p05_evidence.py'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/validate_formal_reproduction.py'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/tests/test_validate_formal_reproduction.py'
+      - 'docs/reproducibility/formal-requirements.txt'
+      - '.github/workflows/p02-p05-formal-reproduction.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce:
+    name: Reproduce P02/P05 formal outcomes on Linux
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up pinned Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: docs/reproducibility/formal-requirements.txt
+
+      - name: Create evidence output root
+        shell: bash
+        run: mkdir -p "$RUNNER_TEMP/c3-formal"
+
+      - name: Audit historical evidence before reproduction
+        shell: bash
+        run: |
+          python Files/Research_Papers/benchmark/pilot_v0_1/validate_p02_p05_evidence.py \
+            > "$RUNNER_TEMP/c3-formal/c2-retained-evidence-report.json"
+          python Files/Research_Papers/benchmark/pilot_v0_1/tests/test_validate_p02_p05_evidence.py
+
+      - name: Install pinned formal tools
+        run: python -m pip install -r docs/reproducibility/formal-requirements.txt
+
+      - name: Execute fresh P02 and P05 run-03 packages
+        shell: bash
+        run: |
+          set +e
+          export XDG_CACHE_HOME="$RUNNER_TEMP/yowasp-cache"
+          python Files/Research_Papers/benchmark/pilot_v0_1/P02/formal/run.py \
+            --out "$RUNNER_TEMP/c3-formal/p02-run-03" \
+            --yosys yowasp-yosys --smtbmc yowasp-yosys-smtbmc
+          p02_rc=$?
+          python Files/Research_Papers/benchmark/pilot_v0_1/P05/formal/run.py \
+            --out "$RUNNER_TEMP/c3-formal/p05-run-03" \
+            --yosys yowasp-yosys --smtbmc yowasp-yosys-smtbmc
+          p05_rc=$?
+          set -e
+          printf '{\n  "P02": %s,\n  "P05": %s\n}\n' "$p02_rc" "$p05_rc" \
+            > "$RUNNER_TEMP/c3-formal/runner-exit-codes.json"
+          echo "P02 runner exit: $p02_rc"
+          echo "P05 runner exit: $p05_rc"
+
+      - name: Run C3 regression tests
+        if: always()
+        run: python Files/Research_Papers/benchmark/pilot_v0_1/tests/test_validate_formal_reproduction.py
+
+      - name: Validate formal outcomes, source lineage and manifests
+        if: always()
+        shell: bash
+        run: |
+          python Files/Research_Papers/benchmark/pilot_v0_1/validate_formal_reproduction.py \
+            --repo-root "$GITHUB_WORKSPACE" \
+            --p02-dir "$RUNNER_TEMP/c3-formal/p02-run-03" \
+            --p05-dir "$RUNNER_TEMP/c3-formal/p05-run-03" \
+            --exit-codes "$RUNNER_TEMP/c3-formal/runner-exit-codes.json" \
+            --output "$RUNNER_TEMP/c3-formal/validation-report.json"
+
+      - name: Upload raw logs, witnesses, snapshots and reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: c3-p02-p05-linux-run-03
+          path: ${{ runner.temp }}/c3-formal/
+          if-no-files-found: warn
+          retention-days: 90

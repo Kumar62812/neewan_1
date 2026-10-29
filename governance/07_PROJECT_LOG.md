@@ -201,3 +201,11 @@ The current head \`09094366a11294a86975e3a1a5aedccd47cfcc71\` passed the P01 pac
 - Follow-up verification [40808996618](https://github.com/Kumar62812/neewan_1/actions/runs/40808996618), on commit \`47a797a2640c09c3f14ff0894d10270de08836d3\`, also passed all 198 validator checks and four regression tests after the C2 guide update. Its report artifact remains downloadable through 2026-11-28 02:53:29 UTC. The machine-readable C2 record now carries both successful runs.
 - During bring-up, the first validator run exposed one overly strict P02 summary phrase check; it was aligned to the exact recorded report wording. The subsequent run passed. The original failed run remains in GitHub Actions history; no failure evidence or source-run artifact was altered.
 
+
+
+## 2026-10-29 update — C3 P02/P05 Linux reproduction prepared
+
+- Added .github/workflows/p02-p05-formal-reproduction.yml to execute both case runners into fresh, isolated run-03 directories using the pinned dependencies.
+- Added validate_formal_reproduction.py and standard-library regression tests to verify expected formal statuses, runner return codes, new-run SHA-256 manifests, Linux/tool versions, and byte identity of 19 contract/formal sources against historical run-02 snapshots.
+- Added docs/project-state/C3_P02_P05_LINUX_REPRODUCTION.md and sequence navigation.
+- Actual execution is not claimed in this setup commit. Historical evidence, source snapshots, RTL, approval records and P05 review material were not modified.
