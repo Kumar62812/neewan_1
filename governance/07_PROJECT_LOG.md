@@ -228,3 +228,11 @@ The current head `09094366a11294a86975e3a1a5aedccd47cfcc71` passed the P01 packa
 - T06 is marked **DONE** in the closure review/status registers for P02 formal/provenance closure under the documented Boolean stable-sampled-edge model. P1's cross-platform reproducibility follow-up is supported by the separate [C3 Linux run](https://github.com/Kumar62812/neewan_1/actions/runs/40809992594); the P02 run-01/run-02 evidence and hashes remain unchanged.
 - The P02 local-only archive hash audit remains an open, non-blocking preservation item. Absolute local path redaction remains a pre-release action; original historical evidence is not rewritten.
 - This approval is not full-project completion, not P05 linguistic-plausibility approval, and not ambiguity certification. Missing core pilot cases, pending governance decisions, evaluator/protocol validation, benchmark-wide reproducibility, later statistical study, and publication/release gates remain.
+
+
+## 2026-10-29 update — C4 P05 review-input provenance preparation
+
+- Added \`P05/annotation/v1/review_input_manifest_v1.json\` binding the proposed reviewer-facing inputs, coordinator protocol and technical provenance files by Git blob ID and SHA-256.
+- Explicitly retained the current blank form as a prospective input and the different form captured in historical run-02 as immutable historical evidence; the run-02 manifest still binds the historical form's SHA-256.
+- Added a read-only validator, six regression tests and a GitHub Actions integrity workflow to check file pins, manifest identity, current/historic form separation, annotation counts and non-certification status.
+- This package is preparation only. It does not initiate reviews; policy still requires technical completion first. No RTL, formal output, historical manifest, source snapshot, current form or analysis protocol was modified.

@@ -51,3 +51,13 @@ C2 passed the retained-run manifest integrity checks and selected source-snapsho
 - [Output validator](../../Files/Research_Papers/benchmark/pilot_v0_1/validate_formal_reproduction.py)
 
 Both fresh formal runners exited 0; all 22 validator checks and all four C3 regression tests passed. T06 was separately approved and is now DONE. The known P05 reviewer-form version gate, local-asset audit, release-path hygiene, and wider project completion gates remain open.
+
+
+## C4 — P05 review-input provenance
+
+- [C4 report and validation status](../project-state/C4_P05_REVIEW_INPUT_PROVENANCE.md)
+- [Prospective review-input manifest](../../Files/Research_Papers/benchmark/pilot_v0_1/P05/annotation/v1/review_input_manifest_v1.json)
+- [Validator](../../Files/Research_Papers/benchmark/pilot_v0_1/validate_p05_review_input_bundle.py)
+- [Integrity workflow](../../.github/workflows/p05-review-input-integrity.yml)
+
+C4 pins the exact prospective P05 reviewer-facing materials and coordinator/technical provenance. It preserves the distinct historical run-02 form and does not authorize human review before technical completion.

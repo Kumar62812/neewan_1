@@ -1,0 +1,56 @@
+name: P05 review-input integrity
+
+on:
+  push:
+    branches:
+      - main
+      - research/end-to-end-sequence
+    paths:
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/P05/**'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/validate_p05_review_input_bundle.py'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/tests/test_validate_p05_review_input_bundle.py'
+      - '.github/workflows/p05-review-input-integrity.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/P05/**'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/validate_p05_review_input_bundle.py'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/tests/test_validate_p05_review_input_bundle.py'
+      - '.github/workflows/p05-review-input-integrity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate P05 prospective review-input provenance
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate pinned inputs and historical form boundary
+        run: |
+          python Files/Research_Papers/benchmark/pilot_v0_1/validate_p05_review_input_bundle.py \
+            --repo-root "$GITHUB_WORKSPACE" \
+            --output "$GITHUB_WORKSPACE/c4-p05-review-input-report.json"
+
+      - name: Run validator regression tests
+        run: python Files/Research_Papers/benchmark/pilot_v0_1/tests/test_validate_p05_review_input_bundle.py
+
+      - name: Upload validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: c4-p05-review-input-integrity
+          path: c4-p05-review-input-report.json
+          if-no-files-found: warn
+          retention-days: 30

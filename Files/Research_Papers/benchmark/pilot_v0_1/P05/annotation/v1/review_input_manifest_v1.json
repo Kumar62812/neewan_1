@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0",
+  "task_id": "C4",
+  "title": "P05 prospective review-input provenance manifest",
+  "status": "PINNED_PREPARATION_ONLY",
+  "repository": "Kumar62812/neewan_1",
+  "basis_branch": "research/end-to-end-sequence",
+  "basis_commit": "283c942aa9a53945c118cf3d4edd384f08c79ae5",
+  "case_id": "P05",
+  "case_status": "UNRESOLVED",
+  "purpose": "Bind the exact prospective P05 reviewer inputs and coordinator/technical provenance sources by SHA-256 and Git blob identity, while preserving the different historical review-form snapshot as separate evidence.",
+  "reviewer_facing_paths": [
+    "Files/Research_Papers/benchmark/pilot_v0_1/P05/P05_REQUIREMENT.md",
+    "Files/Research_Papers/benchmark/pilot_v0_1/P05/P05_INTERPRETATIONS.md",
+    "Files/Research_Papers/benchmark/pilot_v0_1/P05/annotation/v1/reviewer_form.md"
+  ],
+  "coordinator_only_paths": [
+    "Files/Research_Papers/benchmark/pilot_v0_1/P05/annotation/v1/README.md",
+    "Files/Research_Papers/benchmark/pilot_v0_1/P05/annotation/v1/analysis_protocol.md",
+    "Files/Research_Papers/benchmark/pilot_v0_1/P05/P05_SPECIFICATIONS.md",
+    "Files/Research_Papers/benchmark/pilot_v0_1/P05/metadata.json",
+    "Files/Research_Papers/benchmark/pilot_v0_1/P05/P05_RESULTS.md",
+    "Files/Research_Papers/benchmark/pilot_v0_1/P05/formal/STRATEGY.md",
+    "Files/Research_Papers/benchmark/pilot_v0_1/P05/formal/harness.sv",
+    "Files/Research_Papers/benchmark/pilot_v0_1/P05/formal/b_properties.sv",
+    "Files/Research_Papers/benchmark/pilot_v0_1/P05/formal/run.py",
+    "Files/Research_Papers/benchmark/pilot_v0_1/P05/reference_rtl/responses.sv"
+  ],
+  "pinned_files": [
+    {
+      "role": "reviewer_facing_requirement",
+      "path": "Files/Research_Papers/benchmark/pilot_v0_1/P05/P05_REQUIREMENT.md",
+      "git_blob_sha1": "a544fa83625266cabae7642d4b6cb356ccf0c9f6",
+      "sha256": "01e88ea63bebff82db1fff2c9c5b661e5ab8b756535223c10dbd824ff95b1870",
+      "bytes": 978
+    },
+    {
+      "role": "reviewer_facing_interpretations",
+      "path": "Files/Research_Papers/benchmark/pilot_v0_1/P05/P05_INTERPRETATIONS.md",
+      "git_blob_sha1": "31fedca9a16de2b35027ee87dd2e003a38bf35eb",
+      "sha256": "83d3c65305b42d7df2b9a2ed3a5ac4ee5c1f5f29812fec5cd1e4c98d342d0e7e",
+      "bytes": 944
+    },
+    {
+      "role": "reviewer_facing_blank_form",
+      "path": "Files/Research_Papers/benchmark/pilot_v0_1/P05/annotation/v1/reviewer_form.md",
+      "git_blob_sha1": "5f091e8b86ad3c255ac0cd4f99f7c0ad77573093",
+      "sha256": "817387d4fff25ba47871e1b9d43c71cddc1c1872363086fb0f1abd361dbe4aa8",
+      "bytes": 2785
+    },
+    {
+      "role": "coordinator_instructions_thresholds",
+      "path": "Files/Research_Papers/benchmark/pilot_v0_1/P05/annotation/v1/README.md",
+      "git_blob_sha1": "317f67161567100f906ae2d07af9d707174849bf",
+      "sha256": "b46e38ce7b9f3ff455bcfc3cd6b504a0b95bd1f9431f5bd94fdf572040453d98",
+      "bytes": 6747
+    },
+    {
+      "role": "coordinator_analysis_protocol",
+      "path": "Files/Research_Papers/benchmark/pilot_v0_1/P05/annotation/v1/analysis_protocol.md",
+      "git_blob_sha1": "b643158de0ace2a6f343e77c3d26a092777e051b",
+      "sha256": "dfb63614fe9fc421d8a696183c9f91d6236adb246f37d30fe6ec02f326fe909c",
+      "bytes": 2872
+    },
+    {
+      "role": "technical_specification",
+      "path": "Files/Research_Papers/benchmark/pilot_v0_1/P05/P05_SPECIFICATIONS.md",
+      "git_blob_sha1": "65a34d0c689cdbbdba567cc306fa34041e920a87",
+      "sha256": "6dd5bdd7e4fcda97a44de984a29d9ded64af32343c8bb0ee172732ebc9569777",
+      "bytes": 1130
+    },
+    {
+      "role": "technical_metadata",
+      "path": "Files/Research_Papers/benchmark/pilot_v0_1/P05/metadata.json",
+      "git_blob_sha1": "64c01b922fdf7c3ef6059c190c275caf1fc87b85",
+      "sha256": "b2430ce88c25d1c292cf805f51b02a14e0eae4ab93e3f87158651a4b8603b84a",
+      "bytes": 2365
+    },
+    {
+      "role": "technical_results_summary",
+      "path": "Files/Research_Papers/benchmark/pilot_v0_1/P05/P05_RESULTS.md",
+      "git_blob_sha1": "478b69ebca25d8835bf77eef6909b80404996f77",
+      "sha256": "9ffc1e9e647f40bbe3d49d6df46b990d55972649ebdca874add82c3b15b09be4",
+      "bytes": 2373
+    },
+    {
+      "role": "formal_strategy",
+      "path": "Files/Research_Papers/benchmark/pilot_v0_1/P05/formal/STRATEGY.md",
+      "git_blob_sha1": "fbee5ad74384f59188dccd6f08f3fff2630aeba2",
+      "sha256": "f62ec2666a6de0ac843c84764b7fbd48fa33809d79494ca63b7085fa2c74bce9",
+      "bytes": 2001
+    },
+    {
+      "role": "formal_harness",
+      "path": "Files/Research_Papers/benchmark/pilot_v0_1/P05/formal/harness.sv",
+      "git_blob_sha1": "9f15b23dd158a1a4af5f90bbbf6d1671998b873c",
+      "sha256": "f7547837b51a701133bf40bf3e1db49d838ba91c806fb7462c49dfa9ade0f9be",
+      "bytes": 1260
+    },
+    {
+      "role": "formal_properties",
+      "path": "Files/Research_Papers/benchmark/pilot_v0_1/P05/formal/b_properties.sv",
+      "git_blob_sha1": "6b258d27f4e9529f3be43039b857a168e68770cd",
+      "sha256": "8c26163670888b014bebc7e93648f3881fa108b9c9b598b16f36b0119801aff0",
+      "bytes": 671
+    },
+    {
+      "role": "formal_runner",
+      "path": "Files/Research_Papers/benchmark/pilot_v0_1/P05/formal/run.py",
+      "git_blob_sha1": "144d37d1dbcd0ffe468aaf0e9c2f0bb14082c764",
+      "sha256": "08093956c192726af30f9fcf29af1770645e4146691c853d7cab0b52e8018640",
+      "bytes": 3993
+    },
+    {
+      "role": "reference_rtl",
+      "path": "Files/Research_Papers/benchmark/pilot_v0_1/P05/reference_rtl/responses.sv",
+      "git_blob_sha1": "94eaaf0ee89341007892783935d7e1eeebddeea5",
+      "sha256": "490003a932adcf2887e821c9e22a70a6194df8704ede019a8c1c014e0b7e60ac",
+      "bytes": 464
+    },
+    {
+      "role": "historical_run02_manifest",
+      "path": "Files/Research_Papers/benchmark/pilot_v0_1/P05/evidence/run-02/SHA256SUMS.json",
+      "git_blob_sha1": "d572d9801ba889474f8d8e3999544131928ab6d4",
+      "sha256": "8b156d846cf01246a51b4b3efb0acdfa91fd164b27edfed2255e0e55287e82aa",
+      "bytes": 2830
+    },
+    {
+      "role": "historical_run02_form_snapshot_not_current_review_input",
+      "path": "Files/Research_Papers/benchmark/pilot_v0_1/P05/evidence/run-02/source/annotation/REVIEW_FORM.md",
+      "git_blob_sha1": "79179adf25d6ff604b11c4a33bc3bb9dc5d5673a",
+      "sha256": "c272940ef73e45d8159c8eb0df0e698706bec7797486b4ef36f4b9737dd81ce9",
+      "bytes": 1079
+    }
+  ],
+  "historical_form_boundary": {
+    "current_form_path": "Files/Research_Papers/benchmark/pilot_v0_1/P05/annotation/v1/reviewer_form.md",
+    "current_form_git_blob_sha1": "5f091e8b86ad3c255ac0cd4f99f7c0ad77573093",
+    "current_form_sha256": "817387d4fff25ba47871e1b9d43c71cddc1c1872363086fb0f1abd361dbe4aa8",
+    "historical_run02_form_path": "Files/Research_Papers/benchmark/pilot_v0_1/P05/evidence/run-02/source/annotation/REVIEW_FORM.md",
+    "historical_run02_form_git_blob_sha1": "79179adf25d6ff604b11c4a33bc3bb9dc5d5673a",
+    "historical_run02_form_sha256": "c272940ef73e45d8159c8eb0df0e698706bec7797486b4ef36f4b9737dd81ce9",
+    "interpretation": "The files intentionally differ. The historical snapshot remains bound to run-02. The current reviewer form is the prospective input version pinned here; the current form must never be represented as the form used by run-02."
+  },
+  "review_gate": {
+    "human_responses_recorded": 0,
+    "collection_authorized": false,
+    "collection_blocker": "Project policy places independent human review after full technical completion and the reviewer materials must be re-frozen if changed.",
+    "technical_completion_required": true,
+    "ambiguity_certified": false,
+    "llm_evaluation_authorized": false
+  },
+  "non_goals": [
+    "This manifest does not claim P05 is frozen as an approved scientific gold case.",
+    "It does not authorize human-review collection before technical completion.",
+    "It does not change P05 requirement/interpretations/specifications, reviewer form, analysis protocol, RTL, formal evidence, or run manifests.",
+    "It does not retroactively replace the historical run-02 form."
+  ]
+}
