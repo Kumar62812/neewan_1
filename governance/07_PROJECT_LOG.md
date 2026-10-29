@@ -311,3 +311,9 @@ The current head `09094366a11294a86975e3a1a5aedccd47cfcc71` passed the P01 packa
 - Four previous attempts remain in Actions history. They caught a fixture-pin path bug and two schema/report parsing assertion issues. These were corrected before the passing run; failures remain preserved.
 - Final report artifact: [12872102588](https://github.com/Kumar62812/neewan_1/actions/runs/40816068105/artifacts/12872102588), size 2,288 bytes, uploaded ZIP digest `sha256:e89e433ee71bcd5e783a23a9015ed3c2de5acd840ca2b919f19f02e56e40707d`.
 - C8 disposition: `CONSISTENT_BUT_GOVERNANCE_BLOCKED`. D2/D14 remain open; P01 template remains not frozen. No canonical schema/template or historical P01/P02/P05 evidence was modified; no formal tools, human review or LLM experiments were run.
+
+## 2026-10-29 update — D1 taxonomy decision-readiness audit
+
+- Added `docs/project-state/D1_TAXONOMY_DECISION_READINESS.md` to compare the three D1 options, explain the recommended primary-category/secondary-tag separation, define proposed acceptance tests, and record preservation boundaries.
+- Recommendation is Option A (C1–C5 primary; six RP §5 dimensions as optional secondary tags), aligned with the currently frozen PLAN §5.
+- D1 remains **PENDING_AUTHOR_DECISION**; AM-001 remains a draft and is not effective. No frozen source, case metadata, RTL, formal evidence, or run artifacts were changed. The proposed acceptance tests were not executed by this documentation-only task.

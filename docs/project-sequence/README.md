@@ -30,6 +30,13 @@ This repository is **public**. Do not commit API keys, unpublished local-only pr
 
 C1 records observable repository paths and known evidence/gates; it does not certify cases or infer that missing local-only artifacts never existed.
 
+## D1 — taxonomy decision readiness
+
+- [D1 taxonomy decision-readiness audit](../project-state/D1_TAXONOMY_DECISION_READINESS.md)
+- [A3 decision matrix](../project-state/A3_PROTOCOL_DECISION_MATRIX_v1.0.md) · [author decision form](../project-state/A3_AUTHOR_DECISION_FORM.md) · [draft amendment AM-001](../amendments/AM-001_primary-taxonomy.md)
+
+The technical recommendation is Option A: C1–C5 remains the single primary category and the six RP §5 dimensions become optional secondary tags. This is **not an approval**. D1 remains pending until an explicit author disposition and approved amendment are recorded.
+
 ## P02/P05 source and evidence integrity (C2)
 
 - [C2 P02/P05 retained evidence and source alignment audit](../project-state/C2_P02_P05_EVIDENCE_ALIGNMENT.md)
