@@ -125,6 +125,13 @@ The D3 implementation version `aed8f38cf0fca5e2a0ff8e3d3bc07349e6d20df2` is **ap
 
 The helper assigns `MISINTERPRET` only for valid/extracted RTL, successful compilation, explicit completed formal comparison, behavioral class `M`, and a referenced approved comparison contract. All missing or failed prerequisites fail closed. All 21 offline tests passed. D5 remains pending, so the synthetic test contract is not a real approved research contract; complete evaluator integration and scored use remain blocked.
 
+## D5 — A/B/AB/M comparison-relation decision readiness
+
+- [D5 decision-readiness brief](../project-state/D5_COMPARISON_RELATION_DECISION_READINESS.md)
+- [A3 decision matrix](../project-state/A3_PROTOCOL_DECISION_MATRIX_v1.0.md) · [author decision form](../project-state/A3_AUTHOR_DECISION_FORM.md) · [P05 pilot PR #9](https://github.com/Kumar62812/neewan_1/pull/9)
+
+The brief compares equivalence-only, contract-conformance-only, and dual-relation options. Its technical recommendation is Option C: preserve frozen-plan equivalence as primary and report contract conformance separately as secondary, if the author accepts the additional AM-007 change. **D5 remains pending**; the report is not an approval and does not authorize scored study results.
+
 ## C8 — C5–C7 cross-artifact integration
 
 - [C8 integration report](../project-state/C8_CROSS_ARTIFACT_INTEGRATION.md)
