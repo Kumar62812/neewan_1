@@ -138,8 +138,8 @@ Disposition codes: **ACCEPT** (adopt the recommendation) · **REJECT** (keep the
 ### D4 — MISINTERPRET definition
 
 - **Rule (PLAN §11):** `MISINTERPRET` applies only when the generated RTL is valid, formally evaluable and classified `M` under the declared comparison contract. Syntax errors, missing content and inconclusive checks are never relabelled as misinterpretation.
-- **Current state:** EVAL emits no `MISINTERPRET` and no A/B/AB/M class, so the rule is not yet implemented. There is nothing that contradicts it either.
-- **Status:** PROPOSED_RULE; NOT_YET_IMPLEMENTED.
+- **Current state (updated 2026-10-29):** a fail-closed D4 policy helper is implemented on `research/end-to-end-sequence`; [CI run 40824632602](https://github.com/Kumar62812/neewan_1/actions/runs/40824632602) passed syntax compilation and 21/21 offline regression tests. It requires valid/extracted RTL, successful compilation, explicit completed formal comparison, a separately supplied `M` behavioral class, and an explicitly approved comparison contract. It is a standalone helper, not yet wired into a complete A/B/AB/M evaluator. D5 remains pending, so its positive test uses synthetic contract data only.
+- **Status:** D4 policy helper CI-verified; author disposition pending; full evaluator integration gated on D5. See [D4 report](D4_MISINTERPRET_POLICY.md) and [machine-readable evidence](evidence/D4_MISINTERPRET_POLICY_RUN_40824632602.json).
 
 ### D5 — A/B/AB/M comparison semantics
 
