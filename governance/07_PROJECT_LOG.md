@@ -256,3 +256,12 @@ The current head `09094366a11294a86975e3a1a5aedccd47cfcc71` passed the P01 packa
 - Observed schema identifiers: 17/17; YAML template sections/keys: 15/15.
 - Template readiness remains `BLOCKED_NOT_FROZEN`; five blocker records are retained. Passing CI verifies the audit observations only and does not authorize a template freeze, case construction, human review, or project-completion claim.
 - Report artifact: [12871850130](https://github.com/Kumar62812/neewan_1/actions/runs/40813383592/artifacts/12871850130), uploaded ZIP digest `sha256:b88e6d95e148bf8d1115c1af602a6bfc0eddcd83840b1f858ef0fb617940bd9b`.
+
+
+## 2026-10-29 — C6 schema/template mapping proposal
+
+- Drafted a non-binding field mapping for all 18 field entries in the benchmark schema, including conditional counterexample and annotation/provenance gaps.
+- Captured D2 decision questions about lifecycle/status and classification vocabulary, and D14 questions about canonical field paths/package layout.
+- Proposed (not implemented) distinct fields for case role, scientific classification, and an annotation-record pointer; specified role-specific requirements for controls, ambiguity candidates, negative candidates and robustness cases.
+- Added pinned-source validation, six regression tests, and a GitHub Actions workflow. Actual CI outcome will be recorded after completion.
+- Canonical schema/YAML, P01/P02/P05 case sources, historical runs, manifests, witnesses and prior hashes were not changed. No formal tools, human review or LLM experiments were run. No D2/D14 decision or project completion is inferred.

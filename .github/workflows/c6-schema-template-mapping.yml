@@ -1,0 +1,55 @@
+name: C6 schema-template mapping proposal validation
+
+on:
+  push:
+    branches:
+      - main
+      - research/end-to-end-sequence
+    paths:
+      - 'Files/Research_Papers/docs/benchmark_schema.md'
+      - 'Files/Research_Papers/templates/instance_metadata_template.yaml'
+      - 'Files/Research_Papers/docs/formal_verification_protocol.md'
+      - 'docs/project-state/C6_SCHEMA_TEMPLATE_MAPPING_PROPOSAL.json'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/validate_c6_schema_mapping_proposal.py'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/tests/test_validate_c6_schema_mapping_proposal.py'
+      - '.github/workflows/c6-schema-template-mapping.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'Files/Research_Papers/docs/benchmark_schema.md'
+      - 'Files/Research_Papers/templates/instance_metadata_template.yaml'
+      - 'Files/Research_Papers/docs/formal_verification_protocol.md'
+      - 'docs/project-state/C6_SCHEMA_TEMPLATE_MAPPING_PROPOSAL.json'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/validate_c6_schema_mapping_proposal.py'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/tests/test_validate_c6_schema_mapping_proposal.py'
+      - '.github/workflows/c6-schema-template-mapping.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate complete non-binding schema mapping
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate pinned sources and mapping coverage
+        run: python Files/Research_Papers/benchmark/pilot_v0_1/validate_c6_schema_mapping_proposal.py --repo-root "$GITHUB_WORKSPACE" --output "$GITHUB_WORKSPACE/c6-schema-mapping-report.json"
+      - name: Run proposal regression tests
+        run: python Files/Research_Papers/benchmark/pilot_v0_1/tests/test_validate_c6_schema_mapping_proposal.py
+      - name: Upload validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: c6-schema-template-mapping
+          path: c6-schema-mapping-report.json
+          if-no-files-found: warn
+          retention-days: 30

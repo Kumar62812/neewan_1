@@ -73,3 +73,13 @@ C4 **PASS**: [61/61 checks and 6/6 tests passed](https://github.com/Kumar62812/n
 C5 is a bounded readiness audit, **not a template freeze**. It checks the schema/template mapping, P01's explicit not-frozen status, D2/D14 governance gate, and the distinct role of a deliberately wrong negative control. The readiness outcome remains BLOCKED until the open governance and role-aware validation gates are resolved. The official T1–T31 task numbering is not inferred.
 
 **Verified CI:** [run 40813383592 — PASS](https://github.com/Kumar62812/neewan_1/actions/runs/40813383592): 10/10 audit checks and 6/6 regression tests passed. Readiness intentionally remains `BLOCKED_NOT_FROZEN`. [Evidence summary](../project-state/evidence/C5_TEMPLATE_READINESS_AUDIT_RUN_40813383592.json) · [report artifact](https://github.com/Kumar62812/neewan_1/actions/runs/40813383592/artifacts/12871850130).
+
+
+## C6 — non-binding schema-to-template mapping proposal
+
+- [C6 proposal and decision questions](../project-state/C6_SCHEMA_TEMPLATE_MAPPING_PROPOSAL.md)
+- [Machine-readable 18-field mapping](../project-state/C6_SCHEMA_TEMPLATE_MAPPING_PROPOSAL.json)
+- [Validation report](../project-state/C6_SCHEMA_TEMPLATE_MAPPING_VALIDATION.md)
+- [Validator](../../Files/Research_Papers/benchmark/pilot_v0_1/validate_c6_schema_mapping_proposal.py) · [tests](../../Files/Research_Papers/benchmark/pilot_v0_1/tests/test_validate_c6_schema_mapping_proposal.py) · [workflow](../../.github/workflows/c6-schema-template-mapping.yml)
+
+C6 proposes, but does not implement, a normative field mapping. D2 (lifecycle/status and scientific classification vocabulary) and D14 (canonical case layout) remain unresolved. No canonical source is migrated or frozen.

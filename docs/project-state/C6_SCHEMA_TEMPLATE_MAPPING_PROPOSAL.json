@@ -1,0 +1,232 @@
+{
+  "proposal_id": "FORMAL-AMBIG-RTL-C6-SCHEMA-TEMPLATE-MAPPING",
+  "proposal_version": "1.0",
+  "status": "NON_BINDING_REQUIRES_AUTHOR_DECISION",
+  "prepared_from_commit": "d522efdbec1422fbec98935f084127edbcd24b5f",
+  "purpose": "Candidate field mapping from the prose benchmark schema to the current YAML metadata template. This proposal is not normative.",
+  "source_refs": [
+    {
+      "path": "Files/Research_Papers/docs/benchmark_schema.md",
+      "git_blob_sha1": "ed9ddd7bd10f19bb59d126db2978579fe8fd19ea"
+    },
+    {
+      "path": "Files/Research_Papers/templates/instance_metadata_template.yaml",
+      "git_blob_sha1": "3a0d1fecf1228f320bd459e1c61283912a4238ed"
+    },
+    {
+      "path": "Files/Research_Papers/docs/formal_verification_protocol.md",
+      "git_blob_sha1": "7533420227bed29579732e848fa03cb049b62c7c"
+    }
+  ],
+  "field_mappings": [
+    {
+      "schema_field": "instance_id",
+      "candidate_template_path": "instance_id",
+      "mapping_status": "DIRECT",
+      "decision_needed": false,
+      "notes": "Stable case identifier; preserve evidence across versions."
+    },
+    {
+      "schema_field": "version",
+      "candidate_template_path": "instance_version",
+      "mapping_status": "RENAME_CANDIDATE",
+      "decision_needed": true,
+      "notes": "D2 must select canonical name; schema_version is file-format version, not case version."
+    },
+    {
+      "schema_field": "status",
+      "candidate_template_path": "status",
+      "mapping_status": "SEMANTIC_DECISION_REQUIRED",
+      "decision_needed": true,
+      "notes": "Existing labels mix candidate state, scientific outcome and later frozen release state; D2 should define semantics or separate fields."
+    },
+    {
+      "schema_field": "category",
+      "candidate_template_path": null,
+      "mapping_status": "MISSING_FIELD",
+      "decision_needed": true,
+      "notes": "No top-level category field exists. Do not silently equate category with domain, role or ambiguity dimension."
+    },
+    {
+      "schema_field": "specification_text",
+      "candidate_template_path": "requirement.specification_text",
+      "mapping_status": "NESTING_CANDIDATE",
+      "decision_needed": true,
+      "notes": "Concept is present nested under requirement; D14 must select canonical path."
+    },
+    {
+      "schema_field": "ambiguity_dimension",
+      "candidate_template_path": "requirement.primary_ambiguity_dimension",
+      "mapping_status": "RENAME_AND_NESTING_CANDIDATE",
+      "decision_needed": true,
+      "notes": "Names/nesting differ; taxonomy needs versioned vocabulary."
+    },
+    {
+      "schema_field": "interpretation_A",
+      "candidate_template_path": "interpretations.A.text",
+      "mapping_status": "NESTED_REPRESENTATION_CANDIDATE",
+      "decision_needed": true,
+      "notes": "Candidate mapping; rationale maps to interpretations.A.rationale."
+    },
+    {
+      "schema_field": "interpretation_B",
+      "candidate_template_path": "interpretations.B.text",
+      "mapping_status": "NESTED_REPRESENTATION_CANDIDATE",
+      "decision_needed": true,
+      "notes": "B should be role-conditional; do not fabricate a second plausible interpretation for a control."
+    },
+    {
+      "schema_field": "interpretation_rationale_A",
+      "candidate_template_path": "interpretations.A.rationale",
+      "mapping_status": "NESTED_REPRESENTATION_CANDIDATE",
+      "decision_needed": true,
+      "notes": "Nested rationale exists but mapping is not normative."
+    },
+    {
+      "schema_field": "interpretation_rationale_B",
+      "candidate_template_path": "interpretations.B.rationale",
+      "mapping_status": "NESTED_REPRESENTATION_CANDIDATE",
+      "decision_needed": true,
+      "notes": "Conditional on case role and applicability of a second interpretation."
+    },
+    {
+      "schema_field": "reference_rtl_A",
+      "candidate_template_path": "reference_rtl.A.path",
+      "mapping_status": "NESTED_REPRESENTATION_CANDIDATE",
+      "decision_needed": true,
+      "notes": "Hash maps to reference_rtl.A.sha256; bind to same version."
+    },
+    {
+      "schema_field": "reference_rtl_B",
+      "candidate_template_path": "reference_rtl.B.path",
+      "mapping_status": "NESTED_REPRESENTATION_CANDIDATE",
+      "decision_needed": true,
+      "notes": "Required for two-interpretation candidates; not necessarily for a single-reference control."
+    },
+    {
+      "schema_field": "formal_environment",
+      "candidate_template_path": "formal_environment",
+      "mapping_status": "DIRECT_OBJECT_CANDIDATE",
+      "decision_needed": true,
+      "notes": "Existing object has clock/reset and assumptions; validation rules remain to be defined."
+    },
+    {
+      "schema_field": "observables",
+      "candidate_template_path": "observables",
+      "mapping_status": "DIRECT_OBJECT_CANDIDATE",
+      "decision_needed": true,
+      "notes": "Existing object has signals, cycle semantics and comparison scope."
+    },
+    {
+      "schema_field": "formal_result",
+      "candidate_template_path": "formal_result",
+      "mapping_status": "DIRECT_OBJECT_CANDIDATE",
+      "decision_needed": true,
+      "notes": "Existing object contains method/tool/result fields; controlled outcome vocabulary needs validation."
+    },
+    {
+      "schema_field": "counterexample",
+      "candidate_template_path": "formal_result.counterexample_path",
+      "mapping_status": "CONDITIONAL_MAPPING_CANDIDATE",
+      "decision_needed": true,
+      "notes": "Conditional on established non-equivalence; no witness should be required for equivalent/inconclusive/not-run."
+    },
+    {
+      "schema_field": "annotation_record",
+      "candidate_template_path": "human_annotation.adjudication_record (partial)",
+      "mapping_status": "INSUFFICIENT_MAPPING",
+      "decision_needed": true,
+      "notes": "Scores alone do not identify annotation files; decide if manifest/response/record pointers are needed."
+    },
+    {
+      "schema_field": "provenance",
+      "candidate_template_path": "provenance plus reproducibility",
+      "mapping_status": "DISTRIBUTED_MAPPING_CANDIDATE",
+      "decision_needed": true,
+      "notes": "Source identity and run metadata are split across objects; D14 must decide consolidate or cross-reference."
+    }
+  ],
+  "proposed_additional_fields": [
+    {
+      "field": "case_role",
+      "candidate_values": [
+        "unambiguous_control",
+        "ambiguity_candidate",
+        "negative_candidate",
+        "robustness_case"
+      ],
+      "status": "PROPOSAL_ONLY",
+      "reason": "Separates benchmark role from outcome and prevents checker-negative RTL being mislabelled as an alternate interpretation."
+    },
+    {
+      "field": "classification",
+      "candidate_values": [
+        "uncertified",
+        "certified_ambiguous",
+        "unambiguous_control",
+        "negative_candidate",
+        "inconclusive"
+      ],
+      "status": "PROPOSAL_ONLY",
+      "reason": "Possible separate scientific outcome field; vocabulary needs D2 decision."
+    },
+    {
+      "field": "annotation_record_path",
+      "candidate_values": [],
+      "status": "PROPOSAL_ONLY",
+      "reason": "Stable pointer to a frozen annotation package without overwriting individual responses."
+    }
+  ],
+  "decision_questions": [
+    {
+      "decision": "D2",
+      "question": "What are the canonical lifecycle/status, category and certification vocabularies? Should workflow state be separated from scientific classification?",
+      "options": [
+        "Keep existing vocabulary and define each value exactly",
+        "Separate workflow_status from classification and add case_role"
+      ],
+      "recommendation_for_discussion": "Separation is conceptually clearer but must not be implemented without approval."
+    },
+    {
+      "decision": "D14",
+      "question": "What is the canonical case-package layout and exact field-path mapping among schema prose, YAML metadata and evidence?",
+      "options": [
+        "Keep nested YAML and publish a normative mapping",
+        "Publish a versioned schema/template revision with compatibility and migration notes"
+      ],
+      "recommendation_for_discussion": "Preserve historical records; version a new format explicitly if selected."
+    }
+  ],
+  "role_requirements_proposal": [
+    {
+      "case_role": "unambiguous_control",
+      "interpretation_B": "OPTIONAL_OR_NOT_APPLICABLE",
+      "reference_rtl_B": "OPTIONAL_UNLESS_SEPARATE_CHECKER_NEGATIVE_CONTROL_DECLARED",
+      "annotation": "Control-specific validation; no ambiguity certification implied."
+    },
+    {
+      "case_role": "ambiguity_candidate",
+      "interpretation_B": "REQUIRED",
+      "reference_rtl_B": "REQUIRED",
+      "annotation": "Both interpretations need plausibility evidence; formal distinction alone is insufficient."
+    },
+    {
+      "case_role": "negative_candidate",
+      "interpretation_B": "REQUIRED_IF_A_PAIR_WAS_TESTED",
+      "reference_rtl_B": "CONDITIONAL_ON_TESTED_PAIR",
+      "annotation": "Preserve rejection reason including implausibility, equivalence, invalidity or inconclusiveness."
+    },
+    {
+      "case_role": "robustness_case",
+      "interpretation_B": "ROLE_SPECIFIC",
+      "reference_rtl_B": "ROLE_SPECIFIC",
+      "annotation": "Never label deliberately wrong checker-control RTL as a plausible interpretation."
+    }
+  ],
+  "explicit_nonclaims": [
+    "This proposal is not normative, approved, frozen or a replacement for D2/D14.",
+    "The canonical benchmark schema and metadata YAML template remain unchanged.",
+    "No historical P01/P02/P05 artifact, formal result, run manifest or witness was changed.",
+    "No formal execution, human review, LLM experiment, ambiguity certification or full-project completion is claimed."
+  ]
+}
