@@ -1,0 +1,61 @@
+name: P02/P05 evidence validation
+
+on:
+  push:
+    branches:
+      - main
+      - research/end-to-end-sequence
+    paths:
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/P02/**'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/P05/**'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/validate_p02_p05_evidence.py'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/tests/test_validate_p02_p05_evidence.py'
+      - 'docs/project-state/C2_P02_P05_EVIDENCE_ALIGNMENT.md'
+      - 'docs/project-state/evidence/C2_P02_P05_EVIDENCE_ALIGNMENT_v1.json'
+      - '.github/workflows/p02-p05-evidence-validation.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/P02/**'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/P05/**'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/validate_p02_p05_evidence.py'
+      - 'Files/Research_Papers/benchmark/pilot_v0_1/tests/test_validate_p02_p05_evidence.py'
+      - 'docs/project-state/C2_P02_P05_EVIDENCE_ALIGNMENT.md'
+      - 'docs/project-state/evidence/C2_P02_P05_EVIDENCE_ALIGNMENT_v1.json'
+      - '.github/workflows/p02-p05-evidence-validation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: Audit P02/P05 retained source evidence
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Verify retained manifests and source alignment
+        run: |
+          python Files/Research_Papers/benchmark/pilot_v0_1/validate_p02_p05_evidence.py > c2-evidence-alignment-report.json
+
+      - name: Run validator regression tests
+        run: |
+          python Files/Research_Papers/benchmark/pilot_v0_1/tests/test_validate_p02_p05_evidence.py
+
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: c2-p02-p05-evidence-alignment-report
+          path: c2-evidence-alignment-report.json
+          if-no-files-found: warn
+          retention-days: 30
