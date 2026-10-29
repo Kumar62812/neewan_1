@@ -26,7 +26,7 @@ Disposition codes: **ACCEPT** (adopt the A3 recommendation) · **REJECT** (keep 
 
 | ID | Decision | A3 recommendation | Disposition | Date | Notes / revision |
 |---|---|---|---|---|---|
-| D3 | Technical labels | Implement INVALID / INCOMPLETE / INCONCLUSIVE in the evaluator with fixture tests | PENDING | | |
+| D3 | Technical labels | Implement INVALID / INCOMPLETE / INCONCLUSIVE in the evaluator with fixture tests | ACCEPT | 2026-10-29 | G. Naveen approved implementation commit `aed8f38cf0fca5e2a0ff8e3d3bc07349e6d20df2`; CI run 40822948756 passed 15/15 tests; see dated approval record. Scope is that exact implementation version. |
 | D4 | MISINTERPRET rule | Keep PLAN §11 restriction; implement and test | PENDING | | |
 | D5 | Comparison relation | Choose (a) equivalence, (b) contract conformance or (c) both: ___ | PENDING | | |
 | D10 | P05 Groq pilot | Label EXPLORATORY; exclude from primary metrics | PENDING | | |
