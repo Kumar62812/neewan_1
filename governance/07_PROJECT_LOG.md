@@ -332,3 +332,11 @@ The current head `09094366a11294a86975e3a1a5aedccd47cfcc71` passed the P01 packa
 - Added `.github/workflows/d3-technical-outcome-labels.yml` and `docs/project-state/D3_TECHNICAL_OUTCOME_LABELS.md`.
 - The D3 layer emits only `INVALID`, `INCOMPLETE`, or `INCONCLUSIVE` for technical failures. A recognized formal counterexample is retained for a later behavioral-classification stage; the D3 layer never emits `M`.
 - CI result is pending until the workflow actually completes. D3 author approval remains pending. This is not yet integrated into PR #7 and does not unblock Gate 4. No P01/P02/P05 artifacts, formal evidence, historical logs or run manifests were modified; no model call or scored experiment was run.
+
+### D3 CI outcome — 2026-10-29
+
+- Passing workflow: [40822948756](https://github.com/Kumar62812/neewan_1/actions/runs/40822948756), tested implementation commit `aed8f38cf0fca5e2a0ff8e3d3bc07349e6d20df2`.
+- Python: 3.12.15 on `ubuntu-latest`; `py_compile` passed and 15/15 offline regression tests passed (0 failed, 0 skipped).
+- The 15 tests cover missing/truncated content, clarification-only response, syntax/elaboration diagnostics, unknown compile exits, timeouts, missing/crashed tools, formal-result sentinels, unmarked nonzero formal exits, and completed formal commands.
+- [Machine-readable evidence](../project-state/evidence/D3_TECHNICAL_OUTCOME_LABELS_RUN_40822948756.json); detailed report at `docs/project-state/D3_TECHNICAL_OUTCOME_LABELS.md`.
+- This establishes only fixture-level behavior for the D3 implementation candidate. No model call, scored experiment, actual RTL formal run or human review occurred. Author approval remains pending; PR #7 is still unmodified and Gate 4 remains blocked.

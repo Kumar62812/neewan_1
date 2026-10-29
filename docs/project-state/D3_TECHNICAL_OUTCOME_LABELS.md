@@ -3,7 +3,7 @@
 **Project:** FORMAL-AMBIG-RTL  
 **Prepared:** 2026-10-29  
 **Branch:** `research/end-to-end-sequence`  
-**Status at implementation commit:** IMPLEMENTED IN BRANCH — CI VERIFICATION PENDING — AUTHOR APPROVAL PENDING  
+**Status:** IMPLEMENTATION CANDIDATE CI-PASS — AUTHOR APPROVAL PENDING  
 **Decision source:** [A3 Protocol Conflict Decision Matrix](A3_PROTOCOL_DECISION_MATRIX_v1.0.md), D3  
 **Normative baseline:** [Frozen plan §11](https://github.com/Kumar62812/neewan_1/blob/83046997dce165fd3b40c190f7dffa1e280b2c86/Files/FORMAL_AMBIG_RTL_PLAN.md#L103)
 
@@ -39,15 +39,29 @@ An unmarked nonzero formal exit defaults to `INCONCLUSIVE`. This is intentionall
 
 The fixtures cover empty and truncated responses, clarification-only output, syntax error, elaboration error, unknown compile exit, forced timeout, missing tool, process crash, formal timeout, unmarked nonzero formal exit, explicit counterexample, explicit invalid formal model, formal tool crash, and normal completed formal execution. They use local subprocesses and synthetic outputs only—no model call, scored experiment, human review or real RTL formal run.
 
-## 4. Evidence and limitations
+## 4. Verified run evidence
+
+- Machine-readable evidence: [D3 run record](evidence/D3_TECHNICAL_OUTCOME_LABELS_RUN_40822948756.json).
+- Tested implementation commit: `aed8f38cf0fca5e2a0ff8e3d3bc07349e6d20df2`.
+- Workflow: [run 40822948756](https://github.com/Kumar62812/neewan_1/actions/runs/40822948756), completed successfully. Python 3.12.15; syntax compilation passed; 15/15 offline regression tests passed, with zero failures and zero skips.
+
+## 5. Evidence and limitations
 
 - No model was invoked and no scored run was created.
 - No historical P01/P02/P05 metadata, RTL, formal evidence, counterexample, run log or manifest was changed.
 - No behavior class `M` is assigned by this D3 layer.
 - This branch's runner is a D3 implementation candidate and is not yet integrated into or merged back into PR #7.
-- CI status and regression counts must be filled in only from the actual GitHub Actions result.
+- **Verified CI:** [GitHub Actions run 40822948756 — PASS](https://github.com/Kumar62812/neewan_1/actions/runs/40822948756). Python 3.12.15; syntax compilation passed; all 15 offline regression tests passed (0 failed, 0 skipped). The tested source commit is pinned in the machine-readable evidence record.
 - D3's recorded status remains pending author approval; the workflow's passing tests would verify implementation behavior, not approve the research protocol or unblock Gate 4.
 
-## 5. Closure requirements
+## 5. Verified run evidence
 
-D3 can be reported as implementation-verified only after the actual workflow passes its syntax and regression steps. D3 governance remains pending until an explicit author approval of the named implementation version is recorded. Gate 4 remains blocked by the independent D3/D4/D5/D10/D13 protocol and evaluator requirements, the approved status of the experiment plan, and the other project-level gates.
+- Machine-readable evidence: [D3 run record](evidence/D3_TECHNICAL_OUTCOME_LABELS_RUN_40822948756.json).
+- Tested implementation commit: `aed8f38cf0fca5e2a0ff8e3d3bc07349e6d20df2`.
+- Workflow: [run 40822948756](https://github.com/Kumar62812/neewan_1/actions/runs/40822948756), completed with conclusion `success`.
+- Steps: `py_compile` PASS; offline regression fixtures PASS, 15/15.
+- Test scope: synthetic outputs and local subprocesses only. No model call, RTL formal run, human review or scored experiment.
+
+## 6. Closure requirements
+
+D3 implementation behavior is CI-verified for the covered fixtures. D3 governance/author approval remains pending until an explicit author approval of the named implementation version is recorded. Gate 4 remains blocked by the independent D3/D4/D5/D10/D13 protocol and evaluator requirements, the approved status of the experiment plan, and the other project-level gates.

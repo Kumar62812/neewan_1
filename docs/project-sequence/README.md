@@ -115,7 +115,7 @@ C7 checks that an unambiguous control need not invent interpretation B, ambiguit
 - [D3 implementation and verification report](../project-state/D3_TECHNICAL_OUTCOME_LABELS.md)
 - [Traceable runner](../../tools/llm_eval/run_pipeline.py) · [offline regression tests](../../tools/llm_eval/test_d3_outcomes.py) · [GitHub Actions workflow](../../.github/workflows/d3-technical-outcome-labels.yml)
 
-The implementation candidate separates `INVALID`, `INCOMPLETE`, and `INCONCLUSIVE` from generation/compile/formal stage status. An unmarked nonzero formal exit defaults to `INCONCLUSIVE`, never `M`. CI verification and author approval must be recorded separately; this branch copy is not merged into PR #7 and does not authorize scored experiments.
+The implementation candidate separates `INVALID`, `INCOMPLETE`, and `INCONCLUSIVE` from generation/compile/formal stage status. An unmarked nonzero formal exit defaults to `INCONCLUSIVE`, never `M`. [CI run 40822948756 passed: 15/15 offline tests](https://github.com/Kumar62812/neewan_1/actions/runs/40822948756); [machine-readable evidence](../project-state/evidence/D3_TECHNICAL_OUTCOME_LABELS_RUN_40822948756.json). Author approval remains pending; this branch copy is not merged into PR #7 and does not authorize scored experiments.
 
 ## C8 — C5–C7 cross-artifact integration
 
