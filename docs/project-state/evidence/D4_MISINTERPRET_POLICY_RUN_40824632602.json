@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "task_id": "D4",
+  "artifact": "D4_MISINTERPRET_POLICY",
+  "status": "IMPLEMENTATION_CI_PASS_AUTHOR_DISPOSITION_PENDING",
+  "repository": "Kumar62812/neewan_1",
+  "branch": "research/end-to-end-sequence",
+  "tested_commit": "1c6269d3d107d8bbdd225d459390e17cfac588f3",
+  "workflow": {
+    "name": "D4 MISINTERPRET policy regression",
+    "run_id": 40824632602,
+    "url": "https://github.com/Kumar62812/neewan_1/actions/runs/40824632602",
+    "event": "push",
+    "conclusion": "success",
+    "started_at": "2026-10-29T05:39:12Z",
+    "runner": "ubuntu-latest",
+    "python_version": "3.12.15",
+    "steps": {
+      "py_compile": "success",
+      "offline_regression_fixtures": "success"
+    }
+  },
+  "regression_tests": {
+    "total": 21,
+    "passed": 21,
+    "failed": 0,
+    "skipped": 0
+  },
+  "tested_source_blobs": [
+    {
+      "path": "tools/llm_eval/misinterpret_policy.py",
+      "git_blob_sha1": "3b671445bcec790e3e8e7bbcee9d6614566f8429"
+    },
+    {
+      "path": "tools/llm_eval/test_misinterpret_policy.py",
+      "git_blob_sha1": "98cbf78c3dc1ebc4a11e188ddb5f9a203cc5d993"
+    },
+    {
+      "path": ".github/workflows/d4-misinterpret-policy.yml",
+      "git_blob_sha1": "f565c616629f41a14f953360cef1c43079b4bf9f"
+    }
+  ],
+  "coverage": [
+    "Only a complete valid received RTL response, successful compile, explicit formal-comparison completion, separately supplied behavioral class M, and an approved non-empty comparison contract produce MISINTERPRET.",
+    "Classes A, B and AB do not receive MISINTERPRET.",
+    "INVALID, INCOMPLETE and INCONCLUSIVE cannot be relabelled MISINTERPRET.",
+    "Timeout, provider failure, missing RTL, compile failure/not-run, missing formal completion, missing contract, unapproved contract, unknown classification/status, and fixture-only generation fail closed."
+  ],
+  "evidence_scope": {
+    "model_calls": 0,
+    "scored_experiments": 0,
+    "rtl_formal_runs": 0,
+    "human_reviews": 0,
+    "synthetic_fixtures": true
+  },
+  "limitations": [
+    "D5 comparison relation remains pending; the positive contract used by the unit test is synthetic fixture:// data, not a real approved research contract.",
+    "The D4 helper is not wired into a complete A/B/AB/M evaluator; that integration must preserve the D5 governance dependency.",
+    "No end-to-end real compiler/formal adapter validation was performed.",
+    "D4 author disposition remains pending until the author decision form is updated; Gate 4 remains blocked."
+  ]
+}
