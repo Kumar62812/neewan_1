@@ -252,6 +252,7 @@ def audit_repo(repo_root: Path, commit: str | None = None) -> dict[str, Any]:
         "audit_result": "PASS" if failed == 0 else "FAIL",
         "integration_status": "CONSISTENT_BUT_GOVERNANCE_BLOCKED" if failed == 0 else "INTEGRATION_MISMATCH",
         "repo_commit": commit or "UNRECORDED",
+        "checks": checks,
         "checks_total": len(checks),
         "checks_passed": len(checks) - failed,
         "checks_failed": failed,
