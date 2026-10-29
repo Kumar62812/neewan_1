@@ -7,7 +7,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from validate_formal_reproduction import validate_expected_statuses, validate_manifest_dir
 
 class FormalReproductionValidatorTests(unittest.TestCase):
