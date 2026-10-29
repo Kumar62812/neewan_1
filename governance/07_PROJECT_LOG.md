@@ -347,3 +347,11 @@ The current head `09094366a11294a86975e3a1a5aedccd47cfcc71` passed the P01 packa
 - Recorded D3 disposition as `ACCEPT` in `docs/project-state/A3_AUTHOR_DECISION_FORM.md` and added D3 to the approval register.
 - The named implementation's GitHub Actions run [40822948756](https://github.com/Kumar62812/neewan_1/actions/runs/40822948756) passed syntax compilation and all 15 offline regression tests; the machine-readable evidence status now records the approval.
 - Scope is limited to the approved implementation version and its fixture-level verification. PR #7 integration, real-tool end-to-end validation, D4, D5, and Gate 4 remain open. No historical case, RTL, formal evidence, or run manifest was altered.
+ 
+## 2026-10-29 update — D4 MISINTERPRET policy CI verification
+
+- Added `tools/llm_eval/misinterpret_policy.py`, a fail-closed policy helper implementing frozen PLAN §11's restriction: `MISINTERPRET` is emitted only for valid, extracted RTL that compiled, has explicit completed formal-comparison evidence, is separately classified as M, and references an approved comparison contract.
+- Added 21 offline regression tests and workflow `.github/workflows/d4-misinterpret-policy.yml`. Passing run: [40824632602](https://github.com/Kumar62812/neewan_1/actions/runs/40824632602), Python 3.12.15; `py_compile` PASS; 21/21 tests PASS, 0 failures and 0 skips. [Machine evidence](../docs/project-state/evidence/D4_MISINTERPRET_POLICY_RUN_40824632602.json) and [D4 report](../docs/project-state/D4_MISINTERPRET_POLICY.md).
+- The positive test uses only a synthetic `fixture://` contract. D5 remains pending, so the helper deliberately requires the comparison contract to be explicitly approved; it does not choose equivalence vs contract conformance or create an A/B/AB/M classifier.
+- D4 author disposition remains pending. The helper is not yet wired into the complete evaluator; no model calls, scored experiments, real RTL formal runs, human reviews, or case/evidence modifications occurred.
+- **Supersession note:** the earlier D3 log entry above saying the CI/approval outcome was pending is a historical snapshot. It was superseded on 2026-10-29 by the later “D3 author approval recorded” entry and the updated decision/evidence records.
