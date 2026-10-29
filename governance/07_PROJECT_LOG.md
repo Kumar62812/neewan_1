@@ -189,3 +189,12 @@ The current head \`09094366a11294a86975e3a1a5aedccd47cfcc71\` passed the P01 pac
 - Recorded reported core/conditional-extension scope with an explicit caveat that the approved signed master-plan text was not located; disclosed inconsistent PR #6/main publication statements instead of inferring a merge or approval.
 - No RTL, formal logs, witnesses, run manifests, accepted evidence archive, approval record, or pending amendment was changed. No new formal run, human review, certification, or template freeze was performed.
 
+## 2026-10-29 update — C2 P02/P05 evidence alignment audit
+
+- Added \`Files/Research_Papers/benchmark/pilot_v0_1/validate_p02_p05_evidence.py\`, four focused regression tests, and \`.github/workflows/p02-p05-evidence-validation.yml\`.
+- Successful run [40808854269](https://github.com/Kumar62812/neewan_1/actions/runs/40808854269) passed 198/198 checks. All four retained run-01/run-02 SHA-256 manifests (P02: 43 and 50 files; P05: 31 and 30 files) matched every listed file and complete inventory.
+- All 19 pinned P02/P05 contract/formal-source pairs matched their run-02 snapshots. Metadata, run-status and result-summary checks passed. Four regression tests passed, covering valid manifests and detection of file, manifest and source-snapshot mutation.
+- Explicit finding C2-F1: current P05 reviewer form \`annotation/v1/reviewer_form.md\` is not byte-identical to the form retained in the P05 run-02 source snapshot. The formal runner does not consume that form, so this does not change the formal evidence. The exact form/version/hash used must nevertheless be frozen and recorded before human reviews begin.
+- The audit is read-only. No formal tools were run, no run evidence or source RTL was edited, P02 T06 remains subject to its named author-approval gate, and P05 remains unresolved with zero human responses and no ambiguity certification.
+- Machine-readable evidence: \`docs/project-state/evidence/C2_P02_P05_VALIDATION_RUN_40808854269.json\`.
+
