@@ -117,6 +117,14 @@ C7 checks that an unambiguous control need not invent interpretation B, ambiguit
 
 The D3 implementation version `aed8f38cf0fca5e2a0ff8e3d3bc07349e6d20df2` is **approved by G. Naveen** and passed [CI run 40822948756 (15/15 offline tests)](https://github.com/Kumar62812/neewan_1/actions/runs/40822948756); see the [dated approval record](./approvals/D3_TECHNICAL_OUTCOME_LABELS_APPROVAL_2026-10-29.md) and [machine-readable evidence](../project-state/evidence/D3_TECHNICAL_OUTCOME_LABELS_RUN_40822948756.json). Approval is version-specific. The code is not merged into PR #7; D4/D5 and scored-study gates remain open.
 
+## D4 — MISINTERPRET policy guard
+
+- [D4 policy report](../project-state/D4_MISINTERPRET_POLICY.md)
+- [Policy helper](../../tools/llm_eval/misinterpret_policy.py) · [21 regression tests](../../tools/llm_eval/test_misinterpret_policy.py) · [workflow](../../.github/workflows/d4-misinterpret-policy.yml)
+- [Passing CI run 40824632602](https://github.com/Kumar62812/neewan_1/actions/runs/40824632602) · [machine-readable evidence](../project-state/evidence/D4_MISINTERPRET_POLICY_RUN_40824632602.json)
+
+The helper assigns `MISINTERPRET` only for valid/extracted RTL, successful compilation, explicit completed formal comparison, behavioral class `M`, and a referenced approved comparison contract. All missing or failed prerequisites fail closed. All 21 offline tests passed. D5 remains pending, so the synthetic test contract is not a real approved research contract; complete evaluator integration and scored use remain blocked.
+
 ## C8 — C5–C7 cross-artifact integration
 
 - [C8 integration report](../project-state/C8_CROSS_ARTIFACT_INTEGRATION.md)
