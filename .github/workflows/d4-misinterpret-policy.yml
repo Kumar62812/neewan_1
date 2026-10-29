@@ -1,0 +1,38 @@
+name: D4 MISINTERPRET policy regression
+
+on:
+  push:
+    branches:
+      - research/end-to-end-sequence
+    paths:
+      - 'tools/llm_eval/misinterpret_policy.py'
+      - 'tools/llm_eval/test_misinterpret_policy.py'
+      - '.github/workflows/d4-misinterpret-policy.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'tools/llm_eval/misinterpret_policy.py'
+      - 'tools/llm_eval/test_misinterpret_policy.py'
+      - '.github/workflows/d4-misinterpret-policy.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  d4-regression:
+    name: Verify fail-closed MISINTERPRET policy
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile policy and tests
+        run: python -m py_compile tools/llm_eval/misinterpret_policy.py tools/llm_eval/test_misinterpret_policy.py
+      - name: Run offline regression fixtures
+        run: python tools/llm_eval/test_misinterpret_policy.py
