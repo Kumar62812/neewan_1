@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "task_id": "C3",
+  "task_name": "P02/P05 Linux formal reproduction",
+  "status": "PASS",
+  "repository": "Kumar62812/neewan_1",
+  "branch": "research/end-to-end-sequence",
+  "tested_commit": "78e67788ade02881bef5c3321f385c03ea9579b8",
+  "setup_commit": "b79244c1e5f1fd9c14f041d4d16121dfb45d08ed",
+  "workflow": {
+    "name": "P02/P05 Linux formal reproduction",
+    "run_id": 40809992594,
+    "run_number": 2,
+    "conclusion": "success",
+    "url": "https://github.com/Kumar62812/neewan_1/actions/runs/40809992594",
+    "created_at": "2026-10-29T03:03:55Z",
+    "completed_at": "2026-10-29T03:04:34Z"
+  },
+  "environment": {
+    "platform": "GitHub-hosted Ubuntu Linux x86_64",
+    "python": "3.12.15",
+    "yosys": "0.63",
+    "yowasp_yosys": "0.63.0.0.post1107",
+    "z3": "4.15.4.0",
+    "requirements_file": "docs/reproducibility/formal-requirements.txt"
+  },
+  "executions": {
+    "P02": {
+      "runner_exit_code": 0,
+      "required_outcomes": {
+        "reference-bmc": "PASS",
+        "reference-induction": "PASS",
+        "reference-cover": "PASS",
+        "wrong-bmc": "FAIL (expected negative-control violation)",
+        "async-bmc": "FAIL (expected negative-control violation)"
+      }
+    },
+    "P05": {
+      "runner_exit_code": 0,
+      "required_outcomes": {
+        "reference-bmc": "PASS",
+        "reference-induction": "PASS",
+        "reference-cover": "PASS",
+        "equality-bmc": "FAIL (expected behavioral distinction)"
+      }
+    }
+  },
+  "validation": {
+    "status": "PASS",
+    "checks": 22,
+    "passed": 22,
+    "failed": 0,
+    "source_pairs_byte_identical": 19,
+    "run_manifests": "complete inventory and recomputed SHA-256 checks passed for both fresh packages",
+    "historical_preflight": "C2 retained-evidence validator passed; C2 regression tests 4/4 passed",
+    "C3_regression_tests": {
+      "passed": 4,
+      "failed": 0
+    }
+  },
+  "artifact": {
+    "id": 12870250852,
+    "name": "c3-p02-p05-linux-run-03",
+    "url": "https://github.com/Kumar62812/neewan_1/actions/runs/40809992594/artifacts/12870250852",
+    "size_bytes": 90300,
+    "sha256": "8f3c0242f376c04ba83d47801e23ce2dc3258cd87f07c8d6462879c4cf887977",
+    "expires_at": "2027-01-27T03:03:56Z",
+    "contents": [
+      "P02/P05 raw tool logs",
+      "SMT model files",
+      "VCD/Yosys witnesses",
+      "source snapshots",
+      "environment and Python package records",
+      "runs.json and SHA256SUMS.json",
+      "C2 preflight report",
+      "C3 validation report",
+      "runner exit-code record"
+    ]
+  },
+  "source_files_checked": [
+    "P02 requirement",
+    "P02 interpretation",
+    "P02 specification",
+    "P02 consistency review",
+    "P02 formal strategy",
+    "P02 harness",
+    "P02 properties",
+    "P02 runner",
+    "P02 reference RTL",
+    "P02 wrong-reset control",
+    "P02 async-reset control",
+    "P05 requirement",
+    "P05 interpretations",
+    "P05 specifications",
+    "P05 formal strategy",
+    "P05 harness",
+    "P05 B-state properties",
+    "P05 runner",
+    "P05 reference RTL"
+  ],
+  "corrective_history": [
+    {
+      "workflow_run_id": 40809905373,
+      "conclusion": "failure",
+      "cause": "C3 unit-test import path was incorrect; both formal runners returned 0 and the C3 22-check validator passed in that attempt.",
+      "correction_commit": "78e67788ade02881bef5c3321f385c03ea9579b8",
+      "resolution": "import path fixed and complete workflow rerun as successful run #2"
+    }
+  ],
+  "claim_boundaries": [
+    "Formal outcomes are scoped to the documented Boolean stable-sampled-edge model.",
+    "This task does not close T06 or record author approval.",
+    "The P05 reviewer-form version mismatch remains a pre-human-review action.",
+    "No human review, ambiguity certification, or LLM performance result is claimed."
+  ]
+}

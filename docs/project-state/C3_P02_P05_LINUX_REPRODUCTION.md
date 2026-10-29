@@ -1,6 +1,6 @@
 # C3 — P02/P05 Linux Formal Reproduction
 
-**Status at setup:** PREPARED; execution must be confirmed by a completed GitHub Actions run.  
+**Status: PASS** — independently executed on Linux; run-03 output packages, regression tests and the validation report are retained in the linked workflow artifact.  
 **Branch:** research/end-to-end-sequence  
 **Purpose:** Independently rerun the existing P02/P05 formal suites on Linux with pinned tools, retaining fresh run-03 output without modifying historical run-01/run-02 evidence.
 
@@ -26,6 +26,23 @@ This task does not edit RTL, historical logs, witnesses, run manifests, archived
 
 The P05 reviewer-form version mismatch found in C2 is not treated as a formal input change because the formal runner does not consume the form. It remains a required version-freeze action before human review. C3 does not by itself close T06's pending author decisions or certify P05 ambiguity.
 
-## Result record
+## Verified execution result
 
-The execution result and artifact link will be added only after GitHub Actions reports a completed run. Until then, C3 is PREPARED, not PASS.
+**PASS:** [GitHub Actions run #2](https://github.com/Kumar62812/neewan_1/actions/runs/40809992594), tested commit 78e67788ade02881bef5c3321f385c03ea9579b8.
+
+- Environment: Ubuntu Linux x86_64, Python 3.12.15, pinned Yosys 0.63 and Z3 4.15.4.
+- P02 runner exit code: 0. Reference BMC, induction and cover PASS; wrong-reset and asynchronous-reset negative controls produced the required FAIL outcomes.
+- P05 runner exit code: 0. Reference BMC, induction and cover PASS; equality BMC produced the required FAIL with a behavioral distinction.
+- Validation: **22/22 checks passed**, including manifest inventories/digests, both case result vectors, environment/tool versions, runner exit codes, and **19/19 current/run-03/run-02 source snapshot pairs byte-identical**.
+- Regression tests: C3 validator **4/4 passed**. C2 preflight source/evidence validation and its **4/4 tests** also passed.
+- Raw logs, SMT models, witnesses, environment records, manifests and reports: [download the C3 run artifact](https://github.com/Kumar62812/neewan_1/actions/runs/40809992594/artifacts/12870250852).
+- Artifact metadata: ID 12870250852; 90,300 bytes; SHA-256 8f3c0242f376c04ba83d47801e23ce2dc3258cd87f07c8d6462879c4cf887977; expires 2027-01-27 03:03:56 UTC.
+- Durable summary record: [C3_P02_P05_LINUX_REPRODUCTION_v1.json](evidence/C3_P02_P05_LINUX_REPRODUCTION_v1.json).
+
+## CI correction history
+
+The first workflow attempt (run [#1](https://github.com/Kumar62812/neewan_1/actions/runs/40809905373)) executed both case runners successfully and the same 22-check validator passed, but the job was marked failed because the regression test imported the validator from the wrong directory. The import path was corrected in commit 78e67788ade02881bef5c3321f385c03ea9579b8 and the complete workflow was rerun successfully as run #2. The initial attempt remains in Actions history; it was not relabeled as a pass.
+
+## Remaining boundaries
+
+C3 establishes Linux reproducibility for these two existing cases under the registered model. It does **not** auto-close T06: author decisions/approval remain pending. It also does not resolve the known P05 reviewer-form version difference, collect human reviews, certify ambiguity, or claim LLM performance.

@@ -40,10 +40,14 @@ C2 passed the retained-run manifest integrity checks and selected source-snapsho
 
 
 
-## C3 — P02/P05 Linux formal reproduction (prepared)
 
-- [C3 reproduction plan and current status](../project-state/C3_P02_P05_LINUX_REPRODUCTION.md)
+## C3 — P02/P05 Linux formal reproduction
+
+- **PASS:** [GitHub Actions run #2](https://github.com/Kumar62812/neewan_1/actions/runs/40809992594)
+- [C3 reproduction report](../project-state/C3_P02_P05_LINUX_REPRODUCTION.md)
+- [Machine-readable execution evidence](../project-state/evidence/C3_P02_P05_LINUX_REPRODUCTION_v1.json)
+- [90-day raw run artifact](https://github.com/Kumar62812/neewan_1/actions/runs/40809992594/artifacts/12870250852)
 - [Linux reproduction workflow](../../.github/workflows/p02-p05-formal-reproduction.yml)
 - [Output validator](../../Files/Research_Papers/benchmark/pilot_v0_1/validate_formal_reproduction.py)
 
-C3 is not PASS until the GitHub Actions execution and retained artifact have been inspected.
+Both fresh formal runners exited 0; all 22 validator checks and all four C3 regression tests passed. T06 and the known P05 reviewer-form version gate remain open.
