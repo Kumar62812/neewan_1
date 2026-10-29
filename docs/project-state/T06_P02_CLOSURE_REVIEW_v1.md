@@ -1,6 +1,6 @@
 # T06 — P02 formal/provenance closure: closure review v1
 
-**Status: DRAFT FOR AUTHOR APPROVAL. Not DONE until the author approves this named version.**
+**Status: AUTHOR-APPROVED — DONE for the named review version `T06_P02_CLOSURE_REVIEW_v1` as of 2026-10-29.** See [author approval record](../project-sequence/approvals/T06_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-29.md). The technical review content approved by the author is pinned in that record; this status annotation is a subsequent administrative update.
 Prepared 2026-10-28 after T05 was approved ([approval record](../project-sequence/approvals/T05_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-28.md)). This review is
 read-only over branch `research/end-to-end-sequence` at commit `109336c88433be1c3f5836bfde351b5e0c841b0c`;
 the P02 tree is byte-identical through branch head `762c68df4217d8c6cbf0c93ce4447d1bc136ba88`.
@@ -64,9 +64,7 @@ could not be distinguished.
 environment, the P02 reference RTL satisfies the P02 specification for all reachable states (BMC base case
 plus temporal induction), and two deliberately wrong implementations are rejected with legal witnesses.
 
-**Not claimed:** analog setup/hold timing; four-state X/Z behaviour; behaviour before the first edge beyond the
-T05 O3 assumption; independent-person or cross-platform reproduction; any ambiguity, human-plausibility or
-LLM-performance result. P02 was never a SymbiYosys run; there is no `.sby` file.
+**Not claimed by the original run-02 package alone:** analog setup/hold timing; four-state X/Z behaviour; behaviour before the first edge beyond the T05 O3 assumption; independent-person replication; linguistic ambiguity, human plausibility or LLM-performance results. The separate C3 Linux run provides additional cross-platform reproducibility evidence for P02/P05 without modifying or being folded into run-02. P02 was never a SymbiYosys run; there is no `.sby` file.
 
 ## 6. Case role and package version
 
@@ -84,13 +82,15 @@ The closed P02 evidence package is **`evidence/run-02/`**, identified by the has
 | `P02_RESULTS.md` | `0b508df3c4569bf1ecdc026e70f47e89d1f002b533fc6dd5fe13bac00382bb6b` |
 | `metadata.json` | `6488b260226c633098d69c3e5dbbd87fd0cd5614ef44993df862d2abe35affde` |
 
-## 7. Observations needing an author decision
+## 7. Closure dispositions and non-blocking follow-up
 
-| ID | Severity | Observation | Options |
+| ID | Severity | Closure disposition | Residual handling |
 |---|---|---|---|
-| P1 | Medium | No second-platform rerun exists. Run-02 and the 2026-10-10 clean reproduction both ran on the same macOS arm64 machine. A Linux rerun was attempted for this review but the pinned tools could not be installed in the review workspace (package index blocked), so none was performed. | (a) close T06 on run-02 and record cross-platform reproduction as a stage-19 item; (b) hold T06 until the author runs §8 and commits the result as `run-03` |
-| P2 | Low | The clean-run archives `P02-clean-0874a36608a2-20261010.tar.gz` (SHA-256 `234036a798c5e59dd6c542cbd968742d8576843b9763935f6cd6c9a57ebd7b3b`) exist only on the author's machine and could not be checked here. | (a) author verifies the hash locally and notes the result; (b) leave as an open local-asset audit item |
-| P3 | Low | `runs.json` records absolute local paths under the author's home directory. | (a) accept; they are informative and not sensitive; (b) note for redaction before public release |
+| P1 | Medium | **RESOLVED for T06 closure.** The independent C3 Linux reproduction completed successfully at [run 40809992594](https://github.com/Kumar62812/neewan_1/actions/runs/40809992594); fresh P02 run-03 outcomes matched the expected results. | Keep the C3 artifact as separate provenance. Do not merge its outputs into or rewrite run-02. The project-wide reproduction audit remains open under stage 19. |
+| P2 | Low | **NON-BLOCKING, OPEN local-asset audit.** The author-held archive \`P02-clean-0874a36608a2-20261010.tar.gz\`, SHA-256 \`234036a798c5e59dd6c542cbd968742d8576843b9763935f6cd6c9a57ebd7b3b\`, was not available for direct verification in this repository review. | Retain the asset-hash check as a separate local preservation task. It does not invalidate the visible run-01/run-02 manifests or block T06 closure. |
+| P3 | Low | **NON-BLOCKING release action.** Absolute local paths in historical \`runs.json\` remain part of the recorded run package. | Before public release, produce a redacted release copy or sanitized companion record; preserve the original forensic package and its checksums unchanged. |
+
+These dispositions are recorded to complete the named review. The author’s explicit message approves T06; the separate approval record distinguishes that approval from remaining non-blocking local-asset/release follow-ups.
 
 ## 8. Optional reproduction command (new provenance ID, run-03)
 
@@ -107,12 +107,14 @@ echo "exit=$?"   # 0 means all five expected outcomes reproduced
 
 Acceptance: exit 0; the `source/` hashes in `run-03/SHA256SUMS.json` equal the T05 §4 values.
 
-## 9. Approval request
+C3 separately completed the P02/P05 Linux rerun using isolated temporary run-03 packages; see [C3 report](C3_P02_P05_LINUX_REPRODUCTION.md) and [raw run artifact](https://github.com/Kumar62812/neewan_1/actions/runs/40809992594/artifacts/12870250852). Those outputs are retained under the Actions artifact rather than written into the canonical P02 evidence tree. The run-02 manifest and hashes remain unchanged.
 
-> I approve **T06_P02_CLOSURE_REVIEW_v1** (this file, at the SHA-256 recorded in the approval register) as the
-> T06 closure version, with decisions on P1–P3 as recorded below.
->
-> P1: ___ P2: ___ P3: ___
-> Author: __________ Date: __________
+## 9. Approval record
 
-Until this block is completed, T06 stays **IN PROGRESS**.
+The author explicitly approved \`T06_P02_CLOSURE_REVIEW_v1\` in the conversation on 2026-10-29:
+
+> T06 approved. Do not request further approval—C3 only covers P02/P05 reproducibility, not full project completion. — G. Naveen
+
+The approval record [T06_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-29.md](../project-sequence/approvals/T06_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-29.md) pins the technical review content that was presented for approval and records closure/follow-up dispositions.
+
+**Closure decision: T06 DONE** for P02 formal/provenance closure under the stated Boolean stable-sampled-edge model. This is not a declaration that FORMAL-AMBIG-RTL is complete, that the benchmark is certified ambiguous, or that P05's linguistic plausibility is established.

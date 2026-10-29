@@ -15,7 +15,7 @@
 
 - The scientific [frozen plan](https://github.com/Kumar62812/neewan_1/blob/83046997dce165fd3b40c190f7dffa1e280b2c86/Files/FORMAL_AMBIG_RTL_PLAN.md) and [repository compass](https://github.com/Kumar62812/neewan_1/blob/83046997dce165fd3b40c190f7dffa1e280b2c86/Files/FORMAL_AMBIG_RTL_PROJECT_COMPASS.md) are preserved as-is. Their historical status statements are **not necessarily current**.
 - P01 accepted evidence and source caveats, P02 formal runs and P05 formal runs remain in their original paths; no evidence, witness, run manifest or historical log was rewritten as part of this branch navigation.
-- **Most recent author approval (2026-10-28)**: T05 P02 consistency is **DONE** for `T05_P02_CLOSURE_REVIEW_v1`; see the [approved review artifact](../project-state/T05_P02_CLOSURE_REVIEW_v1.md) and [approval record](./approvals/T05_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-28.md). T06 P02 technical/provenance closure has a [draft review](../project-state/T06_P02_CLOSURE_REVIEW_v1.md) and remains **IN PROGRESS**, not complete. The O5 hashes are recorded as author-supplied values and were not independently rehashed in this repository update.
+- **Most recent author approval (2026-10-29)**: T06 P02 formal/provenance closure is **DONE** for `T06_P02_CLOSURE_REVIEW_v1`; see the [approved closure review](../project-state/T06_P02_CLOSURE_REVIEW_v1.md) and [approval record](./approvals/T06_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-29.md). T05 remains DONE for its own named version; see its [approval record](./approvals/T05_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-28.md). These task closures do not imply full project completion or ambiguity certification.
 - **Review policy**: human reviews occur after the technical work. Formal evidence before then is provisional with respect to linguistic ambiguity certification.
 - Historical snapshot vs verified reality: `main` at `83046997dce165fd3b40c190f7dffa1e280b2c86` contains P02/P05 executed evidence; the inherited `README.md` and compass contain earlier pre-execution status assertions. See [conflicts](CONFLICTS_AND_NEXT_ACTION.md).
 
@@ -50,4 +50,4 @@ C2 passed the retained-run manifest integrity checks and selected source-snapsho
 - [Linux reproduction workflow](../../.github/workflows/p02-p05-formal-reproduction.yml)
 - [Output validator](../../Files/Research_Papers/benchmark/pilot_v0_1/validate_formal_reproduction.py)
 
-Both fresh formal runners exited 0; all 22 validator checks and all four C3 regression tests passed. T06 and the known P05 reviewer-form version gate remain open.
+Both fresh formal runners exited 0; all 22 validator checks and all four C3 regression tests passed. T06 was separately approved and is now DONE. The known P05 reviewer-form version gate, local-asset audit, release-path hygiene, and wider project completion gates remain open.

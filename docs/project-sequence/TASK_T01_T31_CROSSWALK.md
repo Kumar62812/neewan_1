@@ -9,7 +9,7 @@
 | T03 | Research source review/audit | Author approval PENDING; external source audit open | 01/02 |
 | T04 | P01 control validation | Author-reported APPROVED on 2026-10-25; verified closure artifact in repo UNKNOWN | 03 |
 | T05 | P02 requirements/specification consistency and provenance | **DONE — author approved `T05_P02_CLOSURE_REVIEW_v1` on 2026-10-28**; see [review artifact](../project-state/T05_P02_CLOSURE_REVIEW_v1.md) and [approval record](./approvals/T05_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-28.md) | 04 |
-| T06 | P02 formal/provenance closure | **IN PROGRESS**; [closure review draft](../project-state/T06_P02_CLOSURE_REVIEW_v1.md) is recorded; technical closure remains pending | 05 |
+| T06 | P02 formal/provenance closure | **DONE — author approved `T06_P02_CLOSURE_REVIEW_v1` on 2026-10-29**; see [closure review](../project-state/T06_P02_CLOSURE_REVIEW_v1.md) and [approval record](./approvals/T06_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-29.md) | 05 |
 | T07 | UNKNOWN — approved master-plan title not located in published snapshot | UNKNOWN — do not invent or mark DONE | UNMAPPED |
 | T08 | Case template v1, runner and negative controls | Approved scope described in Amendment 06, but execution/closure unverified | 06 |
 | T09 | UNKNOWN — approved master-plan title not located in published snapshot | UNKNOWN — do not invent or mark DONE | UNMAPPED |
@@ -50,4 +50,4 @@
 
 A task may be marked DONE only on explicit **author approval of its named version** after verification. PARTIAL approval is not DONE. Simulated reviews do not satisfy external human reviews. No task status should be inferred from a model response, a branch or a roadmap.
 
-**Next known gate:** T06 P02 formal/provenance closure is in progress. The [approved T05 review](../project-state/T05_P02_CLOSURE_REVIEW_v1.md) and [approval record](./approvals/T05_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-28.md) establish the prerequisite; use the [T06 review draft](../project-state/T06_P02_CLOSURE_REVIEW_v1.md) to complete the remaining checks without altering run-01/run-02 evidence.
+**Latest closure:** T06 P02 formal/provenance closure is **DONE** for the named v1 review under the recorded [author approval](./approvals/T06_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-29.md). C3's Linux run is separate reproducibility evidence. The project is not complete: other mapped/unmapped tasks, missing core cases, governance decisions, evaluator/protocol validation, benchmark-wide reproduction and publication/release gates remain. Because the authoritative T1–T31 master file is still unavailable in the verified tree, this crosswalk does not invent a new official T-number as the next task.

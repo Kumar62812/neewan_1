@@ -219,3 +219,12 @@ The current head \`09094366a11294a86975e3a1a5aedccd47cfcc71\` passed the P01 pac
 - Raw outputs and validation JSON are retained in artifact 12870250852 (SHA-256 8f3c0242f376c04ba83d47801e23ce2dc3258cd87f07c8d6462879c4cf887977; expires 2027-01-27 03:03:56 UTC). Durable metadata is at docs/project-state/evidence/C3_P02_P05_LINUX_REPRODUCTION_v1.json.
 - Initial CI run #1 revealed a test import-path defect, not a formal outcome failure; it was fixed and the full workflow reran successfully. The initial failure remains visible in Actions history.
 - No historical run-01/run-02 evidence, source snapshots, RTL, approval records, or review forms were edited. T06 remains subject to pending author approval; P05 human review and ambiguity certification remain open.
+
+
+## 2026-10-29 update — T06 author approval and closure
+
+- The author explicitly approved \`T06_P02_CLOSURE_REVIEW_v1\` in the conversation: “T06 approved. Do not request further approval—C3 only covers P02/P05 reproducibility, not full project completion. — G. Naveen”.
+- Added \`docs/project-sequence/approvals/T06_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-29.md\`, pinning the review content presented for approval by its Git blob ID \`cccb18d2d7e67566a45e213f235b29f6d881e4b2\` and recording the approval statement, closure scope, and non-blocking residual actions.
+- T06 is marked **DONE** in the closure review/status registers for P02 formal/provenance closure under the documented Boolean stable-sampled-edge model. P1's cross-platform reproducibility follow-up is supported by the separate [C3 Linux run](https://github.com/Kumar62812/neewan_1/actions/runs/40809992594); the P02 run-01/run-02 evidence and hashes remain unchanged.
+- The P02 local-only archive hash audit remains an open, non-blocking preservation item. Absolute local path redaction remains a pre-release action; original historical evidence is not rewritten.
+- This approval is not full-project completion, not P05 linguistic-plausibility approval, and not ambiguity certification. Missing core pilot cases, pending governance decisions, evaluator/protocol validation, benchmark-wide reproducibility, later statistical study, and publication/release gates remain.
