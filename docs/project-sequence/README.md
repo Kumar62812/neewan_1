@@ -30,3 +30,11 @@ This repository is **public**. Do not commit API keys, unpublished local-only pr
 
 C1 records observable repository paths and known evidence/gates; it does not certify cases or infer that missing local-only artifacts never existed.
 
+## P02/P05 source and evidence integrity (C2)
+
+- [C2 P02/P05 retained evidence and source alignment audit](../project-state/C2_P02_P05_EVIDENCE_ALIGNMENT.md)
+- [Machine-readable C2 CI result](../project-state/evidence/C2_P02_P05_VALIDATION_RUN_40808854269.json)
+- [Successful C2 GitHub Actions run](https://github.com/Kumar62812/neewan_1/actions/runs/40808854269)
+
+C2 passed the retained-run manifest integrity checks and selected source-snapshot identity checks. The known P05 reviewer-form version difference remains a gate before human-review data collection.
+
