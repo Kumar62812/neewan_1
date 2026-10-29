@@ -39,10 +39,10 @@ PINNED = {
     str(C7_EVIDENCE): "531e638d5c8f234875cb4ab47d47b19b11369c7a",
     str(C7_VALIDATOR): "b4f923e27868226c3d8a8841c6b48e0d114233f7",
     str(C7_TESTS): "d39d741fc259d7668b9d97a09f22bf3970a8cd27",
-    str(FIXTURES / "unambiguous_control.json"): "95308c4e04241ed68a2999fe44960cce6a7b63d8",
-    str(FIXTURES / "ambiguity_candidate.json"): "57fb823fe592695d0587321389d55609f3910bea",
-    str(FIXTURES / "negative_candidate.json"): "c95a84fe7b62c46fe209f6568dd4df1aef8c5e85",
-    str(FIXTURES / "robustness_case.json"): "1ce2fe75200d1b2d288b15c5ca1c08c9419d8561",
+    str(FIXTURE_DIR / "unambiguous_control.json"): "95308c4e04241ed68a2999fe44960cce6a7b63d8",
+    str(FIXTURE_DIR / "ambiguity_candidate.json"): "57fb823fe592695d0587321389d55609f3910bea",
+    str(FIXTURE_DIR / "negative_candidate.json"): "c95a84fe7b62c46fe209f6568dd4df1aef8c5e85",
+    str(FIXTURE_DIR / "robustness_case.json"): "1ce2fe75200d1b2d288b15c5ca1c08c9419d8561",
 }
 EXPECTED_ROLES = set(FIXTURES)
 C6_STATUS = "NON_BINDING_REQUIRES_AUTHOR_DECISION"
