@@ -1,0 +1,38 @@
+name: D3 technical outcome label regression
+
+on:
+  push:
+    branches:
+      - research/end-to-end-sequence
+    paths:
+      - 'tools/llm_eval/run_pipeline.py'
+      - 'tools/llm_eval/test_d3_outcomes.py'
+      - '.github/workflows/d3-technical-outcome-labels.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'tools/llm_eval/run_pipeline.py'
+      - 'tools/llm_eval/test_d3_outcomes.py'
+      - '.github/workflows/d3-technical-outcome-labels.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  d3-regression:
+    name: Validate D3 technical failure labels
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile runner and tests
+        run: python -m py_compile tools/llm_eval/run_pipeline.py tools/llm_eval/test_d3_outcomes.py
+      - name: Run offline regression fixtures
+        run: python tools/llm_eval/test_d3_outcomes.py

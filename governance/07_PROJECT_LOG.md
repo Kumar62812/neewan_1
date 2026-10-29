@@ -324,3 +324,11 @@ The current head `09094366a11294a86975e3a1a5aedccd47cfcc71` passed the P01 packa
 - Recommendation is Option A, consistent with A3 D2 and draft AM-002: certification status follows frozen PLAN §6; lifecycle stage follows benchmark schema §4; release/freeze state is separate.
 - Specifically records that P02's `technical_verification_complete` is neither vocabulary and cannot be automatically promoted into a certification result; P02/P05 metadata remain read-only and unchanged.
 - D2 remains **PENDING_AUTHOR_DECISION**; AM-002 remains draft and not effective. This documentation-only task did not execute the proposed schema tests or authorize T08. No frozen source, case metadata, RTL, formal evidence, witness or run manifest was modified.
+
+## 2026-10-29 update — D3 technical outcome-label implementation candidate
+
+- Added `tools/llm_eval/run_pipeline.py` on `research/end-to-end-sequence` as a separate D3 candidate port of the traceable runner previously present on the open `research/llm-evaluation-pipeline` branch.
+- Added `tools/llm_eval/test_d3_outcomes.py` covering missing/truncated content, parser/elaboration errors, timeouts, unavailable/crashed tools, ambiguous nonzero exits and explicit formal-result sentinels.
+- Added `.github/workflows/d3-technical-outcome-labels.yml` and `docs/project-state/D3_TECHNICAL_OUTCOME_LABELS.md`.
+- The D3 layer emits only `INVALID`, `INCOMPLETE`, or `INCONCLUSIVE` for technical failures. A recognized formal counterexample is retained for a later behavioral-classification stage; the D3 layer never emits `M`.
+- CI result is pending until the workflow actually completes. D3 author approval remains pending. This is not yet integrated into PR #7 and does not unblock Gate 4. No P01/P02/P05 artifacts, formal evidence, historical logs or run manifests were modified; no model call or scored experiment was run.
