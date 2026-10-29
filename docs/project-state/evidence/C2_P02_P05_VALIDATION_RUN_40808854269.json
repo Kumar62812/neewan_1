@@ -1,0 +1,120 @@
+{
+  "evidence_record_id": "FORMAL-AMBIG-RTL-C2-P02-P05-VALIDATION-40808854269",
+  "version": "1.0",
+  "status": "PASS",
+  "evidence_type": "CI-integrity audit of retained P02/P05 run manifests, run-02 source identity, and metadata/results alignment",
+  "repository": "Kumar62812/neewan_1",
+  "branch": "research/end-to-end-sequence",
+  "workflow": {
+    "name": "P02/P05 evidence validation",
+    "workflow_path": ".github/workflows/p02-p05-evidence-validation.yml",
+    "run_id": 40808854269,
+    "run_url": "https://github.com/Kumar62812/neewan_1/actions/runs/40808854269",
+    "run_number": 3,
+    "event": "push",
+    "conclusion": "success",
+    "tested_commit": "5b274f75b064864f3a45a753bf0543f5cb573498",
+    "created_at_utc": "2026-10-29T02:51:52Z",
+    "completed_at_utc": "2026-10-29T02:52:00Z",
+    "runner": "GitHub-hosted ubuntu-latest",
+    "python": "3.11.17"
+  },
+  "tested_artifacts": {
+    "validator": {
+      "path": "Files/Research_Papers/benchmark/pilot_v0_1/validate_p02_p05_evidence.py",
+      "git_blob_sha1": "46f6e734927f80c7620e609347edb4dd342a937e"
+    },
+    "regression_tests": {
+      "path": "Files/Research_Papers/benchmark/pilot_v0_1/tests/test_validate_p02_p05_evidence.py",
+      "git_blob_sha1": "6a9c576e964069594da1cb08884232b4ef52e717",
+      "tests_run": 4,
+      "tests_passed": 4,
+      "tests_failed": 0,
+      "duration_seconds": 0.004,
+      "names": [
+        "test_manifest_pin_detects_manifest_change",
+        "test_mutated_artifact_is_detected",
+        "test_source_pair_detects_snapshot_drift",
+        "test_valid_sha256_manifest_passes"
+      ]
+    },
+    "workflow": {
+      "path": ".github/workflows/p02-p05-evidence-validation.yml",
+      "git_blob_sha1": "fec60d41c79f293aa703f95126b5e7577eb1c87c"
+    }
+  },
+  "validator_result": {
+    "checks_total": 198,
+    "checks_passed": 198,
+    "checks_failed": 0,
+    "run_manifest_checks": {
+      "P02_run_01": {
+        "manifest_path": "Files/Research_Papers/benchmark/pilot_v0_1/P02/evidence/run-01/SHA256SUMS.json",
+        "manifest_git_blob_sha1": "4168ae6b27220eea975effe04f843770ecb9483e",
+        "listed_files": 43,
+        "checks": 46,
+        "failed": 0
+      },
+      "P02_run_02": {
+        "manifest_path": "Files/Research_Papers/benchmark/pilot_v0_1/P02/evidence/run-02/SHA256SUMS.json",
+        "manifest_git_blob_sha1": "e75a996e50f84b17c16f7e5664664e7f9eafd783",
+        "listed_files": 50,
+        "checks": 53,
+        "failed": 0
+      },
+      "P05_run_01": {
+        "manifest_path": "Files/Research_Papers/benchmark/pilot_v0_1/P05/evidence/run-01/SHA256SUMS.json",
+        "manifest_git_blob_sha1": "29e6a357b072c958cd4ec65eb2ceb52339660900",
+        "listed_files": 31,
+        "checks": 34,
+        "failed": 0
+      },
+      "P05_run_02": {
+        "manifest_path": "Files/Research_Papers/benchmark/pilot_v0_1/P05/evidence/run-02/SHA256SUMS.json",
+        "manifest_git_blob_sha1": "d572d9801ba889474f8d8e3999544131928ab6d4",
+        "listed_files": 30,
+        "checks": 33,
+        "failed": 0
+      }
+    },
+    "run02_source_pairs_checked": 19,
+    "run02_source_pairs_passing": 19,
+    "semantic_status_checks": 12,
+    "known_review_form_version_boundary": {
+      "id": "C2-F1",
+      "status": "KNOWN_VERSION_DIFFERENCE",
+      "severity": "ACTION_REQUIRED_BEFORE_HUMAN_REVIEW",
+      "current_form_path": "Files/Research_Papers/benchmark/pilot_v0_1/P05/annotation/v1/reviewer_form.md",
+      "current_form_git_blob_sha1": "5f091e8b86ad3c255ac0cd4f99f7c0ad77573093",
+      "run02_snapshot_path": "Files/Research_Papers/benchmark/pilot_v0_1/P05/evidence/run-02/source/annotation/REVIEW_FORM.md",
+      "run02_snapshot_git_blob_sha1": "79179adf25d6ff604b11c4a33bc3bb9dc5d5673a",
+      "distinction": "Both forms are pinned and the difference is explicitly detected; it is not a formal-run input change because the formal runner does not consume the form.",
+      "action_before_review": "Freeze/hash the exact requirement, interpretations, current reviewer form, and analysis protocol presented to human reviewers; do not replace the historical run-02 snapshot."
+    }
+  },
+  "protected_claims": {
+    "formal_tools_executed": false,
+    "historical_formal_execution_reproduced": false,
+    "human_reviews_collected": false,
+    "P02_T06_closure_decision_changed": false,
+    "P05_certified_ambiguous": false,
+    "P01_frozen": false,
+    "source_or_evidence_files_modified_by_audit": false
+  },
+  "workflow_artifact": {
+    "artifact_id": 12869656255,
+    "name": "c2-p02-p05-evidence-alignment-report",
+    "download_url": "https://github.com/Kumar62812/neewan_1/actions/runs/40808854269/artifacts/12869656255",
+    "zip_size_bytes": 4485,
+    "zip_digest": "sha256:dff1bc6e0cbf5aea78d67b3973ff9481acdbe93047156a01ea590e32a89fe289",
+    "expires_at_utc": "2026-11-28T02:52:00Z",
+    "note": "The digest is for GitHub's uploaded ZIP archive, not for the extracted JSON report."
+  },
+  "interpretation": "All 198 scripted checks passed: all four run-01/run-02 hash manifests are complete and match their recorded file SHA-256 values, all 19 selected current source/executed-snapshot pairs match their pinned Git blob IDs, semantic status checks agree with metadata/results, and the known P05 reviewer-form version difference is explicitly detected and recorded rather than ignored.",
+  "limitations": [
+    "The integrity audit does not independently rerun or recreate Yosys/Yosys-SMTBMC/Z3 execution.",
+    "P02 technical/provenance closure remains subject to its T06 named author-approval procedure.",
+    "P05 human plausibility remains pending; no human responses or ambiguity certification are claimed.",
+    "P03/P04/P06/P08 and conditional extension cases P07/P09-P12 are outside C2."
+  ]
+}
