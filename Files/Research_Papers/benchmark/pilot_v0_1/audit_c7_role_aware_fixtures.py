@@ -55,7 +55,7 @@ def validate_fixture(record: Any, expected_role: str) -> list[dict[str, str]]:
     add("role-matches-file", record.get("case_role") == expected_role, "case_role matches fixture slot")
     add("no-premature-classification", record.get("classification") is None and record.get("status") == "candidate",
         "scientific classification remains null and lifecycle status remains candidate")
-    formal = obj(record.get("formal_result)); human = obj(record.get("human_annotation")); cert = obj(record.get("certification"))
+    formal = obj(record.get("formal_result")); human = obj(record.get("human_annotation")); cert = obj(record.get("certification"))
     add("no-formal-or-human-outcome", formal.get("result") == "NOT_RUN"
         and human.get("status") == "NOT_COLLECTED" and human.get("responses_count") == 0
         and cert.get("certified_ambiguous") is False and cert.get("decision") == "NOT_ADJUDICATED",
@@ -69,7 +69,7 @@ def validate_fixture(record: Any, expected_role: str) -> list[dict[str, str]]:
         and str(requirement.get("source_reference", "")).startswith("fixture://"),
         "requirement text and source reference are fixture-only")
 
-    interpretations = obj(record.get("interpretations)); rtl = obj(record.get("reference_rtl))
+    interpretations = obj(record.get("interpretations")); rtl = obj(record.get("reference_rtl"))
     a_interp = obj(interpretations.get("A")); a_rtl = obj(rtl.get("A"))
     add("interpretation-a-and-reference-a", bool(a_interp.get("text")) and bool(a_interp.get("rationale"))
         and str(a_rtl.get("path", "")).startswith("fixture://") and a_rtl.get("fixture_reference_only") is True,
@@ -81,7 +81,7 @@ def validate_fixture(record: Any, expected_role: str) -> list[dict[str, str]]:
     b_interp = interpretations.get("B"); b_rtl = rtl.get("B")
     role_ok = False; role_detail = "unrecognized role"
     if expected_role == "unambiguous_control":
-        c = obj(record.get("checker_negative_control))
+        c = obj(record.get("checker_negative_control"))
         role_ok = b_interp is None and b_rtl is None and c.get("role") == "formal_checker_negative_control" \
             and c.get("design_intent") == "INTENTIONALLY_WRONG_FOR_CHECKER_TEST" \
             and c.get("actual_formal_result") == "NOT_RUN" and c.get("fixture_reference_only") is True \
@@ -100,7 +100,7 @@ def validate_fixture(record: Any, expected_role: str) -> list[dict[str, str]]:
         role_detail = "rejection fields are unadjudicated placeholders; no actual rejection is claimed"
     elif expected_role == "robustness_case":
         c = obj(record.get("checker_negative_control))
-        target = record.get("robustness_target)
+        target = record.get("robustness_target")
         role_ok = isinstance(target, str) and target.startswith("FIXTURE_STRUCTURE_ONLY") \
             and c.get("role") == "robustness_negative_control" and c.get("actual_formal_result") == "NOT_RUN" \
             and c.get("fixture_reference_only") is True and str(c.get("path", "")).startswith("fixture://")
