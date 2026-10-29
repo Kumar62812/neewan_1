@@ -242,7 +242,7 @@ def audit_semantic_status(repo_root: Path) -> list[dict[str, Any]]:
               all(term in p02_results_lower for term in [
                   "reference bmc | pass", "reference temporal induction | pass",
                   "reference cover | pass", "wrong reset-polarity bmc | fail",
-                  "wrong asynchronous-reset bmc | fail", "all eight cover goals"]),
+                  "wrong asynchronous-reset bmc | fail", "all 8 goals reached"]),
               "results prose records BMC, induction, cover and both negative-control outcomes")
 
     add_check(checks, "P05:identity-and-status",
