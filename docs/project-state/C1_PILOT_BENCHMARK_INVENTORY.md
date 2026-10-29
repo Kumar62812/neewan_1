@@ -82,3 +82,7 @@ No case source, RTL, formal log, witness, run manifest, accepted archive, or app
 - Missing from the inspected tree means missing from this tree snapshot, not proof that local-only work never existed.
 - Existing status documents contain historical or inconsistent publication statements; conflicts are disclosed, not resolved by inference.
 
+## C2 follow-up — source/evidence integrity
+
+C1's path inventory is followed by [C2 — P02/P05 Retained Evidence and Source Alignment Audit](C2_P02_P05_EVIDENCE_ALIGNMENT.md). The C2 CI audit passed 198 checks, verified all four retained P02/P05 run manifests, and matched all 19 selected root formal-source files against the run-02 snapshots. It also preserves the known P05 reviewer-form version difference as a required action before human review; see the [machine-readable C2 evidence record](evidence/C2_P02_P05_VALIDATION_RUN_40808854269.json).
+
