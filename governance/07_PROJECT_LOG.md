@@ -301,3 +301,13 @@ The current head `09094366a11294a86975e3a1a5aedccd47cfcc71` passed the P01 packa
 - Cross-checks the 18-field C6 mapping, C6 role list, C5 blocked/not-frozen status, C7 successful run summary, all four fixture role contracts and open D2/D14 status.
 - Added regression tests for source pins, complete mapping, role-specific shape, and mutation attempts that mislabel a checker-negative implementation as interpretation B or promote a synthetic fixture to certified status.
 - The actual CI outcome will be recorded after the run. No canonical schema/template, P01/P02/P05 case sources or historical formal evidence was changed.
+
+
+### C8 CI outcome — 2026-10-29
+
+- Successful workflow: [40816068105](https://github.com/Kumar62812/neewan_1/actions/runs/40816068105), tested commit `8fda51296dce56c398fcf92166361c5117fd9ec6`.
+- Cross-artifact audit: 54 checks passed, 0 failed; 16/16 source/evidence pins match; all 18 schema fields map exactly once; all four role fixtures are present and role-consistent.
+- Regression suite: 11 passed under Python 3.12.15.
+- Four previous attempts remain in Actions history. They caught a fixture-pin path bug and two schema/report parsing assertion issues. These were corrected before the passing run; failures remain preserved.
+- Final report artifact: [12872102588](https://github.com/Kumar62812/neewan_1/actions/runs/40816068105/artifacts/12872102588), size 2,288 bytes, uploaded ZIP digest `sha256:e89e433ee71bcd5e783a23a9015ed3c2de5acd840ca2b919f19f02e56e40707d`.
+- C8 disposition: `CONSISTENT_BUT_GOVERNANCE_BLOCKED`. D2/D14 remain open; P01 template remains not frozen. No canonical schema/template or historical P01/P02/P05 evidence was modified; no formal tools, human review or LLM experiments were run.

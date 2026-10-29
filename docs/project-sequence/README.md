@@ -101,4 +101,4 @@ C7 checks that an unambiguous control need not invent interpretation B, ambiguit
 - [C8 integration report](../project-state/C8_CROSS_ARTIFACT_INTEGRATION.md)
 - [Read-only integration validator](../../Files/Research_Papers/benchmark/pilot_v0_1/audit_c8_integration.py) · [regression tests](../../Files/Research_Papers/benchmark/pilot_v0_1/tests/test_audit_c8_integration.py) · [workflow](../../.github/workflows/c8-cross-artifact-integration.yml)
 
-C8 checks C5/C6/C7 records, pins 16 prior objects, cross-checks the 18-field proposal, and verifies four role-fixture boundaries. It does not resolve D2/D14 or freeze the template.
+C8 passed 54/54 integration checks and 11/11 regression tests, with 16/16 pinned objects, 18/18 mapping fields, and four role fixtures verified. [CI run 40816068105](https://github.com/Kumar62812/neewan_1/actions/runs/40816068105) · [evidence](../project-state/evidence/C8_C5_C7_INTEGRATION_RUN_40816068105.json) · [artifact](https://github.com/Kumar62812/neewan_1/actions/runs/40816068105/artifacts/12872102588). D2/D14 remain open, so the result does not authorize a template freeze.

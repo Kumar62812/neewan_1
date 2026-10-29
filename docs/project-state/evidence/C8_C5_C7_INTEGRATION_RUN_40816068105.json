@@ -1,0 +1,77 @@
+{
+  "evidence_id": "C8_C5_C7_INTEGRATION_RUN_40816068105",
+  "evidence_version": "1.0",
+  "date_utc": "2026-10-29",
+  "repository": "Kumar62812/neewan_1",
+  "branch": "research/end-to-end-sequence",
+  "tested_commit": "8fda51296dce56c398fcf92166361c5117fd9ec6",
+  "workflow": {
+    "name": "C8 C5-C7 cross-artifact integration audit",
+    "run_id": 40816068105,
+    "url": "https://github.com/Kumar62812/neewan_1/actions/runs/40816068105",
+    "conclusion": "success",
+    "python_version": "3.12.15"
+  },
+  "validation": {
+    "audit_result": "PASS",
+    "integration_status": "CONSISTENT_BUT_GOVERNANCE_BLOCKED",
+    "checks_total": 54,
+    "checks_passed": 54,
+    "checks_failed": 0,
+    "pinned_source_objects_total": 16,
+    "pinned_source_objects_matched": 16,
+    "schema_field_count": 18,
+    "mapping_entry_count": 18,
+    "fixture_count": 4,
+    "regression_tests_total": 11,
+    "regression_tests_passed": 11,
+    "regression_tests_failed": 0
+  },
+  "governance": {
+    "D2": "OPEN",
+    "D14": "OPEN",
+    "template_freeze": "BLOCKED_NOT_FROZEN",
+    "canonical_schema_changed": false,
+    "canonical_yaml_template_changed": false,
+    "historical_case_evidence_changed": false
+  },
+  "preserved_failed_attempts": [
+    {
+      "run_id": 40815419231,
+      "commit": "ec22ecc96e4a4e4f8f77aec250d3f2b0d9809d49",
+      "result": "failure",
+      "summary": "Initial validator used the fixture dictionary as a path; corrected by pinning via FIXTURE_DIR."
+    },
+    {
+      "run_id": 40815590451,
+      "commit": "33301324791f6d8ee575e6b0cfef6b6380c48de7",
+      "result": "failure",
+      "summary": "Two integration assertions remained too strict; detailed check records were added."
+    },
+    {
+      "run_id": 40815924948,
+      "commit": "aebd5ddb0918add8bda4114ffec637c627f23ee0",
+      "result": "failure",
+      "summary": "Schema field parsing and exact C7 report phrase checks failed; the C7 report check was broadened to require the actual governance facts."
+    },
+    {
+      "run_id": 40815990451,
+      "commit": "f696e27f2e6fc3a098ad59f3752f5443d525ae17",
+      "result": "failure",
+      "summary": "The schema parser included trailing explanatory text for conditional counterexample; corrected to extract between the first two code delimiters."
+    }
+  ],
+  "artifact": {
+    "id": 12872102588,
+    "name": "c8-cross-artifact-integration",
+    "url": "https://github.com/Kumar62812/neewan_1/actions/runs/40816068105/artifacts/12872102588",
+    "size_bytes": 2288,
+    "uploaded_zip_sha256": "e89e433ee71bcd5e783a23a9015ed3c2de5acd840ca2b919f19f02e56e40707d",
+    "expires_at": "2026-11-28T04:08:41Z"
+  },
+  "nonclaims": [
+    "C8 establishes only that the pinned C5-C7 records are mutually consistent at the tested commit.",
+    "The C7 role fixtures remain synthetic proposal-only examples, not real benchmark cases.",
+    "No D2/D14 approval, canonical template freeze, formal run, human review, LLM experiment, ambiguity certification or project-completion claim is made."
+  ]
+}
