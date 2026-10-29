@@ -317,3 +317,10 @@ The current head `09094366a11294a86975e3a1a5aedccd47cfcc71` passed the P01 packa
 - Added `docs/project-state/D1_TAXONOMY_DECISION_READINESS.md` to compare the three D1 options, explain the recommended primary-category/secondary-tag separation, define proposed acceptance tests, and record preservation boundaries.
 - Recommendation is Option A (C1–C5 primary; six RP §5 dimensions as optional secondary tags), aligned with the currently frozen PLAN §5.
 - D1 remains **PENDING_AUTHOR_DECISION**; AM-001 remains a draft and is not effective. No frozen source, case metadata, RTL, formal evidence, or run artifacts were changed. The proposed acceptance tests were not executed by this documentation-only task.
+
+## 2026-10-29 update — D2 certification-status/lifecycle decision-readiness audit
+
+- Added `docs/project-state/D2_STATUS_LIFECYCLE_DECISION_READINESS.md` with a source-grounded comparison of D2 options, recommended separate status fields and release flag, an evidence-guarded crosswalk, legacy metadata handling, and proposed schema acceptance tests.
+- Recommendation is Option A, consistent with A3 D2 and draft AM-002: certification status follows frozen PLAN §6; lifecycle stage follows benchmark schema §4; release/freeze state is separate.
+- Specifically records that P02's `technical_verification_complete` is neither vocabulary and cannot be automatically promoted into a certification result; P02/P05 metadata remain read-only and unchanged.
+- D2 remains **PENDING_AUTHOR_DECISION**; AM-002 remains draft and not effective. This documentation-only task did not execute the proposed schema tests or authorize T08. No frozen source, case metadata, RTL, formal evidence, witness or run manifest was modified.

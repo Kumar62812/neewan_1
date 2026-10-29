@@ -37,6 +37,13 @@ C1 records observable repository paths and known evidence/gates; it does not cer
 
 The technical recommendation is Option A: C1–C5 remains the single primary category and the six RP §5 dimensions become optional secondary tags. This is **not an approval**. D1 remains pending until an explicit author disposition and approved amendment are recorded.
 
+## D2 — certification status and lifecycle decision readiness
+
+- [D2 decision-readiness audit](../project-state/D2_STATUS_LIFECYCLE_DECISION_READINESS.md)
+- [A3 decision matrix](../project-state/A3_PROTOCOL_DECISION_MATRIX_v1.0.md) · [author decision form](../project-state/A3_AUTHOR_DECISION_FORM.md) · [draft amendment AM-002](../amendments/AM-002_status-vocabulary-crosswalk.md)
+
+The recommendation is Option A: separate PLAN-aligned `certification_status`, benchmark `lifecycle_stage`, and release/freeze state, linked by an evidence-guarded crosswalk. P02's `technical_verification_complete` must not be mistaken for certification. **D2 remains pending**; AM-002 is not effective and no existing metadata was migrated.
+
 ## P02/P05 source and evidence integrity (C2)
 
 - [C2 P02/P05 retained evidence and source alignment audit](../project-state/C2_P02_P05_EVIDENCE_ALIGNMENT.md)
