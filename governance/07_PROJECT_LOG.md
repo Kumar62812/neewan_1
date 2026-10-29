@@ -265,3 +265,12 @@ The current head `09094366a11294a86975e3a1a5aedccd47cfcc71` passed the P01 packa
 - Proposed (not implemented) distinct fields for case role, scientific classification, and an annotation-record pointer; specified role-specific requirements for controls, ambiguity candidates, negative candidates and robustness cases.
 - Added pinned-source validation, six regression tests, and a GitHub Actions workflow. Actual CI outcome will be recorded after completion.
 - Canonical schema/YAML, P01/P02/P05 case sources, historical runs, manifests, witnesses and prior hashes were not changed. No formal tools, human review or LLM experiments were run. No D2/D14 decision or project completion is inferred.
+
+
+### C6 CI outcome — 2026-10-29
+
+- Successful workflow: [40814081793](https://github.com/Kumar62812/neewan_1/actions/runs/40814081793), tested commit `cf8e753e21ef42f1e4280453bd4e3ff30fe875d2`.
+- Validation: 10 checks passed, 0 failed; all 18 schema field entries are mapped exactly once; all 3 pinned source Git blob IDs match.
+- Regression suite: 7 tests passed under Python 3.12.15.
+- Artifact: [12871731814](https://github.com/Kumar62812/neewan_1/actions/runs/40814081793/artifacts/12871731814), size 1,111 bytes, uploaded ZIP digest `sha256:5cd7b46b8bb7e6435a34bd32a5669675d4f473a876013018d3eb109e43eb4b9e`.
+- Result validates coverage/identity only. Proposal remains non-binding; D2/D14 are not approved, canonical files remain unchanged, and template freeze/project completion is not claimed.

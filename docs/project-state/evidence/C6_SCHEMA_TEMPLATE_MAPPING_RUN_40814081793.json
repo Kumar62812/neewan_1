@@ -1,0 +1,51 @@
+{
+  "evidence_id": "C6_SCHEMA_TEMPLATE_MAPPING_RUN_40814081793",
+  "evidence_version": "1.0",
+  "date_utc": "2026-10-29",
+  "repository": "Kumar62812/neewan_1",
+  "branch": "research/end-to-end-sequence",
+  "tested_commit": "cf8e753e21ef42f1e4280453bd4e3ff30fe875d2",
+  "workflow": {
+    "name": "C6 schema-template mapping proposal validation",
+    "run_id": 40814081793,
+    "url": "https://github.com/Kumar62812/neewan_1/actions/runs/40814081793",
+    "conclusion": "success",
+    "python_version": "3.12.15"
+  },
+  "validation": {
+    "audit_result": "PASS",
+    "check_count": 10,
+    "checks_passed": 10,
+    "checks_failed": 0,
+    "schema_required_field_count": 18,
+    "mapping_count": 18,
+    "mapping_coverage": "Each schema-listed field has exactly one mapping entry.",
+    "pinned_source_count": 3,
+    "pinned_sources_matched": 3,
+    "regression_test_count": 7,
+    "regression_tests_passed": 7,
+    "regression_tests_failed": 0
+  },
+  "proposal_status": "NON_BINDING_REQUIRES_AUTHOR_DECISION",
+  "governance_status": {
+    "D2": "OPEN",
+    "D14": "OPEN",
+    "canonical_schema_changed": false,
+    "canonical_yaml_template_changed": false,
+    "p01_template_frozen": false
+  },
+  "artifact": {
+    "id": 12871731814,
+    "name": "c6-schema-template-mapping",
+    "url": "https://github.com/Kumar62812/neewan_1/actions/runs/40814081793/artifacts/12871731814",
+    "size_bytes": 1111,
+    "uploaded_zip_sha256": "5cd7b46b8bb7e6435a34bd32a5669675d4f473a876013018d3eb109e43eb4b9e",
+    "expires_at": "2026-11-28T03:47:20Z"
+  },
+  "nonclaims": [
+    "This evidence validates proposal content coverage and source identity only.",
+    "No D2/D14 decision or template freeze is recorded.",
+    "No formal tools, human review, or LLM experiments were run.",
+    "No full-project completion or ambiguity certification is claimed."
+  ]
+}
