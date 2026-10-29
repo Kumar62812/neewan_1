@@ -138,52 +138,52 @@ P05 ambiguity certification: NOT CLAIMED
 
 ## 2026-10-29 update — B2 P01 package validation
 
-- Added read-only validator \`Files/Research_Papers/benchmark/pilot_v0_1/P01/validate_p01_package.py\` and its usage/interpretation guide at \`docs/project-state/B2_P01_PACKAGE_VALIDATOR.md\`.
+- Added read-only validator `Files/Research_Papers/benchmark/pilot_v0_1/P01/validate_p01_package.py` and its usage/interpretation guide at `docs/project-state/B2_P01_PACKAGE_VALIDATOR.md`.
 - The validator checks the B1-baseline Git blob IDs for 12 package files, contract consistency, correct/negative RTL roles, shared property use, expected SBY configuration outcomes, and the registered SHA-256 of the accepted archive.
 - Corrected relative links in the P01 README.
 - No formal tools were executed by this connected GitHub operation. Runtime validator output remains pending execution on a complete local checkout. P01 remains NOT FROZEN; this task does not grant certification or authorize a freeze tag.
 
 ## 2026-10-29 update — B3 P01 validator regression tests
 
-- Added standard-library regression tests at \`Files/Research_Papers/benchmark/pilot_v0_1/P01/tests/test_validate_p01_package.py\`.
+- Added standard-library regression tests at `Files/Research_Papers/benchmark/pilot_v0_1/P01/tests/test_validate_p01_package.py`.
 - The tests create isolated temporary fixtures and check baseline success, detection of a changed reference RTL blob, and detection of a mutated accepted-archive checksum.
-- Linked the tests from the P01 README and B2 guide; added the usage/interpretation guide at \`docs/project-state/B3_P01_VALIDATOR_TESTS.md\`.
+- Linked the tests from the P01 README and B2 guide; added the usage/interpretation guide at `docs/project-state/B3_P01_VALIDATOR_TESTS.md`.
 - Suite execution was not possible through the connected GitHub file-editing session. No test pass is claimed; the local run command is documented. No formal tool run, certification, case metadata migration, or P01 freeze was performed.
 
 ## 2026-10-29 update — B4 automated P01 package validation
 
-- Added \`.github/workflows/p01-package-validation.yml\` to run the B2 read-only package validator and B3 regression tests for relevant branch pushes and pull requests.
+- Added `.github/workflows/p01-package-validation.yml` to run the B2 read-only package validator and B3 regression tests for relevant branch pushes and pull requests.
 - The workflow preserves the validator JSON output as a downloadable artifact, including on a failing run.
-- Added \`docs/project-state/B4_P01_CI_VALIDATION_GATE.md\` and linked it from the P01 README.
+- Added `docs/project-state/B4_P01_CI_VALIDATION_GATE.md` and linked it from the P01 README.
 - The workflow definition is prepared, but no successful remote run is claimed until GitHub Actions reports a completed PASS. This gate is not formal verification, independent certification, or P01 template freeze.
 
 ## 2026-10-29 update — B5 versioned P01 package manifest
 
-- Added the machine-readable baseline inventory at \`Files/Research_Papers/benchmark/pilot_v0_1/P01/p01_package_manifest_v1.json\`, listing 12 source artifacts by Git blob ID and the registered accepted-archive SHA-256.
+- Added the machine-readable baseline inventory at `Files/Research_Papers/benchmark/pilot_v0_1/P01/p01_package_manifest_v1.json`, listing 12 source artifacts by Git blob ID and the registered accepted-archive SHA-256.
 - Updated the B2 validator to load that manifest as its central source of baseline fingerprints and verify the manifest itself against a pinned Git blob ID.
 - Extended B3 regression tests with manifest-tampering detection; test mutations remain isolated to temporary fixtures.
-- Updated the B2/B3 guides and P01 README; added \`docs/project-state/B5_P01_VERSIONED_MANIFEST.md\`.
+- Updated the B2/B3 guides and P01 README; added `docs/project-state/B5_P01_VERSIONED_MANIFEST.md`.
 - GitHub Actions initially exposed overly strict wording checks in the validator; the checks were corrected to normalize Markdown backticks and test the specification's actual wording.
 - The updated validator and all four regression tests passed in [run 40752580869](https://github.com/Kumar62812/neewan_1/actions/runs/40752580869); the JSON validation report is retained as a run artifact.
 - No formal run, independent reproduction, external review, certification, metadata migration, or P01 freeze was performed.
 
 ## B5 validation confirmation
 
-The current head \`09094366a11294a86975e3a1a5aedccd47cfcc71\` passed the P01 package-validation workflow: [run 40752919435](https://github.com/Kumar62812/neewan_1/actions/runs/40752919435). The manifest pin, all 12 source Git blob fingerprints, the accepted archive SHA-256, and all four validator regression tests passed. This is repository integrity/validator regression evidence only; no formal RTL run or P01 certification/freeze was performed.
+The current head `09094366a11294a86975e3a1a5aedccd47cfcc71` passed the P01 package-validation workflow: [run 40752919435](https://github.com/Kumar62812/neewan_1/actions/runs/40752919435). The manifest pin, all 12 source Git blob fingerprints, the accepted archive SHA-256, and all four validator regression tests passed. This is repository integrity/validator regression evidence only; no formal RTL run or P01 certification/freeze was performed.
 
 ## 2026-10-29 update — B6 P01 validation evidence provenance
 
-- Added \`docs/project-state/B6_P01_VALIDATION_EVIDENCE_RECORD.md\` and machine-readable \`docs/project-state/evidence/P01_CI_VALIDATION_RUN_40752919435.json\`.
-- Captured successful run 40752919435, tested commit \`09094366a11294a86975e3a1a5aedccd47cfcc71\`, the four tested source blob IDs, all 26 validator check results, all four regression-test results, and the GitHub artifact ID/digest/expiry.
+- Added `docs/project-state/B6_P01_VALIDATION_EVIDENCE_RECORD.md` and machine-readable `docs/project-state/evidence/P01_CI_VALIDATION_RUN_40752919435.json`.
+- Captured successful run 40752919435, tested commit `09094366a11294a86975e3a1a5aedccd47cfcc71`, the four tested source blob IDs, all 26 validator check results, all four regression-test results, and the GitHub artifact ID/digest/expiry.
 - Independently inspected the Actions job steps and logs; the validator reported 26 passed, 0 failed, and unittest reported 4 tests passed.
 - The artifact binary is subject to GitHub retention through 2026-11-27 19:17:19 UTC; the committed provenance record preserves run metadata, not an expired artifact's bytes.
 - No formal RTL tool run, independent reproduction of the archived formal execution, external certification or P01 Golden Template freeze was performed. P01 remains NOT FROZEN, and D2/D14 remain pending.
 
-- Follow-up CI run [40765501022](https://github.com/Kumar62812/neewan_1/actions/runs/40765501022) on commit \`92f8cf8323a7457325c2d5016c798783aa060171\` also passed: 26/26 validator checks, four regression tests, and artifact upload. Added its run/artifact metadata to the machine-readable B6 record.
+- Follow-up CI run [40765501022](https://github.com/Kumar62812/neewan_1/actions/runs/40765501022) on commit `92f8cf8323a7457325c2d5016c798783aa060171` also passed: 26/26 validator checks, four regression tests, and artifact upload. Added its run/artifact metadata to the machine-readable B6 record.
 
 ## 2026-10-29 update — C1 pilot benchmark inventory
 
-- Added \`docs/project-state/C1_PILOT_BENCHMARK_INVENTORY.md\` and machine-readable \`docs/project-state/evidence/C1_PILOT_CASE_INVENTORY_v1.json\` after a read-only recursive tree inspection of branch snapshot \`50b8d926b8c8b29fa2375eda40b0c6cfa48325f2\`.
+- Added `docs/project-state/C1_PILOT_BENCHMARK_INVENTORY.md` and machine-readable `docs/project-state/evidence/C1_PILOT_CASE_INVENTORY_v1.json` after a read-only recursive tree inspection of branch snapshot `50b8d926b8c8b29fa2375eda40b0c6cfa48325f2`.
 - The inspected tree contains canonical case directories for P01, P02 and P05 only. P03, P04, P06–P12 have no case-directory path components in that snapshot; this is not a claim about local-only material outside the repository.
 - Recorded P02's existing source and run-01/run-02 technical evidence with T06 still in progress, and P05's formal distinction evidence with human plausibility pending (zero responses) and ambiguity certification not claimed.
 - Recorded reported core/conditional-extension scope with an explicit caveat that the approved signed master-plan text was not located; disclosed inconsistent PR #6/main publication statements instead of inferring a merge or approval.
@@ -191,14 +191,14 @@ The current head \`09094366a11294a86975e3a1a5aedccd47cfcc71\` passed the P01 pac
 
 ## 2026-10-29 update — C2 P02/P05 evidence alignment audit
 
-- Added \`Files/Research_Papers/benchmark/pilot_v0_1/validate_p02_p05_evidence.py\`, four focused regression tests, and \`.github/workflows/p02-p05-evidence-validation.yml\`.
+- Added `Files/Research_Papers/benchmark/pilot_v0_1/validate_p02_p05_evidence.py`, four focused regression tests, and `.github/workflows/p02-p05-evidence-validation.yml`.
 - Successful run [40808854269](https://github.com/Kumar62812/neewan_1/actions/runs/40808854269) passed 198/198 checks. All four retained run-01/run-02 SHA-256 manifests (P02: 43 and 50 files; P05: 31 and 30 files) matched every listed file and complete inventory.
 - All 19 pinned P02/P05 contract/formal-source pairs matched their run-02 snapshots. Metadata, run-status and result-summary checks passed. Four regression tests passed, covering valid manifests and detection of file, manifest and source-snapshot mutation.
-- Explicit finding C2-F1: current P05 reviewer form \`annotation/v1/reviewer_form.md\` is not byte-identical to the form retained in the P05 run-02 source snapshot. The formal runner does not consume that form, so this does not change the formal evidence. The exact form/version/hash used must nevertheless be frozen and recorded before human reviews begin.
+- Explicit finding C2-F1: current P05 reviewer form `annotation/v1/reviewer_form.md` is not byte-identical to the form retained in the P05 run-02 source snapshot. The formal runner does not consume that form, so this does not change the formal evidence. The exact form/version/hash used must nevertheless be frozen and recorded before human reviews begin.
 - The audit is read-only. No formal tools were run, no run evidence or source RTL was edited, P02 T06 remains subject to its named author-approval gate, and P05 remains unresolved with zero human responses and no ambiguity certification.
-- Machine-readable evidence: \`docs/project-state/evidence/C2_P02_P05_VALIDATION_RUN_40808854269.json\`.
+- Machine-readable evidence: `docs/project-state/evidence/C2_P02_P05_VALIDATION_RUN_40808854269.json`.
 
-- Follow-up verification [40808996618](https://github.com/Kumar62812/neewan_1/actions/runs/40808996618), on commit \`47a797a2640c09c3f14ff0894d10270de08836d3\`, also passed all 198 validator checks and four regression tests after the C2 guide update. Its report artifact remains downloadable through 2026-11-28 02:53:29 UTC. The machine-readable C2 record now carries both successful runs.
+- Follow-up verification [40808996618](https://github.com/Kumar62812/neewan_1/actions/runs/40808996618), on commit `47a797a2640c09c3f14ff0894d10270de08836d3`, also passed all 198 validator checks and four regression tests after the C2 guide update. Its report artifact remains downloadable through 2026-11-28 02:53:29 UTC. The machine-readable C2 record now carries both successful runs.
 - During bring-up, the first validator run exposed one overly strict P02 summary phrase check; it was aligned to the exact recorded report wording. The subsequent run passed. The original failed run remains in GitHub Actions history; no failure evidence or source-run artifact was altered.
 
 
@@ -223,8 +223,8 @@ The current head \`09094366a11294a86975e3a1a5aedccd47cfcc71\` passed the P01 pac
 
 ## 2026-10-29 update — T06 author approval and closure
 
-- The author explicitly approved \`T06_P02_CLOSURE_REVIEW_v1\` in the conversation: “T06 approved. Do not request further approval—C3 only covers P02/P05 reproducibility, not full project completion. — G. Naveen”.
-- Added \`docs/project-sequence/approvals/T06_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-29.md\`, pinning the review content presented for approval by its Git blob ID \`cccb18d2d7e67566a45e213f235b29f6d881e4b2\` and recording the approval statement, closure scope, and non-blocking residual actions.
+- The author explicitly approved `T06_P02_CLOSURE_REVIEW_v1` in the conversation: “T06 approved. Do not request further approval—C3 only covers P02/P05 reproducibility, not full project completion. — G. Naveen”.
+- Added `docs/project-sequence/approvals/T06_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-29.md`, pinning the review content presented for approval by its Git blob ID `cccb18d2d7e67566a45e213f235b29f6d881e4b2` and recording the approval statement, closure scope, and non-blocking residual actions.
 - T06 is marked **DONE** in the closure review/status registers for P02 formal/provenance closure under the documented Boolean stable-sampled-edge model. P1's cross-platform reproducibility follow-up is supported by the separate [C3 Linux run](https://github.com/Kumar62812/neewan_1/actions/runs/40809992594); the P02 run-01/run-02 evidence and hashes remain unchanged.
 - The P02 local-only archive hash audit remains an open, non-blocking preservation item. Absolute local path redaction remains a pre-release action; original historical evidence is not rewritten.
 - This approval is not full-project completion, not P05 linguistic-plausibility approval, and not ambiguity certification. Missing core pilot cases, pending governance decisions, evaluator/protocol validation, benchmark-wide reproducibility, later statistical study, and publication/release gates remain.

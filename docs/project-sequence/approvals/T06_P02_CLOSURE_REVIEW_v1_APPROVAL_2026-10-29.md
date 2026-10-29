@@ -2,10 +2,10 @@
 
 **Decision date:** 2026-10-29  
 **Approving author:** G. Naveen (as identified in the author's message)  
-**Review version approved:** \`T06_P02_CLOSURE_REVIEW_v1\`  
-**Repository:** \`Kumar62812/neewan_1\`  
-**Branch:** \`research/end-to-end-sequence\`  
-**Reviewed source Git blob ID before status annotation:** \`cccb18d2d7e67566a45e213f235b29f6d881e4b2\`  
+**Review version approved:** `T06_P02_CLOSURE_REVIEW_v1`  
+**Repository:** `Kumar62812/neewan_1`  
+**Branch:** `research/end-to-end-sequence`  
+**Reviewed source Git blob ID before status annotation:** `cccb18d2d7e67566a45e213f235b29f6d881e4b2`  
 **Status:** **APPROVED — T06 DONE** for the bounded P02 formal/provenance closure described in the named review.
 
 ## Explicit author approval and consent
@@ -35,7 +35,7 @@ The author approved T06 as a closure version; the remaining P2/P3 actions above 
 ## Task-gate decision
 
 - **T05 — P02 requirements/specification consistency and provenance:** remains DONE for its separately approved named version.
-- **T06 — P02 formal/provenance closure:** **DONE — author-approved on 2026-10-29 for \`T06_P02_CLOSURE_REVIEW_v1\`.**
+- **T06 — P02 formal/provenance closure:** **DONE — author-approved on 2026-10-29 for `T06_P02_CLOSURE_REVIEW_v1`.**
 - **C3 — P02/P05 Linux reproducibility:** PASS under its recorded model; this does not itself authorize project completion or certify ambiguity.
 
 ## Limits of approval

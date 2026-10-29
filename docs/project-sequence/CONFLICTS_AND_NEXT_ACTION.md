@@ -16,7 +16,7 @@
 
 ## Recently closed gate — T06 P02 formal/provenance closure
 
-**T06 is DONE** for \`T06_P02_CLOSURE_REVIEW_v1\` following explicit author approval on 2026-10-29. See the [approval record](./approvals/T06_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-29.md). P02's original run-01/run-02 evidence remains unchanged. P1 cross-platform follow-up is supported by the separately retained [C3 Linux run](https://github.com/Kumar62812/neewan_1/actions/runs/40809992594); P2 local archive verification remains an open non-blocking audit item, and P3 absolute-path redaction remains a pre-release action.
+**T06 is DONE** for `T06_P02_CLOSURE_REVIEW_v1` following explicit author approval on 2026-10-29. See the [approval record](./approvals/T06_P02_CLOSURE_REVIEW_v1_APPROVAL_2026-10-29.md). P02's original run-01/run-02 evidence remains unchanged. P1 cross-platform follow-up is supported by the separately retained [C3 Linux run](https://github.com/Kumar62812/neewan_1/actions/runs/40809992594); P2 local archive verification remains an open non-blocking audit item, and P3 absolute-path redaction remains a pre-release action.
 
 ## Next authorised research checkpoint
 

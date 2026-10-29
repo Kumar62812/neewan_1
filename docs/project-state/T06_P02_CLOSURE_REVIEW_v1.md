@@ -87,8 +87,8 @@ The closed P02 evidence package is **`evidence/run-02/`**, identified by the has
 | ID | Severity | Closure disposition | Residual handling |
 |---|---|---|---|
 | P1 | Medium | **RESOLVED for T06 closure.** The independent C3 Linux reproduction completed successfully at [run 40809992594](https://github.com/Kumar62812/neewan_1/actions/runs/40809992594); fresh P02 run-03 outcomes matched the expected results. | Keep the C3 artifact as separate provenance. Do not merge its outputs into or rewrite run-02. The project-wide reproduction audit remains open under stage 19. |
-| P2 | Low | **NON-BLOCKING, OPEN local-asset audit.** The author-held archive \`P02-clean-0874a36608a2-20261010.tar.gz\`, SHA-256 \`234036a798c5e59dd6c542cbd968742d8576843b9763935f6cd6c9a57ebd7b3b\`, was not available for direct verification in this repository review. | Retain the asset-hash check as a separate local preservation task. It does not invalidate the visible run-01/run-02 manifests or block T06 closure. |
-| P3 | Low | **NON-BLOCKING release action.** Absolute local paths in historical \`runs.json\` remain part of the recorded run package. | Before public release, produce a redacted release copy or sanitized companion record; preserve the original forensic package and its checksums unchanged. |
+| P2 | Low | **NON-BLOCKING, OPEN local-asset audit.** The author-held archive `P02-clean-0874a36608a2-20261010.tar.gz`, SHA-256 `234036a798c5e59dd6c542cbd968742d8576843b9763935f6cd6c9a57ebd7b3b`, was not available for direct verification in this repository review. | Retain the asset-hash check as a separate local preservation task. It does not invalidate the visible run-01/run-02 manifests or block T06 closure. |
+| P3 | Low | **NON-BLOCKING release action.** Absolute local paths in historical `runs.json` remain part of the recorded run package. | Before public release, produce a redacted release copy or sanitized companion record; preserve the original forensic package and its checksums unchanged. |
 
 These dispositions are recorded to complete the named review. The author’s explicit message approves T06; the separate approval record distinguishes that approval from remaining non-blocking local-asset/release follow-ups.
 
@@ -111,7 +111,7 @@ C3 separately completed the P02/P05 Linux rerun using isolated temporary run-03 
 
 ## 9. Approval record
 
-The author explicitly approved \`T06_P02_CLOSURE_REVIEW_v1\` in the conversation on 2026-10-29:
+The author explicitly approved `T06_P02_CLOSURE_REVIEW_v1` in the conversation on 2026-10-29:
 
 > T06 approved. Do not request further approval—C3 only covers P02/P05 reproducibility, not full project completion. — G. Naveen
 
