@@ -1,6 +1,8 @@
 # FORMAL-AMBIG-RTL Project Compass
 
-**CURRENT: P01 / NOT STARTED**
+**CURRENT STATUS: See [the 2026-10-30 status and task tracker](../docs/project-state/TASK6_TASK7_STATUS_2026-10-30.md).**
+
+**Historical compass note:** The P01-only status and task focus below are an earlier snapshot. Use the linked tracker for current Task 6/7 status and next gates. The scientific plan remains governed by its versioned approval process.
 
 **Purpose:** This is the project’s day-to-day source of truth.  
 Read this file before starting work. If a proposed task is not permitted by the  
@@ -56,7 +58,7 @@ Never create two RTL variants first and call them “interpretations” afterwar
 
 ---
 
-## 4. Current state
+## 4. Historical state snapshot
 
 | Field | Current value |
 |---|---|
@@ -69,7 +71,7 @@ Never create two RTL variants first and call them “interpretations” afterwar
 
 ---
 
-## 5. Current task: P01 only
+## 5. Earlier task-focus snapshot: P01 only
 
 ### P01 identity
 

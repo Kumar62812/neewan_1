@@ -84,3 +84,12 @@ P05 formal distinction: DEMONSTRATED under the tested model
 P05 human plausibility: PENDING; zero responses
 P05 ambiguity certification: NOT CLAIMED
 ```
+
+## 2026-10-30 update — Task 6 approval and Task 7 status reconciliation
+
+- Added the [Task 6/Task 7 status tracker](../docs/project-state/TASK6_TASK7_STATUS_2026-10-30.md) and linked it from the README, repository map, and project compass. Older P01/P02-only navigation text is now labelled as historical.
+- The author explicitly approved the Task 6 final evidence report v3 and freeze record v1.1 on 2026-10-30 with their stated limitations. This is recorded as technical/protocol-level author approval only; Task 21 supervisor decisions and project-level confirmatory closure remain pending. The approved v3 and v1.1 source files were not available for hash verification in the accessible workspace, so this update does not reproduce or assign hashes to them. The earlier unsigned Task 6 report remains a predecessor draft and was not substituted.
+- The Task 7 freeze-candidate archive SHA-256 is `6bfd08cf0d846d1ab47f92ec43df9f30e83d454713810f7c5b7ab3a146744422`. Its 2,536 manifest-listed entries were checked with no missing entries or mismatches. Three source reports were copied unchanged under `docs/project-state/task7_v1_1/`; their verified SHA-256 values are recorded in the status tracker.
+- The user-supplied non-scored Mac excerpt shows 60/60 held-out calls received (all `DIRECT_RTL`, 8 subquestions), and 9 Stage-2 completions. The planned Variant B concurrent 100-R control is not selected/frozen. Blind held-out scoring remains open; Stage 2 is not verified complete because the rest of the outcomes were not present in the excerpt. Scored Task 7 trials remain at zero.
+- The existing research workstream records A3 D3 acceptance only; the remaining A3 decisions and overall A3 approval remain pending. This FAR Task 6 approval is distinct from project-sequence T06, which denotes P02 closure.
+- No historical Task 6 protocol, original 320-trial evidence, raw model outputs, API key, or secret-bearing log was changed or added by this status update.

@@ -2,7 +2,13 @@
 
 FORMAL-AMBIG-RTL is a research repository for evaluating how LLM-generated RTL handles underspecified natural-language hardware requirements using explicit interpretations, behavioral specifications, formal verification, and review-governed evidence.
 
-## Current project position
+## Current verified status — 2026-10-30
+
+See the [current status and task tracker](docs/project-state/TASK6_TASK7_STATUS_2026-10-30.md) for the latest audited work state, source-file hashes, open gates, and ordered next steps. In brief: Task 6’s final report v3 and freeze record v1.1 have author approval at the technical/protocol level, while Task 21 supervisor decisions remain pending; Task 7 remains a non-scored freeze candidate with zero scored trials. Human plausibility and ambiguity certification are not inferred.
+
+The project-sequence branch records the P02 closure approvals and broader dependency map; its T06 (P02 closure) is distinct from FAR Task 6. See the [sequence index](https://github.com/Kumar62812/neewan_1/blob/research/end-to-end-sequence/docs/project-sequence/README.md).
+
+## Historical project-position snapshot
 
 **P01: Formal evidence complete; professor-approved.** Professor approval is recorded as project direction to proceed with P02; it does not imply completion of an independent certification record.
 
@@ -17,6 +23,8 @@ FORMAL-AMBIG-RTL is a research repository for evaluating how LLM-generated RTL h
 `P02: Requirement PRESENT → Interpretation PRESENT → Specification PRESENT → Consistency review PENDING → RTL NOT IMPLEMENTED → Formal verification NOT EXECUTED → Evidence NOT GENERATED`
 
 ## Start here
+
+For the current project position, use the [2026-10-30 status and task tracker](docs/project-state/TASK6_TASK7_STATUS_2026-10-30.md). The foundational records below include earlier snapshots.
 
 1. [`Files/FORMAL_AMBIG_RTL_PROJECT_COMPASS.md`](Files/FORMAL_AMBIG_RTL_PROJECT_COMPASS.md) — project control.
 2. [`Files/FORMAL_AMBIG_RTL_PLAN.md`](Files/FORMAL_AMBIG_RTL_PLAN.md) — scientific plan and phase gates.
@@ -51,7 +59,7 @@ Archive SHA-256:
 
 The unmodified pinned revision is not represented as having formally passed.
 
-## Current governance
+## Historical governance snapshot
 
 - Formal evidence: **COMPLETE** for the documented effective tested source.
 - Evidence audit/integrity: **COMPLETE**.
