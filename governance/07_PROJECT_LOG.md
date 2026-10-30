@@ -362,3 +362,10 @@ The current head `09094366a11294a86975e3a1a5aedccd47cfcc71` passed the P01 packa
 - Source-grounded findings: frozen PLAN §11 and RP §7 define A/B/AB/M by equivalence to references; if the certified reference pair is non-equivalent on the same declared observables, equivalence-based AB is structurally unreachable. The open PR #9 P05 pilot instead evaluates per-interpretation contracts, with two I1-only and one I2-only sample.
 - The brief's technical recommendation is Option C: preserve equivalence as the primary relation and report contract conformance separately as secondary, requiring AM-007 if adopted. This is explicitly not an author decision; D5 remains pending.
 - Existing PR #9 outputs and evidence remain unchanged and are not promoted from exploratory contract-conformance counts to primary equivalence results. D4 remains CI-verified (21/21 tests) but author disposition is still pending; production evaluator integration and Gate 4 remain blocked by D5 and other gates.
+
+## 2026-10-31 update — FAR Task 6/7 evidence intake
+
+- Added `docs/project-state/FAR_TASK6_TASK7_EVIDENCE_UPDATE_2026-10-31.md` as a local inventory supplement. It explicitly distinguishes FAR Task 6/7 from project-sequence T06/T07 and does not infer a T1–T31 mapping.
+- Located the Task 6 trial records, analysis, and integrity-checked evidence bundle in the shared output workspace. The exact approved report v3 and freeze record v1.1 named by the separate 2026-10-30 status record were not found in the accessible workspace; this update does not record Task 6 closure.
+- The local r7 inventory contains an HO4 score marked NOT PASSED and partial HO5 collection artifacts without a final score. T7-G3 remains pending. No raw responses, labels, scores, experimental metrics, credentials, or sealed key were added to the repository.
+- No model/API calls, scoring, experiment reruns, frozen-evidence edits, or approval changes occurred in this documentation update.

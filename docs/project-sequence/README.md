@@ -10,6 +10,7 @@
 4. [Branches, PRs and research deltas](BRANCH_PR_REGISTER.md) — draft branches remain separate and unapproved unless independently established.
 5. [Approvals and decision provenance](APPROVAL_AND_DECISION_REGISTER.md) — distinguishes author-reported decisions from independently verified signed records.
 6. [Contradictions, blockers and next authorised action](CONFLICTS_AND_NEXT_ACTION.md) — do not resume execution by assuming a task is DONE.
+7. [FAR Task 6/7 evidence intake update (2026-10-31)](../project-state/FAR_TASK6_TASK7_EVIDENCE_UPDATE_2026-10-31.md) — a local inventory note that keeps the FAR study labels distinct from the official T1–T31 crosswalk.
 
 ## Evidence boundaries
 
