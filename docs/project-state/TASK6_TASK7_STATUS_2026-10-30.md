@@ -34,13 +34,15 @@ The uploaded freeze-candidate archive `Task7_v1_1_freeze_candidate_package.zip` 
 
 The validation report records 95/95 numbered checks and 18/18 fixture-suite tests in each of two runs, with identical repeated results. This update verified the archive’s internal hashes and the three report identities; it did not rerun those tests. The report’s synthetic validation does not establish live API reliability, selection of Variant B, or a protocol freeze.
 
-The user-supplied Mac console excerpt shows:
+The uploaded non-scored results archive `T7_NONSCORED_RESULTS_20261030T075451Z.zip` has SHA-256 `0671669f6edd7a3534e20c1b9138bf01e79199a4fcd921533f17c32da091a2c8`; ZIP integrity passes.
 
-- Non-scored User-Agent diagnostic: Python’s default User-Agent returned HTTP 403; the project User-Agent returned HTTP 200.
-- Held-out probe: 60/60 calls were `RECEIVED`; all 60 were classified `DIRECT_RTL`, with 8 subquestions reported. Blind labelling and the H1–H5 held-out score remain open.
-- Stage-2 rehearsal: 9 `COMPLETED` entries are visible. The excerpt does not establish the outcome of the remaining planned trials, so the rehearsal is incomplete/unverified as a whole.
+- User-Agent diagnostic: Python’s default User-Agent returned HTTP 403; the project User-Agent returned HTTP 200. Stage-2 metadata records the project User-Agent for all 16 trials.
+- Held-out probe: 60/60 requests returned HTTP 200; all were `DIRECT_RTL`, producing 8 question items. The blind sheet has 0/8 labels. H1–H4 are not assessable; H5 is underpowered (8 < 30), so T7-G3 remains pending.
+- Stage-2 rehearsal: all 16 planned trial IDs match the archive and have one HTTP 200 completion each. The ledger records 18 HTTP 429 attempts and 18 matching `Retry-After` waits; each wait was at most 745 s and the maximum accumulated wait per trial-turn was 1,067 s, within the configured caps. No 401, 403, or 413 occurred in the held-out or Stage-2 requests.
+- The archive’s non-key machine-readable evidence parses without errors, and a credential-pattern scan found no token-like matches outside the sealed oracle-key file. The sealed key is present and was not inspected.
+- The kit reports that freeze-manifest verification was skipped because the Task 5 folder was not beside it. The supplied quota values were not independently verified against account limits. These non-scored results do not freeze Task 7 or authorize scored trials; scored Task 7 trials remain at zero.
 
-Remaining Task 7 gates include the actual Groq quota and budget, selection/freeze of the design variant and planned concurrent 100-R control, validation of the Task 6 baseline adapter against the approved real files, recording Task 6 prerequisite gates in the Task 7 approval file, held-out blind scoring, the complete Stage-2 outcome, and approval of T7-G1…G8. No scored Task 7 execution is authorized or reported here.
+Remaining Task 7 gates include verification and recording of the actual Groq quota and budget, selection/freeze of the design variant and planned concurrent 100-R control, validation of the Task 6 baseline adapter against the approved real files, recording Task 6 prerequisite gates in the Task 7 approval file, completion and blind scoring of the amended held-out sample, and approval of T7-G1…G8. Stage 2 is verified complete as a non-scored rehearsal; it does not close the freeze gates. No scored Task 7 execution is authorized or reported here.
 
 ## A3 and approval namespace check
 
@@ -53,6 +55,6 @@ The repository’s project-sequence `T06` means P02 formal/provenance closure; i
 1. Locate the exact approved Task 6 report v3 and freeze record v1.1, verify their source hashes, and add them as new versioned files without replacing FAR-PROTOCOL-v1.0 or the 320-trial evidence.
 2. Resolve and record the five Task 21 supervisor decisions before confirmatory closure or any gated scored study.
 3. Verify the actual Groq quota and budget; select the Task 7 variant and freeze the concurrent R-control decision; validate the baseline adapter against the approved Task 6 `trials.jsonl` and `analysis.json`.
-4. Blind-label the held-out probe and record the H1–H5 score. Obtain the complete Stage-2 package and verify all planned outcomes; the nine visible completions are not a complete rehearsal result.
+4. Blind-label the 8 held-out items without opening the sealed key, then score H1–H5; H5 is currently underpowered. The selected amended sample is fixed at 240 total probes (40 per case: the original 60 plus 180 new), with H1–H5 unchanged. It is prepared but not run. Keep T7-G3 pending until a held-out score meets the criteria.
 5. Record the prerequisite and T7-G1…G8 decisions in the Task 7 approval file, regenerate and verify the manifest after quota/budget decisions, and keep scored execution at zero until every applicable gate is closed.
 6. Complete the pending A3 decisions and required amendments as separate, dated approvals. Preserve the distinction between technical verification, author approval, supervisor decisions, human plausibility, and ambiguity certification.
