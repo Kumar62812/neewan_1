@@ -1,16 +1,14 @@
 # Repository Map and Curation Policy
 
-## 1. Current remote state
+## 1. Current remote state — checked 2026-10-30
 
-The repository default branch is `main`.
+- Default branch `main` is at `83046997dce165fd3b40c190f7dffa1e280b2c86`.
+- The existing `research/end-to-end-sequence` workstream is at `526354123fe9b5c7f08af098a885b39bcce828e1`, is 138 commits ahead of `main`, and has no associated PR. Its decision registers and task crosswalk are linked from the [2026-10-30 status tracker](project-state/TASK6_TASK7_STATUS_2026-10-30.md).
+- The live A3 author form records D3 as accepted for its named implementation. Other A3 decisions remain pending and the A3 approval block is blank; see the [current A3 form](https://github.com/Kumar62812/neewan_1/blob/research/end-to-end-sequence/docs/project-state/A3_AUTHOR_DECISION_FORM.md).
+- GitHub search showed PRs #7, #8, and #9 open. PR #9 contains a three-sample P05 exploratory pilot; it does not establish human plausibility or ambiguity certification.
+- This focused status update is prepared on `docs/task6-task7-status-20261030` from the live `main` commit, so it can be reviewed without folding the full 138-commit workstream into the same change.
 
-The FORMAL-AMBIG-RTL foundation work from `formal-ambig-rtl-foundation` has now been merged into `main` through PR #2:
-
-- PR: #2
-- Merge commit: `4af94063d69c48ef616727853b99187fe468a0dc`
-- Purpose: synchronize the audited P01 foundation and curation layer into `main`.
-
-The current working synchronization branch is `sync/current-project-state-p02`.
+The earlier P01 foundation synchronization was merged through PR #2. That historical merge record remains below as provenance; it is not the current project phase.
 
 ## 2. Logical architecture
 
@@ -79,9 +77,11 @@ Do not rewrite, replace, recompress, rename, or regenerate the accepted archive 
 
 The unmodified pinned revision is not claimed to have passed.
 
-## 6. P02 boundary
+## 6. Historical P02 boundary at an earlier synchronization
 
-P02 is authorized to begin at the requirement → interpretation → specification stage.
+This block is retained from an earlier synchronization and is not the current P02 status. Use the [current status tracker](project-state/TASK6_TASK7_STATUS_2026-10-30.md) and the linked project-sequence crosswalk for navigation. The frozen scientific plan and accepted evidence remain unchanged.
+
+P02 was authorized to begin at the requirement → interpretation → specification stage at that earlier synchronization.
 
 At this synchronization point:
 
