@@ -111,7 +111,7 @@ def create_run(case_path: Path) -> Path:
     evidence = case_path / "evidence"
     evidence.mkdir(exist_ok=True)
     existing = [int(m.group(1)) for p in evidence.iterdir()
-                if p.is_dir() and (m := re.fullmatch(r"run-(\\d{2,})", p.name))]
+                if p.is_dir() and (m := re.fullmatch(r"run-(\d{2,})", p.name))]
     number = max(existing, default=0) + 1
     run_dir = evidence / f"run-{number:02d}"
     # mkdir without exist_ok is the final race-safe no-overwrite guard.
@@ -127,7 +127,7 @@ def create_run(case_path: Path) -> Path:
         "source_commit": data.get("reproducibility", {}).get("source_commit"),
         "immutability_rule": "Do not modify this run directory; corrections require a new run."
     }
-    (run_dir / "run_manifest.json").write_text(json.dumps(manifest, indent=2) + "\\n", encoding="utf-8")
+    (run_dir / "run_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     return run_dir
 
 def main():
