@@ -198,7 +198,7 @@ The authoritative dispositions will be recorded in the [author decision form](A3
 
 | ID | Gate | Evidence baseline | Recommendation | Disposition | Approval evidence | Amendment | Effective baseline | Validation |
 |---|---|---|---|---|---|---|---|---|
-| D1 | T08 | PLAN §5, RP §5 | C1–C5 primary; RP dims as tags | PENDING | — | AM-001 | — | T08 schema field check |
+| D1 | T08 | PLAN §5, RP §5 | C1–C5 primary; RP dimensions as optional secondary tags | ACCEPT — A | [D1 approval](approvals/D1_TAXONOMY_RELATIONSHIP_APPROVAL_2026-10-31.md) | [AM-001 approved](../amendments/AM-001_taxonomy_relationship.md) | 2026-10-31 | T08 schema and runner validation pending |
 | D2 | T08 | PLAN §6, BS §4, P02/P05 metadata | PLAN status + separate lifecycle field + crosswalk | PENDING | — | AM-002 | — | JSON-schema validation |
 | D9 | T08 | PLAN §9/13/14, guide record | Option B amendment | PENDING | — | AM-003 | — | Evidence hashes unchanged |
 | D14 | T08 | PLAN §9–10, BS §2, P02/P05 trees | One layout for new cases + crosswalk | PENDING | — | AM-004 | — | Template run + crosswalk |
