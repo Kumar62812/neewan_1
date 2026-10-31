@@ -125,4 +125,4 @@ No production integration, real end-to-end validation, or scored experiment is c
 | Approved by | G. Naveen |
 | Date | 2026-10-31 |
 | Approval-register entry | [D5 author approval](../project-state/approvals/D5_COMPARISON_SEMANTICS_APPROVAL_2026-10-31.md) |
-| Effective from commit | To be recorded after this amendment is committed and its source hashes are verified; production use remains gated on Section 5 validation and remaining Gate 4 approvals. |
+| Effective from commit | `f6361a42abdfe8cb8f889e0d74f34a4a60915ed7` (AM-007 creation commit); production use remains gated on Section 5 validation and remaining Gate 4 approvals. |
