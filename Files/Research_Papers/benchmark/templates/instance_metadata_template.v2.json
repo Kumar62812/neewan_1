@@ -1,0 +1,83 @@
+{
+  "schema_version": "2.0",
+  "instance_id": "CASE_001",
+  "instance_version": "v1",
+  "case_role": "ambiguity_candidate",
+  "primary_category": "C2",
+  "thematic_tags": [],
+  "certification_status": "UNRESOLVED",
+  "lifecycle_stage": "candidate",
+  "release_frozen": false,
+  "provenance": {
+    "source_type": "original",
+    "source_reference": "REPLACE_WITH_SOURCE_REFERENCE",
+    "created_at": "REPLACE_WITH_ISO8601_TIMESTAMP",
+    "created_by": "G. Naveen",
+    "source_commit": null,
+    "notes": ""
+  },
+  "requirement": {
+    "text": "REPLACE_WITH_VERBATIM_REQUIREMENT",
+    "source_reference": "REPLACE_WITH_SOURCE_REFERENCE",
+    "domain": "RTL",
+    "context_reference": null
+  },
+  "interpretations": {
+    "A": {
+      "text": "REPLACE_WITH_INTERPRETATION_A",
+      "rationale": "REPLACE_WITH_RATIONALE_A"
+    },
+    "B": {
+      "text": "REPLACE_WITH_INTERPRETATION_B",
+      "rationale": "REPLACE_WITH_RATIONALE_B"
+    }
+  },
+  "reference_rtl": {
+    "A": {
+      "path": "reference_rtl/A/rtl.sv",
+      "sha256": null
+    },
+    "B": {
+      "path": "reference_rtl/B/rtl.sv",
+      "sha256": null
+    }
+  },
+  "formal_environment": {
+    "contract": "REPLACE_WITH_SHARED_LEGAL_ENVIRONMENT",
+    "clock": null,
+    "reset": null,
+    "input_assumptions": [],
+    "initial_state_assumptions": [],
+    "protocol_assumptions": [],
+    "other_assumptions": []
+  },
+  "observables": {
+    "signals": [],
+    "cycle_semantics": "REPLACE_WITH_CYCLE_SEMANTICS",
+    "comparison_scope": "REPLACE_WITH_COMPARISON_SCOPE"
+  },
+  "formal_evidence": {
+    "status": "NOT_RUN",
+    "tool": null,
+    "tool_version": null,
+    "command": null,
+    "timeout_seconds": null,
+    "evidence_references": []
+  },
+  "annotations": {
+    "status": "NOT_COLLECTED",
+    "protocol_version": null,
+    "record_references": []
+  },
+  "certification_decision": {
+    "decision_record": null,
+    "exclusion_reason": null
+  },
+  "reproducibility": {
+    "benchmark_version": "pilot_v0_1",
+    "source_commit": null,
+    "created_at": "REPLACE_WITH_ISO8601_TIMESTAMP",
+    "source_hashes": {}
+  },
+  "llm_evaluation": null
+}
