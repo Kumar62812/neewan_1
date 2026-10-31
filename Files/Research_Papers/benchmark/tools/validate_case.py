@@ -2,6 +2,7 @@
 """T08 v2 metadata validator and non-overwriting case scaffold generator."""
 from __future__ import annotations
 import argparse, copy, hashlib, json, re, sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -98,14 +99,54 @@ def scaffold(case_id: str, role: str, category: str, root: Path) -> Path:
     (target/"metadata.json").write_text(json.dumps(data,indent=2)+"\n",encoding="utf-8")
     return target
 
+def create_run(case_path: Path) -> Path:
+    case_path = case_path.resolve()
+    metadata_path = case_path / "metadata.json"
+    if not metadata_path.is_file():
+        raise FileNotFoundError(f"metadata.json not found: {metadata_path}")
+    data = json.loads(metadata_path.read_text(encoding="utf-8"))
+    errors = validate(data)
+    if errors:
+        raise ValueError("case metadata invalid: " + "; ".join(errors))
+    evidence = case_path / "evidence"
+    evidence.mkdir(exist_ok=True)
+    existing = [int(m.group(1)) for p in evidence.iterdir()
+                if p.is_dir() and (m := re.fullmatch(r"run-(\\d{2,})", p.name))]
+    number = max(existing, default=0) + 1
+    run_dir = evidence / f"run-{number:02d}"
+    # mkdir without exist_ok is the final race-safe no-overwrite guard.
+    run_dir.mkdir()
+    manifest = {
+        "manifest_version": "1.0",
+        "run_id": run_dir.name,
+        "created_at": datetime.now(timezone.utc).isoformat(),
+        "instance_id": data["instance_id"],
+        "instance_version": data["instance_version"],
+        "metadata_path": "metadata.json",
+        "metadata_sha256": hashlib.sha256(metadata_path.read_bytes()).hexdigest(),
+        "source_commit": data.get("reproducibility", {}).get("source_commit"),
+        "immutability_rule": "Do not modify this run directory; corrections require a new run."
+    }
+    (run_dir / "run_manifest.json").write_text(json.dumps(manifest, indent=2) + "\\n", encoding="utf-8")
+    return run_dir
+
 def main():
     p=argparse.ArgumentParser()
     p.add_argument("--metadata")
     p.add_argument("--init")
+    p.add_argument("--new-run", help="create the next immutable evidence/run-NN directory for an existing case")
     p.add_argument("--role",choices=sorted(ROLES))
     p.add_argument("--category",choices=sorted(CATEGORIES))
     p.add_argument("--root",default=".")
     a=p.parse_args()
+    if a.new_run:
+        try:
+            path = create_run(Path(a.new_run))
+            print(f"CREATED_NEW_EVIDENCE_RUN {path}")
+            return 0
+        except Exception as ex:
+            print(f"ERROR: {ex}", file=sys.stderr)
+            return 2
     if a.init:
         try:
             path=scaffold(a.init,a.role,a.category,Path(a.root))
