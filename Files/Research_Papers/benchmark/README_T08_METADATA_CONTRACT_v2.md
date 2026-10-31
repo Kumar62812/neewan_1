@@ -73,7 +73,7 @@ An inconclusive record may become EXCLUDED only through an explicit decision wit
 
 - Metadata artifact paths are case-relative POSIX paths; absolute paths, parent traversal (`..`), and network paths are invalid.
 - Every source file consumed by a run must be hash-pinned in the run manifest.
-- Runs are created under `evidence/run-NN/`; a pre-existing run directory is never overwritten.
+- Runs are created under `evidence/run-NN/` with `--new-run`; each run receives a manifest containing the metadata SHA-256 and creation identity. A pre-existing run directory is never overwritten. The runner does not make filesystems cryptographically immutable; the policy is append-only, and repository permissions/review protect committed evidence.
 - A sealed run is immutable. Corrections create a new run number and retain the old run.
 - Hashes are lowercase SHA-256 hex strings.
 - Missing historical artifacts are recorded as absent in the crosswalk, never fabricated.
@@ -88,7 +88,7 @@ From repository root:
 
 ```bash
 python Files/Research_Papers/benchmark/tools/validate_case.py --metadata PATH/metadata.json
-python Files/Research_Papers/benchmark/tools/validate_case.py --init CASE_ID --role ambiguity_candidate --category C2 --root /tmp/t08-smoke
+python Files/Research_Papers/benchmark/tools/validate_case.py --init CASE_ID --role ambiguity_candidate --category C2 --root /tmp/t08-smoke\npython Files/Research_Papers/benchmark/tools/validate_case.py --new-run /tmp/t08-smoke/CASE_ID
 ```
 
 The validator is intentionally standard-library-only. It checks required keys, types, enumerations, role-dependent artifacts, lifecycle/status consistency, safe relative paths, and source hash syntax. It does not certify plausibility, run formal tools, or adjudicate cases.
