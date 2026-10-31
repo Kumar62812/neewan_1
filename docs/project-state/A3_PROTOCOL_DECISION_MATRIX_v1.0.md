@@ -88,11 +88,12 @@ Disposition codes: **ACCEPT** (adopt the recommendation) · **REJECT** (keep the
 ### D14 — Canonical case-template layout
 
 - **Conflict:** PLAN §9–10 and BS §2 specify `metadata.yaml`, `interpretations/`, `behavioral_specification/`, `annotations/`, `review/` and `reference_rtl/A`, `B`. P02 and P05 use `metadata.json`, flat `P0x_*.md` files and `evidence/run-0N/`. BS §2 allows a logical rather than literal layout.
-- **Options:** (a) T08 defines one canonical layout for new cases, with a path crosswalk for P01/P02/P05; (b) migrate existing cases to the PLAN layout; (c) adopt the P02/P05 layout as canonical.
-- **Recommendation:** (a), choosing the P02/P05 layout (JSON metadata, immutable `evidence/run-NN/`) as the base, since it is the layout with executed, reproducible evidence.
-- **Amendment needed:** yes, PLAN §10/BS §2 (AM-004), adopted together with T08.
-- **Validation:** T08 runner creates a new case from the template; the crosswalk resolves every PLAN artifact for P01/P02/P05 to an existing path or records it as absent.
-- **Status:** PENDING_AUTHOR_DECISION.
+- **Options:** (a) T08 defines one canonical layout for new cases, with a read-only path crosswalk for P01/P02/P05; (b) migrate existing cases to the PLAN layout; (c) adopt the P02/P05 layout globally.
+- **Approved decision:** Option A. T08 will define one canonical physical layout for new cases, using the executed P02/P05 layout as its starting point (JSON metadata and isolated immutable `evidence/run-NN/` directories), and provide a read-only crosswalk for P01/P02/P05. The exact tree, metadata contract, and runner/validator behavior are specified and tested in T08.
+- **Amendment:** [AM-004 approved as the D14 layout direction](../amendments/AM-004_canonical_case_layout.md). Corresponding adoption in PLAN §10 and Benchmark Schema §2 is to be prepared together with T08; neither frozen source is modified by this decision.
+- **Validation:** T08 runner creates and validates a new case from the template; the crosswalk resolves every logical artifact for P01/P02/P05 to an existing path or explicitly records it as absent.
+- **Preservation:** no migration or rewrite of P01/P02/P05 or their historical evidence; any future migration requires separate authorization.
+- **Status:** ACCEPT — A (2026-10-31). See [D14 author approval](approvals/D14_CANONICAL_CASE_LAYOUT_APPROVAL_2026-10-31.md).
 
 ## 5. Decisions required before Gate 3 (certification)
 
@@ -201,7 +202,7 @@ The authoritative dispositions will be recorded in the [author decision form](A3
 | D1 | T08 | PLAN §5, RP §5 | C1–C5 primary; RP dimensions as optional secondary tags | ACCEPT — A | [D1 approval](approvals/D1_TAXONOMY_RELATIONSHIP_APPROVAL_2026-10-31.md) | [AM-001 approved](../amendments/AM-001_taxonomy_relationship.md) | 2026-10-31 | T08 schema and runner validation pending |
 | D2 | T08 | PLAN §6, BS §4, P02/P05 metadata | PLAN §6 certification_status; separate lifecycle_stage; release_frozen flag; approved crosswalk | ACCEPT — A | [D2 approval](approvals/D2_CERTIFICATION_STATUS_VOCABULARY_APPROVAL_2026-10-31.md) | [AM-002 approved](../amendments/AM-002_certification_status_vocabulary.md) | 2026-10-31 | T08 schema/template/runner and read-only compatibility validation pending |
 | D9 | T08 | PLAN §9/13/14, guide record | Option B: disclose sequencing deviation; assign reusable template-freeze function to T08 | ACCEPT — B | [D9 approval](approvals/D9_P01_FREEZE_GATE_APPROVAL_2026-10-31.md) | [AM-003 approved](../amendments/AM-003_p01_gate_deviation.md) | 2026-10-31 | Historical evidence preserved; T08 validation and explicit freeze record pending; D14 still required |
-| D14 | T08 | PLAN §9–10, BS §2, P02/P05 trees | One layout for new cases + crosswalk | PENDING | — | AM-004 | — | Template run + crosswalk |
+| D14 | T08 | PLAN §9–10, BS §2, P01/P02/P05 trees | Canonical layout for new cases based on P02/P05; read-only crosswalk for existing cases | ACCEPT — A | [D14 approval](approvals/D14_CANONICAL_CASE_LAYOUT_APPROVAL_2026-10-31.md) | [AM-004 approved direction](../amendments/AM-004_canonical_case_layout.md) | 2026-10-31 (policy direction; exact source adoption with T08) | T08 template-run, metadata/schema, runner, and crosswalk validation pending |
 | D7 | Gate 3 | AP §6–9 | Share rating ≥ 4, τ = 0.80, fixed minimum n | PENDING | — | AM-005 | — | Rule fixed before any rating analysed |
 | D11 | Gate 3 | AP, RP §13, EVAL-PLAN | Separate technical and certification status | PENDING | — | AM-006 | — | Metadata fields present |
 | D12 | Gate 3 | §3 hashes | Freeze at listed hashes after D1/D2/D7/D11 | PENDING | — | baseline record | — | Hash re-verification |
