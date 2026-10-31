@@ -27,7 +27,7 @@ Disposition codes: **ACCEPT** (adopt the A3 recommendation) · **REJECT** (keep 
 | ID | Decision | A3 recommendation | Disposition | Date | Notes / revision |
 |---|---|---|---|---|---|
 | D3 | Technical labels | Implement INVALID / INCOMPLETE / INCONCLUSIVE in the evaluator with fixture tests | ACCEPT | 2026-10-29 | G. Naveen approved implementation commit `aed8f38cf0fca5e2a0ff8e3d3bc07349e6d20df2`; CI run 40822948756 passed 15/15 tests; see dated approval record. Scope is that exact implementation version. |
-| D4 | MISINTERPRET rule | Keep PLAN §11 restriction; implement and test | PENDING | | |
+| D4 | MISINTERPRET rule | Keep PLAN §11 restriction; implement and test | ACCEPT | 2026-10-31 | Author accepts the fail-closed helper at `1c6269d3d107d8bbdd225d459390e17cfac588f3`; CI run 40824632602 passed 21/21 tests. Frozen PLAN §11 unchanged. Production integration remains subject to D5 approval and real evaluator validation; see [approval record](approvals/D4_MISINTERPRET_POLICY_APPROVAL_2026-10-31.md). |
 | D5 | Comparison relation | Choose (a) equivalence, (b) contract conformance or (c) both: ___ | PENDING | | |
 | D10 | P05 Groq pilot | Label EXPLORATORY; exclude from primary metrics | PENDING | | |
 | D13 | Metric operations | Pre-register operational rules and statistics (AM-008) before the first scored run | PENDING | | |
