@@ -75,6 +75,6 @@ The following implementation checks remain required before T08 is considered val
 | Approved by | G. Naveen |
 | Date | 2026-10-31 |
 | Approval-register entry | [D1 author approval](../project-state/approvals/D1_TAXONOMY_RELATIONSHIP_APPROVAL_2026-10-31.md) |
-| Effective from commit | To be filled with the commit that creates this approved amendment |
+| Effective from commit | `470c97e26cd066493353d12d9c8e40656c57ff95` (approved amendment creation commit) |
 
 **Frozen-source instruction:** Do not edit or replace `Files/FORMAL_AMBIG_RTL_PLAN.md` or `Files/Research_Papers/docs/research_protocol.md`. This amendment is read alongside the frozen sources. Historical case artifacts, RTL, formal evidence, pilot outputs, logs and manifests remain immutable.
