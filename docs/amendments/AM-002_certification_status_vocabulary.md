@@ -103,6 +103,6 @@ Validation status: Amendment approved; schema, template/runner implementation an
 | Approved by | G. Naveen |
 | Date | 2026-10-31 |
 | Approval-register entry | [D2 author approval](../project-state/approvals/D2_CERTIFICATION_STATUS_VOCABULARY_APPROVAL_2026-10-31.md) |
-| Effective from commit | To be completed in the approval record after the amendment commit is created. |
+| Effective from commit | 8fcabc70f241a14b8de73a586602837fe2355c7d (approved D2 amendment commit). |
 
 Frozen-source instruction: Do not edit or replace Files/FORMAL_AMBIG_RTL_PLAN.md or Files/Research_Papers/docs/benchmark_schema.md. This amendment is read alongside the frozen sources. P01/P02/P05 metadata, source RTL, formal evidence, counterexamples, historical logs, run manifests and pilot artifacts remain unchanged.
