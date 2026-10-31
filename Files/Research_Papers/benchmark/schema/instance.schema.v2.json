@@ -1,0 +1,627 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Kumar62812/neewan_1/blob/research/end-to-end-sequence/Files/Research_Papers/benchmark/schema/instance.schema.v2.json",
+  "title": "FORMAL-AMBIG-RTL Case Metadata v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "instance_id",
+    "instance_version",
+    "case_role",
+    "primary_category",
+    "thematic_tags",
+    "certification_status",
+    "lifecycle_stage",
+    "release_frozen",
+    "provenance",
+    "requirement",
+    "interpretations",
+    "reference_rtl",
+    "formal_environment",
+    "observables",
+    "formal_evidence",
+    "annotations",
+    "certification_decision",
+    "reproducibility"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "2.0"
+    },
+    "instance_id": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_-]{1,31}$"
+    },
+    "instance_version": {
+      "type": "string",
+      "pattern": "^v[1-9][0-9]*$"
+    },
+    "case_role": {
+      "enum": [
+        "unambiguous_control",
+        "ambiguity_candidate",
+        "negative_candidate",
+        "robustness_case"
+      ]
+    },
+    "primary_category": {
+      "enum": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ]
+    },
+    "thematic_tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "reset",
+          "output",
+          "transition",
+          "timing",
+          "state",
+          "concurrency"
+        ]
+      }
+    },
+    "certification_status": {
+      "enum": [
+        "UNAMBIGUOUS",
+        "CERTIFIED_AMBIGUOUS",
+        "UNRESOLVED",
+        "EXCLUDED"
+      ]
+    },
+    "lifecycle_stage": {
+      "enum": [
+        "candidate",
+        "certified_ambiguous",
+        "unambiguous_control",
+        "negative_candidate",
+        "inconclusive"
+      ]
+    },
+    "release_frozen": {
+      "type": "boolean"
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_type",
+        "source_reference",
+        "created_at",
+        "created_by"
+      ],
+      "properties": {
+        "source_type": {
+          "enum": [
+            "original",
+            "derived",
+            "public_document",
+            "synthetic_test_fixture"
+          ]
+        },
+        "source_reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_by": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_commit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "requirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "source_reference"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "domain": {
+          "type": "string"
+        },
+        "context_reference": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "interpretations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "A",
+        "B"
+      ],
+      "properties": {
+        "A": {
+          "$ref": "#/$defs/interpretation"
+        },
+        "B": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/interpretation"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "reference_rtl": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "A",
+        "B"
+      ],
+      "properties": {
+        "A": {
+          "$ref": "#/$defs/artifact"
+        },
+        "B": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/artifact"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "formal_environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "input_assumptions",
+        "initial_state_assumptions",
+        "protocol_assumptions"
+      ],
+      "properties": {
+        "contract": {
+          "type": "string",
+          "minLength": 1
+        },
+        "clock": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reset": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "input_assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "initial_state_assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "protocol_assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "other_assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "observables": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "signals",
+        "cycle_semantics",
+        "comparison_scope"
+      ],
+      "properties": {
+        "signals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cycle_semantics": {
+          "type": "string",
+          "minLength": 1
+        },
+        "comparison_scope": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "formal_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "tool",
+        "tool_version",
+        "command",
+        "evidence_references"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "NOT_RUN",
+            "PASS",
+            "FAIL",
+            "INCONCLUSIVE",
+            "INVALID"
+          ]
+        },
+        "tool": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tool_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "command": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "timeout_seconds": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "evidence_references": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact"
+          }
+        }
+      }
+    },
+    "annotations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "protocol_version",
+        "record_references"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "NOT_COLLECTED",
+            "IN_PROGRESS",
+            "COMPLETE",
+            "ADJUDICATED"
+          ]
+        },
+        "protocol_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "record_references": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact"
+          }
+        }
+      }
+    },
+    "certification_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision_record",
+        "exclusion_reason"
+      ],
+      "properties": {
+        "decision_record": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "exclusion_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "reproducibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "benchmark_version",
+        "source_commit",
+        "created_at"
+      ],
+      "properties": {
+        "benchmark_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_commit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "created_at": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_hashes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        }
+      }
+    },
+    "llm_evaluation": {
+      "type": [
+        "object",
+        "null"
+      ]
+    }
+  },
+  "$defs": {
+    "interpretation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "rationale"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^([a-f0-9]{64})?$"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "case_role": {
+            "const": "unambiguous_control"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "primary_category": {
+            "const": "C1"
+          },
+          "lifecycle_stage": {
+            "const": "unambiguous_control"
+          },
+          "certification_status": {
+            "const": "UNAMBIGUOUS"
+          },
+          "interpretations": {
+            "properties": {
+              "A": {
+                "$ref": "#/$defs/interpretation"
+              },
+              "B": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "A",
+              "B"
+            ]
+          },
+          "reference_rtl": {
+            "properties": {
+              "A": {
+                "$ref": "#/$defs/artifact"
+              },
+              "B": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "A",
+              "B"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "case_role": {
+            "const": "ambiguity_candidate"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "primary_category": {
+            "enum": [
+              "C2",
+              "C3",
+              "C4",
+              "C5"
+            ]
+          },
+          "lifecycle_stage": {
+            "enum": [
+              "candidate",
+              "certified_ambiguous",
+              "inconclusive"
+            ]
+          },
+          "interpretations": {
+            "properties": {
+              "A": {
+                "$ref": "#/$defs/interpretation"
+              },
+              "B": {
+                "$ref": "#/$defs/interpretation"
+              }
+            },
+            "required": [
+              "A",
+              "B"
+            ]
+          },
+          "reference_rtl": {
+            "properties": {
+              "A": {
+                "$ref": "#/$defs/artifact"
+              },
+              "B": {
+                "$ref": "#/$defs/artifact"
+              }
+            },
+            "required": [
+              "A",
+              "B"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "case_role": {
+            "const": "negative_candidate"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "lifecycle_stage": {
+            "const": "negative_candidate"
+          },
+          "certification_status": {
+            "enum": [
+              "UNRESOLVED",
+              "EXCLUDED"
+            ]
+          },
+          "certification_decision": {
+            "properties": {
+              "exclusion_reason": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "case_role": {
+            "const": "robustness_case"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "lifecycle_stage": {
+            "enum": [
+              "candidate",
+              "inconclusive"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
