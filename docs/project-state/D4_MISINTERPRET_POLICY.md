@@ -3,9 +3,9 @@
 **Project:** FORMAL-AMBIG-RTL  
 **Prepared:** 2026-10-29  
 **Branch:** `research/end-to-end-sequence`  
-**Status:** AUTHOR ACCEPTED — POLICY HELPER CI-PASS — PRODUCTION INTEGRATION BLOCKED BY D5  
+**Status:** AUTHOR ACCEPTED — POLICY HELPER CI-PASS — D5 OPTION C APPROVED — PRODUCTION INTEGRATION VALIDATION PENDING  
 **Normative basis:** Frozen plan §11; A3 D4  
-**Related dependency:** D5 comparison-relation decision remains pending
+**Related dependency:** D5 Option C approved on 2026-10-31; production integration still requires primary-equivalence binding and real evaluator validation
 
 ## 1. Rule implemented
 
@@ -47,4 +47,4 @@ The D4 workflow completed successfully on the exact implementation commit `1c626
 - No P01/P02/P05 metadata, RTL, formal evidence, counterexamples, historical logs or run manifests were changed.
 - The policy test's positive example is explicitly synthetic; no case or contract is certified.
 - **Verified CI:** [GitHub Actions run 40824632602 — PASS](https://github.com/Kumar62812/neewan_1/actions/runs/40824632602). Python 3.12.15; syntax compilation passed; all 21 offline regression tests passed (0 failed, 0 skipped). [Machine-readable run evidence](evidence/D4_MISINTERPRET_POLICY_RUN_40824632602.json).
-- **Author disposition: ACCEPT (2026-10-31).** See [dated approval record](approvals/D4_MISINTERPRET_POLICY_APPROVAL_2026-10-31.md) and the updated [A3 author decision form](A3_AUTHOR_DECISION_FORM.md). Acceptance covers the exact standalone helper implementation and preserves frozen PLAN §11. D5 and Gate 4 remain separate open decisions; production integration is not approved by this record.
+- **Author disposition: ACCEPT (2026-10-31).** See [dated approval record](approvals/D4_MISINTERPRET_POLICY_APPROVAL_2026-10-31.md) and the updated [A3 author decision form](A3_AUTHOR_DECISION_FORM.md). Acceptance covers the exact standalone helper implementation and preserves frozen PLAN §11. D5 Option C is now approved through [D5 approval](approvals/D5_COMPARISON_SEMANTICS_APPROVAL_2026-10-31.md) and [AM-007](../amendments/AM-007_dual_comparison_relations.md). Production integration remains pending until D4 is bound to the primary equivalence classification and real evaluator regression/end-to-end validation passes; remaining Gate 4 approvals are also required.
