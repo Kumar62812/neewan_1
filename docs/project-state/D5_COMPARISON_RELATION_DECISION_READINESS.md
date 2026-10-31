@@ -3,7 +3,7 @@
 **Project:** FORMAL-AMBIG-RTL  
 **Prepared:** 2026-10-29  
 **Branch:** `research/end-to-end-sequence`  
-**Status:** TECHNICAL OPTIONS ANALYSED — AUTHOR DISPOSITION PENDING  
+**Status:** AUTHOR ACCEPTED OPTION C — AM-007 APPROVED — IMPLEMENTATION VALIDATION PENDING  
 **Decision source:** [A3 Protocol Conflict Decision Matrix](A3_PROTOCOL_DECISION_MATRIX_v1.0.md), D5  
 **Related implementation:** [D4 MISINTERPRET policy](D4_MISINTERPRET_POLICY.md)  
 **Pilot source:** [P05 Groq pilot, PR #9](https://github.com/Kumar62812/neewan_1/pull/9)
@@ -36,7 +36,9 @@ The public P05 Groq pilot uses a different relation: conformance against per-int
 
 This avoids two errors: silently replacing the frozen relation with the one used in the later pilot, and discarding potentially useful contract-conformance evidence. If minimizing protocol change is more important than the secondary compatibility analysis, Option A is the defensible low-change alternative. Option B should be selected only through an explicit versioned amendment accepting that the primary estimand and label semantics have changed.
 
-This recommendation is a technical assessment only. **D5 remains PENDING_AUTHOR_DECISION.**
+The author approved **Option C — Both, separately reported** on 2026-10-31. Equivalence remains the primary A/B/AB/M relation under frozen PLAN §11 and RP §7; contract conformance is a separately reported secondary vector. See [dated author approval](approvals/D5_COMPARISON_SEMANTICS_APPROVAL_2026-10-31.md), [AM-007](../amendments/AM-007_dual_comparison_relations.md), and the [updated author decision form](A3_AUTHOR_DECISION_FORM.md).
+
+**D5 author decision: ACCEPTED.** The protocol amendment is recorded, but production integration remains blocked pending the Section 5 regression/end-to-end validation, D4 binding to primary equivalence only, and remaining Gate 4 approvals. No scored experiment is authorized by this decision alone.
 
 ## 5. Required rules regardless of option
 
