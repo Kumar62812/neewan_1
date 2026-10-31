@@ -58,7 +58,7 @@ Disposition codes: **ACCEPT** (adopt the recommendation) · **REJECT** (keep the
 - **Conflict:** PLAN §6 statuses (`UNAMBIGUOUS`, `CERTIFIED_AMBIGUOUS`, `UNRESOLVED`, `EXCLUDED`) differ from BS §4 lifecycle labels (`candidate`, `certified_ambiguous`, `unambiguous_control`, `negative_candidate`, `inconclusive`, `frozen`). Existing records disagree too: P02 has `status: technical_verification_complete` and P05 has `status: UNRESOLVED`.
 - **Options:** (a) PLAN statuses canonical in a `certification_status` field, BS stage in a separate `lifecycle_stage` field, plus a crosswalk; (b) BS labels canonical; (c) merge into one new vocabulary.
 - **Recommendation:** (a).
-- **Proposed crosswalk** (for approval, not in effect):
+- **Approved crosswalk** (D2 Option A; effective under [AM-002](../amendments/AM-002_certification_status_vocabulary.md)):
 
   | `lifecycle_stage` (BS) | Allowed `certification_status` (PLAN) |
   |---|---|
@@ -66,8 +66,8 @@ Disposition codes: **ACCEPT** (adopt the recommendation) · **REJECT** (keep the
   | `certified_ambiguous` | `CERTIFIED_AMBIGUOUS` |
   | `unambiguous_control` | `UNAMBIGUOUS` |
   | `negative_candidate` | `EXCLUDED` with a PLAN §6 reason |
-  | `inconclusive` | `UNRESOLVED` or `EXCLUDED`/`INCONCLUSIVE_FORMAL` |
-  | `frozen` | a release flag, not a status; any of the above |
+  | `inconclusive` | `UNRESOLVED` by default while investigation remains open; `EXCLUDED` only after an explicit decision with a specific PLAN §6 reason such as `INCONCLUSIVE_FORMAL` |
+  | `frozen` | separate Boolean `release_frozen` release flag; it does not determine either status field |
 
 - **Existing records:** P01, P02 and P05 metadata are **not rewritten**. Any migration is a separately authorised task with new file versions.
 - **Amendment needed:** yes, BS §4 (AM-002).
@@ -194,12 +194,12 @@ These are already reflected in A2-v1.0 and need only an author acknowledgement. 
 
 ## 8. Decision register
 
-The authoritative dispositions will be recorded in the [author decision form](A3_AUTHOR_DECISION_FORM.md). The table below is the planning state: none of the decisions has been made.
+The authoritative dispositions will be recorded in the [author decision form](A3_AUTHOR_DECISION_FORM.md). The table below records current dispositions; pending items remain explicitly marked PENDING.
 
 | ID | Gate | Evidence baseline | Recommendation | Disposition | Approval evidence | Amendment | Effective baseline | Validation |
 |---|---|---|---|---|---|---|---|---|
 | D1 | T08 | PLAN §5, RP §5 | C1–C5 primary; RP dimensions as optional secondary tags | ACCEPT — A | [D1 approval](approvals/D1_TAXONOMY_RELATIONSHIP_APPROVAL_2026-10-31.md) | [AM-001 approved](../amendments/AM-001_taxonomy_relationship.md) | 2026-10-31 | T08 schema and runner validation pending |
-| D2 | T08 | PLAN §6, BS §4, P02/P05 metadata | PLAN status + separate lifecycle field + crosswalk | PENDING | — | AM-002 | — | JSON-schema validation |
+| D2 | T08 | PLAN §6, BS §4, P02/P05 metadata | PLAN §6 certification_status; separate lifecycle_stage; release_frozen flag; approved crosswalk | ACCEPT — A | [D2 approval](approvals/D2_CERTIFICATION_STATUS_VOCABULARY_APPROVAL_2026-10-31.md) | [AM-002 approved](../amendments/AM-002_certification_status_vocabulary.md) | 2026-10-31 | T08 schema/template/runner and read-only compatibility validation pending |
 | D9 | T08 | PLAN §9/13/14, guide record | Option B amendment | PENDING | — | AM-003 | — | Evidence hashes unchanged |
 | D14 | T08 | PLAN §9–10, BS §2, P02/P05 trees | One layout for new cases + crosswalk | PENDING | — | AM-004 | — | Template run + crosswalk |
 | D7 | Gate 3 | AP §6–9 | Share rating ≥ 4, τ = 0.80, fixed minimum n | PENDING | — | AM-005 | — | Rule fixed before any rating analysed |
@@ -219,7 +219,7 @@ Until a decision is recorded, the operative source and its existing limitations 
 
 ## 9. Execution order
 
-1. Decide D1, D2, D9 and D14, then start T08.
+1. D1 and D2 are ACCEPTED. Decide D9 and D14, then start T08.
 2. Decide D7 and D11, then D12 (freeze baseline), before any Gate 3 certification work.
 3. Decide D5 and D13, implement D3 and D4 in the evaluator, and record D10, all before Gate 4 scored experiments.
 4. Acknowledge D6, D8, D15 and D16.
@@ -241,7 +241,7 @@ Each amendment AM-NNN:
 
 - [x] All inconsistencies D1–D16 are accounted for (12 substantive, 4 documentation-only).
 - [x] Each substantive decision has its impact, options and gate recorded.
-- [x] Recommendations are clearly separated from approved decisions (all dispositions PENDING).
+- [x] Recommendations are clearly separated from approved decisions; recorded dispositions and pending items are identified individually.
 - [x] No source protocol, RTL, run log or evidence manifest was modified.
 - [x] No benchmark case was newly certified by this documentation task.
 - [x] No experimental result or metric was invented. Pilot figures are quoted from PILOT-CSV.
