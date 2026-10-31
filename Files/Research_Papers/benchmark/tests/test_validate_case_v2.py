@@ -80,4 +80,18 @@ class T08ValidatorTests(unittest.TestCase):
             self.assertIsNone(data["interpretations"]["B"])
             self.assertIsNone(data["reference_rtl"]["B"])
 
+
+    def test_evidence_run_is_new_and_non_overwriting(self):
+        from importlib.machinery import SourceFileLoader
+        mod=SourceFileLoader("validate_case_runs",str(SCRIPT)).load_module()
+        with tempfile.TemporaryDirectory() as d:
+            case=mod.scaffold("T08_RUN_CASE","ambiguity_candidate","C2",Path(d))
+            first=mod.create_run(case)
+            second=mod.create_run(case)
+            self.assertEqual("run-01",first.name)
+            self.assertEqual("run-02",second.name)
+            manifest=json.loads((first/"run_manifest.json").read_text())
+            self.assertEqual("T08_RUN_CASE",manifest["instance_id"])
+            self.assertEqual(64,len(manifest["metadata_sha256"]))
+
 if __name__=="__main__": unittest.main(verbosity=2)
