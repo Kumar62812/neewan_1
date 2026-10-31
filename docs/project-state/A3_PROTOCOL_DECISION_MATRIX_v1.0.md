@@ -187,7 +187,7 @@ These are already reflected in A2-v1.0 and need only an author acknowledgement. 
 
 | ID | Clarification | Where recorded |
 |---|---|---|
-| D6 | ASSUME = the system **silently** selects or states an interpretation without obtaining clarification (RP §7) | A2 §6 |
+| D6 | ASSUME = the system **silently** selects or states an interpretation without obtaining clarification (RP §7) | A2 §6; acknowledged by G. Naveen on 2026-10-31; [dated acknowledgement](approvals/D6_ASSUME_TERMINOLOGY_ACKNOWLEDGEMENT_2026-10-31.md) |
 | D8 | The core/extension grouping is a later governance decision, not part of PLAN §7's construction order | A2 §9 |
 | D15 | Observation unit = (Model, Benchmark instance, Condition, Trial) (RP §11) | A2 §8 |
 | D16 | P02 is a deterministic C1 control within the core set, not an ambiguity case (PLAN §7; T05 decision O4) | A2 §9 |
@@ -210,7 +210,8 @@ The authoritative dispositions will be recorded in the [author decision form](A3
 | D5 | Gate 4 | PLAN §11, RP §7, PILOT | Option C: equivalence primary; contract conformance secondary | ACCEPT — C | [D5 approval](approvals/D5_COMPARISON_SEMANTICS_APPROVAL_2026-10-31.md) | AM-007 approved | 2026-10-31 | Separate-field regression and end-to-end validation pending |
 | D10 | Gate 4 | PILOT, EVAL-PLAN | Label EXPLORATORY; exclude from primary | PENDING | — | none | — | Register + PR #9 label |
 | D13 | Gate 4 | RP §8 | Pre-register operational rules | PENDING | — | AM-008 | — | Metric spec dated before first scored run |
-| D6, D8, D15, D16 | — | A2 | Acknowledge as documented | PENDING | — | none | A2-v1.0 | — |
+| D6 | — | A2 §6 / RP §7 | Acknowledge existing ASSUME wording | ACKNOWLEDGED | [D6 acknowledgement](approvals/D6_ASSUME_TERMINOLOGY_ACKNOWLEDGEMENT_2026-10-31.md) | none | A2-v1.0 | Wording confirmed; frozen sources unchanged |
+| D8, D15, D16 | — | A2 | Acknowledge as documented | PENDING | — | none | A2-v1.0 | — |
 
 Until a decision is recorded, the operative source and its existing limitations remain unchanged.
 
