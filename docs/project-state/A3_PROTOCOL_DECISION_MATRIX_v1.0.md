@@ -79,11 +79,11 @@ Disposition codes: **ACCEPT** (adopt the recommendation) · **REJECT** (keep the
 - **Conflict:** PLAN §9, §13 (Gate 2) and §14 forbid P02–P12 until the P01 golden template is frozen. P01 is **not frozen** (`governance/07_PROJECT_LOG.md`), yet P02 and P05 were built and formally verified. The recorded basis is the guide direction "Proceed with P02" (`02_CERTIFICATION/P01_GUIDE_MEETING_RECORD.md`, line 12), which was never recorded as a PLAN amendment.
 - **Options:**
   - **A:** complete the P01 Gate 2 freeze before T08. Open items include the annotation workflow, the clean reproduction and the `p01_template_freeze.md` review.
-  - **B:** approve a dated amendment that records the guide direction and its date, states the gate deviation openly, confirms P02/P05 evidence remains valid within its recorded scope, and moves the template-freeze function to T08.
-- **Recommendation:** B. T08 is the reusable template task, so freezing P01 now would duplicate it. The amendment must not imply an approval existed before it was recorded.
-- **Amendment needed:** yes, PLAN §9/§13/§14 (AM-003). The amendment records the guide-meeting date exactly as stated in the meeting record.
-- **Validation:** the amendment links the guide record; P01/P02/P05 evidence hashes are unchanged before and after.
-- **Status:** PENDING_AUTHOR_DECISION.
+  - **B (approved):** record the guide direction and the known date limitation, disclose the gate deviation, preserve P02/P05 evidence within its existing scope, and assign the reusable template-freeze function to T08.
+- **Recommendation:** B. T08 is the reusable template task, so freezing P01 separately now would duplicate the reusable-template work. The amendment must not imply that the original gate was met or that earlier work was retrospectively authorized.
+- **Amendment:** [AM-003 approved](../amendments/AM-003_p01_gate_deviation.md), addressing PLAN §§9, 13, and 14. The guide record's 2026-10-08 date is the **student record date only**; the actual professor meeting/approval date is not supplied and is not inferred.
+- **Validation:** preserve P01/P02/P05 historical evidence and verify the accepted archive, package fingerprints, and evidence lineage during T08. P01 remains NOT FROZEN until T08 validation and an explicit freeze record. T08 still requires D14.
+- **Status:** ACCEPT — B (2026-10-31). See [D9 author approval](approvals/D9_P01_FREEZE_GATE_APPROVAL_2026-10-31.md).
 
 ### D14 — Canonical case-template layout
 
@@ -200,7 +200,7 @@ The authoritative dispositions will be recorded in the [author decision form](A3
 |---|---|---|---|---|---|---|---|---|
 | D1 | T08 | PLAN §5, RP §5 | C1–C5 primary; RP dimensions as optional secondary tags | ACCEPT — A | [D1 approval](approvals/D1_TAXONOMY_RELATIONSHIP_APPROVAL_2026-10-31.md) | [AM-001 approved](../amendments/AM-001_taxonomy_relationship.md) | 2026-10-31 | T08 schema and runner validation pending |
 | D2 | T08 | PLAN §6, BS §4, P02/P05 metadata | PLAN §6 certification_status; separate lifecycle_stage; release_frozen flag; approved crosswalk | ACCEPT — A | [D2 approval](approvals/D2_CERTIFICATION_STATUS_VOCABULARY_APPROVAL_2026-10-31.md) | [AM-002 approved](../amendments/AM-002_certification_status_vocabulary.md) | 2026-10-31 | T08 schema/template/runner and read-only compatibility validation pending |
-| D9 | T08 | PLAN §9/13/14, guide record | Option B amendment | PENDING | — | AM-003 | — | Evidence hashes unchanged |
+| D9 | T08 | PLAN §9/13/14, guide record | Option B: disclose sequencing deviation; assign reusable template-freeze function to T08 | ACCEPT — B | [D9 approval](approvals/D9_P01_FREEZE_GATE_APPROVAL_2026-10-31.md) | [AM-003 approved](../amendments/AM-003_p01_gate_deviation.md) | 2026-10-31 | Historical evidence preserved; T08 validation and explicit freeze record pending; D14 still required |
 | D14 | T08 | PLAN §9–10, BS §2, P02/P05 trees | One layout for new cases + crosswalk | PENDING | — | AM-004 | — | Template run + crosswalk |
 | D7 | Gate 3 | AP §6–9 | Share rating ≥ 4, τ = 0.80, fixed minimum n | PENDING | — | AM-005 | — | Rule fixed before any rating analysed |
 | D11 | Gate 3 | AP, RP §13, EVAL-PLAN | Separate technical and certification status | PENDING | — | AM-006 | — | Metadata fields present |
