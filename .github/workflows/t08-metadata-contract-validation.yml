@@ -38,7 +38,10 @@ jobs:
         with:
           python-version: '3.12'
       - name: Validate JSON schema and template syntax
-        run: python -c "import json,pathlib; [json.loads(pathlib.Path(p).read_text()) for p in ['Files/Research_Papers/benchmark/schema/instance.schema.v2.json','Files/Research_Papers/benchmark/templates/instance_metadata_template.v2.json']]"
+        run: |
+          python -c "import json,pathlib; [json.loads(pathlib.Path(p).read_text()) for p in ['Files/Research_Papers/benchmark/schema/instance.schema.v2.json','Files/Research_Papers/benchmark/templates/instance_metadata_template.v2.json']]"
+          python -m pip install jsonschema
+          python -c "import json,jsonschema,pathlib; s=json.loads(pathlib.Path('Files/Research_Papers/benchmark/schema/instance.schema.v2.json').read_text()); d=json.loads(pathlib.Path('Files/Research_Papers/benchmark/templates/instance_metadata_template.v2.json').read_text()); jsonschema.validate(d,s); print('JSON_SCHEMA_TEMPLATE_VALID')"
       - name: Run T08 validator regression tests
         run: python Files/Research_Papers/benchmark/tests/test_validate_case_v2.py
       - name: Smoke-test generated ambiguity case
