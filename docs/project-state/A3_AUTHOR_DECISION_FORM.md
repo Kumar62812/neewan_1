@@ -9,7 +9,7 @@ Disposition codes: **ACCEPT** (adopt the A3 recommendation) · **REJECT** (keep 
 
 | ID | Decision | A3 recommendation | Disposition | Date | Notes / revision |
 |---|---|---|---|---|---|
-| D1 | Taxonomy relationship | C1–C5 primary; RP §5 dimensions as secondary tags (AM-001) | PENDING | | |
+| D1 | Taxonomy relationship | C1–C5 primary; RP §5 dimensions as secondary tags (AM-001) | ACCEPT — A | 2026-10-31 | G. Naveen approves Option A: C1–C5 remain the sole primary taxonomy; six RP §5 dimensions become optional secondary tags. AM-001 approved; T08 implementation validation remains pending. See [D1 approval](approvals/D1_TAXONOMY_RELATIONSHIP_APPROVAL_2026-10-31.md) and [AM-001](../amendments/AM-001_taxonomy_relationship.md). |
 | D2 | Status vocabulary | PLAN status field + separate lifecycle field + crosswalk (AM-002); existing metadata not rewritten | PENDING | | |
 | D9 | P01 freeze gate | Option B: dated amendment recording the guide direction; template freeze moves to T08 (AM-003) | PENDING | | |
 | D14 | Case layout | One layout for new cases, based on P02/P05; crosswalk for P01/P02/P05 (AM-004) | PENDING | | |
