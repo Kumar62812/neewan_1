@@ -138,20 +138,20 @@ Disposition codes: **ACCEPT** (adopt the recommendation) · **REJECT** (keep the
 ### D4 — MISINTERPRET definition
 
 - **Rule (PLAN §11):** `MISINTERPRET` applies only when the generated RTL is valid, formally evaluable and classified `M` under the declared comparison contract. Syntax errors, missing content and inconclusive checks are never relabelled as misinterpretation.
-- **Current state (updated 2026-10-29):** a fail-closed D4 policy helper is implemented on `research/end-to-end-sequence`; [CI run 40824632602](https://github.com/Kumar62812/neewan_1/actions/runs/40824632602) passed syntax compilation and 21/21 offline regression tests. It requires valid/extracted RTL, successful compilation, explicit completed formal comparison, a separately supplied `M` behavioral class, and an explicitly approved comparison contract. It is a standalone helper, not yet wired into a complete A/B/AB/M evaluator. D5 remains pending, so its positive test uses synthetic contract data only.
-- **Status:** D4 policy helper CI-verified; author disposition pending; full evaluator integration gated on D5. See [D4 report](D4_MISINTERPRET_POLICY.md) and [machine-readable evidence](evidence/D4_MISINTERPRET_POLICY_RUN_40824632602.json).
+- **Current state (updated 2026-10-31):** a fail-closed D4 policy helper is implemented and author-accepted; [CI run 40824632602](https://github.com/Kumar62812/neewan_1/actions/runs/40824632602) passed syntax compilation and 21/21 offline regression tests. It requires valid/extracted RTL, successful compilation, explicit completed formal comparison, a separately supplied `M` behavioral class, and an explicitly approved comparison contract. It remains a standalone helper, not yet wired into the complete evaluator. D5 Option C is now approved; D4 must bind `M` to the primary equivalence classification only. The D4 positive test remains synthetic.
+- **Status:** D4 policy helper CI-verified and author-accepted; production integration awaits evaluator validation. See [D4 report](D4_MISINTERPRET_POLICY.md) and [machine-readable evidence](evidence/D4_MISINTERPRET_POLICY_RUN_40824632602.json).
 
 ### D5 — A/B/AB/M comparison semantics
 
 - **Conflict:** PLAN §11 and RP §7 define the classes by equivalence to RTL_A and RTL_B. If RTL_A and RTL_B are proven non-equivalent on the declared observables, AB cannot occur.
-- **Current state (updated 2026-10-29):** the PR #9 pilot does **not** use equivalence. It checks each generated design against per-interpretation **contracts** (`I1_contract.sv`, `I2_contract.sv`) and reports `I1_only`, `I2_only` and so on. PILOT-CSV shows 1 × I2_only and 2 × I1_only. This is a different relation from the one the protocol defines. The [D5 decision-readiness brief](D5_COMPARISON_RELATION_DECISION_READINESS.md) analyses all three options and recommends (c) as a technical position only: frozen-plan equivalence primary, contract conformance separately secondary. This is **not an approval**; author disposition remains pending.
+- **Current state (updated 2026-10-31):** the PR #9 pilot used per-interpretation contract conformance (`I1_contract.sv`, `I2_contract.sv`), not frozen-plan equivalence. Its 1 × I2_only and 2 × I1_only outputs remain exploratory and are not relabelled as primary A/B/AB/M. The author accepted Option C on 2026-10-31: equivalence remains primary under frozen PLAN §11 and RP §7; contract conformance is a separate secondary vector. See [D5 approval](approvals/D5_COMPARISON_SEMANTICS_APPROVAL_2026-10-31.md) and [AM-007](../amendments/AM-007_dual_comparison_relations.md).
 - **Options:**
   - (a) Keep equivalence. AB is then reachable only when the references differ outside the observables, so on certified cases it is reported as structurally empty.
   - (b) Amend to **contract conformance**: class A means the design satisfies S_A's property set. AB then means it satisfies both contracts, which is possible when the contracts leave behaviour unconstrained. This needs an extra check that the contracts are tight (each reference fails the other's contract).
   - (c) Use both relations, with equivalence primary and conformance secondary.
 - **Recommendation:** decide explicitly before Gate 4, and do not adopt (b) implicitly because the pilot used it. If (b) is chosen, the amendment states that PR #9 results were produced under a relation adopted later.
 - **Amendment needed:** if (b) or (c), yes, PLAN §11/RP §7 (AM-007).
-- **Status:** PENDING_AUTHOR_DECISION.
+- **Status:** ACCEPTED — Option C; AM-007 approved. Implementation regression and end-to-end validation remain pending.
 
 ### D10 — Existing exploratory evaluation
 
@@ -207,7 +207,7 @@ The authoritative dispositions will be recorded in the [author decision form](A3
 | D12 | Gate 3 | §3 hashes | Freeze at listed hashes after D1/D2/D7/D11 | PENDING | — | baseline record | — | Hash re-verification |
 | D3 | Gate 4 | EVAL | Implement three labels + fixtures | PENDING | — | none (implementation) | — | Unit tests per label |
 | D4 | Gate 4 | PLAN §11, EVAL | Keep PLAN rule; implement | PENDING | — | none | — | Test: invalid ≠ MISINTERPRET |
-| D5 | Gate 4 | PLAN §11, RP §7, PILOT | Explicit choice; no implicit switch | PENDING | — | AM-007 if changed | — | Contract-tightness check if (b) |
+| D5 | Gate 4 | PLAN §11, RP §7, PILOT | Option C: equivalence primary; contract conformance secondary | ACCEPT — C | [D5 approval](approvals/D5_COMPARISON_SEMANTICS_APPROVAL_2026-10-31.md) | AM-007 approved | 2026-10-31 | Separate-field regression and end-to-end validation pending |
 | D10 | Gate 4 | PILOT, EVAL-PLAN | Label EXPLORATORY; exclude from primary | PENDING | — | none | — | Register + PR #9 label |
 | D13 | Gate 4 | RP §8 | Pre-register operational rules | PENDING | — | AM-008 | — | Metric spec dated before first scored run |
 | D6, D8, D15, D16 | — | A2 | Acknowledge as documented | PENDING | — | none | A2-v1.0 | — |
