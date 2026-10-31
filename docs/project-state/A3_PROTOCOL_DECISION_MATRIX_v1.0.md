@@ -189,7 +189,7 @@ These are already reflected in A2-v1.0 and need only an author acknowledgement. 
 |---|---|---|
 | D6 | ASSUME = the system **silently** selects or states an interpretation without obtaining clarification (RP §7) | A2 §6; acknowledged by G. Naveen on 2026-10-31; [dated acknowledgement](approvals/D6_ASSUME_TERMINOLOGY_ACKNOWLEDGEMENT_2026-10-31.md) |
 | D8 | The core/extension grouping is a later governance decision, not part of PLAN §7's construction order | A2 §9; acknowledged by G. Naveen on 2026-10-31; [dated acknowledgement](approvals/D8_CORE_EXTENSION_GROUPING_ACKNOWLEDGEMENT_2026-10-31.md) |
-| D15 | Observation unit = (Model, Benchmark instance, Condition, Trial) (RP §11) | A2 §8 |
+| D15 | Observation unit = (Model, Benchmark instance, Condition, Trial) (RP §11) | A2 §8; acknowledged by G. Naveen on 2026-10-31; [dated acknowledgement](approvals/D15_OBSERVATION_UNIT_ACKNOWLEDGEMENT_2026-10-31.md) |
 | D16 | P02 is a deterministic C1 control within the core set, not an ambiguity case (PLAN §7; T05 decision O4) | A2 §9 |
 
 ## 8. Decision register
@@ -212,7 +212,8 @@ The authoritative dispositions will be recorded in the [author decision form](A3
 | D13 | Gate 4 | RP §8 | Pre-register operational rules | PENDING | — | AM-008 | — | Metric spec dated before first scored run |
 | D6 | — | A2 §6 / RP §7 | Acknowledge existing ASSUME wording | ACKNOWLEDGED | [D6 acknowledgement](approvals/D6_ASSUME_TERMINOLOGY_ACKNOWLEDGEMENT_2026-10-31.md) | none | A2-v1.0 | Wording confirmed; frozen sources unchanged |
 | D8 | — | A2 §9 | Acknowledge core/extension grouping as a governance decision, distinct from PLAN §7 construction order | ACKNOWLEDGED | [D8 acknowledgement](approvals/D8_CORE_EXTENSION_GROUPING_ACKNOWLEDGEMENT_2026-10-31.md) | none | A2-v1.0 | Existing grouping accepted; frozen sources unchanged |
-| D15, D16 | — | A2 | Acknowledge as documented | PENDING | — | none | A2-v1.0 | — |
+| D15 | — | A2 §8 / RP §11 | Acknowledge observation unit (Model, Benchmark Instance, Condition, Trial) | ACKNOWLEDGED | [D15 acknowledgement](approvals/D15_OBSERVATION_UNIT_ACKNOWLEDGEMENT_2026-10-31.md) | none | A2-v1.0 | Existing unit confirmed; frozen sources unchanged |
+| D16 | — | A2 | Acknowledge as documented | PENDING | — | none | A2-v1.0 | — |
 
 Until a decision is recorded, the operative source and its existing limitations remain unchanged.
 
