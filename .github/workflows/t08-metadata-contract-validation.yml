@@ -1,0 +1,47 @@
+name: T08 metadata contract validation
+
+on:
+  push:
+    branches:
+      - research/end-to-end-sequence
+    paths:
+      - 'Files/Research_Papers/benchmark/schema/instance.schema.v2.json'
+      - 'Files/Research_Papers/benchmark/templates/instance_metadata_template.v2.json'
+      - 'Files/Research_Papers/benchmark/tools/validate_case.py'
+      - 'Files/Research_Papers/benchmark/tests/test_validate_case_v2.py'
+      - 'Files/Research_Papers/benchmark/README_T08_METADATA_CONTRACT_v2.md'
+      - 'docs/project-state/T08_P01_P02_P05_READ_ONLY_PATH_CROSSWALK_v1.md'
+      - '.github/workflows/t08-metadata-contract-validation.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'Files/Research_Papers/benchmark/schema/instance.schema.v2.json'
+      - 'Files/Research_Papers/benchmark/templates/instance_metadata_template.v2.json'
+      - 'Files/Research_Papers/benchmark/tools/validate_case.py'
+      - 'Files/Research_Papers/benchmark/tests/test_validate_case_v2.py'
+      - 'Files/Research_Papers/benchmark/README_T08_METADATA_CONTRACT_v2.md'
+      - 'docs/project-state/T08_P01_P02_P05_READ_ONLY_PATH_CROSSWALK_v1.md'
+      - '.github/workflows/t08-metadata-contract-validation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate JSON schema and template syntax
+        run: python -c "import json,pathlib; [json.loads(pathlib.Path(p).read_text()) for p in ['Files/Research_Papers/benchmark/schema/instance.schema.v2.json','Files/Research_Papers/benchmark/templates/instance_metadata_template.v2.json']]"
+      - name: Run T08 validator regression tests
+        run: python Files/Research_Papers/benchmark/tests/test_validate_case_v2.py
+      - name: Smoke-test generated ambiguity case
+        run: python Files/Research_Papers/benchmark/tools/validate_case.py --init T08_CI_SMOKE --role ambiguity_candidate --category C2 --root "$RUNNER_TEMP"
+      - name: Smoke-test generated unambiguous control
+        run: python Files/Research_Papers/benchmark/tools/validate_case.py --init T08_CI_CONTROL --role unambiguous_control --category C1 --root "$RUNNER_TEMP"
