@@ -37,7 +37,7 @@ Disposition codes: **ACCEPT** (adopt the A3 recommendation) · **REJECT** (keep 
 | ID | Clarification | Acknowledged | Date |
 |---|---|---|---|
 | D6 | ASSUME wording ("silently") | ACKNOWLEDGE | 2026-10-31 | G. Naveen acknowledges the existing definition: silently selects or states an interpretation without obtaining clarification. Documentation clarification only; no amendment. See [D6 acknowledgement record](approvals/D6_ASSUME_TERMINOLOGY_ACKNOWLEDGEMENT_2026-10-31.md). |
-| D8 | Core/extension grouping is a governance decision | PENDING | |
+| D8 | Core/extension grouping is a governance decision | ACKNOWLEDGE | 2026-10-31 | G. Naveen acknowledges that grouping is a governance decision, distinct from PLAN §7 construction order. Existing A2 §9 grouping accepted; no amendment. See [D8 acknowledgement record](approvals/D8_CORE_EXTENSION_GROUPING_ACKNOWLEDGEMENT_2026-10-31.md). |
 | D15 | Observation unit (Model, Instance, Condition, Trial) | PENDING | |
 | D16 | P02 is a C1 control in the core set | PENDING | |
 
